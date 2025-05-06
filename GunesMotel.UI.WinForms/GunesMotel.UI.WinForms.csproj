@@ -88,6 +88,10 @@
       <Project>{d577e325-7300-4c7d-b4e9-dac055e74a97}</Project>
       <Name>GunesMotel.Common</Name>
     </ProjectReference>
+    <ProjectReference Include="..\GunesMotel.DataAccess\GunesMotel.DataAccess.csproj">
+      <Project>{9f48e4d6-9efa-4513-a883-c9edaa98c34b}</Project>
+      <Name>GunesMotel.DataAccess</Name>
+    </ProjectReference>
     <ProjectReference Include="..\GunesMotel.Entities\GunesMotel.Entities.csproj">
       <Project>{9527e55f-4923-431b-a975-9b686a40e306}</Project>
       <Name>GunesMotel.Entities</Name>
