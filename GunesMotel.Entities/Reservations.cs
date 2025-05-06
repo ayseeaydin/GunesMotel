@@ -3,11 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.ComponentModel.DataAnnotations;
 
 namespace GunesMotel.Entities
 {
     public class Reservations
     {
+        [Key]
         public int ReservationID { get; set; }
         public string CustomerID { get; set; }
         public int RoomID { get; set; }

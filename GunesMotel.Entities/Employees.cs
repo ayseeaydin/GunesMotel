@@ -3,11 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.ComponentModel.DataAnnotations;
 
 namespace GunesMotel.Entities
 {
     public class Employees
     {
+        [Key]
         public int EmployeeID { get; set; }
         public string FullName { get; set; }
         public string? NationalID { get; set; }

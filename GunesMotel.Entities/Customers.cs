@@ -2,12 +2,13 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
+using System.ComponentModel.DataAnnotations;
 
 namespace GunesMotel.Entities
 {
     public class Customers
     {
+        [Key]
         public int CustomerID { get; set; }
         public string FullName { get; set; }
         public string Phone { get; set; }

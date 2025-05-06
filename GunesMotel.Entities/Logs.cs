@@ -3,11 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.ComponentModel.DataAnnotations;
 
 namespace GunesMotel.Entities
 {
     public class Logs
     {
+        [Key]
         public int LogID { get; set; }
         public int UserID { get; set; }
         public DateTime LogDate { get; set; }

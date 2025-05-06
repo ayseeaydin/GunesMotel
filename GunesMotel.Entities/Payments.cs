@@ -3,11 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.ComponentModel.DataAnnotations;
 
 namespace GunesMotel.Entities
 {
     public class Payments
     {
+        [Key]
         public int PaymentID { get; set; }
         public int InvoiceID { get; set; }
         public decimal Amount { get; set; }
