@@ -64,7 +64,7 @@ namespace GunesMotel.UI.WinForms
                 if (dgvPositions.CurrentRow != null)
                 {
                     // seçili satırın id al
-                    int selectedId = Convert.ToInt32(dgvPositions.CurrentRow.Cells["PositionID"].Value);
+                    int selectedId = Convert.ToInt32(dgvPositions.SelectedRows[0].Cells[0].Value);
                     // id ye göre pozisyonu bul
                     var position=_repo.GetById(selectedId);
                     if (position != null)
@@ -89,7 +89,7 @@ namespace GunesMotel.UI.WinForms
             {
                 if(dgvPositions.CurrentRow != null)
                 {
-                    int selectedId = Convert.ToInt32(dgvPositions.CurrentRow.Cells["PositionID"].Value);
+                    int selectedId = Convert.ToInt32(dgvPositions.SelectedRows[0].Cells[0].Value);
                     _repo.Delete(selectedId);
                     LoadPositions();
                     MessageBox.Show("Pozisyon silindi.");
