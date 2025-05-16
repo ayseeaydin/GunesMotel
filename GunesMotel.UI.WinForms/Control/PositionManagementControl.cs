@@ -138,10 +138,10 @@ namespace GunesMotel.UI.WinForms
         }
 
         private void btnRefresh_Click(object sender, EventArgs e)
-        {
+        {            
             LoadPositions();
             ClearAndFocus();
-            LogHelper.AddLog(CurrentUser.UserID, "Pozisyon Yönetimi", "Yenileme", "Pozisyonlar yenilendi.");
+            LogHelper.AddLog(CurrentUser.UserID, "Pozisyon Yönetimi", "Yenileme", "Pozisyonlar yenilendi.");      
         }
 
         private void dgvPositions_CellClick(object sender, DataGridViewCellEventArgs e)
