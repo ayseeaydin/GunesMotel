@@ -7,7 +7,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace GunesMotel.Entities
 {
-    public class Logs
+    public class Log
     {
         [Key]
         public int LogID { get; set; }

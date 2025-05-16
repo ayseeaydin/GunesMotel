@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.pnlMain = new System.Windows.Forms.Panel();
             this.lblTitle = new System.Windows.Forms.Label();
             this.dgvPositions = new System.Windows.Forms.DataGridView();
@@ -55,7 +55,7 @@
             this.pnlMain.Controls.Add(this.pnlControls);
             this.pnlMain.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlMain.Location = new System.Drawing.Point(0, 0);
-            this.pnlMain.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pnlMain.Margin = new System.Windows.Forms.Padding(4);
             this.pnlMain.Name = "pnlMain";
             this.pnlMain.Padding = new System.Windows.Forms.Padding(27, 25, 27, 25);
             this.pnlMain.Size = new System.Drawing.Size(1067, 615);
@@ -85,30 +85,30 @@
             this.dgvPositions.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvPositions.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.dgvPositions.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(155)))), ((int)(((byte)(180)))));
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(155)))), ((int)(((byte)(180)))));
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvPositions.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(155)))), ((int)(((byte)(180)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(155)))), ((int)(((byte)(180)))));
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvPositions.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvPositions.ColumnHeadersHeight = 40;
             this.dgvPositions.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colPositionID,
             this.colPositionName});
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(232)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvPositions.DefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(232)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvPositions.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgvPositions.EnableHeadersVisualStyles = false;
             this.dgvPositions.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
             this.dgvPositions.Location = new System.Drawing.Point(27, 80);
-            this.dgvPositions.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dgvPositions.Margin = new System.Windows.Forms.Padding(4);
             this.dgvPositions.Name = "dgvPositions";
             this.dgvPositions.ReadOnly = true;
             this.dgvPositions.RowHeadersVisible = false;
@@ -117,6 +117,7 @@
             this.dgvPositions.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvPositions.Size = new System.Drawing.Size(613, 511);
             this.dgvPositions.TabIndex = 1;
+            this.dgvPositions.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPositions_CellClick);
             // 
             // colPositionID
             // 
@@ -148,7 +149,7 @@
             this.pnlControls.Controls.Add(this.btnDelete);
             this.pnlControls.Controls.Add(this.btnRefresh);
             this.pnlControls.Location = new System.Drawing.Point(667, 80);
-            this.pnlControls.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pnlControls.Margin = new System.Windows.Forms.Padding(4);
             this.pnlControls.Name = "pnlControls";
             this.pnlControls.Padding = new System.Windows.Forms.Padding(20, 18, 20, 18);
             this.pnlControls.Size = new System.Drawing.Size(373, 511);
@@ -173,7 +174,7 @@
             this.txtPositionName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtPositionName.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.txtPositionName.Location = new System.Drawing.Point(20, 49);
-            this.txtPositionName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtPositionName.Margin = new System.Windows.Forms.Padding(4);
             this.txtPositionName.Name = "txtPositionName";
             this.txtPositionName.Size = new System.Drawing.Size(333, 32);
             this.txtPositionName.TabIndex = 1;
@@ -188,7 +189,7 @@
             this.btnAdd.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.btnAdd.ForeColor = System.Drawing.Color.White;
             this.btnAdd.Location = new System.Drawing.Point(20, 111);
-            this.btnAdd.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnAdd.Margin = new System.Windows.Forms.Padding(4);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(333, 55);
             this.btnAdd.TabIndex = 2;
@@ -206,7 +207,7 @@
             this.btnUpdate.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.btnUpdate.ForeColor = System.Drawing.Color.White;
             this.btnUpdate.Location = new System.Drawing.Point(20, 185);
-            this.btnUpdate.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnUpdate.Margin = new System.Windows.Forms.Padding(4);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(333, 55);
             this.btnUpdate.TabIndex = 3;
@@ -224,7 +225,7 @@
             this.btnDelete.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.btnDelete.ForeColor = System.Drawing.Color.White;
             this.btnDelete.Location = new System.Drawing.Point(20, 258);
-            this.btnDelete.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnDelete.Margin = new System.Windows.Forms.Padding(4);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(333, 55);
             this.btnDelete.TabIndex = 4;
@@ -242,7 +243,7 @@
             this.btnRefresh.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.btnRefresh.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(70)))), ((int)(((byte)(70)))));
             this.btnRefresh.Location = new System.Drawing.Point(20, 332);
-            this.btnRefresh.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnRefresh.Margin = new System.Windows.Forms.Padding(4);
             this.btnRefresh.Name = "btnRefresh";
             this.btnRefresh.Size = new System.Drawing.Size(333, 55);
             this.btnRefresh.TabIndex = 5;
@@ -255,9 +256,10 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.pnlMain);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "PositionManagementControl";
             this.Size = new System.Drawing.Size(1067, 615);
+            this.Load += new System.EventHandler(this.PositionManagementControl_Load);
             this.pnlMain.ResumeLayout(false);
             this.pnlMain.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPositions)).EndInit();

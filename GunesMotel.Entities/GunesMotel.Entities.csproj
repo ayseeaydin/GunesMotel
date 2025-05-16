@@ -57,7 +57,7 @@
     <Compile Include="ExtraServices.cs" />
     <Compile Include="InvoiceItems.cs" />
     <Compile Include="Invoices.cs" />
-    <Compile Include="Logs.cs" />
+    <Compile Include="Log.cs" />
     <Compile Include="Payments.cs" />
     <Compile Include="Positions.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using GunesMotel.UI.WinForms.Control;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -26,13 +27,13 @@ namespace GunesMotel.UI.WinForms
                 pnlContent.Controls.Clear();
 
                 // Position UserControl'ünü oluştur
-                var positionControl = new PositionManagementControl
+                var roleControl = new PositionManagementControl
                 {
                     Dock = DockStyle.Fill
                 };
 
                 // UserControl'ü panele ekle
-                pnlContent.Controls.Add(positionControl);
+                pnlContent.Controls.Add(roleControl);
             }
             catch (Exception ex)
             {

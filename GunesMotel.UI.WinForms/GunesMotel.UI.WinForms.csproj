@@ -56,24 +56,45 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="FrmMain.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FrmMain.Designer.cs">
-      <DependentUpon>FrmMain.cs</DependentUpon>
-    </Compile>
-    <Compile Include="PositionManagementControl.cs">
+    <Compile Include="Control\EmployeeManagementControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="PositionManagementControl.Designer.cs">
+    <Compile Include="Control\EmployeeManagementControl.Designer.cs">
+      <DependentUpon>EmployeeManagementControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Control\RoleManagementControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Control\RoleManagementControl.Designer.cs">
+      <DependentUpon>RoleManagementControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Control\UserManagementControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Control\UserManagementControl.Designer.cs">
+      <DependentUpon>UserManagementControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FrmMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmMain.Designer.cs">
+      <DependentUpon>FrmMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Control\PositionManagementControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Control\PositionManagementControl.Designer.cs">
       <DependentUpon>PositionManagementControl.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="FrmMain.resx">
+    <EmbeddedResource Include="Control\RoleManagementControl.resx">
+      <DependentUpon>RoleManagementControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmMain.resx">
       <DependentUpon>FrmMain.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="PositionManagementControl.resx">
+    <EmbeddedResource Include="Control\PositionManagementControl.resx">
       <DependentUpon>PositionManagementControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
