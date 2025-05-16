@@ -56,12 +56,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Control\EmployeeManagementControl.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Control\EmployeeManagementControl.Designer.cs">
-      <DependentUpon>EmployeeManagementControl.cs</DependentUpon>
-    </Compile>
     <Compile Include="Control\RoleManagementControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
