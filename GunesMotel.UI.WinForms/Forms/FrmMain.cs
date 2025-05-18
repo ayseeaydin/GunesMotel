@@ -27,9 +27,9 @@ namespace GunesMotel.UI.WinForms
                 pnlContent.Controls.Clear();
 
                 // Position UserControl'ünü oluştur
-                var roleControl = new PositionManagementControl
+                var roleControl = new EmployeeManagementControl();
                 {
-                    Dock = DockStyle.Fill
+                    Dock = DockStyle.Fill;
                 };
 
                 // UserControl'ü panele ekle

@@ -88,6 +88,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Control\EmployeeManagementControl.resx">
+      <DependentUpon>EmployeeManagementControl.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Control\RoleManagementControl.resx">
       <DependentUpon>RoleManagementControl.cs</DependentUpon>
     </EmbeddedResource>

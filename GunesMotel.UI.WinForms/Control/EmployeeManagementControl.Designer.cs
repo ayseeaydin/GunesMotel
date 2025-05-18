@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.pnlContainer = new System.Windows.Forms.Panel();
             this.pnlRight = new System.Windows.Forms.Panel();
             this.btnDelete = new System.Windows.Forms.Button();
@@ -59,12 +59,12 @@
             this.lblNationalID = new System.Windows.Forms.Label();
             this.txtFullName = new System.Windows.Forms.TextBox();
             this.lblFullName = new System.Windows.Forms.Label();
-            this.lblRightTitle = new System.Windows.Forms.Label();
             this.pnlRightHeader = new System.Windows.Forms.Panel();
+            this.lblRightTitle = new System.Windows.Forms.Label();
             this.pnlLeft = new System.Windows.Forms.Panel();
             this.dgvEmployees = new System.Windows.Forms.DataGridView();
-            this.lblLeftTitle = new System.Windows.Forms.Label();
             this.pnlLeftHeader = new System.Windows.Forms.Panel();
+            this.lblLeftTitle = new System.Windows.Forms.Label();
             this.lblTitle = new System.Windows.Forms.Label();
             this.pnlContainer.SuspendLayout();
             this.pnlRight.SuspendLayout();
@@ -90,7 +90,7 @@
             // 
             // pnlRight
             // 
-            this.pnlRight.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+            this.pnlRight.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pnlRight.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(249)))), ((int)(((byte)(250)))));
             this.pnlRight.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -172,6 +172,7 @@
             this.btnAdd.TabIndex = 25;
             this.btnAdd.Text = "Ekle";
             this.btnAdd.UseVisualStyleBackColor = false;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // dtpLeaveDate
             // 
@@ -191,7 +192,7 @@
             this.lblLeaveDate.Location = new System.Drawing.Point(220, 474);
             this.lblLeaveDate.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblLeaveDate.Name = "lblLeaveDate";
-            this.lblLeaveDate.Size = new System.Drawing.Size(72, 20);
+            this.lblLeaveDate.Size = new System.Drawing.Size(74, 20);
             this.lblLeaveDate.TabIndex = 23;
             this.lblLeaveDate.Text = "İşten Çıkış";
             // 
@@ -212,7 +213,7 @@
             this.lblHireDate.Location = new System.Drawing.Point(20, 474);
             this.lblHireDate.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblHireDate.Name = "lblHireDate";
-            this.lblHireDate.Size = new System.Drawing.Size(63, 20);
+            this.lblHireDate.Size = new System.Drawing.Size(60, 20);
             this.lblHireDate.TabIndex = 21;
             this.lblHireDate.Text = "İşe Giriş";
             // 
@@ -233,7 +234,7 @@
             this.lblIBAN.Location = new System.Drawing.Point(220, 424);
             this.lblIBAN.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblIBAN.Name = "lblIBAN";
-            this.lblIBAN.Size = new System.Drawing.Size(40, 20);
+            this.lblIBAN.Size = new System.Drawing.Size(43, 20);
             this.lblIBAN.TabIndex = 19;
             this.lblIBAN.Text = "IBAN";
             // 
@@ -255,7 +256,7 @@
             this.lblPosition.Location = new System.Drawing.Point(20, 424);
             this.lblPosition.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblPosition.Name = "lblPosition";
-            this.lblPosition.Size = new System.Drawing.Size(67, 20);
+            this.lblPosition.Size = new System.Drawing.Size(66, 20);
             this.lblPosition.TabIndex = 17;
             this.lblPosition.Text = "Pozisyon";
             // 
@@ -276,7 +277,7 @@
             this.lblAddress.Location = new System.Drawing.Point(20, 374);
             this.lblAddress.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblAddress.Name = "lblAddress";
-            this.lblAddress.Size = new System.Drawing.Size(46, 20);
+            this.lblAddress.Size = new System.Drawing.Size(47, 20);
             this.lblAddress.TabIndex = 15;
             this.lblAddress.Text = "Adres";
             // 
@@ -297,7 +298,7 @@
             this.lblEmail.Location = new System.Drawing.Point(20, 324);
             this.lblEmail.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblEmail.Name = "lblEmail";
-            this.lblEmail.Size = new System.Drawing.Size(58, 20);
+            this.lblEmail.Size = new System.Drawing.Size(60, 20);
             this.lblEmail.TabIndex = 13;
             this.lblEmail.Text = "E-posta";
             // 
@@ -318,7 +319,7 @@
             this.lblPhone.Location = new System.Drawing.Point(20, 274);
             this.lblPhone.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblPhone.Name = "lblPhone";
-            this.lblPhone.Size = new System.Drawing.Size(56, 20);
+            this.lblPhone.Size = new System.Drawing.Size(58, 20);
             this.lblPhone.TabIndex = 11;
             this.lblPhone.Text = "Telefon";
             // 
@@ -364,7 +365,7 @@
             this.lblBirthDate.Location = new System.Drawing.Point(20, 224);
             this.lblBirthDate.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblBirthDate.Name = "lblBirthDate";
-            this.lblBirthDate.Size = new System.Drawing.Size(97, 20);
+            this.lblBirthDate.Size = new System.Drawing.Size(98, 20);
             this.lblBirthDate.TabIndex = 7;
             this.lblBirthDate.Text = "Doğum Tarihi";
             // 
@@ -385,7 +386,7 @@
             this.lblPassportID.Location = new System.Drawing.Point(20, 174);
             this.lblPassportID.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblPassportID.Name = "lblPassportID";
-            this.lblPassportID.Size = new System.Drawing.Size(89, 20);
+            this.lblPassportID.Size = new System.Drawing.Size(90, 20);
             this.lblPassportID.TabIndex = 5;
             this.lblPassportID.Text = "Pasaport No";
             // 
@@ -406,7 +407,7 @@
             this.lblNationalID.Location = new System.Drawing.Point(20, 124);
             this.lblNationalID.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblNationalID.Name = "lblNationalID";
-            this.lblNationalID.Size = new System.Drawing.Size(97, 20);
+            this.lblNationalID.Size = new System.Drawing.Size(101, 20);
             this.lblNationalID.TabIndex = 3;
             this.lblNationalID.Text = "T.C. Kimlik No";
             // 
@@ -427,9 +428,20 @@
             this.lblFullName.Location = new System.Drawing.Point(20, 74);
             this.lblFullName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblFullName.Name = "lblFullName";
-            this.lblFullName.Size = new System.Drawing.Size(71, 20);
+            this.lblFullName.Size = new System.Drawing.Size(73, 20);
             this.lblFullName.TabIndex = 1;
             this.lblFullName.Text = "Ad Soyad";
+            // 
+            // pnlRightHeader
+            // 
+            this.pnlRightHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(155)))), ((int)(((byte)(180)))));
+            this.pnlRightHeader.Controls.Add(this.lblRightTitle);
+            this.pnlRightHeader.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnlRightHeader.Location = new System.Drawing.Point(0, 0);
+            this.pnlRightHeader.Margin = new System.Windows.Forms.Padding(4);
+            this.pnlRightHeader.Name = "pnlRightHeader";
+            this.pnlRightHeader.Size = new System.Drawing.Size(418, 40);
+            this.pnlRightHeader.TabIndex = 0;
             // 
             // lblRightTitle
             // 
@@ -443,21 +455,10 @@
             this.lblRightTitle.TabIndex = 0;
             this.lblRightTitle.Text = "Yeni / Düzenle";
             // 
-            // pnlRightHeader
-            // 
-            this.pnlRightHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(155)))), ((int)(((byte)(180)))));
-            this.pnlRightHeader.Controls.Add(this.lblRightTitle);
-            this.pnlRightHeader.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnlRightHeader.Location = new System.Drawing.Point(0, 0);
-            this.pnlRightHeader.Margin = new System.Windows.Forms.Padding(4);
-            this.pnlRightHeader.Name = "pnlRightHeader";
-            this.pnlRightHeader.Size = new System.Drawing.Size(418, 40);
-            this.pnlRightHeader.TabIndex = 0;
-            // 
             // pnlLeft
             // 
-            this.pnlLeft.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-            | System.Windows.Forms.AnchorStyles.Left)
+            this.pnlLeft.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pnlLeft.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(249)))), ((int)(((byte)(250)))));
             this.pnlLeft.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -474,31 +475,31 @@
             this.dgvEmployees.AllowUserToAddRows = false;
             this.dgvEmployees.AllowUserToDeleteRows = false;
             this.dgvEmployees.AllowUserToResizeRows = false;
-            this.dgvEmployees.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-            | System.Windows.Forms.AnchorStyles.Left)
+            this.dgvEmployees.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvEmployees.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvEmployees.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(249)))), ((int)(((byte)(250)))));
             this.dgvEmployees.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvEmployees.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.dgvEmployees.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(239)))), ((int)(((byte)(245)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(239)))), ((int)(((byte)(245)))));
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvEmployees.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(239)))), ((int)(((byte)(245)))));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(239)))), ((int)(((byte)(245)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvEmployees.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dgvEmployees.ColumnHeadersHeight = 30;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(155)))), ((int)(((byte)(180)))));
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvEmployees.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(155)))), ((int)(((byte)(180)))));
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvEmployees.DefaultCellStyle = dataGridViewCellStyle4;
             this.dgvEmployees.EnableHeadersVisualStyles = false;
             this.dgvEmployees.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(221)))), ((int)(((byte)(221)))));
             this.dgvEmployees.Location = new System.Drawing.Point(10, 50);
@@ -513,18 +514,6 @@
             this.dgvEmployees.Size = new System.Drawing.Size(880, 638);
             this.dgvEmployees.TabIndex = 1;
             // 
-            // lblLeftTitle
-            // 
-            this.lblLeftTitle.AutoSize = true;
-            this.lblLeftTitle.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.lblLeftTitle.ForeColor = System.Drawing.Color.White;
-            this.lblLeftTitle.Location = new System.Drawing.Point(10, 8);
-            this.lblLeftTitle.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblLeftTitle.Name = "lblLeftTitle";
-            this.lblLeftTitle.Size = new System.Drawing.Size(106, 23);
-            this.lblLeftTitle.TabIndex = 0;
-            this.lblLeftTitle.Text = "Kayıt Listesi";
-            // 
             // pnlLeftHeader
             // 
             this.pnlLeftHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(155)))), ((int)(((byte)(180)))));
@@ -536,6 +525,18 @@
             this.pnlLeftHeader.Size = new System.Drawing.Size(900, 40);
             this.pnlLeftHeader.TabIndex = 0;
             // 
+            // lblLeftTitle
+            // 
+            this.lblLeftTitle.AutoSize = true;
+            this.lblLeftTitle.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.lblLeftTitle.ForeColor = System.Drawing.Color.White;
+            this.lblLeftTitle.Location = new System.Drawing.Point(10, 8);
+            this.lblLeftTitle.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblLeftTitle.Name = "lblLeftTitle";
+            this.lblLeftTitle.Size = new System.Drawing.Size(105, 23);
+            this.lblLeftTitle.TabIndex = 0;
+            this.lblLeftTitle.Text = "Kayıt Listesi";
+            // 
             // lblTitle
             // 
             this.lblTitle.AutoSize = true;
@@ -544,18 +545,19 @@
             this.lblTitle.Location = new System.Drawing.Point(20, 30);
             this.lblTitle.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblTitle.Name = "lblTitle";
-            this.lblTitle.Size = new System.Drawing.Size(242, 37);
+            this.lblTitle.Size = new System.Drawing.Size(248, 37);
             this.lblTitle.TabIndex = 0;
             this.lblTitle.Text = "Personel Yönetimi";
             // 
-            // EmployeeUserControl
+            // EmployeeManagementControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.pnlContainer);
             this.Margin = new System.Windows.Forms.Padding(4);
-            this.Name = "EmployeeUserControl";
+            this.Name = "EmployeeManagementControl";
             this.Size = new System.Drawing.Size(1400, 800);
+            this.Load += new System.EventHandler(this.EmployeeManagementControl_Load);
             this.pnlContainer.ResumeLayout(false);
             this.pnlContainer.PerformLayout();
             this.pnlRight.ResumeLayout(false);
@@ -567,6 +569,7 @@
             this.pnlLeftHeader.ResumeLayout(false);
             this.pnlLeftHeader.PerformLayout();
             this.ResumeLayout(false);
+
         }
 
         #endregion
