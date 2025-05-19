@@ -55,6 +55,15 @@
     <Compile Include="Contexts\GunesMotelContext.cs" />
     <Compile Include="Helpers\LogHelper.cs" />
     <Compile Include="Interfaces\IRepository.cs" />
+    <Compile Include="Migrations\202505181059260_InitialCreate.cs" />
+    <Compile Include="Migrations\202505181059260_InitialCreate.Designer.cs">
+      <DependentUpon>202505181059260_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202505181103333_MakeLeaveDateNullable.cs" />
+    <Compile Include="Migrations\202505181103333_MakeLeaveDateNullable.Designer.cs">
+      <DependentUpon>202505181103333_MakeLeaveDateNullable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\GenericRepository.cs" />
   </ItemGroup>
@@ -71,6 +80,14 @@
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\202505181059260_InitialCreate.resx">
+      <DependentUpon>202505181059260_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202505181103333_MakeLeaveDateNullable.resx">
+      <DependentUpon>202505181103333_MakeLeaveDateNullable.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

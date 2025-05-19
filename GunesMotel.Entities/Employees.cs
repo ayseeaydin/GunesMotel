@@ -21,6 +21,8 @@ namespace GunesMotel.Entities
         public DateTime? LeaveDate { get; set; }
         public bool IsActive { get; set; }
         public DateTime CreatedAt { get; set; }
+
+        // Navigation
         public virtual Positions Position { get; set; }
     }
 }
