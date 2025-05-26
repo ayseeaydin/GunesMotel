@@ -11,5 +11,6 @@ namespace GunesMotel.Common
         public static int UserID { get; set; }
         public static string Username { get; set; }
         public static string RoleName { get; set; }
+        public static string FullName { get; set; }
     }
 }

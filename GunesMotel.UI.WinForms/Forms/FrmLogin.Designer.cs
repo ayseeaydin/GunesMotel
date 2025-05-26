@@ -32,6 +32,8 @@
             this.pnlImage = new System.Windows.Forms.Panel();
             this.picLogo = new System.Windows.Forms.PictureBox();
             this.pnlLogin = new System.Windows.Forms.Panel();
+            this.lnkForgotPassword = new System.Windows.Forms.LinkLabel();
+            this.chkRememberMe = new System.Windows.Forms.CheckBox();
             this.btnExit = new System.Windows.Forms.Button();
             this.btnLogin = new System.Windows.Forms.Button();
             this.txtPassword = new System.Windows.Forms.TextBox();
@@ -67,6 +69,8 @@
             // pnlLogin
             // 
             this.pnlLogin.BackColor = System.Drawing.Color.White;
+            this.pnlLogin.Controls.Add(this.lnkForgotPassword);
+            this.pnlLogin.Controls.Add(this.chkRememberMe);
             this.pnlLogin.Controls.Add(this.btnExit);
             this.pnlLogin.Controls.Add(this.btnLogin);
             this.pnlLogin.Controls.Add(this.txtPassword);
@@ -80,6 +84,32 @@
             this.pnlLogin.Size = new System.Drawing.Size(450, 443);
             this.pnlLogin.TabIndex = 1;
             // 
+            // lnkForgotPassword
+            // 
+            this.lnkForgotPassword.ActiveLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(160)))), ((int)(((byte)(23)))));
+            this.lnkForgotPassword.AutoSize = true;
+            this.lnkForgotPassword.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.lnkForgotPassword.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(93)))), ((int)(((byte)(64)))), ((int)(((byte)(55)))));
+            this.lnkForgotPassword.Location = new System.Drawing.Point(261, 292);
+            this.lnkForgotPassword.Name = "lnkForgotPassword";
+            this.lnkForgotPassword.Size = new System.Drawing.Size(117, 20);
+            this.lnkForgotPassword.TabIndex = 7;
+            this.lnkForgotPassword.TabStop = true;
+            this.lnkForgotPassword.Text = "Şifremi Unuttum";
+            this.lnkForgotPassword.VisitedLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(93)))), ((int)(((byte)(64)))), ((int)(((byte)(55)))));
+            // 
+            // chkRememberMe
+            // 
+            this.chkRememberMe.AutoSize = true;
+            this.chkRememberMe.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.chkRememberMe.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(93)))), ((int)(((byte)(64)))), ((int)(((byte)(55)))));
+            this.chkRememberMe.Location = new System.Drawing.Point(75, 292);
+            this.chkRememberMe.Name = "chkRememberMe";
+            this.chkRememberMe.Size = new System.Drawing.Size(109, 24);
+            this.chkRememberMe.TabIndex = 6;
+            this.chkRememberMe.Text = "Beni Hatırla";
+            this.chkRememberMe.UseVisualStyleBackColor = true;
+            // 
             // btnExit
             // 
             this.btnExit.BackColor = System.Drawing.Color.Transparent;
@@ -90,7 +120,7 @@
             this.btnExit.Location = new System.Drawing.Point(410, 10);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(30, 30);
-            this.btnExit.TabIndex = 6;
+            this.btnExit.TabIndex = 8;
             this.btnExit.Text = "X";
             this.btnExit.UseVisualStyleBackColor = false;
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
@@ -102,12 +132,13 @@
             this.btnLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLogin.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.btnLogin.ForeColor = System.Drawing.Color.White;
-            this.btnLogin.Location = new System.Drawing.Point(150, 325);
+            this.btnLogin.Location = new System.Drawing.Point(150, 335);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(150, 40);
             this.btnLogin.TabIndex = 5;
             this.btnLogin.Text = "GİRİŞ YAP";
             this.btnLogin.UseVisualStyleBackColor = false;
+            this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
             // 
             // txtPassword
             // 
@@ -189,5 +220,7 @@
         private System.Windows.Forms.Label lblPassword;
         private System.Windows.Forms.Button btnLogin;
         private System.Windows.Forms.Button btnExit;
+        private System.Windows.Forms.CheckBox chkRememberMe;
+        private System.Windows.Forms.LinkLabel lnkForgotPassword;
     }
 }
