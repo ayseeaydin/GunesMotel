@@ -9,5 +9,6 @@ namespace GunesMotel.DataAccess.Interfaces
     {
         List<Users> GetUsersWithIncludes(); // Role + Employee tablosuyla birlikte getirir
         bool UsernameExists(string username);  // Aynı kullanıcı adı var mı kontrol eder
+
     }
 }

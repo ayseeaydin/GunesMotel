@@ -51,5 +51,13 @@ namespace GunesMotel.DataAccess.Repositories
                 .OrderBy(e => e.FullName)
                 .ToList();
         }
+
+        public List<Employees> GetAvailableEmployeesByPositionIDs(List<int> positionIds)
+        {
+            return _context.Employees
+        .Where(e => positionIds.Contains(e.PositionID)) // Sadece pozisyona göre filtrele
+        .ToList();
+        }
+
     }
 }

@@ -1,4 +1,5 @@
 ﻿using GunesMotel.DataAccess.Repositories;
+using GunesMotel.UI.WinForms.Control;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -68,7 +69,27 @@ namespace GunesMotel.UI.WinForms.Forms
 
         private void btnPersonel_Click(object sender, EventArgs e)
         {
-            LoadContent(new PositionManagementControl());
+            var employeeControl = new EmployeeManagementControl();
+
+            // Event yakalanıyor:
+            employeeControl.OnPozisyonYonet += (s, args) =>
+            {
+                lblFormTitle.Text = "Pozisyon Yönetimi";
+                LoadContent(new PositionManagementControl());
+            };
+
+            LoadContent(employeeControl);
+        }
+
+        private void btnKullanicilar_Click(object sender, EventArgs e)
+        {
+            var userControl = new UserManagementControl();
+            userControl.OnRolYonet += (s, args) =>
+            {
+                lblFormTitle.Text = "Rol Yönetimi";
+                LoadContent(new RoleManagementControl());
+            };
+            LoadContent(userControl);
         }
     }
 }

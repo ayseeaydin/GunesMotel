@@ -10,5 +10,7 @@ namespace GunesMotel.DataAccess.Interfaces
     public interface IEmployeeRepository
     {
         List<Employees> GetActiveEmployeesWithPosition();
+        List<Employees> GetAvailableEmployeesByPositionIDs(List<int> positionIds);
+
     }
 }

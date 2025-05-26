@@ -157,6 +157,7 @@
             this.btnKullanicilar.Text = "Kullanıcı Yönetimi";
             this.btnKullanicilar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnKullanicilar.UseVisualStyleBackColor = true;
+            this.btnKullanicilar.Click += new System.EventHandler(this.btnKullanicilar_Click);
             // 
             // btnPersonel
             // 

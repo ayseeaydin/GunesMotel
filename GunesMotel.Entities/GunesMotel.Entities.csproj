@@ -64,6 +64,7 @@
     <Compile Include="ReservationExtras.cs" />
     <Compile Include="ReservationGuests.cs" />
     <Compile Include="Reservations.cs" />
+    <Compile Include="RolePositionMap.cs" />
     <Compile Include="Roles.cs" />
     <Compile Include="RoomPrices.cs" />
     <Compile Include="Rooms.cs" />

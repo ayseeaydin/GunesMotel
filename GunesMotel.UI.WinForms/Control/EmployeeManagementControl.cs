@@ -11,6 +11,7 @@ namespace GunesMotel.UI.WinForms.Control
 {
     public partial class EmployeeManagementControl : UserControl
     {
+        public event EventHandler OnPozisyonYonet;
         private readonly EmployeeRepository _employeeRepo;
         private readonly GunesMotelContext _context;
         public EmployeeManagementControl()
@@ -278,6 +279,12 @@ namespace GunesMotel.UI.WinForms.Control
             LoadPositions();
             LoadEmployees();
             ClearForm();
+        }
+
+        private void btnPositionManagement_Click(object sender, EventArgs e)
+        {
+            // Bu event dış dünyaya haber verir
+            OnPozisyonYonet?.Invoke(this, EventArgs.Empty);
         }
     }
 }

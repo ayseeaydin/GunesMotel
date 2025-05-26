@@ -23,6 +23,8 @@ namespace GunesMotel.DataAccess.Contexts
         public DbSet<Salaries>  Salaries { get; set; }
         public DbSet<Seasons> Seasons { get; set; }
         public DbSet<RoomTypes> RoomTypes { get; set; }
+        public DbSet<RolePositionMap> RolePositionMap { get; set; }
+
         public DbSet<Rooms> Rooms { get; set; }
         public DbSet<RoomPrices> RoomPrices { get; set; }
         public DbSet<ExtraServices> ExtraServices { get; set; }
