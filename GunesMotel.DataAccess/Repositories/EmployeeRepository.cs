@@ -4,6 +4,7 @@ using GunesMotel.DataAccess.Contexts;
 using System.Collections.Generic;
 using System.Linq;
 using System.Data.Entity;
+using System;
 
 namespace GunesMotel.DataAccess.Repositories
 {
@@ -25,6 +26,29 @@ namespace GunesMotel.DataAccess.Repositories
             return _context.Employees
                 .Include(e => e.Position) // Pozisyon bilgilerini de dahil et
                 .Where(e => e.IsActive == true) // Sadece aktif çalışanları al
+                .ToList();
+        }
+
+        public List<Employees> GetUnassignedActiveEmployees()
+        {
+            var assignedIds = _context.Users.Select(u => u.EmployeeID).ToList();
+
+            return _context.Employees
+                            .Where(e => e.IsActive)
+                            .OrderBy(e => e.FullName)
+                            .ToList();
+        }
+
+        public List<Employees> GetUnassignedEmployeesByRoleName(string roleName)
+        {
+            var assignedIds = _context.Users.Select(u => u.EmployeeID).ToList();
+
+            return _context.Employees
+                .Include(e => e.Position)
+                .Where(e => e.IsActive &&
+                            !assignedIds.Contains(e.EmployeeID) &&
+                            e.Position.PositionName == roleName)
+                .OrderBy(e => e.FullName)
                 .ToList();
         }
     }

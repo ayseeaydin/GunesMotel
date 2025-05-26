@@ -56,6 +56,8 @@
     <Compile Include="Helpers\LogHelper.cs" />
     <Compile Include="Interfaces\IEmployeeRepository.cs" />
     <Compile Include="Interfaces\IRepository.cs" />
+    <Compile Include="Interfaces\IRoleRepository.cs" />
+    <Compile Include="Interfaces\IUserRepository.cs" />
     <Compile Include="Migrations\202505181059260_InitialCreate.cs" />
     <Compile Include="Migrations\202505181059260_InitialCreate.Designer.cs">
       <DependentUpon>202505181059260_InitialCreate.cs</DependentUpon>
@@ -64,10 +66,20 @@
     <Compile Include="Migrations\202505181103333_MakeLeaveDateNullable.Designer.cs">
       <DependentUpon>202505181103333_MakeLeaveDateNullable.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202505242129255_UpdateUserModel.cs" />
+    <Compile Include="Migrations\202505242129255_UpdateUserModel.Designer.cs">
+      <DependentUpon>202505242129255_UpdateUserModel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202505252102114_ReSyncUserModel.cs" />
+    <Compile Include="Migrations\202505252102114_ReSyncUserModel.Designer.cs">
+      <DependentUpon>202505252102114_ReSyncUserModel.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\EmployeeRepository.cs" />
     <Compile Include="Repositories\GenericRepository.cs" />
+    <Compile Include="Repositories\RoleRepository.cs" />
+    <Compile Include="Repositories\UserRepository.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\GunesMotel.Common\GunesMotel.Common.csproj">
@@ -89,6 +101,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202505181103333_MakeLeaveDateNullable.resx">
       <DependentUpon>202505181103333_MakeLeaveDateNullable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202505242129255_UpdateUserModel.resx">
+      <DependentUpon>202505242129255_UpdateUserModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202505252102114_ReSyncUserModel.resx">
+      <DependentUpon>202505252102114_ReSyncUserModel.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

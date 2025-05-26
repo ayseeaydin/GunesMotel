@@ -2,9 +2,9 @@
 using System.Windows.Forms;
 using GunesMotel.DataAccess.Contexts;
 using GunesMotel.DataAccess.Repositories;
-using GunesMotel.Common;
 using GunesMotel.DataAccess.Helpers;
 using GunesMotel.Entities;
+using GunesMotel.Common;
 
 namespace GunesMotel.UI.WinForms
 {
@@ -26,13 +26,12 @@ namespace GunesMotel.UI.WinForms
         {
             try
             {
-                // Tüm pozisyonları getir:
-                var positions = _repo.GetAll();
                 // Dgv ye pozisyon listesini ata:
-                dgvPositions.DataSource = positions;
+                dgvPositions.DataSource = _repo.GetAll();
 
                 // Varsayılan olarak hiçbir satırı seçili yapma
                 dgvPositions.ClearSelection();
+                LogHelper.AddLog(CurrentUser.UserID, "Pozisyon yönetimi","Listeleme","Pozisyonlar başarıyla yüklendi");
             }
             catch(Exception ex)
             {
@@ -71,7 +70,7 @@ namespace GunesMotel.UI.WinForms
                 _repo.Add(newPosition);
                 // ekleme sonrası listeyi güncelle
                 LoadPositions();
-                MessageBox.Show("Yeni pozisyon eklendi.");
+                MessageBox.Show("Yeni pozisyon eklendi.", "Başarılı", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 LogHelper.AddLog(CurrentUser.UserID, "Pozisyon Yönetimi", "Ekleme", $"Yeni pozisyon eklendi: {newPosition.PositionName}");
                 ClearAndFocus();
             }
@@ -101,7 +100,8 @@ namespace GunesMotel.UI.WinForms
                         position.PositionName = txtPositionName.Text;
                         _repo.Update(position);
                         LoadPositions();
-                        MessageBox.Show("Pozisyon güncellendi.");
+                        txtPositionName.Clear();
+                        MessageBox.Show("Pozisyon güncellendi.","Başarılı", MessageBoxButtons.OK,MessageBoxIcon.Information);
                         LogHelper.AddLog(CurrentUser.UserID, "Pozisyon Yönetimi", "Güncelleme", $"Pozisyon güncellendi: '{oldName}' → '{position.PositionName}'");
                     }
                 }
@@ -118,6 +118,11 @@ namespace GunesMotel.UI.WinForms
         {
             try
             {
+                if(dgvPositions.SelectedRows.Count == 0)
+                {
+                    MessageBox.Show("Silinecek rolü seçin.","Hata",MessageBoxButtons.OK,MessageBoxIcon.Error);
+                    return;
+                }
                 if(dgvPositions.CurrentRow != null)
                 {
                     int selectedId = Convert.ToInt32(dgvPositions.SelectedRows[0].Cells[0].Value);
@@ -138,10 +143,18 @@ namespace GunesMotel.UI.WinForms
         }
 
         private void btnRefresh_Click(object sender, EventArgs e)
-        {            
-            LoadPositions();
-            ClearAndFocus();
-            LogHelper.AddLog(CurrentUser.UserID, "Pozisyon Yönetimi", "Yenileme", "Pozisyonlar yenilendi.");      
+        {
+            try
+            {
+                LoadPositions();
+                ClearAndFocus();
+                LogHelper.AddLog(CurrentUser.UserID, "Pozisyon Yönetimi", "Yenileme", "Pozisyonlar yenilendi.");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Pozisyon yenileme hatası: " + ex.Message);
+                LogHelper.AddLog(CurrentUser.UserID, "Pozisyon Yönetimi", "Hata", "Yenileme hatası: " + ex.Message);
+            }
         }
 
         private void dgvPositions_CellClick(object sender, DataGridViewCellEventArgs e)

@@ -1,14 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
-using GunesMotel.Entities;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using GunesMotel.Entities;
 
 namespace GunesMotel.DataAccess.Interfaces
 {
-    public interface IEmployeeRepository
+    public interface IRoleRepository : IRepository<Roles>
     {
-        List<Employees> GetActiveEmployeesWithPosition();
+        List<Roles> GetAllOrdered();
     }
 }

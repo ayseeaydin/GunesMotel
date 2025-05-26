@@ -10,11 +10,12 @@ namespace GunesMotel.UI.WinForms.Control
 {    
     public partial class RoleManagementControl : UserControl
     {
-        // Generic repository örneği ile rol işlemleri yapılacak
+        // GenericRepository sınıfını kullanarak pozisyon verilerini yönetmek için bir değişken tanımlıyoruz:
         private readonly GenericRepository<Roles> _roleRepo;
         public RoleManagementControl()
         {
             InitializeComponent();
+            // Repository nesnesi oluşturur ve veritabanı bağlantısını sağlar
             _roleRepo = new GenericRepository<Roles>(new GunesMotelContext());
             LoadRoles();
         }
@@ -35,25 +36,37 @@ namespace GunesMotel.UI.WinForms.Control
             }
         }
 
+        private void ClearAndFocus()
+        {
+            txtRoleName.Clear(); // TextBox'ı temizle
+            txtRoleName.Focus(); // TextBox'a odaklan
+        }
+
+        private bool IsInputValid()
+        {
+            if (string.IsNullOrWhiteSpace(txtRoleName.Text))
+            {
+                MessageBox.Show("Rol adı boş olamaz.", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                txtRoleName.Focus();
+                return false;
+            }
+            return true;
+        }
+
         private void btnAdd_Click(object sender, EventArgs e)
         {
             try
             {
-                string name = txtRoleName.Text.Trim(); // Kullanıcıdan alınan rol adı   
+                if (!IsInputValid()) return;
+                
+                var newRole = new Roles { RoleName = txtRoleName.Text };
 
-                if(string.IsNullOrEmpty(name))
-                {
-                    MessageBox.Show("Rol adı boş olamaz.", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    return;
-                }
-
-                Roles newRole = new Roles { RoleName = name };
-
-                _roleRepo.Add(newRole); // Teni rolü ekle
+                _roleRepo.Add(newRole); // yeni rolü ekle
                 LoadRoles(); // Rolleri yeniden yükle - Listeyi yenile
                 txtRoleName.Clear(); // TextBox'ı temizle   
                 MessageBox.Show("Rol başarıyla eklendi.", "Başarılı", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                LogHelper.AddLog(CurrentUser.UserID, "Rol Yönetimi", "Ekleme", $"'{name}' rolü eklendi.");
+                LogHelper.AddLog(CurrentUser.UserID, "Rol Yönetimi", "Ekleme", $"Yeni rol eklendi: '{newRole.RoleName}'");
+                ClearAndFocus(); // TextBox'ı temizle ve odaklan
             }
             catch(Exception ex)
             {
@@ -66,17 +79,16 @@ namespace GunesMotel.UI.WinForms.Control
         {
             try
             {
-                if(dgvRoles.SelectedRows.Count == 0)
-                {
-                    MessageBox.Show("Güncellenecek rolü seçin.", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    return;
-                }
-                int roleId = Convert.ToInt32(dgvRoles.SelectedRows[0].Cells[0].Value); // Seçilen rolün ID'si
-                var role = _roleRepo.GetById(roleId); // Rolü bul
-
+                if (!IsInputValid()) return;
+                
+                // seçili satırın ID al
+                int selectedID=Convert.ToInt32(dgvRoles.SelectedRows[0].Cells[0].Value); 
+                // ID ye göre rolü bul
+                var role= _roleRepo.GetById(selectedID); // Seçilen rolü getir
                 if (role != null)
                 {
-                    role.RoleName = txtRoleName.Text.Trim(); // TextBox'tan yeni adı al
+                    string oldName = role.RoleName; // eski rol adını al
+                    role.RoleName = txtRoleName.Text; // yeni rol adını ata
                     _roleRepo.Update(role); // Rolü güncelle
                     LoadRoles(); // Rolleri yeniden yükle
                     txtRoleName.Clear(); // TextBox'ı temizle
@@ -95,20 +107,23 @@ namespace GunesMotel.UI.WinForms.Control
         {
             try
             {
-                if(dgvRoles.SelectedRows.Count == 0)
+                if (dgvRoles.SelectedRows.Count == 0)
                 {
                     MessageBox.Show("Silinecek rolü seçin.", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
                 }
-
-                int roleId = Convert.ToInt32(dgvRoles.SelectedRows[0].Cells[0].Value); // Seçilen rolün ID'si
-                _roleRepo.Delete(roleId); // Rolü sil
-                LoadRoles(); // Rolleri yeniden yükle
-                txtRoleName.Clear(); // TextBox'ı temizle
-                MessageBox.Show("Rol başarıyla silindi.", "Başarılı", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                LogHelper.AddLog(CurrentUser.UserID, "Rol Yönetimi", "Silme", $"'{roleId}' ID'li rol silindi.");
+                if (dgvRoles.CurrentRow != null)
+                {
+                    int selectedID = Convert.ToInt32(dgvRoles.SelectedRows[0].Cells[0].Value);
+                    string deletedName = dgvRoles.SelectedRows[0].Cells[1].Value.ToString();
+                    _roleRepo.Delete(selectedID); // Seçilen rolü sil
+                    MessageBox.Show($"'{deletedName}' rolü başarıyla silindi.", "Başarılı", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    LoadRoles(); // Rolleri yeniden yükle
+                    LogHelper.AddLog(CurrentUser.UserID, "Rol Yönetimi", "Silme", $"'{deletedName}' rolü silindi.");
+                    ClearAndFocus(); // TextBox'ı temizle ve odaklan
+                }
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show("Rol silinirken hata oluştu: " + ex.Message, "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 LogHelper.AddLog(CurrentUser.UserID, "Rol Yönetimi", "Hata", "Rol silinemedi: " + ex.Message);
@@ -120,8 +135,7 @@ namespace GunesMotel.UI.WinForms.Control
             try
             {
                 LoadRoles(); // Rolleri yeniden yükle
-                txtRoleName.Clear(); // TextBox'ı temizle
-                MessageBox.Show("Liste başarıyla yenilendi.", "Başarılı", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                ClearAndFocus(); // TextBox'ı temizle ve odaklan
                 LogHelper.AddLog(CurrentUser.UserID, "Rol Yönetimi", "Yenileme", "Liste başarıyla yenilendi.");
             }
             catch (Exception ex)
@@ -135,10 +149,13 @@ namespace GunesMotel.UI.WinForms.Control
         {
             try
             {
+
                 if(dgvRoles.SelectedRows.Count > 0)
                 {
-                    string roleName=dgvRoles.SelectedRows[0].Cells[1].Value?.ToString(); // Seçilen rolün adı
-                    txtRoleName.Text = roleName; // TextBox'a rol adını yaz
+                    // Seçili satırın RoleName değerini al ve TextBox'a ata
+                    txtRoleName.Text = dgvRoles.SelectedRows[0].Cells[1].Value.ToString();
+                    // TextBox a odaklan
+                    txtRoleName.Focus();
                 }
             }
             catch (Exception ex)
@@ -146,6 +163,11 @@ namespace GunesMotel.UI.WinForms.Control
                 MessageBox.Show("Rol seçilirken hata oluştu: " + ex.Message, "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 LogHelper.AddLog(CurrentUser.UserID, "Rol Yönetimi", "Hata", "DataGridView tıklama hatası: " + ex.Message);
             }
+        }
+
+        private void RoleManagementControl_Load(object sender, EventArgs e)
+        {
+            dgvRoles.ClearSelection(); // DataGridView'deki seçimi temizle
         }
     }
 }

@@ -50,7 +50,7 @@ namespace GunesMotel.UI.WinForms.Control
         {
             try
             {
-                var positions=_context.Positions.OrderBy(p=>p.PositionName).ToList();
+                var positions = _context.Positions.OrderBy(p => p.PositionName).ToList();
                 cmbPosition.DataSource = positions;
                 cmbPosition.DisplayMember = "PositionName";
                 cmbPosition.ValueMember = "PositionID";
@@ -162,7 +162,7 @@ namespace GunesMotel.UI.WinForms.Control
 
         private void dgvEmployees_SelectionChanged(object sender, EventArgs e)
         {
-            if (dgvEmployees.SelectedRows.Count == 0 || dgvEmployees.CurrentRow==null || dgvEmployees.CurrentRow.Index==-1)
+            if (dgvEmployees.SelectedRows.Count == 0 || dgvEmployees.CurrentRow == null || dgvEmployees.CurrentRow.Index == -1)
             {
                 ClearForm();
                 return;
@@ -194,7 +194,7 @@ namespace GunesMotel.UI.WinForms.Control
                 dtpLeaveDate.Checked = false;
             }
         }
-        
+
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
@@ -233,7 +233,7 @@ namespace GunesMotel.UI.WinForms.Control
                 LoadEmployees();
                 ClearForm();
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 ShowError("Güncelleme sırasında hata oluştu", ex);
             }
@@ -271,6 +271,13 @@ namespace GunesMotel.UI.WinForms.Control
             {
                 ShowError("Silme sırasında hata oluştu", ex);
             }
+        }
+
+        private void btnRefresh_Click(object sender, EventArgs e)
+        {
+            LoadPositions();
+            LoadEmployees();
+            ClearForm();
         }
     }
 }
