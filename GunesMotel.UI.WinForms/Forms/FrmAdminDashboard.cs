@@ -53,5 +53,22 @@ namespace GunesMotel.UI.WinForms.Forms
             }
 
         }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void LoadContent(System.Windows.Forms.Control control)
+        {
+            pnlContent.Controls.Clear();
+            control.Dock = DockStyle.Fill;
+            pnlContent.Controls.Add(control);
+        }
+
+        private void btnPersonel_Click(object sender, EventArgs e)
+        {
+            LoadContent(new PositionManagementControl());
+        }
     }
 }

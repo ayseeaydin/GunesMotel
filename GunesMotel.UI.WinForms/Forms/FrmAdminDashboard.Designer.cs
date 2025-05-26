@@ -174,6 +174,7 @@
             this.btnPersonel.Text = "Personel Yönetimi";
             this.btnPersonel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnPersonel.UseVisualStyleBackColor = true;
+            this.btnPersonel.Click += new System.EventHandler(this.btnPersonel_Click);
             // 
             // btnRaporlar
             // 
@@ -391,6 +392,7 @@
             this.btnClose.TabIndex = 0;
             this.btnClose.Text = "X";
             this.btnClose.UseVisualStyleBackColor = false;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // pnlContent
             // 
