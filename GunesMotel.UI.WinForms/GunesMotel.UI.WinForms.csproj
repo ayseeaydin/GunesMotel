@@ -44,6 +44,7 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -97,6 +98,12 @@
     </Compile>
     <Compile Include="Control\PositionManagementControl.Designer.cs">
       <DependentUpon>PositionManagementControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FrmReceptionDashboard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmReceptionDashboard.Designer.cs">
+      <DependentUpon>FrmReceptionDashboard.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

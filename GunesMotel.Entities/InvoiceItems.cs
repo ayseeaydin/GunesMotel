@@ -17,5 +17,7 @@ namespace GunesMotel.Entities
         public decimal UnitPrice { get; set; }
         public int Quantity { get; set; }
         public decimal TotalPrice => UnitPrice * Quantity;
+
+        public virtual Invoices Invoice { get; set; } // Navigation property to Invoices
     }
 }

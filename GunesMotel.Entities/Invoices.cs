@@ -16,5 +16,7 @@ namespace GunesMotel.Entities
         public string Status { get; set; }
         public DateTime InvoiceDate { get; set; }
         public int? CreatedByUserID { get; set; }
+
+        public virtual ICollection<InvoiceItems> InvoiceItems { get; set; }
     }
 }

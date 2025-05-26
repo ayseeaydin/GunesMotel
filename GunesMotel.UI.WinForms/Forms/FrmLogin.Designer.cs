@@ -97,6 +97,7 @@
             this.lnkForgotPassword.TabStop = true;
             this.lnkForgotPassword.Text = "Şifremi Unuttum";
             this.lnkForgotPassword.VisitedLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(93)))), ((int)(((byte)(64)))), ((int)(((byte)(55)))));
+            this.lnkForgotPassword.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lnkForgotPassword_LinkClicked);
             // 
             // chkRememberMe
             // 
@@ -201,6 +202,7 @@
             this.Name = "FrmLogin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Güneş Otel - Giriş";
+            this.Load += new System.EventHandler(this.FrmLogin_Load);
             this.pnlImage.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.picLogo)).EndInit();
             this.pnlLogin.ResumeLayout(false);

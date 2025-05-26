@@ -9,7 +9,10 @@ namespace GunesMotel.DataAccess.Contexts
     public class GunesMotelContext : DbContext
     {
         // Constructor: Veritabanı bağlantı cümlesini alır (web.config veya app.config'den)
-        public GunesMotelContext(): base("name=GunesMotelContext") { }
+        public GunesMotelContext(): base("name=GunesMotelContext") {
+            // EF artık veritabanı ile modeli kontrol etmesin
+            System.Data.Entity.Database.SetInitializer<GunesMotelContext>(null);
+        }
 
         // DbSet<T>: Her tabloyu temsil eder
         public DbSet<Positions> Positions { get; set; }
