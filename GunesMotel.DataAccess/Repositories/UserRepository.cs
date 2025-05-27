@@ -31,5 +31,11 @@ namespace GunesMotel.DataAccess.Repositories
         {
             return _context.Users.Any(u => u.Username == username);
         }
+
+        public void Add(Users user)
+        {
+            _context.Users.Add(user);
+            _context.SaveChanges();
+        }
     }
 }

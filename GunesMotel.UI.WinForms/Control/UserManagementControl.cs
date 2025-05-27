@@ -179,17 +179,16 @@ namespace GunesMotel.UI.WinForms.Control
         {
             try
             {
-                // 🧪 1. Zorunlu alanlar kontrol edilsin
+                // 1. Zorunlu alan kontrolü
                 if (string.IsNullOrWhiteSpace(txtUsername.Text) ||
                     string.IsNullOrWhiteSpace(txtPassword.Text) ||
                     cmbRole.SelectedItem == null ||
                     cmbEmployee.SelectedItem == null)
                 {
-                    MessageBox.Show("Lütfen tüm zorunlu alanları doldurun.", "Eksik Bilgi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show("Lütfen tüm alanları eksiksiz doldurun.", "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
                 }
 
-                // 🎯 2. Girişler alınır
                 string username = txtUsername.Text.Trim();
                 string password = txtPassword.Text.Trim();
                 string email = txtEmail.Text.Trim();
@@ -198,33 +197,52 @@ namespace GunesMotel.UI.WinForms.Control
                 var selectedRole = (Roles)cmbRole.SelectedItem;
                 var selectedEmployee = (Employees)cmbEmployee.SelectedItem;
 
-                // 🔍 3. Kullanıcı adı daha önce kullanılmış mı?
                 var userRepo = new UserRepository(new GunesMotelContext());
-                if (userRepo.UsernameExists(username))
+
+                // 2. Kullanıcı adı boş veya tekrarlı mı?
+                if (string.IsNullOrWhiteSpace(username))
                 {
-                    MessageBox.Show("Bu kullanıcı adı zaten kullanımda!", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Kullanıcı adı boş olamaz.", "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
                 }
 
-                // 🛠 4. Yeni kullanıcı nesnesi oluşturuluyor
+                if (userRepo.GetUsersWithIncludes().Any(u => u.Username.ToLower() == username.ToLower()))
+                {
+                    MessageBox.Show("Bu kullanıcı adı zaten kullanımda!", "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
+                // 3. Bu çalışana ait zaten kullanıcı var mı?
+                bool employeeAssigned = userRepo.GetUsersWithIncludes()
+                    .Any(u => u.EmployeeID == selectedEmployee.EmployeeID);
+
+                if (employeeAssigned)
+                {
+                    MessageBox.Show("Bu çalışana zaten bir kullanıcı atanmış!", "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
+                // 4. Yeni kullanıcı oluşturuluyor
                 var newUser = new Users
                 {
                     Username = username,
                     Password = password,
-                    RoleID = selectedRole.RoleID,
-                    EmployeeID = selectedEmployee.EmployeeID,
                     Email = email,
                     Phone = phone,
-                    IsActive = true
+                    RoleID = selectedRole.RoleID,
+                    EmployeeID = selectedEmployee.EmployeeID,
+                    FullName = selectedEmployee.FullName, // NOT NULL alan
+                    IsActive = true,
+                    CreatedAt = DateTime.Now
                 };
 
-                // 💾 5. Kaydediliyor
+                // 5. Kaydet
                 userRepo.Add(newUser);
 
-                // 📋 6. Log kaydı (isteğe bağlı)
-                LogHelper.AddLog(CurrentUser.UserID, "Kullanıcı Yönetimi", "Ekleme", $"{username} adlı kullanıcı eklendi.");
+                // 6. Log kaydı
+                LogHelper.AddLog(CurrentUser.UserID, "Kullanıcı Yönetimi", "Ekleme", $"{username} adlı kullanıcı oluşturuldu.");
 
-                // 🔄 7. Liste güncelle ve formu temizle
+                // 7. Yenile ve temizle
                 LoadUsers();
                 ClearForm();
 
@@ -232,14 +250,15 @@ namespace GunesMotel.UI.WinForms.Control
             }
             catch (Exception ex)
             {
-                MessageBox.Show(
-        "Kullanıcı eklenirken hata oluştu:\n\n" +
-        ex.Message + "\n\n" +
-        ex.InnerException?.Message,
-        "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error
-    );
+                var inner = ex.InnerException?.InnerException?.Message ?? ex.InnerException?.Message ?? "İç hata yok";
 
-                LogHelper.AddLog(0, "Kullanıcı Yönetimi", "Hata", $"Kullanıcı eklenirken hata: {ex.Message} - {ex.InnerException?.Message}");
+                MessageBox.Show(
+                    "Kullanıcı eklenirken bir hata oluştu:\n\n" +
+                    ex.Message + "\n\n" + inner,
+                    "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error
+                );
+
+                LogHelper.AddLog(0, "Kullanıcı Yönetimi", "Hata", $"Kullanıcı ekleme hatası: {ex.Message} | {inner}");
             }
         }
     }
