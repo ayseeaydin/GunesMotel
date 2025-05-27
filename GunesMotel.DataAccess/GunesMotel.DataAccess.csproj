@@ -58,6 +58,7 @@
     <Compile Include="Interfaces\IRepository.cs" />
     <Compile Include="Interfaces\IRolePositionMapRepository.cs" />
     <Compile Include="Interfaces\IRoleRepository.cs" />
+    <Compile Include="Interfaces\IRoomTypeRepository.cs" />
     <Compile Include="Interfaces\IUserRepository.cs" />
     <Compile Include="Migrations\202505181059260_InitialCreate.cs" />
     <Compile Include="Migrations\202505181059260_InitialCreate.Designer.cs">
@@ -82,6 +83,7 @@
     <Compile Include="Repositories\GenericRepository.cs" />
     <Compile Include="Repositories\RolePositionMapRepository.cs" />
     <Compile Include="Repositories\RoleRepository.cs" />
+    <Compile Include="Repositories\RoomTypeRepository.cs" />
     <Compile Include="Repositories\UserRepository.cs" />
   </ItemGroup>
   <ItemGroup>

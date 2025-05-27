@@ -278,6 +278,7 @@
             this.btnOdalar.Text = "Odalar";
             this.btnOdalar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnOdalar.UseVisualStyleBackColor = true;
+            this.btnOdalar.Click += new System.EventHandler(this.btnOdalar_Click);
             // 
             // btnAnaSayfa
             // 
@@ -326,7 +327,7 @@
             this.lblUserName.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblUserName.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.lblUserName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(93)))), ((int)(((byte)(64)))), ((int)(((byte)(55)))));
-            this.lblUserName.Location = new System.Drawing.Point(-27, 51);
+            this.lblUserName.Location = new System.Drawing.Point(-156, 51);
             this.lblUserName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblUserName.Name = "lblUserName";
             this.lblUserName.Size = new System.Drawing.Size(160, 28);

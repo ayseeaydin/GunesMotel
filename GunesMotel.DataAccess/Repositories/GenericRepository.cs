@@ -7,14 +7,14 @@ using GunesMotel.DataAccess.Interfaces;
 namespace GunesMotel.DataAccess.Repositories
 {
     // Tüm veri erişim işlemleri için temel generic repository
-    public class GenericRepository<T> : IRepository<T> where T : class
+    public class GenericRepository<T> : IRepository<T>, IDisposable where T : class
     {
         // Sadece bu sınıf içinde değiştirilebilir ama dışarıdan erişilemez
         // Sadece constructor içinde atanabilir, sonradan değiştirilemez
-        private readonly DbContext _context;
+        protected readonly DbContext _context;
 
         // İlgili tabloyu temsil eder (örneğin: _dbSet = context.Employees)
-        private readonly DbSet<T> _dbSet;
+        protected readonly DbSet<T> _dbSet;
 
         // Constructor: DbContext dependency injection ile alınır.
         // Constructor: Dışarıdan bir DbContext alır ve DbSet<T>'i hazırlar
@@ -25,40 +25,61 @@ namespace GunesMotel.DataAccess.Repositories
         }
 
         // Veritabanındaki tüm kayıtları listele (SELECT * FROM ...)
-        public List<T> GetAll()
+        public virtual List<T> GetAll()
         {
             return _dbSet.ToList(); // IQueryable → List dönüşümü
         }
 
         // ID'si verilen kaydı getir (primary key üzerinden Find yapılır)
-        public T? GetById(int id)
+        public virtual T? GetById(int id)
         {
-            return _dbSet.Find(id); // Entity Framework Find ile ID’ye göre getirir
+            return _dbSet.Find(id); // Entity Framework Find ile ID'ye göre getirir
         }
 
         // Yeni kayıt ekle
-        public void Add(T entity)
+        public virtual void Add(T entity)
         {
-            _dbSet.Add(entity);         // DbSet’e yeni nesne eklenir
+            _dbSet.Add(entity);         // DbSet'e yeni nesne eklenir
             _context.SaveChanges();     // Değişiklikler veritabanına kaydedilir
         }
 
         // Mevcut kaydı güncelle
-        public void Update(T entity)
+        public virtual void Update(T entity)
         {
             _context.Entry(entity).State = EntityState.Modified; // Nesneye "değişti" olarak işaret verilir
             _context.SaveChanges(); // Güncelleme işlemi uygulanır
         }
 
         // Belirtilen ID'li kaydı sil
-        public void Delete(int id)
+        public virtual void Delete(int id)
         {
             var entity = _dbSet.Find(id);  // İlk olarak kaydı bul
             if (entity != null)            // Varsa sil
             {
-                _dbSet.Remove(entity);     // DbSet’ten çıkar
+                _dbSet.Remove(entity);     // DbSet'ten çıkar
                 _context.SaveChanges();    // Değişiklikleri uygula
             }
+        }
+
+        // IDisposable implementation
+        private bool _disposed = false;
+
+        protected virtual void Dispose(bool disposing)
+        {
+            if (!_disposed)
+            {
+                if (disposing)
+                {
+                    _context?.Dispose();
+                }
+                _disposed = true;
+            }
+        }
+
+        public void Dispose()
+        {
+            Dispose(true);
+            GC.SuppressFinalize(this);
         }
     }
 }

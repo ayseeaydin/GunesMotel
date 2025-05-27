@@ -14,5 +14,7 @@ namespace GunesMotel.Entities
         public string Feature { get; set; }
         public string TypeName { get; set; }
         public string? Description { get; set; }
+
+        public virtual ICollection<Rooms> Rooms { get; set; }
     }
 }
