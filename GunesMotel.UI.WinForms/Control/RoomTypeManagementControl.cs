@@ -27,6 +27,8 @@ namespace GunesMotel.UI.WinForms.Control
         {
             try
             {
+                dgvRoomTypes.SelectionChanged -= dgvRoomTypes_SelectionChanged;
+
                 var roomTypeRepo = new RoomTypeRepository();
                 var roomTypes = roomTypeRepo.GetAll();
 
@@ -38,8 +40,12 @@ namespace GunesMotel.UI.WinForms.Control
                     rt.Description
                 }).ToList();
 
+                Application.DoEvents(); // UI thread'e bu işlemi zorla
+
                 dgvRoomTypes.ClearSelection();
                 dgvRoomTypes.CurrentCell = null;
+
+                dgvRoomTypes.SelectionChanged += dgvRoomTypes_SelectionChanged;
             }
             catch (Exception ex)
             {
@@ -49,10 +55,12 @@ namespace GunesMotel.UI.WinForms.Control
         }
         private void RoomTypeManagementControl_Load(object sender, EventArgs e)
         {
-            isFirstLoad = true;
+            dgvRoomTypes.SelectionChanged -= dgvRoomTypes_SelectionChanged;
             LoadRoomTypes();
+            Application.DoEvents(); // UI güncellensin
             dgvRoomTypes.ClearSelection();
             dgvRoomTypes.CurrentCell = null;
+            dgvRoomTypes.SelectionChanged += dgvRoomTypes_SelectionChanged;
 
         }
 

@@ -75,6 +75,12 @@
     <Compile Include="Control\RoomTypeManagementControl.Designer.cs">
       <DependentUpon>RoomTypeManagementControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="Control\SeasonManagementControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Control\SeasonManagementControl.Designer.cs">
+      <DependentUpon>SeasonManagementControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="Control\UserManagementControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -121,6 +127,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Control\RoomTypeManagementControl.resx">
       <DependentUpon>RoomTypeManagementControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Control\SeasonManagementControl.resx">
+      <DependentUpon>SeasonManagementControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Control\UserManagementControl.resx">
       <DependentUpon>UserManagementControl.cs</DependentUpon>

@@ -28,548 +28,469 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.pnlContainer = new System.Windows.Forms.Panel();
-            this.pnlRight = new System.Windows.Forms.Panel();
-            this.btnRefresh = new System.Windows.Forms.Button();
-            this.btnDelete = new System.Windows.Forms.Button();
-            this.btnUpdate = new System.Windows.Forms.Button();
-            this.btnAdd = new System.Windows.Forms.Button();
-            this.dtpLeaveDate = new System.Windows.Forms.DateTimePicker();
-            this.lblLeaveDate = new System.Windows.Forms.Label();
-            this.dtpHireDate = new System.Windows.Forms.DateTimePicker();
-            this.lblHireDate = new System.Windows.Forms.Label();
-            this.txtIBAN = new System.Windows.Forms.TextBox();
-            this.lblIBAN = new System.Windows.Forms.Label();
-            this.cmbPosition = new System.Windows.Forms.ComboBox();
-            this.lblPosition = new System.Windows.Forms.Label();
-            this.txtAddress = new System.Windows.Forms.TextBox();
-            this.lblAddress = new System.Windows.Forms.Label();
-            this.txtEmail = new System.Windows.Forms.TextBox();
-            this.lblEmail = new System.Windows.Forms.Label();
-            this.txtPhone = new System.Windows.Forms.TextBox();
-            this.lblPhone = new System.Windows.Forms.Label();
-            this.cmbGender = new System.Windows.Forms.ComboBox();
-            this.lblGender = new System.Windows.Forms.Label();
-            this.dtpBirthDate = new System.Windows.Forms.DateTimePicker();
-            this.lblBirthDate = new System.Windows.Forms.Label();
-            this.txtPassportID = new System.Windows.Forms.TextBox();
-            this.lblPassportID = new System.Windows.Forms.Label();
-            this.txtNationalID = new System.Windows.Forms.TextBox();
-            this.lblNationalID = new System.Windows.Forms.Label();
-            this.txtFullName = new System.Windows.Forms.TextBox();
-            this.lblFullName = new System.Windows.Forms.Label();
-            this.pnlRightHeader = new System.Windows.Forms.Panel();
-            this.lblRightTitle = new System.Windows.Forms.Label();
-            this.pnlLeft = new System.Windows.Forms.Panel();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            this.pnlMain = new System.Windows.Forms.Panel();
+            this.lblTitle = new System.Windows.Forms.Label();
+            this.pnlContent = new System.Windows.Forms.Panel();
             this.dgvEmployees = new System.Windows.Forms.DataGridView();
-            this.pnlLeftHeader = new System.Windows.Forms.Panel();
-            this.lblLeftTitle = new System.Windows.Forms.Label();
+            this.pnlForm = new System.Windows.Forms.Panel();
+            this.pnlFormRow1 = new System.Windows.Forms.Panel();
+            this.txtFullName = new System.Windows.Forms.TextBox();
+            this.txtNationalID = new System.Windows.Forms.TextBox();
+            this.pnlFormRow2 = new System.Windows.Forms.Panel();
+            this.txtPassportID = new System.Windows.Forms.TextBox();
+            this.dtpBirthDate = new System.Windows.Forms.DateTimePicker();
+            this.pnlFormRow3 = new System.Windows.Forms.Panel();
+            this.cmbGender = new System.Windows.Forms.ComboBox();
+            this.txtPhone = new System.Windows.Forms.TextBox();
+            this.pnlFormRow4 = new System.Windows.Forms.Panel();
+            this.txtEmail = new System.Windows.Forms.TextBox();
+            this.txtAddress = new System.Windows.Forms.TextBox();
+            this.pnlFormRow5 = new System.Windows.Forms.Panel();
+            this.cmbPosition = new System.Windows.Forms.ComboBox();
+            this.txtIBAN = new System.Windows.Forms.TextBox();
+            this.pnlFormRow6 = new System.Windows.Forms.Panel();
+            this.dtpHireDate = new System.Windows.Forms.DateTimePicker();
+            this.dtpLeaveDate = new System.Windows.Forms.DateTimePicker();
+            this.pnlButtons = new System.Windows.Forms.Panel();
+            this.btnAdd = new System.Windows.Forms.Button();
+            this.btnUpdate = new System.Windows.Forms.Button();
+            this.btnDelete = new System.Windows.Forms.Button();
+            this.btnRefresh = new System.Windows.Forms.Button();
             this.btnPositionManagement = new System.Windows.Forms.Button();
-            this.pnlContainer.SuspendLayout();
-            this.pnlRight.SuspendLayout();
-            this.pnlRightHeader.SuspendLayout();
-            this.pnlLeft.SuspendLayout();
+            this.pnlMain.SuspendLayout();
+            this.pnlContent.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEmployees)).BeginInit();
-            this.pnlLeftHeader.SuspendLayout();
+            this.pnlForm.SuspendLayout();
+            this.pnlFormRow1.SuspendLayout();
+            this.pnlFormRow2.SuspendLayout();
+            this.pnlFormRow3.SuspendLayout();
+            this.pnlFormRow4.SuspendLayout();
+            this.pnlFormRow5.SuspendLayout();
+            this.pnlFormRow6.SuspendLayout();
+            this.pnlButtons.SuspendLayout();
             this.SuspendLayout();
             // 
-            // pnlContainer
-            // 
-            this.pnlContainer.BackColor = System.Drawing.Color.White;
-            this.pnlContainer.Controls.Add(this.pnlRight);
-            this.pnlContainer.Controls.Add(this.pnlLeft);
-            this.pnlContainer.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlContainer.Location = new System.Drawing.Point(0, 0);
-            this.pnlContainer.Margin = new System.Windows.Forms.Padding(4);
-            this.pnlContainer.Name = "pnlContainer";
-            this.pnlContainer.Padding = new System.Windows.Forms.Padding(20);
-            this.pnlContainer.Size = new System.Drawing.Size(1509, 933);
-            this.pnlContainer.TabIndex = 0;
-            // 
-            // pnlRight
-            // 
-            this.pnlRight.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.pnlRight.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(249)))), ((int)(((byte)(250)))));
-            this.pnlRight.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pnlRight.Controls.Add(this.btnPositionManagement);
-            this.pnlRight.Controls.Add(this.btnRefresh);
-            this.pnlRight.Controls.Add(this.btnDelete);
-            this.pnlRight.Controls.Add(this.btnUpdate);
-            this.pnlRight.Controls.Add(this.btnAdd);
-            this.pnlRight.Controls.Add(this.dtpLeaveDate);
-            this.pnlRight.Controls.Add(this.lblLeaveDate);
-            this.pnlRight.Controls.Add(this.dtpHireDate);
-            this.pnlRight.Controls.Add(this.lblHireDate);
-            this.pnlRight.Controls.Add(this.txtIBAN);
-            this.pnlRight.Controls.Add(this.lblIBAN);
-            this.pnlRight.Controls.Add(this.cmbPosition);
-            this.pnlRight.Controls.Add(this.lblPosition);
-            this.pnlRight.Controls.Add(this.txtAddress);
-            this.pnlRight.Controls.Add(this.lblAddress);
-            this.pnlRight.Controls.Add(this.txtEmail);
-            this.pnlRight.Controls.Add(this.lblEmail);
-            this.pnlRight.Controls.Add(this.txtPhone);
-            this.pnlRight.Controls.Add(this.lblPhone);
-            this.pnlRight.Controls.Add(this.cmbGender);
-            this.pnlRight.Controls.Add(this.lblGender);
-            this.pnlRight.Controls.Add(this.dtpBirthDate);
-            this.pnlRight.Controls.Add(this.lblBirthDate);
-            this.pnlRight.Controls.Add(this.txtPassportID);
-            this.pnlRight.Controls.Add(this.lblPassportID);
-            this.pnlRight.Controls.Add(this.txtNationalID);
-            this.pnlRight.Controls.Add(this.lblNationalID);
-            this.pnlRight.Controls.Add(this.txtFullName);
-            this.pnlRight.Controls.Add(this.lblFullName);
-            this.pnlRight.Controls.Add(this.pnlRightHeader);
-            this.pnlRight.Location = new System.Drawing.Point(1059, 80);
-            this.pnlRight.Margin = new System.Windows.Forms.Padding(4);
-            this.pnlRight.Name = "pnlRight";
-            this.pnlRight.Size = new System.Drawing.Size(420, 833);
-            this.pnlRight.TabIndex = 2;
-            // 
-            // btnRefresh
-            // 
-            this.btnRefresh.BackColor = System.Drawing.Color.Silver;
-            this.btnRefresh.FlatAppearance.BorderSize = 0;
-            this.btnRefresh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRefresh.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.btnRefresh.ForeColor = System.Drawing.Color.White;
-            this.btnRefresh.Location = new System.Drawing.Point(20, 697);
-            this.btnRefresh.Margin = new System.Windows.Forms.Padding(4);
-            this.btnRefresh.Name = "btnRefresh";
-            this.btnRefresh.Size = new System.Drawing.Size(380, 36);
-            this.btnRefresh.TabIndex = 28;
-            this.btnRefresh.Text = "Yenile";
-            this.btnRefresh.UseVisualStyleBackColor = false;
-            this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
-            // 
-            // btnDelete
-            // 
-            this.btnDelete.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(53)))), ((int)(((byte)(69)))));
-            this.btnDelete.FlatAppearance.BorderSize = 0;
-            this.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDelete.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.btnDelete.ForeColor = System.Drawing.Color.White;
-            this.btnDelete.Location = new System.Drawing.Point(20, 644);
-            this.btnDelete.Margin = new System.Windows.Forms.Padding(4);
-            this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(380, 36);
-            this.btnDelete.TabIndex = 27;
-            this.btnDelete.Text = "Sil";
-            this.btnDelete.UseVisualStyleBackColor = false;
-            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
-            // 
-            // btnUpdate
-            // 
-            this.btnUpdate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(167)))), ((int)(((byte)(69)))));
-            this.btnUpdate.FlatAppearance.BorderSize = 0;
-            this.btnUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnUpdate.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.btnUpdate.ForeColor = System.Drawing.Color.White;
-            this.btnUpdate.Location = new System.Drawing.Point(20, 594);
-            this.btnUpdate.Margin = new System.Windows.Forms.Padding(4);
-            this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(380, 36);
-            this.btnUpdate.TabIndex = 26;
-            this.btnUpdate.Text = "Güncelle";
-            this.btnUpdate.UseVisualStyleBackColor = false;
-            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
-            // 
-            // btnAdd
-            // 
-            this.btnAdd.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(212)))), ((int)(((byte)(160)))), ((int)(((byte)(23)))));
-            this.btnAdd.FlatAppearance.BorderSize = 0;
-            this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAdd.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.btnAdd.ForeColor = System.Drawing.Color.White;
-            this.btnAdd.Location = new System.Drawing.Point(20, 544);
-            this.btnAdd.Margin = new System.Windows.Forms.Padding(4);
-            this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(380, 36);
-            this.btnAdd.TabIndex = 25;
-            this.btnAdd.Text = "Ekle";
-            this.btnAdd.UseVisualStyleBackColor = false;
-            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
-            // 
-            // dtpLeaveDate
-            // 
-            this.dtpLeaveDate.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.dtpLeaveDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpLeaveDate.Location = new System.Drawing.Point(220, 494);
-            this.dtpLeaveDate.Margin = new System.Windows.Forms.Padding(4);
-            this.dtpLeaveDate.Name = "dtpLeaveDate";
-            this.dtpLeaveDate.ShowCheckBox = true;
-            this.dtpLeaveDate.Size = new System.Drawing.Size(180, 30);
-            this.dtpLeaveDate.TabIndex = 24;
-            // 
-            // lblLeaveDate
-            // 
-            this.lblLeaveDate.AutoSize = true;
-            this.lblLeaveDate.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.lblLeaveDate.Location = new System.Drawing.Point(220, 474);
-            this.lblLeaveDate.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblLeaveDate.Name = "lblLeaveDate";
-            this.lblLeaveDate.Size = new System.Drawing.Size(74, 20);
-            this.lblLeaveDate.TabIndex = 23;
-            this.lblLeaveDate.Text = "İşten Çıkış";
-            // 
-            // dtpHireDate
-            // 
-            this.dtpHireDate.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.dtpHireDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpHireDate.Location = new System.Drawing.Point(20, 494);
-            this.dtpHireDate.Margin = new System.Windows.Forms.Padding(4);
-            this.dtpHireDate.Name = "dtpHireDate";
-            this.dtpHireDate.Size = new System.Drawing.Size(180, 30);
-            this.dtpHireDate.TabIndex = 22;
-            // 
-            // lblHireDate
-            // 
-            this.lblHireDate.AutoSize = true;
-            this.lblHireDate.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.lblHireDate.Location = new System.Drawing.Point(20, 474);
-            this.lblHireDate.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblHireDate.Name = "lblHireDate";
-            this.lblHireDate.Size = new System.Drawing.Size(60, 20);
-            this.lblHireDate.TabIndex = 21;
-            this.lblHireDate.Text = "İşe Giriş";
-            // 
-            // txtIBAN
-            // 
-            this.txtIBAN.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtIBAN.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.txtIBAN.Location = new System.Drawing.Point(220, 444);
-            this.txtIBAN.Margin = new System.Windows.Forms.Padding(4);
-            this.txtIBAN.Name = "txtIBAN";
-            this.txtIBAN.Size = new System.Drawing.Size(180, 30);
-            this.txtIBAN.TabIndex = 20;
-            // 
-            // lblIBAN
-            // 
-            this.lblIBAN.AutoSize = true;
-            this.lblIBAN.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.lblIBAN.Location = new System.Drawing.Point(220, 424);
-            this.lblIBAN.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblIBAN.Name = "lblIBAN";
-            this.lblIBAN.Size = new System.Drawing.Size(43, 20);
-            this.lblIBAN.TabIndex = 19;
-            this.lblIBAN.Text = "IBAN";
-            // 
-            // cmbPosition
-            // 
-            this.cmbPosition.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbPosition.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.cmbPosition.FormattingEnabled = true;
-            this.cmbPosition.Location = new System.Drawing.Point(20, 444);
-            this.cmbPosition.Margin = new System.Windows.Forms.Padding(4);
-            this.cmbPosition.Name = "cmbPosition";
-            this.cmbPosition.Size = new System.Drawing.Size(180, 31);
-            this.cmbPosition.TabIndex = 18;
-            // 
-            // lblPosition
-            // 
-            this.lblPosition.AutoSize = true;
-            this.lblPosition.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.lblPosition.Location = new System.Drawing.Point(20, 424);
-            this.lblPosition.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblPosition.Name = "lblPosition";
-            this.lblPosition.Size = new System.Drawing.Size(66, 20);
-            this.lblPosition.TabIndex = 17;
-            this.lblPosition.Text = "Pozisyon";
-            // 
-            // txtAddress
-            // 
-            this.txtAddress.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtAddress.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.txtAddress.Location = new System.Drawing.Point(20, 394);
-            this.txtAddress.Margin = new System.Windows.Forms.Padding(4);
-            this.txtAddress.Name = "txtAddress";
-            this.txtAddress.Size = new System.Drawing.Size(380, 30);
-            this.txtAddress.TabIndex = 16;
-            // 
-            // lblAddress
-            // 
-            this.lblAddress.AutoSize = true;
-            this.lblAddress.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.lblAddress.Location = new System.Drawing.Point(20, 374);
-            this.lblAddress.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblAddress.Name = "lblAddress";
-            this.lblAddress.Size = new System.Drawing.Size(47, 20);
-            this.lblAddress.TabIndex = 15;
-            this.lblAddress.Text = "Adres";
-            // 
-            // txtEmail
-            // 
-            this.txtEmail.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtEmail.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.txtEmail.Location = new System.Drawing.Point(20, 344);
-            this.txtEmail.Margin = new System.Windows.Forms.Padding(4);
-            this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(380, 30);
-            this.txtEmail.TabIndex = 14;
-            // 
-            // lblEmail
-            // 
-            this.lblEmail.AutoSize = true;
-            this.lblEmail.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.lblEmail.Location = new System.Drawing.Point(20, 324);
-            this.lblEmail.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblEmail.Name = "lblEmail";
-            this.lblEmail.Size = new System.Drawing.Size(60, 20);
-            this.lblEmail.TabIndex = 13;
-            this.lblEmail.Text = "E-posta";
-            // 
-            // txtPhone
-            // 
-            this.txtPhone.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtPhone.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.txtPhone.Location = new System.Drawing.Point(20, 294);
-            this.txtPhone.Margin = new System.Windows.Forms.Padding(4);
-            this.txtPhone.Name = "txtPhone";
-            this.txtPhone.Size = new System.Drawing.Size(380, 30);
-            this.txtPhone.TabIndex = 12;
-            // 
-            // lblPhone
-            // 
-            this.lblPhone.AutoSize = true;
-            this.lblPhone.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.lblPhone.Location = new System.Drawing.Point(20, 274);
-            this.lblPhone.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblPhone.Name = "lblPhone";
-            this.lblPhone.Size = new System.Drawing.Size(58, 20);
-            this.lblPhone.TabIndex = 11;
-            this.lblPhone.Text = "Telefon";
-            // 
-            // cmbGender
-            // 
-            this.cmbGender.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbGender.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.cmbGender.FormattingEnabled = true;
-            this.cmbGender.Items.AddRange(new object[] {
-            "E",
-            "K"});
-            this.cmbGender.Location = new System.Drawing.Point(220, 244);
-            this.cmbGender.Margin = new System.Windows.Forms.Padding(4);
-            this.cmbGender.Name = "cmbGender";
-            this.cmbGender.Size = new System.Drawing.Size(180, 31);
-            this.cmbGender.TabIndex = 10;
-            // 
-            // lblGender
-            // 
-            this.lblGender.AutoSize = true;
-            this.lblGender.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.lblGender.Location = new System.Drawing.Point(220, 224);
-            this.lblGender.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblGender.Name = "lblGender";
-            this.lblGender.Size = new System.Drawing.Size(60, 20);
-            this.lblGender.TabIndex = 9;
-            this.lblGender.Text = "Cinsiyet";
-            // 
-            // dtpBirthDate
-            // 
-            this.dtpBirthDate.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.dtpBirthDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpBirthDate.Location = new System.Drawing.Point(20, 244);
-            this.dtpBirthDate.Margin = new System.Windows.Forms.Padding(4);
-            this.dtpBirthDate.Name = "dtpBirthDate";
-            this.dtpBirthDate.Size = new System.Drawing.Size(180, 30);
-            this.dtpBirthDate.TabIndex = 8;
-            // 
-            // lblBirthDate
-            // 
-            this.lblBirthDate.AutoSize = true;
-            this.lblBirthDate.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.lblBirthDate.Location = new System.Drawing.Point(20, 224);
-            this.lblBirthDate.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblBirthDate.Name = "lblBirthDate";
-            this.lblBirthDate.Size = new System.Drawing.Size(98, 20);
-            this.lblBirthDate.TabIndex = 7;
-            this.lblBirthDate.Text = "Doğum Tarihi";
-            // 
-            // txtPassportID
-            // 
-            this.txtPassportID.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtPassportID.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.txtPassportID.Location = new System.Drawing.Point(20, 194);
-            this.txtPassportID.Margin = new System.Windows.Forms.Padding(4);
-            this.txtPassportID.Name = "txtPassportID";
-            this.txtPassportID.Size = new System.Drawing.Size(380, 30);
-            this.txtPassportID.TabIndex = 6;
-            // 
-            // lblPassportID
-            // 
-            this.lblPassportID.AutoSize = true;
-            this.lblPassportID.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.lblPassportID.Location = new System.Drawing.Point(20, 174);
-            this.lblPassportID.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblPassportID.Name = "lblPassportID";
-            this.lblPassportID.Size = new System.Drawing.Size(90, 20);
-            this.lblPassportID.TabIndex = 5;
-            this.lblPassportID.Text = "Pasaport No";
-            // 
-            // txtNationalID
-            // 
-            this.txtNationalID.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtNationalID.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.txtNationalID.Location = new System.Drawing.Point(20, 144);
-            this.txtNationalID.Margin = new System.Windows.Forms.Padding(4);
-            this.txtNationalID.Name = "txtNationalID";
-            this.txtNationalID.Size = new System.Drawing.Size(380, 30);
-            this.txtNationalID.TabIndex = 4;
-            // 
-            // lblNationalID
-            // 
-            this.lblNationalID.AutoSize = true;
-            this.lblNationalID.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.lblNationalID.Location = new System.Drawing.Point(20, 124);
-            this.lblNationalID.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblNationalID.Name = "lblNationalID";
-            this.lblNationalID.Size = new System.Drawing.Size(101, 20);
-            this.lblNationalID.TabIndex = 3;
-            this.lblNationalID.Text = "T.C. Kimlik No";
-            // 
-            // txtFullName
-            // 
-            this.txtFullName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtFullName.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.txtFullName.Location = new System.Drawing.Point(20, 94);
-            this.txtFullName.Margin = new System.Windows.Forms.Padding(4);
-            this.txtFullName.Name = "txtFullName";
-            this.txtFullName.Size = new System.Drawing.Size(380, 30);
-            this.txtFullName.TabIndex = 2;
-            // 
-            // lblFullName
-            // 
-            this.lblFullName.AutoSize = true;
-            this.lblFullName.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.lblFullName.Location = new System.Drawing.Point(20, 74);
-            this.lblFullName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblFullName.Name = "lblFullName";
-            this.lblFullName.Size = new System.Drawing.Size(73, 20);
-            this.lblFullName.TabIndex = 1;
-            this.lblFullName.Text = "Ad Soyad";
-            // 
-            // pnlRightHeader
-            // 
-            this.pnlRightHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(93)))), ((int)(((byte)(64)))), ((int)(((byte)(55)))));
-            this.pnlRightHeader.Controls.Add(this.lblRightTitle);
-            this.pnlRightHeader.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnlRightHeader.Location = new System.Drawing.Point(0, 0);
-            this.pnlRightHeader.Margin = new System.Windows.Forms.Padding(4);
-            this.pnlRightHeader.Name = "pnlRightHeader";
-            this.pnlRightHeader.Size = new System.Drawing.Size(418, 40);
-            this.pnlRightHeader.TabIndex = 0;
-            // 
-            // lblRightTitle
-            // 
-            this.lblRightTitle.AutoSize = true;
-            this.lblRightTitle.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.lblRightTitle.ForeColor = System.Drawing.Color.White;
-            this.lblRightTitle.Location = new System.Drawing.Point(10, 8);
-            this.lblRightTitle.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblRightTitle.Name = "lblRightTitle";
-            this.lblRightTitle.Size = new System.Drawing.Size(124, 23);
-            this.lblRightTitle.TabIndex = 0;
-            this.lblRightTitle.Text = "Yeni / Düzenle";
-            // 
-            // pnlLeft
-            // 
-            this.pnlLeft.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.pnlLeft.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(249)))), ((int)(((byte)(250)))));
-            this.pnlLeft.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pnlLeft.Controls.Add(this.dgvEmployees);
-            this.pnlLeft.Controls.Add(this.pnlLeftHeader);
-            this.pnlLeft.Location = new System.Drawing.Point(20, 80);
-            this.pnlLeft.Margin = new System.Windows.Forms.Padding(4);
-            this.pnlLeft.Name = "pnlLeft";
-            this.pnlLeft.Size = new System.Drawing.Size(1011, 833);
-            this.pnlLeft.TabIndex = 1;
+            // pnlMain
+            // 
+            this.pnlMain.BackColor = System.Drawing.Color.White;
+            this.pnlMain.Controls.Add(this.lblTitle);
+            this.pnlMain.Controls.Add(this.pnlContent);
+            this.pnlMain.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlMain.Location = new System.Drawing.Point(0, 0);
+            this.pnlMain.Margin = new System.Windows.Forms.Padding(4);
+            this.pnlMain.Name = "pnlMain";
+            this.pnlMain.Padding = new System.Windows.Forms.Padding(27, 25, 27, 25);
+            this.pnlMain.Size = new System.Drawing.Size(1509, 933);
+            this.pnlMain.TabIndex = 0;
+            // 
+            // lblTitle
+            // 
+            this.lblTitle.AutoSize = true;
+            this.lblTitle.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Bold);
+            this.lblTitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(101)))), ((int)(((byte)(67)))), ((int)(((byte)(33)))));
+            this.lblTitle.Location = new System.Drawing.Point(27, 25);
+            this.lblTitle.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblTitle.Name = "lblTitle";
+            this.lblTitle.Size = new System.Drawing.Size(370, 54);
+            this.lblTitle.TabIndex = 0;
+            this.lblTitle.Text = "Personel Yönetimi";
+            // 
+            // pnlContent
+            // 
+            this.pnlContent.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(245)))), ((int)(((byte)(235)))));
+            this.pnlContent.Controls.Add(this.dgvEmployees);
+            this.pnlContent.Controls.Add(this.pnlForm);
+            this.pnlContent.Controls.Add(this.pnlButtons);
+            this.pnlContent.Location = new System.Drawing.Point(27, 100);
+            this.pnlContent.Margin = new System.Windows.Forms.Padding(4);
+            this.pnlContent.Name = "pnlContent";
+            this.pnlContent.Padding = new System.Windows.Forms.Padding(20);
+            this.pnlContent.Size = new System.Drawing.Size(1455, 808);
+            this.pnlContent.TabIndex = 1;
             // 
             // dgvEmployees
             // 
             this.dgvEmployees.AllowUserToAddRows = false;
             this.dgvEmployees.AllowUserToDeleteRows = false;
             this.dgvEmployees.AllowUserToResizeRows = false;
-            this.dgvEmployees.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvEmployees.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvEmployees.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(249)))), ((int)(((byte)(250)))));
+            this.dgvEmployees.BackgroundColor = System.Drawing.Color.White;
             this.dgvEmployees.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvEmployees.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.dgvEmployees.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(239)))), ((int)(((byte)(245)))));
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(239)))), ((int)(((byte)(245)))));
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvEmployees.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
-            this.dgvEmployees.ColumnHeadersHeight = 30;
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(155)))), ((int)(((byte)(180)))));
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvEmployees.DefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(240)))), ((int)(((byte)(230)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(101)))), ((int)(((byte)(67)))), ((int)(((byte)(33)))));
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(240)))), ((int)(((byte)(230)))));
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(101)))), ((int)(((byte)(67)))), ((int)(((byte)(33)))));
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvEmployees.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvEmployees.ColumnHeadersHeight = 50;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 10F);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(101)))), ((int)(((byte)(67)))), ((int)(((byte)(33)))));
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(240)))), ((int)(((byte)(230)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(101)))), ((int)(((byte)(67)))), ((int)(((byte)(33)))));
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvEmployees.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgvEmployees.EnableHeadersVisualStyles = false;
-            this.dgvEmployees.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(221)))), ((int)(((byte)(221)))));
-            this.dgvEmployees.Location = new System.Drawing.Point(10, 50);
+            this.dgvEmployees.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(232)))), ((int)(((byte)(220)))));
+            this.dgvEmployees.Location = new System.Drawing.Point(20, 20);
             this.dgvEmployees.Margin = new System.Windows.Forms.Padding(4);
             this.dgvEmployees.MultiSelect = false;
             this.dgvEmployees.Name = "dgvEmployees";
             this.dgvEmployees.ReadOnly = true;
             this.dgvEmployees.RowHeadersVisible = false;
             this.dgvEmployees.RowHeadersWidth = 51;
-            this.dgvEmployees.RowTemplate.Height = 30;
+            this.dgvEmployees.RowTemplate.Height = 40;
             this.dgvEmployees.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvEmployees.Size = new System.Drawing.Size(989, 771);
-            this.dgvEmployees.TabIndex = 1;
+            this.dgvEmployees.Size = new System.Drawing.Size(1415, 400);
+            this.dgvEmployees.TabIndex = 0;
             this.dgvEmployees.SelectionChanged += new System.EventHandler(this.dgvEmployees_SelectionChanged);
             // 
-            // pnlLeftHeader
+            // pnlForm
             // 
-            this.pnlLeftHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(93)))), ((int)(((byte)(64)))), ((int)(((byte)(55)))));
-            this.pnlLeftHeader.Controls.Add(this.lblLeftTitle);
-            this.pnlLeftHeader.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnlLeftHeader.Location = new System.Drawing.Point(0, 0);
-            this.pnlLeftHeader.Margin = new System.Windows.Forms.Padding(4);
-            this.pnlLeftHeader.Name = "pnlLeftHeader";
-            this.pnlLeftHeader.Size = new System.Drawing.Size(1009, 40);
-            this.pnlLeftHeader.TabIndex = 0;
+            this.pnlForm.BackColor = System.Drawing.Color.Transparent;
+            this.pnlForm.Controls.Add(this.pnlFormRow1);
+            this.pnlForm.Controls.Add(this.pnlFormRow2);
+            this.pnlForm.Controls.Add(this.pnlFormRow3);
+            this.pnlForm.Controls.Add(this.pnlFormRow4);
+            this.pnlForm.Controls.Add(this.pnlFormRow5);
+            this.pnlForm.Controls.Add(this.pnlFormRow6);
+            this.pnlForm.Location = new System.Drawing.Point(20, 440);
+            this.pnlForm.Margin = new System.Windows.Forms.Padding(4);
+            this.pnlForm.Name = "pnlForm";
+            this.pnlForm.Size = new System.Drawing.Size(1415, 280);
+            this.pnlForm.TabIndex = 1;
             // 
-            // lblLeftTitle
+            // pnlFormRow1
             // 
-            this.lblLeftTitle.AutoSize = true;
-            this.lblLeftTitle.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.lblLeftTitle.ForeColor = System.Drawing.Color.White;
-            this.lblLeftTitle.Location = new System.Drawing.Point(10, 8);
-            this.lblLeftTitle.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblLeftTitle.Name = "lblLeftTitle";
-            this.lblLeftTitle.Size = new System.Drawing.Size(105, 23);
-            this.lblLeftTitle.TabIndex = 0;
-            this.lblLeftTitle.Text = "Kayıt Listesi";
+            this.pnlFormRow1.Controls.Add(this.txtFullName);
+            this.pnlFormRow1.Controls.Add(this.txtNationalID);
+            this.pnlFormRow1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnlFormRow1.Location = new System.Drawing.Point(0, 0);
+            this.pnlFormRow1.Margin = new System.Windows.Forms.Padding(4);
+            this.pnlFormRow1.Name = "pnlFormRow1";
+            this.pnlFormRow1.Padding = new System.Windows.Forms.Padding(0, 0, 0, 15);
+            this.pnlFormRow1.Size = new System.Drawing.Size(1415, 45);
+            this.pnlFormRow1.TabIndex = 0;
+            // 
+            // txtFullName
+            // 
+            this.txtFullName.BackColor = System.Drawing.Color.White;
+            this.txtFullName.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtFullName.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.txtFullName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(150)))), ((int)(((byte)(150)))));
+            this.txtFullName.Location = new System.Drawing.Point(15, 10);
+            this.txtFullName.Margin = new System.Windows.Forms.Padding(4);
+            this.txtFullName.Multiline = true;
+            this.txtFullName.Name = "txtFullName";
+            this.txtFullName.Size = new System.Drawing.Size(450, 30);
+            this.txtFullName.TabIndex = 0;
+            this.txtFullName.Text = "Ad Soyad";
+            // 
+            // txtNationalID
+            // 
+            this.txtNationalID.BackColor = System.Drawing.Color.White;
+            this.txtNationalID.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtNationalID.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.txtNationalID.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(150)))), ((int)(((byte)(150)))));
+            this.txtNationalID.Location = new System.Drawing.Point(485, 10);
+            this.txtNationalID.Margin = new System.Windows.Forms.Padding(4);
+            this.txtNationalID.Multiline = true;
+            this.txtNationalID.Name = "txtNationalID";
+            this.txtNationalID.Size = new System.Drawing.Size(450, 30);
+            this.txtNationalID.TabIndex = 1;
+            this.txtNationalID.Text = "T.C. Kimlik No";
+            // 
+            // pnlFormRow2
+            // 
+            this.pnlFormRow2.Controls.Add(this.txtPassportID);
+            this.pnlFormRow2.Controls.Add(this.dtpBirthDate);
+            this.pnlFormRow2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnlFormRow2.Location = new System.Drawing.Point(0, 45);
+            this.pnlFormRow2.Margin = new System.Windows.Forms.Padding(4);
+            this.pnlFormRow2.Name = "pnlFormRow2";
+            this.pnlFormRow2.Padding = new System.Windows.Forms.Padding(0, 0, 0, 15);
+            this.pnlFormRow2.Size = new System.Drawing.Size(1415, 45);
+            this.pnlFormRow2.TabIndex = 1;
+            // 
+            // txtPassportID
+            // 
+            this.txtPassportID.BackColor = System.Drawing.Color.White;
+            this.txtPassportID.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtPassportID.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.txtPassportID.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(150)))), ((int)(((byte)(150)))));
+            this.txtPassportID.Location = new System.Drawing.Point(15, 10);
+            this.txtPassportID.Margin = new System.Windows.Forms.Padding(4);
+            this.txtPassportID.Multiline = true;
+            this.txtPassportID.Name = "txtPassportID";
+            this.txtPassportID.Size = new System.Drawing.Size(450, 30);
+            this.txtPassportID.TabIndex = 0;
+            this.txtPassportID.Text = "Pasaport No";
+            // 
+            // dtpBirthDate
+            // 
+            this.dtpBirthDate.CalendarFont = new System.Drawing.Font("Segoe UI", 10F);
+            this.dtpBirthDate.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.dtpBirthDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpBirthDate.Location = new System.Drawing.Point(485, 10);
+            this.dtpBirthDate.Margin = new System.Windows.Forms.Padding(4);
+            this.dtpBirthDate.Name = "dtpBirthDate";
+            this.dtpBirthDate.Size = new System.Drawing.Size(450, 34);
+            this.dtpBirthDate.TabIndex = 1;
+            // 
+            // pnlFormRow3
+            // 
+            this.pnlFormRow3.Controls.Add(this.cmbGender);
+            this.pnlFormRow3.Controls.Add(this.txtPhone);
+            this.pnlFormRow3.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnlFormRow3.Location = new System.Drawing.Point(0, 90);
+            this.pnlFormRow3.Margin = new System.Windows.Forms.Padding(4);
+            this.pnlFormRow3.Name = "pnlFormRow3";
+            this.pnlFormRow3.Padding = new System.Windows.Forms.Padding(0, 0, 0, 15);
+            this.pnlFormRow3.Size = new System.Drawing.Size(1415, 45);
+            this.pnlFormRow3.TabIndex = 2;
+            // 
+            // cmbGender
+            // 
+            this.cmbGender.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbGender.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.cmbGender.FormattingEnabled = true;
+            this.cmbGender.Items.AddRange(new object[] {
+            "E",
+            "K"});
+            this.cmbGender.Location = new System.Drawing.Point(15, 10);
+            this.cmbGender.Margin = new System.Windows.Forms.Padding(4);
+            this.cmbGender.Name = "cmbGender";
+            this.cmbGender.Size = new System.Drawing.Size(450, 36);
+            this.cmbGender.TabIndex = 0;
+            // 
+            // txtPhone
+            // 
+            this.txtPhone.BackColor = System.Drawing.Color.White;
+            this.txtPhone.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtPhone.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.txtPhone.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(150)))), ((int)(((byte)(150)))));
+            this.txtPhone.Location = new System.Drawing.Point(485, 10);
+            this.txtPhone.Margin = new System.Windows.Forms.Padding(4);
+            this.txtPhone.Multiline = true;
+            this.txtPhone.Name = "txtPhone";
+            this.txtPhone.Size = new System.Drawing.Size(450, 30);
+            this.txtPhone.TabIndex = 1;
+            this.txtPhone.Text = "Telefon";
+            // 
+            // pnlFormRow4
+            // 
+            this.pnlFormRow4.Controls.Add(this.txtEmail);
+            this.pnlFormRow4.Controls.Add(this.txtAddress);
+            this.pnlFormRow4.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnlFormRow4.Location = new System.Drawing.Point(0, 135);
+            this.pnlFormRow4.Margin = new System.Windows.Forms.Padding(4);
+            this.pnlFormRow4.Name = "pnlFormRow4";
+            this.pnlFormRow4.Padding = new System.Windows.Forms.Padding(0, 0, 0, 15);
+            this.pnlFormRow4.Size = new System.Drawing.Size(1415, 45);
+            this.pnlFormRow4.TabIndex = 3;
+            // 
+            // txtEmail
+            // 
+            this.txtEmail.BackColor = System.Drawing.Color.White;
+            this.txtEmail.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtEmail.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.txtEmail.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(150)))), ((int)(((byte)(150)))));
+            this.txtEmail.Location = new System.Drawing.Point(15, 10);
+            this.txtEmail.Margin = new System.Windows.Forms.Padding(4);
+            this.txtEmail.Multiline = true;
+            this.txtEmail.Name = "txtEmail";
+            this.txtEmail.Size = new System.Drawing.Size(450, 30);
+            this.txtEmail.TabIndex = 0;
+            this.txtEmail.Text = "E-posta";
+            // 
+            // txtAddress
+            // 
+            this.txtAddress.BackColor = System.Drawing.Color.White;
+            this.txtAddress.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtAddress.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.txtAddress.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(150)))), ((int)(((byte)(150)))));
+            this.txtAddress.Location = new System.Drawing.Point(485, 10);
+            this.txtAddress.Margin = new System.Windows.Forms.Padding(4);
+            this.txtAddress.Multiline = true;
+            this.txtAddress.Name = "txtAddress";
+            this.txtAddress.Size = new System.Drawing.Size(450, 30);
+            this.txtAddress.TabIndex = 1;
+            this.txtAddress.Text = "Adres";
+            // 
+            // pnlFormRow5
+            // 
+            this.pnlFormRow5.Controls.Add(this.cmbPosition);
+            this.pnlFormRow5.Controls.Add(this.txtIBAN);
+            this.pnlFormRow5.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnlFormRow5.Location = new System.Drawing.Point(0, 180);
+            this.pnlFormRow5.Margin = new System.Windows.Forms.Padding(4);
+            this.pnlFormRow5.Name = "pnlFormRow5";
+            this.pnlFormRow5.Padding = new System.Windows.Forms.Padding(0, 0, 0, 15);
+            this.pnlFormRow5.Size = new System.Drawing.Size(1415, 45);
+            this.pnlFormRow5.TabIndex = 4;
+            // 
+            // cmbPosition
+            // 
+            this.cmbPosition.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbPosition.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.cmbPosition.FormattingEnabled = true;
+            this.cmbPosition.Location = new System.Drawing.Point(15, 10);
+            this.cmbPosition.Margin = new System.Windows.Forms.Padding(4);
+            this.cmbPosition.Name = "cmbPosition";
+            this.cmbPosition.Size = new System.Drawing.Size(450, 36);
+            this.cmbPosition.TabIndex = 0;
+            // 
+            // txtIBAN
+            // 
+            this.txtIBAN.BackColor = System.Drawing.Color.White;
+            this.txtIBAN.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtIBAN.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.txtIBAN.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(150)))), ((int)(((byte)(150)))));
+            this.txtIBAN.Location = new System.Drawing.Point(485, 10);
+            this.txtIBAN.Margin = new System.Windows.Forms.Padding(4);
+            this.txtIBAN.Multiline = true;
+            this.txtIBAN.Name = "txtIBAN";
+            this.txtIBAN.Size = new System.Drawing.Size(450, 30);
+            this.txtIBAN.TabIndex = 1;
+            this.txtIBAN.Text = "IBAN";
+            // 
+            // pnlFormRow6
+            // 
+            this.pnlFormRow6.Controls.Add(this.dtpHireDate);
+            this.pnlFormRow6.Controls.Add(this.dtpLeaveDate);
+            this.pnlFormRow6.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnlFormRow6.Location = new System.Drawing.Point(0, 225);
+            this.pnlFormRow6.Margin = new System.Windows.Forms.Padding(4);
+            this.pnlFormRow6.Name = "pnlFormRow6";
+            this.pnlFormRow6.Padding = new System.Windows.Forms.Padding(0, 0, 0, 15);
+            this.pnlFormRow6.Size = new System.Drawing.Size(1415, 45);
+            this.pnlFormRow6.TabIndex = 5;
+            // 
+            // dtpHireDate
+            // 
+            this.dtpHireDate.CalendarFont = new System.Drawing.Font("Segoe UI", 10F);
+            this.dtpHireDate.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.dtpHireDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpHireDate.Location = new System.Drawing.Point(15, 10);
+            this.dtpHireDate.Margin = new System.Windows.Forms.Padding(4);
+            this.dtpHireDate.Name = "dtpHireDate";
+            this.dtpHireDate.Size = new System.Drawing.Size(450, 34);
+            this.dtpHireDate.TabIndex = 0;
+            // 
+            // dtpLeaveDate
+            // 
+            this.dtpLeaveDate.CalendarFont = new System.Drawing.Font("Segoe UI", 10F);
+            this.dtpLeaveDate.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.dtpLeaveDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpLeaveDate.Location = new System.Drawing.Point(485, 10);
+            this.dtpLeaveDate.Margin = new System.Windows.Forms.Padding(4);
+            this.dtpLeaveDate.Name = "dtpLeaveDate";
+            this.dtpLeaveDate.ShowCheckBox = true;
+            this.dtpLeaveDate.Size = new System.Drawing.Size(450, 34);
+            this.dtpLeaveDate.TabIndex = 1;
+            // 
+            // pnlButtons
+            // 
+            this.pnlButtons.BackColor = System.Drawing.Color.Transparent;
+            this.pnlButtons.Controls.Add(this.btnAdd);
+            this.pnlButtons.Controls.Add(this.btnUpdate);
+            this.pnlButtons.Controls.Add(this.btnDelete);
+            this.pnlButtons.Controls.Add(this.btnRefresh);
+            this.pnlButtons.Controls.Add(this.btnPositionManagement);
+            this.pnlButtons.Location = new System.Drawing.Point(20, 740);
+            this.pnlButtons.Margin = new System.Windows.Forms.Padding(4);
+            this.pnlButtons.Name = "pnlButtons";
+            this.pnlButtons.Size = new System.Drawing.Size(1415, 55);
+            this.pnlButtons.TabIndex = 2;
+            // 
+            // btnAdd
+            // 
+            this.btnAdd.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(139)))), ((int)(((byte)(106)))), ((int)(((byte)(66)))));
+            this.btnAdd.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAdd.FlatAppearance.BorderSize = 0;
+            this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAdd.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            this.btnAdd.ForeColor = System.Drawing.Color.White;
+            this.btnAdd.Location = new System.Drawing.Point(0, 0);
+            this.btnAdd.Margin = new System.Windows.Forms.Padding(4);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.Size = new System.Drawing.Size(200, 55);
+            this.btnAdd.TabIndex = 0;
+            this.btnAdd.Text = "Ekle";
+            this.btnAdd.UseVisualStyleBackColor = false;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
+            // 
+            // btnUpdate
+            // 
+            this.btnUpdate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(139)))), ((int)(((byte)(106)))), ((int)(((byte)(66)))));
+            this.btnUpdate.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnUpdate.FlatAppearance.BorderSize = 0;
+            this.btnUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnUpdate.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            this.btnUpdate.ForeColor = System.Drawing.Color.White;
+            this.btnUpdate.Location = new System.Drawing.Point(220, 0);
+            this.btnUpdate.Margin = new System.Windows.Forms.Padding(4);
+            this.btnUpdate.Name = "btnUpdate";
+            this.btnUpdate.Size = new System.Drawing.Size(200, 55);
+            this.btnUpdate.TabIndex = 1;
+            this.btnUpdate.Text = "Güncelle";
+            this.btnUpdate.UseVisualStyleBackColor = false;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
+            // 
+            // btnDelete
+            // 
+            this.btnDelete.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(139)))), ((int)(((byte)(106)))), ((int)(((byte)(66)))));
+            this.btnDelete.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnDelete.FlatAppearance.BorderSize = 0;
+            this.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDelete.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            this.btnDelete.ForeColor = System.Drawing.Color.White;
+            this.btnDelete.Location = new System.Drawing.Point(440, 0);
+            this.btnDelete.Margin = new System.Windows.Forms.Padding(4);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(200, 55);
+            this.btnDelete.TabIndex = 2;
+            this.btnDelete.Text = "Sil";
+            this.btnDelete.UseVisualStyleBackColor = false;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
+            // 
+            // btnRefresh
+            // 
+            this.btnRefresh.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(139)))), ((int)(((byte)(106)))), ((int)(((byte)(66)))));
+            this.btnRefresh.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnRefresh.FlatAppearance.BorderSize = 0;
+            this.btnRefresh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRefresh.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            this.btnRefresh.ForeColor = System.Drawing.Color.White;
+            this.btnRefresh.Location = new System.Drawing.Point(660, 0);
+            this.btnRefresh.Margin = new System.Windows.Forms.Padding(4);
+            this.btnRefresh.Name = "btnRefresh";
+            this.btnRefresh.Size = new System.Drawing.Size(200, 55);
+            this.btnRefresh.TabIndex = 3;
+            this.btnRefresh.Text = "Yenile";
+            this.btnRefresh.UseVisualStyleBackColor = false;
+            this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
             // 
             // btnPositionManagement
             // 
-            this.btnPositionManagement.BackColor = System.Drawing.Color.Silver;
+            this.btnPositionManagement.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(139)))), ((int)(((byte)(106)))), ((int)(((byte)(66)))));
+            this.btnPositionManagement.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnPositionManagement.FlatAppearance.BorderSize = 0;
             this.btnPositionManagement.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnPositionManagement.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnPositionManagement.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
             this.btnPositionManagement.ForeColor = System.Drawing.Color.White;
-            this.btnPositionManagement.Location = new System.Drawing.Point(20, 751);
+            this.btnPositionManagement.Location = new System.Drawing.Point(880, 0);
             this.btnPositionManagement.Margin = new System.Windows.Forms.Padding(4);
             this.btnPositionManagement.Name = "btnPositionManagement";
-            this.btnPositionManagement.Size = new System.Drawing.Size(380, 36);
-            this.btnPositionManagement.TabIndex = 29;
+            this.btnPositionManagement.Size = new System.Drawing.Size(200, 55);
+            this.btnPositionManagement.TabIndex = 4;
             this.btnPositionManagement.Text = "Pozisyonları Yönet";
             this.btnPositionManagement.UseVisualStyleBackColor = false;
             this.btnPositionManagement.Click += new System.EventHandler(this.btnPositionManagement_Click);
@@ -578,61 +499,61 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.pnlContainer);
+            this.Controls.Add(this.pnlMain);
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "EmployeeManagementControl";
             this.Size = new System.Drawing.Size(1509, 933);
             this.Load += new System.EventHandler(this.EmployeeManagementControl_Load);
-            this.pnlContainer.ResumeLayout(false);
-            this.pnlRight.ResumeLayout(false);
-            this.pnlRight.PerformLayout();
-            this.pnlRightHeader.ResumeLayout(false);
-            this.pnlRightHeader.PerformLayout();
-            this.pnlLeft.ResumeLayout(false);
+            this.pnlMain.ResumeLayout(false);
+            this.pnlMain.PerformLayout();
+            this.pnlContent.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvEmployees)).EndInit();
-            this.pnlLeftHeader.ResumeLayout(false);
-            this.pnlLeftHeader.PerformLayout();
+            this.pnlForm.ResumeLayout(false);
+            this.pnlFormRow1.ResumeLayout(false);
+            this.pnlFormRow1.PerformLayout();
+            this.pnlFormRow2.ResumeLayout(false);
+            this.pnlFormRow2.PerformLayout();
+            this.pnlFormRow3.ResumeLayout(false);
+            this.pnlFormRow3.PerformLayout();
+            this.pnlFormRow4.ResumeLayout(false);
+            this.pnlFormRow4.PerformLayout();
+            this.pnlFormRow5.ResumeLayout(false);
+            this.pnlFormRow5.PerformLayout();
+            this.pnlFormRow6.ResumeLayout(false);
+            this.pnlButtons.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Panel pnlContainer;
-        private System.Windows.Forms.Panel pnlRight;
-        private System.Windows.Forms.Button btnDelete;
-        private System.Windows.Forms.Button btnUpdate;
-        private System.Windows.Forms.Button btnAdd;
-        private System.Windows.Forms.DateTimePicker dtpLeaveDate;
-        private System.Windows.Forms.Label lblLeaveDate;
-        private System.Windows.Forms.DateTimePicker dtpHireDate;
-        private System.Windows.Forms.Label lblHireDate;
-        private System.Windows.Forms.TextBox txtIBAN;
-        private System.Windows.Forms.Label lblIBAN;
-        private System.Windows.Forms.ComboBox cmbPosition;
-        private System.Windows.Forms.Label lblPosition;
-        private System.Windows.Forms.TextBox txtAddress;
-        private System.Windows.Forms.Label lblAddress;
-        private System.Windows.Forms.TextBox txtEmail;
-        private System.Windows.Forms.Label lblEmail;
-        private System.Windows.Forms.TextBox txtPhone;
-        private System.Windows.Forms.Label lblPhone;
-        private System.Windows.Forms.ComboBox cmbGender;
-        private System.Windows.Forms.Label lblGender;
-        private System.Windows.Forms.DateTimePicker dtpBirthDate;
-        private System.Windows.Forms.Label lblBirthDate;
-        private System.Windows.Forms.TextBox txtPassportID;
-        private System.Windows.Forms.Label lblPassportID;
-        private System.Windows.Forms.TextBox txtNationalID;
-        private System.Windows.Forms.Label lblNationalID;
-        private System.Windows.Forms.TextBox txtFullName;
-        private System.Windows.Forms.Label lblFullName;
-        private System.Windows.Forms.Label lblRightTitle;
-        private System.Windows.Forms.Panel pnlRightHeader;
-        private System.Windows.Forms.Panel pnlLeft;
+        private System.Windows.Forms.Panel pnlMain;
+        private System.Windows.Forms.Label lblTitle;
+        private System.Windows.Forms.Panel pnlContent;
         private System.Windows.Forms.DataGridView dgvEmployees;
-        private System.Windows.Forms.Label lblLeftTitle;
-        private System.Windows.Forms.Panel pnlLeftHeader;
+        private System.Windows.Forms.Panel pnlForm;
+        private System.Windows.Forms.Panel pnlFormRow1;
+        private System.Windows.Forms.TextBox txtFullName;
+        private System.Windows.Forms.TextBox txtNationalID;
+        private System.Windows.Forms.Panel pnlFormRow2;
+        private System.Windows.Forms.TextBox txtPassportID;
+        private System.Windows.Forms.DateTimePicker dtpBirthDate;
+        private System.Windows.Forms.Panel pnlFormRow3;
+        private System.Windows.Forms.ComboBox cmbGender;
+        private System.Windows.Forms.TextBox txtPhone;
+        private System.Windows.Forms.Panel pnlFormRow4;
+        private System.Windows.Forms.TextBox txtEmail;
+        private System.Windows.Forms.TextBox txtAddress;
+        private System.Windows.Forms.Panel pnlFormRow5;
+        private System.Windows.Forms.ComboBox cmbPosition;
+        private System.Windows.Forms.TextBox txtIBAN;
+        private System.Windows.Forms.Panel pnlFormRow6;
+        private System.Windows.Forms.DateTimePicker dtpHireDate;
+        private System.Windows.Forms.DateTimePicker dtpLeaveDate;
+        private System.Windows.Forms.Panel pnlButtons;
+        private System.Windows.Forms.Button btnAdd;
+        private System.Windows.Forms.Button btnUpdate;
+        private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.Button btnRefresh;
         private System.Windows.Forms.Button btnPositionManagement;
     }
