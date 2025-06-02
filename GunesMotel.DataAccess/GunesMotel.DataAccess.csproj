@@ -58,6 +58,7 @@
     <Compile Include="Interfaces\IRepository.cs" />
     <Compile Include="Interfaces\IRolePositionMapRepository.cs" />
     <Compile Include="Interfaces\IRoleRepository.cs" />
+    <Compile Include="Interfaces\IRoomRepository.cs" />
     <Compile Include="Interfaces\IRoomTypeRepository.cs" />
     <Compile Include="Interfaces\ISeasonRepository.cs" />
     <Compile Include="Interfaces\IUserRepository.cs" />
@@ -84,6 +85,7 @@
     <Compile Include="Repositories\GenericRepository.cs" />
     <Compile Include="Repositories\RolePositionMapRepository.cs" />
     <Compile Include="Repositories\RoleRepository.cs" />
+    <Compile Include="Repositories\RoomRepository.cs" />
     <Compile Include="Repositories\RoomTypeRepository.cs" />
     <Compile Include="Repositories\SeasonRepository.cs" />
     <Compile Include="Repositories\UserRepository.cs" />

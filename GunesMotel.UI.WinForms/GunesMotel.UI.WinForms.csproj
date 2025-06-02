@@ -69,6 +69,12 @@
     <Compile Include="Control\RoleManagementControl.Designer.cs">
       <DependentUpon>RoleManagementControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="Control\RoomManagementControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Control\RoomManagementControl.Designer.cs">
+      <DependentUpon>RoomManagementControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="Control\RoomTypeManagementControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -124,6 +130,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Control\RoleManagementControl.resx">
       <DependentUpon>RoleManagementControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Control\RoomManagementControl.resx">
+      <DependentUpon>RoomManagementControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Control\RoomTypeManagementControl.resx">
       <DependentUpon>RoomTypeManagementControl.cs</DependentUpon>
