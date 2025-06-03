@@ -4,6 +4,7 @@ using GunesMotel.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using Microsoft.EntityFrameworkCore;
 
 namespace GunesMotel.DataAccess.Repositories
 {
@@ -59,5 +60,28 @@ namespace GunesMotel.DataAccess.Repositories
             using var context = new GunesMotelContext();
             return context.Rooms.Any(r => r.RoomNumber == roomNumber);
         }
+
+        public List<dynamic> GetAllWithRoomType()
+        {
+            using (var context = new GunesMotelContext())
+            {
+                var result = (from r in context.Rooms
+                              join rt in context.RoomTypes on r.RoomTypeID equals rt.RoomTypeID
+                              select new
+                              {
+                                  r.RoomID,
+                                  r.RoomNumber,
+                                  RoomTypeName = rt.TypeName,
+                                  RoomFeature = rt.Feature,
+                                  r.Floor,
+                                  r.Status,
+                                  r.Description
+                              })
+                              .OrderByDescending(x => x.RoomID)
+                              .ToList<dynamic>();
+
+                return result;
+            }
+        }          
     }
 }

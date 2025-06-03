@@ -16,5 +16,6 @@ namespace GunesMotel.Entities
         public int? Floor { get; set; }
         public string Status { get; set; }
         public string? Description { get; set; }
+        public RoomTypes RoomType { get; set; }
     }
 }

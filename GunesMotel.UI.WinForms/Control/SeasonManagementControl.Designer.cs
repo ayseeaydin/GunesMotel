@@ -28,10 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.pnlMain = new System.Windows.Forms.Panel();
-            this.lblTitle = new System.Windows.Forms.Label();
             this.pnlContent = new System.Windows.Forms.Panel();
             this.dgvSeasons = new System.Windows.Forms.DataGridView();
             this.colSeasonID = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -41,10 +40,11 @@
             this.colDescription = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pnlForm = new System.Windows.Forms.Panel();
             this.pnlFormRow1 = new System.Windows.Forms.Panel();
+            this.txtSearch = new System.Windows.Forms.TextBox();
             this.txtSeasonName = new System.Windows.Forms.TextBox();
-            this.dtpStartDate = new System.Windows.Forms.DateTimePicker();
             this.pnlFormRow2 = new System.Windows.Forms.Panel();
             this.dtpEndDate = new System.Windows.Forms.DateTimePicker();
+            this.dtpStartDate = new System.Windows.Forms.DateTimePicker();
             this.pnlFormRow3 = new System.Windows.Forms.Panel();
             this.txtDescription = new System.Windows.Forms.TextBox();
             this.pnlButtons = new System.Windows.Forms.Panel();
@@ -52,7 +52,6 @@
             this.btnUpdate = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnRefresh = new System.Windows.Forms.Button();
-            this.txtSearch = new System.Windows.Forms.TextBox();
             this.pnlMain.SuspendLayout();
             this.pnlContent.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSeasons)).BeginInit();
@@ -66,7 +65,6 @@
             // pnlMain
             // 
             this.pnlMain.BackColor = System.Drawing.Color.White;
-            this.pnlMain.Controls.Add(this.lblTitle);
             this.pnlMain.Controls.Add(this.pnlContent);
             this.pnlMain.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlMain.Location = new System.Drawing.Point(0, 0);
@@ -76,29 +74,17 @@
             this.pnlMain.Size = new System.Drawing.Size(1200, 800);
             this.pnlMain.TabIndex = 0;
             // 
-            // lblTitle
-            // 
-            this.lblTitle.AutoSize = true;
-            this.lblTitle.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Bold);
-            this.lblTitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(101)))), ((int)(((byte)(67)))), ((int)(((byte)(33)))));
-            this.lblTitle.Location = new System.Drawing.Point(27, 25);
-            this.lblTitle.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblTitle.Name = "lblTitle";
-            this.lblTitle.Size = new System.Drawing.Size(310, 54);
-            this.lblTitle.TabIndex = 0;
-            this.lblTitle.Text = "Sezon Yönetimi";
-            // 
             // pnlContent
             // 
             this.pnlContent.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(245)))), ((int)(((byte)(235)))));
             this.pnlContent.Controls.Add(this.dgvSeasons);
             this.pnlContent.Controls.Add(this.pnlForm);
             this.pnlContent.Controls.Add(this.pnlButtons);
-            this.pnlContent.Location = new System.Drawing.Point(27, 100);
+            this.pnlContent.Location = new System.Drawing.Point(0, 0);
             this.pnlContent.Margin = new System.Windows.Forms.Padding(4);
             this.pnlContent.Name = "pnlContent";
             this.pnlContent.Padding = new System.Windows.Forms.Padding(20);
-            this.pnlContent.Size = new System.Drawing.Size(1146, 675);
+            this.pnlContent.Size = new System.Drawing.Size(1200, 800);
             this.pnlContent.TabIndex = 1;
             // 
             // dgvSeasons
@@ -110,14 +96,14 @@
             this.dgvSeasons.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvSeasons.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.dgvSeasons.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(240)))), ((int)(((byte)(230)))));
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(101)))), ((int)(((byte)(67)))), ((int)(((byte)(33)))));
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(240)))), ((int)(((byte)(230)))));
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(101)))), ((int)(((byte)(67)))), ((int)(((byte)(33)))));
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvSeasons.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(240)))), ((int)(((byte)(230)))));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(101)))), ((int)(((byte)(67)))), ((int)(((byte)(33)))));
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(240)))), ((int)(((byte)(230)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(101)))), ((int)(((byte)(67)))), ((int)(((byte)(33)))));
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvSeasons.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dgvSeasons.ColumnHeadersHeight = 50;
             this.dgvSeasons.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colSeasonID,
@@ -125,14 +111,14 @@
             this.colStartDate,
             this.colEndDate,
             this.colDescription});
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 10F);
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(101)))), ((int)(((byte)(67)))), ((int)(((byte)(33)))));
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(240)))), ((int)(((byte)(230)))));
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(101)))), ((int)(((byte)(67)))), ((int)(((byte)(33)))));
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvSeasons.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 10F);
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(101)))), ((int)(((byte)(67)))), ((int)(((byte)(33)))));
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(240)))), ((int)(((byte)(230)))));
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(101)))), ((int)(((byte)(67)))), ((int)(((byte)(33)))));
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvSeasons.DefaultCellStyle = dataGridViewCellStyle4;
             this.dgvSeasons.EnableHeadersVisualStyles = false;
             this.dgvSeasons.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(232)))), ((int)(((byte)(220)))));
             this.dgvSeasons.Location = new System.Drawing.Point(20, 20);
@@ -217,6 +203,23 @@
             this.pnlFormRow1.Size = new System.Drawing.Size(1106, 60);
             this.pnlFormRow1.TabIndex = 0;
             // 
+            // txtSearch
+            // 
+            this.txtSearch.BackColor = System.Drawing.Color.White;
+            this.txtSearch.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtSearch.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.txtSearch.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(150)))), ((int)(((byte)(150)))));
+            this.txtSearch.Location = new System.Drawing.Point(485, 15);
+            this.txtSearch.Margin = new System.Windows.Forms.Padding(4);
+            this.txtSearch.Multiline = true;
+            this.txtSearch.Name = "txtSearch";
+            this.txtSearch.Size = new System.Drawing.Size(450, 30);
+            this.txtSearch.TabIndex = 1;
+            this.txtSearch.Text = "Ara";
+            this.txtSearch.TextChanged += new System.EventHandler(this.txtSearch_TextChanged);
+            this.txtSearch.Enter += new System.EventHandler(this.txtSearch_Enter);
+            this.txtSearch.Leave += new System.EventHandler(this.txtSearch_Leave);
+            // 
             // txtSeasonName
             // 
             this.txtSeasonName.BackColor = System.Drawing.Color.White;
@@ -232,17 +235,6 @@
             this.txtSeasonName.Text = "Sezon Adı";
             this.txtSeasonName.Enter += new System.EventHandler(this.txtSeasonName_Enter);
             this.txtSeasonName.Leave += new System.EventHandler(this.txtSeasonName_Leave);
-            // 
-            // dtpStartDate
-            // 
-            this.dtpStartDate.CalendarFont = new System.Drawing.Font("Segoe UI", 10F);
-            this.dtpStartDate.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.dtpStartDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpStartDate.Location = new System.Drawing.Point(15, 10);
-            this.dtpStartDate.Margin = new System.Windows.Forms.Padding(4);
-            this.dtpStartDate.Name = "dtpStartDate";
-            this.dtpStartDate.Size = new System.Drawing.Size(450, 34);
-            this.dtpStartDate.TabIndex = 1;
             // 
             // pnlFormRow2
             // 
@@ -266,6 +258,17 @@
             this.dtpEndDate.Name = "dtpEndDate";
             this.dtpEndDate.Size = new System.Drawing.Size(450, 34);
             this.dtpEndDate.TabIndex = 0;
+            // 
+            // dtpStartDate
+            // 
+            this.dtpStartDate.CalendarFont = new System.Drawing.Font("Segoe UI", 10F);
+            this.dtpStartDate.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.dtpStartDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpStartDate.Location = new System.Drawing.Point(15, 10);
+            this.dtpStartDate.Margin = new System.Windows.Forms.Padding(4);
+            this.dtpStartDate.Name = "dtpStartDate";
+            this.dtpStartDate.Size = new System.Drawing.Size(450, 34);
+            this.dtpStartDate.TabIndex = 1;
             // 
             // pnlFormRow3
             // 
@@ -375,23 +378,6 @@
             this.btnRefresh.UseVisualStyleBackColor = false;
             this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
             // 
-            // txtSearch
-            // 
-            this.txtSearch.BackColor = System.Drawing.Color.White;
-            this.txtSearch.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtSearch.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.txtSearch.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(150)))), ((int)(((byte)(150)))));
-            this.txtSearch.Location = new System.Drawing.Point(485, 15);
-            this.txtSearch.Margin = new System.Windows.Forms.Padding(4);
-            this.txtSearch.Multiline = true;
-            this.txtSearch.Name = "txtSearch";
-            this.txtSearch.Size = new System.Drawing.Size(450, 30);
-            this.txtSearch.TabIndex = 1;
-            this.txtSearch.Text = "Ara";
-            this.txtSearch.TextChanged += new System.EventHandler(this.txtSearch_TextChanged);
-            this.txtSearch.Enter += new System.EventHandler(this.txtSearch_Enter);
-            this.txtSearch.Leave += new System.EventHandler(this.txtSearch_Leave);
-            // 
             // SeasonManagementControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -401,7 +387,6 @@
             this.Name = "SeasonManagementControl";
             this.Size = new System.Drawing.Size(1200, 800);
             this.pnlMain.ResumeLayout(false);
-            this.pnlMain.PerformLayout();
             this.pnlContent.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvSeasons)).EndInit();
             this.pnlForm.ResumeLayout(false);
@@ -417,7 +402,6 @@
 
         #endregion
         private System.Windows.Forms.Panel pnlMain;
-        private System.Windows.Forms.Label lblTitle;
         private System.Windows.Forms.Panel pnlContent;
         private System.Windows.Forms.DataGridView dgvSeasons;
         private System.Windows.Forms.Panel pnlForm;

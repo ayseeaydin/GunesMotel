@@ -37,7 +37,7 @@
             this.btnFaturalar = new System.Windows.Forms.Button();
             this.btnOdemeler = new System.Windows.Forms.Button();
             this.btnRezervasyonlar = new System.Windows.Forms.Button();
-            this.btnMusteriler = new System.Windows.Forms.Button();
+            this.btnSeasons = new System.Windows.Forms.Button();
             this.btnOdalar = new System.Windows.Forms.Button();
             this.btnAnaSayfa = new System.Windows.Forms.Button();
             this.pnlLogo = new System.Windows.Forms.Panel();
@@ -96,7 +96,7 @@
             this.pnlSidebar.Controls.Add(this.btnFaturalar);
             this.pnlSidebar.Controls.Add(this.btnOdemeler);
             this.pnlSidebar.Controls.Add(this.btnRezervasyonlar);
-            this.pnlSidebar.Controls.Add(this.btnMusteriler);
+            this.pnlSidebar.Controls.Add(this.btnSeasons);
             this.pnlSidebar.Controls.Add(this.btnOdalar);
             this.pnlSidebar.Controls.Add(this.btnAnaSayfa);
             this.pnlSidebar.Controls.Add(this.pnlLogo);
@@ -245,22 +245,23 @@
             this.btnRezervasyonlar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnRezervasyonlar.UseVisualStyleBackColor = true;
             // 
-            // btnMusteriler
+            // btnSeasons
             // 
-            this.btnMusteriler.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnMusteriler.FlatAppearance.BorderSize = 0;
-            this.btnMusteriler.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMusteriler.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.btnMusteriler.ForeColor = System.Drawing.Color.White;
-            this.btnMusteriler.Location = new System.Drawing.Point(0, 284);
-            this.btnMusteriler.Margin = new System.Windows.Forms.Padding(4);
-            this.btnMusteriler.Name = "btnMusteriler";
-            this.btnMusteriler.Padding = new System.Windows.Forms.Padding(13, 0, 0, 0);
-            this.btnMusteriler.Size = new System.Drawing.Size(333, 62);
-            this.btnMusteriler.TabIndex = 3;
-            this.btnMusteriler.Text = "Müşteriler";
-            this.btnMusteriler.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnMusteriler.UseVisualStyleBackColor = true;
+            this.btnSeasons.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnSeasons.FlatAppearance.BorderSize = 0;
+            this.btnSeasons.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSeasons.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnSeasons.ForeColor = System.Drawing.Color.White;
+            this.btnSeasons.Location = new System.Drawing.Point(0, 284);
+            this.btnSeasons.Margin = new System.Windows.Forms.Padding(4);
+            this.btnSeasons.Name = "btnSeasons";
+            this.btnSeasons.Padding = new System.Windows.Forms.Padding(13, 0, 0, 0);
+            this.btnSeasons.Size = new System.Drawing.Size(333, 62);
+            this.btnSeasons.TabIndex = 3;
+            this.btnSeasons.Text = "Sezonlar";
+            this.btnSeasons.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSeasons.UseVisualStyleBackColor = true;
+            this.btnSeasons.Click += new System.EventHandler(this.btnSeasons_Click);
             // 
             // btnOdalar
             // 
@@ -714,7 +715,7 @@
         private System.Windows.Forms.Button btnFaturalar;
         private System.Windows.Forms.Button btnOdemeler;
         private System.Windows.Forms.Button btnRezervasyonlar;
-        private System.Windows.Forms.Button btnMusteriler;
+        private System.Windows.Forms.Button btnSeasons;
         private System.Windows.Forms.Button btnOdalar;
         private System.Windows.Forms.Panel pnlHeader;
         private System.Windows.Forms.Label lblFormTitle;

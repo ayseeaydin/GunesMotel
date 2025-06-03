@@ -94,8 +94,14 @@ namespace GunesMotel.UI.WinForms.Forms
 
         private void btnOdalar_Click(object sender, EventArgs e)
         {
-            var roomTypeControl = new RoomTypeManagementControl();
-            LoadContent(roomTypeControl);
+            var roomControl = new RoomManagementControl();
+            LoadContent(roomControl);
+        }
+
+        private void btnSeasons_Click(object sender, EventArgs e)
+        {
+            var seasonControl = new SeasonManagementControl();
+            LoadContent(seasonControl);
         }
     }
 }
