@@ -7,13 +7,6 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
-using GunesMotel.DataAccess.Helpers;
-using GunesMotel.DataAccess.Repositories;
-using GunesMotel.Entities;
-using System;
-using System.Collections.Generic;
-using System.Drawing;
-using System.Linq;
 using System.Windows.Forms;
 
 

@@ -258,11 +258,22 @@ namespace GunesMotel.UI.WinForms.Control
         private void ClearForm()
         {
             _selectedUserID = null;
-            txtUsername.Clear();
-            txtPassword.Clear();
-            txtFullName.Clear();
-            txtEmail.Clear();
-            txtPhone.Clear();
+
+            txtUsername.Text = "Kullanıcı Adı";
+            txtUsername.ForeColor = Color.Gray;
+
+            txtPassword.Text = "Şifre";
+            txtPassword.ForeColor = Color.Gray;
+
+            txtFullName.Text = "Ad Soyad";
+            txtFullName.ForeColor = Color.Gray;
+
+            txtEmail.Text = "E-posta";
+            txtEmail.ForeColor = Color.Gray;
+
+            txtPhone.Text = "Telefon";
+            txtPhone.ForeColor = Color.Gray;
+
             cmbRole.SelectedIndex = -1;
             cmbEmployee.DataSource = null;
         }
@@ -664,6 +675,96 @@ namespace GunesMotel.UI.WinForms.Control
             catch (Exception ex)
             {
                 ShowError("Liste yenilenirken hata oluştu", ex);
+            }
+        }
+
+        private void txtFullName_Enter(object sender, EventArgs e)
+        {
+            if(txtFullName.Text == "Ad Soyad")
+            {
+                txtFullName.Text = "";
+                txtFullName.ForeColor = Color.Black;
+            }
+        }
+
+        private void txtFullName_Leave(object sender, EventArgs e)
+        {
+            if(string.IsNullOrWhiteSpace(txtFullName.Text))
+            {
+                txtFullName.Text = "Ad Soyad";
+                txtFullName.ForeColor = Color.Gray;
+            }
+        }
+
+        private void txtPhone_Enter(object sender, EventArgs e)
+        {
+            if(txtPhone.Text == "Telefon")
+            {
+                txtPhone.Text = "";
+                txtPhone.ForeColor = Color.Black;
+            }
+        }
+
+        private void txtPhone_Leave(object sender, EventArgs e)
+        {
+            if(string.IsNullOrWhiteSpace(txtPhone.Text))
+            {
+                txtPhone.Text = "Telefon";
+                txtPhone.ForeColor = Color.Gray;
+            }
+        }
+
+        private void txtEmail_Enter(object sender, EventArgs e)
+        {
+            if(txtEmail.Text == "E-posta")
+            {
+                txtEmail.Text = "";
+                txtEmail.ForeColor = Color.Black;
+            }
+        }
+
+        private void txtEmail_Leave(object sender, EventArgs e)
+        {
+            if(string.IsNullOrWhiteSpace(txtEmail.Text))
+            {
+                txtEmail.Text = "E-posta";
+                txtEmail.ForeColor = Color.Gray;
+            }
+        }
+
+        private void txtUsername_Enter(object sender, EventArgs e)
+        {
+            if(txtUsername.Text == "Kullanıcı Adı")
+            {
+                txtUsername.Text = "";
+                txtUsername.ForeColor = Color.Black;
+            }
+        }
+
+        private void txtUsername_Leave(object sender, EventArgs e)
+        {
+            if(string.IsNullOrWhiteSpace(txtUsername.Text))
+            {
+                txtUsername.Text = "Kullanıcı Adı";
+                txtUsername.ForeColor = Color.Gray;
+            }
+        }
+
+        private void txtPassword_Enter(object sender, EventArgs e)
+        {
+            if(txtPassword.Text == "Şifre")
+            {
+                txtPassword.Text = "";
+                txtPassword.ForeColor = Color.Black;
+            }
+        }
+
+        private void txtPassword_Leave(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(txtPassword.Text))
+            {
+                txtPassword.Text = "Şifre";
+                txtPassword.ForeColor = Color.Gray;
             }
         }
     }

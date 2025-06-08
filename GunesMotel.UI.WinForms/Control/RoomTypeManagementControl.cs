@@ -234,5 +234,59 @@ namespace GunesMotel.UI.WinForms.Control
             LoadRoomTypes();
             ClearForm();
         }
+
+        private void txtDescription_Enter(object sender, EventArgs e)
+        {
+            if(txtDescription.Text == "Açıklama")
+            {
+                txtDescription.Text = "";
+                txtDescription.ForeColor = Color.Black;
+            }
+        }
+
+        private void txtDescription_Leave(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(txtDescription.Text))
+            {
+                txtDescription.Text = "Açıklama";
+                txtDescription.ForeColor = Color.Gray;
+            }
+        }
+
+        private void txtTypeName_Enter(object sender, EventArgs e)
+        {
+            if(txtDescription.Text== "Oda Türü Adı")
+            {
+                txtTypeName.Text = "";
+                txtTypeName.ForeColor = Color.Gray;
+            }
+        }
+
+        private void txtTypeName_Leave(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(txtTypeName.Text))
+            {
+                txtTypeName.Text = "Oda Türü Adı";
+                txtTypeName.ForeColor = Color.Gray;
+            }
+        }
+
+        private void txtFeature_Enter(object sender, EventArgs e)
+        {
+            if (txtFeature.Text == "Özellikler")
+            {
+                txtFeature.Text = "";
+                txtFeature.ForeColor = Color.Black;
+            }
+        }
+
+        private void txtFeature_Leave(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(txtFeature.Text))
+            {
+                txtFeature.Text = "Özellikler";
+                txtFeature.ForeColor = Color.Gray;
+            }
+        }
     }
 }

@@ -132,10 +132,6 @@
     <Compile Include="Interfaces\IRoomTypeRepository.cs" />
     <Compile Include="Interfaces\ISeasonRepository.cs" />
     <Compile Include="Interfaces\IUserRepository.cs" />
-    <Compile Include="Migrations\202505181059260_InitialCreate.cs" />
-    <Compile Include="Migrations\202505181059260_InitialCreate.Designer.cs">
-      <DependentUpon>202505181059260_InitialCreate.cs</DependentUpon>
-    </Compile>
     <Compile Include="Migrations\202505181103333_MakeLeaveDateNullable.cs" />
     <Compile Include="Migrations\202505181103333_MakeLeaveDateNullable.Designer.cs">
       <DependentUpon>202505181103333_MakeLeaveDateNullable.cs</DependentUpon>
@@ -175,9 +171,6 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202505181059260_InitialCreate.resx">
-      <DependentUpon>202505181059260_InitialCreate.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202505181103333_MakeLeaveDateNullable.resx">
       <DependentUpon>202505181103333_MakeLeaveDateNullable.cs</DependentUpon>
     </EmbeddedResource>

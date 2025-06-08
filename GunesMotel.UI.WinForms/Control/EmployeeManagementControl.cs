@@ -4,6 +4,7 @@ using GunesMotel.DataAccess.Helpers;
 using GunesMotel.DataAccess.Repositories;
 using GunesMotel.Entities;
 using System;
+using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
 
@@ -97,16 +98,32 @@ namespace GunesMotel.UI.WinForms.Control
 
         private void ClearForm()
         {
-            txtFullName.Clear();
-            txtNationalID.Clear();
-            txtPassportID.Clear();
+            txtFullName.Text = "Ad Soyad";
+            txtFullName.ForeColor = Color.Gray;
+
+            txtNationalID.Text = "T.C. Kimlik No";
+            txtNationalID.ForeColor = Color.Gray;
+
+            txtPassportID.Text = "Pasaport No";
+            txtPassportID.ForeColor = Color.Gray;
+
             dtpBirthDate.Value = DateTime.Now;
             cmbGender.SelectedIndex = -1;
-            txtPhone.Clear();
-            txtEmail.Clear();
-            txtAddress.Clear();
+
+            txtPhone.Text = "Telefon";
+            txtPhone.ForeColor = Color.Gray;
+
+            txtEmail.Text = "E-posta";
+            txtEmail.ForeColor = Color.Gray;
+
+            txtAddress.Text = "Adres";
+            txtAddress.ForeColor = Color.Gray;
+
             cmbPosition.SelectedIndex = -1;
-            txtIBAN.Clear();
+
+            txtIBAN.Text = "IBAN";
+            txtIBAN.ForeColor = Color.Gray;
+
             dtpHireDate.Value = DateTime.Now;
             dtpLeaveDate.Value = DateTime.Now;
             dtpLeaveDate.Checked = false;
@@ -285,6 +302,131 @@ namespace GunesMotel.UI.WinForms.Control
         {
             // Bu event dış dünyaya haber verir
             OnPozisyonYonet?.Invoke(this, EventArgs.Empty);
+        }
+
+        private void txtFullName_Enter(object sender, EventArgs e)
+        {
+            if(txtFullName.Text =="Ad Soyad")
+            {
+                txtFullName.Text = "";
+                txtFullName.ForeColor =Color.Black;
+            }
+        }
+
+        private void txtFullName_Leave(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(txtFullName.Text))
+            {
+                txtFullName.Text = "Ad Soyad";
+                txtFullName.ForeColor = Color.Gray;            }
+        }
+
+        private void txtEmail_Enter(object sender, EventArgs e)
+        {
+            if (txtEmail.Text == "E-posta")
+            {
+                txtEmail.Text ="";
+                txtEmail.ForeColor = Color.Black;
+            }
+        }
+
+        private void txtEmail_Leave(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(txtEmail.Text))
+            {
+                txtEmail.Text = "E-posta";
+                txtEmail.ForeColor = Color.Gray;
+            }
+        }
+
+        private void txtNationalID_Enter(object sender, EventArgs e)
+        {
+            if(txtNationalID.Text == "T.C. Kimlik No")
+            {
+                txtNationalID.Text = "";
+                txtNationalID.ForeColor = Color.Black;
+            }
+        }
+
+        private void txtNationalID_Leave(object sender, EventArgs e)
+        {
+            if(string.IsNullOrWhiteSpace(txtNationalID.Text))
+            {
+                txtNationalID.Text = "T.C. Kimlik No";
+                txtNationalID.ForeColor = Color.Gray;
+            }
+        }
+
+        private void txtAddress_Enter(object sender, EventArgs e)
+        {
+            if(txtAddress.Text == "Adres")
+            {
+                txtAddress.Text = "";
+                txtAddress.ForeColor = Color.Black;
+            }
+        }
+
+        private void txtAddress_Leave(object sender, EventArgs e)
+        {
+            if(string.IsNullOrWhiteSpace(txtAddress.Text))
+            {
+                txtAddress.Text = "Adres";
+                txtAddress.ForeColor = Color.Gray;
+            }
+        }
+
+        private void txtPhone_Enter(object sender, EventArgs e)
+        {
+            if(txtPhone.Text == "Telefon")
+            {
+                txtPhone.Text = "";
+                txtPhone.ForeColor = Color.Black;
+            }
+        }
+
+        private void txtPhone_Leave(object sender, EventArgs e)
+        {
+            if(string.IsNullOrWhiteSpace(txtPhone.Text))
+            {
+                txtPhone.Text = "Telefon";
+                txtPhone.ForeColor = Color.Gray;
+            }
+        }
+
+        private void txtPassportID_Enter(object sender, EventArgs e)
+        {
+            if(txtPassportID.Text == "Pasaport No")
+            {
+                txtPassportID.Text = "";
+                txtPassportID.ForeColor = Color.Black;
+            }
+        }
+
+        private void txtPassportID_Leave(object sender, EventArgs e)
+        {
+            if(string.IsNullOrWhiteSpace(txtPassportID.Text))
+            {
+                txtPassportID.Text = "Pasaport No";
+                txtPassportID.ForeColor = Color.Gray;
+            }
+        }
+
+        private void txtIBAN_Enter(object sender, EventArgs e)
+        {
+            if(txtIBAN.Text == "IBAN")
+            {
+                txtIBAN.Text = "";
+                txtIBAN.ForeColor = Color.Black;
+            }
+        }
+
+        private void txtIBAN_Leave(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(txtIBAN.Text))
+            {
+                txtIBAN.Text = "IBAN";
+                txtIBAN.ForeColor = Color.Gray;
+            }
         }
     }
 }

@@ -30,27 +30,27 @@ namespace GunesMotel.UI.WinForms.Control
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
             this.pnlMain = new System.Windows.Forms.Panel();
             this.pnlContent = new System.Windows.Forms.Panel();
             this.dgvRoomTypes = new System.Windows.Forms.DataGridView();
             this.pnlForm = new System.Windows.Forms.Panel();
-            this.txtTypeName = new System.Windows.Forms.TextBox();
-            this.txtFeature = new System.Windows.Forms.TextBox();
-            this.pnlFormRow2 = new System.Windows.Forms.Panel();
-            this.txtDescription = new System.Windows.Forms.TextBox();
+            this.pnlFormRow1 = new System.Windows.Forms.Panel();
+            this.btnRefresh = new System.Windows.Forms.Button();
+            this.btnDelete = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
             this.btnUpdate = new System.Windows.Forms.Button();
-            this.btnDelete = new System.Windows.Forms.Button();
-            this.btnRefresh = new System.Windows.Forms.Button();
-            this.pnlFormRow1 = new System.Windows.Forms.Panel();
+            this.pnlFormRow2 = new System.Windows.Forms.Panel();
+            this.txtFeature = new System.Windows.Forms.TextBox();
+            this.txtTypeName = new System.Windows.Forms.TextBox();
+            this.txtDescription = new System.Windows.Forms.TextBox();
             this.pnlMain.SuspendLayout();
             this.pnlContent.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvRoomTypes)).BeginInit();
             this.pnlForm.SuspendLayout();
-            this.pnlFormRow2.SuspendLayout();
             this.pnlFormRow1.SuspendLayout();
+            this.pnlFormRow2.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnlMain
@@ -86,23 +86,23 @@ namespace GunesMotel.UI.WinForms.Control
             this.dgvRoomTypes.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvRoomTypes.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.dgvRoomTypes.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(240)))), ((int)(((byte)(230)))));
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(101)))), ((int)(((byte)(67)))), ((int)(((byte)(33)))));
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(240)))), ((int)(((byte)(230)))));
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(101)))), ((int)(((byte)(67)))), ((int)(((byte)(33)))));
-            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvRoomTypes.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(240)))), ((int)(((byte)(230)))));
+            dataGridViewCellStyle11.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(101)))), ((int)(((byte)(67)))), ((int)(((byte)(33)))));
+            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(240)))), ((int)(((byte)(230)))));
+            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(101)))), ((int)(((byte)(67)))), ((int)(((byte)(33)))));
+            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvRoomTypes.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle11;
             this.dgvRoomTypes.ColumnHeadersHeight = 50;
-            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle10.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle10.Font = new System.Drawing.Font("Segoe UI", 10F);
-            dataGridViewCellStyle10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(101)))), ((int)(((byte)(67)))), ((int)(((byte)(33)))));
-            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(240)))), ((int)(((byte)(230)))));
-            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(101)))), ((int)(((byte)(67)))), ((int)(((byte)(33)))));
-            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvRoomTypes.DefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle12.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle12.Font = new System.Drawing.Font("Segoe UI", 10F);
+            dataGridViewCellStyle12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(101)))), ((int)(((byte)(67)))), ((int)(((byte)(33)))));
+            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(240)))), ((int)(((byte)(230)))));
+            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(101)))), ((int)(((byte)(67)))), ((int)(((byte)(33)))));
+            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvRoomTypes.DefaultCellStyle = dataGridViewCellStyle12;
             this.dgvRoomTypes.EnableHeadersVisualStyles = false;
             this.dgvRoomTypes.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(232)))), ((int)(((byte)(220)))));
             this.dgvRoomTypes.Location = new System.Drawing.Point(20, 20);
@@ -129,60 +129,53 @@ namespace GunesMotel.UI.WinForms.Control
             this.pnlForm.Size = new System.Drawing.Size(1306, 160);
             this.pnlForm.TabIndex = 1;
             // 
-            // txtTypeName
+            // pnlFormRow1
             // 
-            this.txtTypeName.BackColor = System.Drawing.Color.White;
-            this.txtTypeName.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtTypeName.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.txtTypeName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(150)))), ((int)(((byte)(150)))));
-            this.txtTypeName.Location = new System.Drawing.Point(15, 43);
-            this.txtTypeName.Margin = new System.Windows.Forms.Padding(4);
-            this.txtTypeName.Multiline = true;
-            this.txtTypeName.Name = "txtTypeName";
-            this.txtTypeName.Size = new System.Drawing.Size(375, 30);
-            this.txtTypeName.TabIndex = 0;
-            this.txtTypeName.Text = "Oda Türü Adı";
+            this.pnlFormRow1.Controls.Add(this.btnRefresh);
+            this.pnlFormRow1.Controls.Add(this.btnDelete);
+            this.pnlFormRow1.Controls.Add(this.btnAdd);
+            this.pnlFormRow1.Controls.Add(this.btnUpdate);
+            this.pnlFormRow1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnlFormRow1.Location = new System.Drawing.Point(0, 100);
+            this.pnlFormRow1.Margin = new System.Windows.Forms.Padding(4);
+            this.pnlFormRow1.Name = "pnlFormRow1";
+            this.pnlFormRow1.Padding = new System.Windows.Forms.Padding(0, 0, 0, 15);
+            this.pnlFormRow1.Size = new System.Drawing.Size(1306, 60);
+            this.pnlFormRow1.TabIndex = 0;
             // 
-            // txtFeature
+            // btnRefresh
             // 
-            this.txtFeature.BackColor = System.Drawing.Color.White;
-            this.txtFeature.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtFeature.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.txtFeature.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(150)))), ((int)(((byte)(150)))));
-            this.txtFeature.Location = new System.Drawing.Point(398, 43);
-            this.txtFeature.Margin = new System.Windows.Forms.Padding(4);
-            this.txtFeature.Multiline = true;
-            this.txtFeature.Name = "txtFeature";
-            this.txtFeature.Size = new System.Drawing.Size(377, 30);
-            this.txtFeature.TabIndex = 1;
-            this.txtFeature.Text = "Özellikler";
+            this.btnRefresh.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(139)))), ((int)(((byte)(106)))), ((int)(((byte)(66)))));
+            this.btnRefresh.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnRefresh.FlatAppearance.BorderSize = 0;
+            this.btnRefresh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRefresh.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            this.btnRefresh.ForeColor = System.Drawing.Color.White;
+            this.btnRefresh.Location = new System.Drawing.Point(490, 4);
+            this.btnRefresh.Margin = new System.Windows.Forms.Padding(4);
+            this.btnRefresh.Name = "btnRefresh";
+            this.btnRefresh.Size = new System.Drawing.Size(148, 37);
+            this.btnRefresh.TabIndex = 3;
+            this.btnRefresh.Text = "Yenile";
+            this.btnRefresh.UseVisualStyleBackColor = false;
+            this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
             // 
-            // pnlFormRow2
+            // btnDelete
             // 
-            this.pnlFormRow2.Controls.Add(this.txtFeature);
-            this.pnlFormRow2.Controls.Add(this.txtTypeName);
-            this.pnlFormRow2.Controls.Add(this.txtDescription);
-            this.pnlFormRow2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnlFormRow2.Location = new System.Drawing.Point(0, 0);
-            this.pnlFormRow2.Margin = new System.Windows.Forms.Padding(4);
-            this.pnlFormRow2.Name = "pnlFormRow2";
-            this.pnlFormRow2.Padding = new System.Windows.Forms.Padding(0, 0, 0, 15);
-            this.pnlFormRow2.Size = new System.Drawing.Size(1306, 100);
-            this.pnlFormRow2.TabIndex = 1;
-            // 
-            // txtDescription
-            // 
-            this.txtDescription.BackColor = System.Drawing.Color.White;
-            this.txtDescription.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtDescription.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.txtDescription.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(150)))), ((int)(((byte)(150)))));
-            this.txtDescription.Location = new System.Drawing.Point(15, 4);
-            this.txtDescription.Margin = new System.Windows.Forms.Padding(4);
-            this.txtDescription.Multiline = true;
-            this.txtDescription.Name = "txtDescription";
-            this.txtDescription.Size = new System.Drawing.Size(760, 31);
-            this.txtDescription.TabIndex = 0;
-            this.txtDescription.Text = "Açıklama";
+            this.btnDelete.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(139)))), ((int)(((byte)(106)))), ((int)(((byte)(66)))));
+            this.btnDelete.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnDelete.FlatAppearance.BorderSize = 0;
+            this.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDelete.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            this.btnDelete.ForeColor = System.Drawing.Color.White;
+            this.btnDelete.Location = new System.Drawing.Point(180, 4);
+            this.btnDelete.Margin = new System.Windows.Forms.Padding(4);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(148, 37);
+            this.btnDelete.TabIndex = 2;
+            this.btnDelete.Text = "Sil";
+            this.btnDelete.UseVisualStyleBackColor = false;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // btnAdd
             // 
@@ -218,53 +211,66 @@ namespace GunesMotel.UI.WinForms.Control
             this.btnUpdate.UseVisualStyleBackColor = false;
             this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
-            // btnDelete
+            // pnlFormRow2
             // 
-            this.btnDelete.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(139)))), ((int)(((byte)(106)))), ((int)(((byte)(66)))));
-            this.btnDelete.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnDelete.FlatAppearance.BorderSize = 0;
-            this.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDelete.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
-            this.btnDelete.ForeColor = System.Drawing.Color.White;
-            this.btnDelete.Location = new System.Drawing.Point(180, 4);
-            this.btnDelete.Margin = new System.Windows.Forms.Padding(4);
-            this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(148, 37);
-            this.btnDelete.TabIndex = 2;
-            this.btnDelete.Text = "Sil";
-            this.btnDelete.UseVisualStyleBackColor = false;
-            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
+            this.pnlFormRow2.Controls.Add(this.txtFeature);
+            this.pnlFormRow2.Controls.Add(this.txtTypeName);
+            this.pnlFormRow2.Controls.Add(this.txtDescription);
+            this.pnlFormRow2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnlFormRow2.Location = new System.Drawing.Point(0, 0);
+            this.pnlFormRow2.Margin = new System.Windows.Forms.Padding(4);
+            this.pnlFormRow2.Name = "pnlFormRow2";
+            this.pnlFormRow2.Padding = new System.Windows.Forms.Padding(0, 0, 0, 15);
+            this.pnlFormRow2.Size = new System.Drawing.Size(1306, 100);
+            this.pnlFormRow2.TabIndex = 1;
             // 
-            // btnRefresh
+            // txtFeature
             // 
-            this.btnRefresh.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(139)))), ((int)(((byte)(106)))), ((int)(((byte)(66)))));
-            this.btnRefresh.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnRefresh.FlatAppearance.BorderSize = 0;
-            this.btnRefresh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRefresh.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
-            this.btnRefresh.ForeColor = System.Drawing.Color.White;
-            this.btnRefresh.Location = new System.Drawing.Point(490, 4);
-            this.btnRefresh.Margin = new System.Windows.Forms.Padding(4);
-            this.btnRefresh.Name = "btnRefresh";
-            this.btnRefresh.Size = new System.Drawing.Size(148, 37);
-            this.btnRefresh.TabIndex = 3;
-            this.btnRefresh.Text = "Yenile";
-            this.btnRefresh.UseVisualStyleBackColor = false;
-            this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
+            this.txtFeature.BackColor = System.Drawing.Color.White;
+            this.txtFeature.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtFeature.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.txtFeature.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(150)))), ((int)(((byte)(150)))));
+            this.txtFeature.Location = new System.Drawing.Point(398, 43);
+            this.txtFeature.Margin = new System.Windows.Forms.Padding(4);
+            this.txtFeature.Multiline = true;
+            this.txtFeature.Name = "txtFeature";
+            this.txtFeature.Size = new System.Drawing.Size(377, 30);
+            this.txtFeature.TabIndex = 1;
+            this.txtFeature.Text = "Özellikler";
+            this.txtFeature.Enter += new System.EventHandler(this.txtFeature_Enter);
+            this.txtFeature.Leave += new System.EventHandler(this.txtFeature_Leave);
             // 
-            // pnlFormRow1
+            // txtTypeName
             // 
-            this.pnlFormRow1.Controls.Add(this.btnRefresh);
-            this.pnlFormRow1.Controls.Add(this.btnDelete);
-            this.pnlFormRow1.Controls.Add(this.btnAdd);
-            this.pnlFormRow1.Controls.Add(this.btnUpdate);
-            this.pnlFormRow1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnlFormRow1.Location = new System.Drawing.Point(0, 100);
-            this.pnlFormRow1.Margin = new System.Windows.Forms.Padding(4);
-            this.pnlFormRow1.Name = "pnlFormRow1";
-            this.pnlFormRow1.Padding = new System.Windows.Forms.Padding(0, 0, 0, 15);
-            this.pnlFormRow1.Size = new System.Drawing.Size(1306, 60);
-            this.pnlFormRow1.TabIndex = 0;
+            this.txtTypeName.BackColor = System.Drawing.Color.White;
+            this.txtTypeName.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtTypeName.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.txtTypeName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(150)))), ((int)(((byte)(150)))));
+            this.txtTypeName.Location = new System.Drawing.Point(15, 43);
+            this.txtTypeName.Margin = new System.Windows.Forms.Padding(4);
+            this.txtTypeName.Multiline = true;
+            this.txtTypeName.Name = "txtTypeName";
+            this.txtTypeName.Size = new System.Drawing.Size(375, 30);
+            this.txtTypeName.TabIndex = 0;
+            this.txtTypeName.Text = "Oda Türü Adı";
+            this.txtTypeName.Enter += new System.EventHandler(this.txtTypeName_Enter);
+            this.txtTypeName.Leave += new System.EventHandler(this.txtTypeName_Leave);
+            // 
+            // txtDescription
+            // 
+            this.txtDescription.BackColor = System.Drawing.Color.White;
+            this.txtDescription.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtDescription.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.txtDescription.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(150)))), ((int)(((byte)(150)))));
+            this.txtDescription.Location = new System.Drawing.Point(15, 4);
+            this.txtDescription.Margin = new System.Windows.Forms.Padding(4);
+            this.txtDescription.Multiline = true;
+            this.txtDescription.Name = "txtDescription";
+            this.txtDescription.Size = new System.Drawing.Size(760, 31);
+            this.txtDescription.TabIndex = 0;
+            this.txtDescription.Text = "Açıklama";
+            this.txtDescription.Enter += new System.EventHandler(this.txtDescription_Enter);
+            this.txtDescription.Leave += new System.EventHandler(this.txtDescription_Leave);
             // 
             // RoomTypeManagementControl
             // 
@@ -279,9 +285,9 @@ namespace GunesMotel.UI.WinForms.Control
             this.pnlContent.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvRoomTypes)).EndInit();
             this.pnlForm.ResumeLayout(false);
+            this.pnlFormRow1.ResumeLayout(false);
             this.pnlFormRow2.ResumeLayout(false);
             this.pnlFormRow2.PerformLayout();
-            this.pnlFormRow1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

@@ -272,5 +272,114 @@ namespace GunesMotel.UI.WinForms.Control
             dgvRooms.DataSource = filteredList;
             dgvRooms.ClearSelection();
         }
+
+        private void txtPrice_Enter(object sender, EventArgs e)
+        {
+            if(txtPrice.Text== "Fiyat (€)")
+            {
+                txtPrice.Text = "";
+                txtPrice.ForeColor = Color.Black;
+            }
+        }
+
+        private void txtPrice_Leave(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(txtPrice.Text))
+            {
+                txtPrice.Text = "Fiyat (€)";
+                txtPrice.ForeColor = Color.Gray;
+            }
+        }
+
+        private void txtPriceSearch_Enter(object sender, EventArgs e)
+        {
+            if( txtPriceSearch.Text== "Ara (Oda No, Sezon)")
+            {
+                txtPriceSearch.Text = "";
+                txtPriceSearch.ForeColor = Color.Black;
+            }
+        }
+
+        private void txtPriceSearch_Leave(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(txtPriceSearch.Text))
+            {
+                txtPriceSearch.Text = "Ara (Oda No, Sezon)";
+                txtPriceSearch.ForeColor = Color.Gray;
+            }
+        }
+
+        private void txtRoomNumber_Enter(object sender, EventArgs e)
+        {
+            if(txtRoomNumber.Text == "Oda Numarası")
+            {
+                txtRoomNumber.Text = "";
+                txtRoomNumber.ForeColor = Color.Black;
+            }
+
+        }
+
+        private void txtRoomNumber_Leave(object sender, EventArgs e)
+        {
+            if(string.IsNullOrEmpty(txtRoomNumber.Text))
+            {
+                txtRoomNumber.Text = "Oda Numarası";
+                txtRoomNumber.ForeColor = Color.Gray;
+            }
+        }
+
+        private void txtFloor_Enter(object sender, EventArgs e)
+        {
+            if (txtFloor.Text == "Kat")
+            {
+                txtFloor.Text = "";
+                txtFloor.ForeColor = Color.Black;
+            }
+        }
+
+        private void txtFloor_Leave(object sender, EventArgs e)
+        {
+            if(string.IsNullOrEmpty(txtFloor.Text))
+            {
+                txtFloor.Text = "Kat";
+                txtFloor.ForeColor = Color.Gray;
+            }
+        }
+
+        private void txtDescription_Enter(object sender, EventArgs e)
+        {
+            if (txtDescription.Text == "Açıklama")
+            {
+                txtDescription.Text = "";
+                txtDescription.ForeColor = Color.Black;
+            }
+        }
+
+        private void txtDescription_Leave(object sender, EventArgs e)
+        {
+            if(string.IsNullOrEmpty(txtDescription.Text))
+            {
+                txtDescription.Text = "Açıklama";
+                txtDescription.ForeColor = Color.Gray;
+            }
+        }
+
+        private void txtSearch_Enter(object sender, EventArgs e)
+        {
+            if(txtSearch.Text == "Ara (Oda No, Durum, Açıklama, Oda Türü)")
+            {
+                txtSearch.Text = "";
+                txtSearch.ForeColor = Color.Black;
+            }
+        }
+
+        private void txtSearch_Leave(object sender, EventArgs e)
+        {
+            if(string.IsNullOrEmpty(txtSearch.Text))
+            {
+                txtSearch.Text = "Ara (Oda No, Durum, Açıklama, Oda Türü)";
+                txtSearch.ForeColor = Color.Gray;
+            }
+        }
     }
 }
