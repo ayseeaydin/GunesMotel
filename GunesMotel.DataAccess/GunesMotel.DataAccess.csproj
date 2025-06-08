@@ -151,6 +151,7 @@
     <Compile Include="Repositories\GenericRepository.cs" />
     <Compile Include="Repositories\RolePositionMapRepository.cs" />
     <Compile Include="Repositories\RoleRepository.cs" />
+    <Compile Include="Repositories\RoomPriceRepository.cs" />
     <Compile Include="Repositories\RoomRepository.cs" />
     <Compile Include="Repositories\RoomTypeRepository.cs" />
     <Compile Include="Repositories\SeasonRepository.cs" />

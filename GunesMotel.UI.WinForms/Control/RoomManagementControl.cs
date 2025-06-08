@@ -6,6 +6,9 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
+using System.Data.Entity;
+using GunesMotel.Common;
+using GunesMotel.DataAccess.Helpers;
 
 namespace GunesMotel.UI.WinForms.Control
 {
@@ -15,7 +18,10 @@ namespace GunesMotel.UI.WinForms.Control
         private readonly RoomRepository _roomRepo;
         private List<dynamic> _roomList;
         private int? SelectedRoomID = null;
-
+        private GunesMotelContext _context;
+        private RoomPriceRepository _roomPriceRepo;
+        private List<dynamic> _roomPriceList;
+        private int? selectedPriceID = null;
         public RoomManagementControl()
         {
             InitializeComponent();
@@ -31,6 +37,14 @@ namespace GunesMotel.UI.WinForms.Control
             LoadRooms();
             ClearForm();
             LoadRoomTypeTab();
+
+            _context = new GunesMotelContext();
+            _roomPriceRepo = new RoomPriceRepository(_context);
+
+            LoadPrices();
+            LoadPriceRooms();
+            LoadSeasons();
+
         }
 
         private void LoadRoomTypeTab()
@@ -379,6 +393,255 @@ namespace GunesMotel.UI.WinForms.Control
             {
                 txtSearch.Text = "Ara (Oda No, Durum, Açıklama, Oda Türü)";
                 txtSearch.ForeColor = Color.Gray;
+            }
+        }
+
+        private void LoadPrices()
+        {
+            try
+            {
+                var prices = _roomPriceRepo.GetAll();
+                _roomPriceList = prices.Select(p => new
+                {
+                    RoomPriceID = p.RoomPriceID,
+                    RoomNumber = p.Room.RoomNumber,
+                    RoomType = p.Room.RoomType.TypeName,
+                    SeasonName = p.Season.SeasonName,
+                    Price = p.Price,
+                    LastUpdated = p.LastUpdated.ToString("dd.MM.yyyy HH:mm")
+                }).ToList<dynamic>();
+
+                dgvPrices.DataSource = null;
+                dgvPrices.DataSource = _roomPriceList;
+                dgvPrices.ClearSelection();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Fiyatlar yüklenirken hata:\n" + ex.Message);
+            }
+        }
+
+        private void LoadPriceRooms()
+        {
+            var rooms = _roomRepo.GetAll(); // Direkt Rooms listesi
+            cmbPriceRoom.DataSource = rooms;
+            cmbPriceRoom.DisplayMember = "RoomNumber";
+            cmbPriceRoom.ValueMember = "RoomID";
+            cmbPriceRoom.SelectedIndex = -1;
+        }
+
+        private void LoadSeasons()
+        {
+            var seasons = _context.Seasons.ToList();
+            cmbSeason.DataSource = seasons;
+            cmbSeason.DisplayMember = "SeasonName";
+            cmbSeason.ValueMember = "SeasonID";
+            cmbSeason.SelectedIndex = -1;
+        }
+
+
+        private void ClearPriceForm()
+        {
+            cmbPriceRoom.SelectedIndex = -1;
+            cmbSeason.SelectedIndex = -1;
+            txtPrice.Text = "Fiyat (€)";
+            txtPrice.ForeColor = Color.Gray;
+        }
+
+        private void btnPriceAdd_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                // Validasyon
+                if (cmbPriceRoom.SelectedItem == null || cmbSeason.SelectedItem == null)
+                {
+                    MessageBox.Show("Lütfen oda ve sezon seçiniz.", "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
+                if (string.IsNullOrWhiteSpace(txtPrice.Text) || !decimal.TryParse(txtPrice.Text, out decimal price))
+                {
+                    MessageBox.Show("Lütfen geçerli bir fiyat giriniz.", "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
+                var selectedRoom = (Rooms)cmbPriceRoom.SelectedItem;
+                var selectedSeason = (Seasons)cmbSeason.SelectedItem;
+
+                var roomPrice = new RoomPrices
+                {
+                    RoomID = selectedRoom.RoomID,
+                    SeasonID = selectedSeason.SeasonID,
+                    Price = price,
+                    LastUpdated = DateTime.Now
+                };
+
+                _roomPriceRepo.Add(roomPrice);
+
+                GunesMotel.DataAccess.Helpers.LogHelper.AddLog(
+                    GunesMotel.Common.CurrentUser.UserID,
+                    "Fiyat Yönetimi",
+                    "Ekleme",
+                    $"Oda: {selectedRoom.RoomNumber}, Sezon: {selectedSeason.SeasonName}, Fiyat: {price} eklendi."
+                );
+
+                MessageBox.Show("Fiyat başarıyla eklendi.", "Bilgi", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                LoadPrices();
+                ClearPriceForm();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Fiyat eklenirken hata:\n" + ex.Message, "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void dgvPrices_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0 && dgvPrices.SelectedRows.Count > 0)
+            {
+                var row = dgvPrices.SelectedRows[0];
+
+                selectedPriceID = Convert.ToInt32(row.Cells["colPriceID"].Value);
+
+                cmbPriceRoom.Text = row.Cells["colPriceRoomNumber"].Value?.ToString();
+                cmbSeason.Text = row.Cells["colSeasonName"].Value?.ToString();
+                txtPrice.Text = row.Cells["colPrice"].Value?.ToString();
+                txtPrice.ForeColor = Color.Black;
+            }
+        }
+
+        private void btnPriceUpdate_Click(object sender, EventArgs e)
+        {
+            if (selectedPriceID == null)
+            {
+                MessageBox.Show("Lütfen güncellenecek bir fiyat seçin.", "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            try
+            {
+                if (cmbPriceRoom.SelectedItem == null || cmbSeason.SelectedItem == null || string.IsNullOrWhiteSpace(txtPrice.Text))
+                {
+                    MessageBox.Show("Lütfen tüm alanları doldurun.", "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
+                if (!decimal.TryParse(txtPrice.Text.Trim(), out decimal parsedPrice))
+                {
+                    MessageBox.Show("Geçerli bir fiyat girin.", "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
+                // Güncellenecek fiyatı bul
+                var existingPrice = _roomPriceRepo.GetById(selectedPriceID.Value);
+                if (existingPrice == null)
+                {
+                    MessageBox.Show("Fiyat bulunamadı.", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
+                // Güncellemeleri yap
+                existingPrice.RoomID = ((Rooms)cmbPriceRoom.SelectedItem).RoomID;
+                existingPrice.SeasonID = ((Seasons)cmbSeason.SelectedItem).SeasonID;
+                existingPrice.Price = parsedPrice;
+
+                _roomPriceRepo.Update(existingPrice);
+
+                LogHelper.AddLog(CurrentUser.UserID, "Fiyat Yönetimi", "Güncelleme", $"Fiyat güncellendi. ID: {existingPrice.RoomPriceID}");
+
+                MessageBox.Show("Fiyat başarıyla güncellendi.", "Bilgi", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                LoadPrices();
+                ClearPriceForm();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Fiyat güncellenirken hata:\n" + ex.Message, "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void btnPriceDelete_Click(object sender, EventArgs e)
+        {
+            if (selectedPriceID == null)
+            {
+                MessageBox.Show("Lütfen silinecek bir fiyat seçin.", "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            var dialog = MessageBox.Show("Seçili fiyatı silmek istediğinize emin misiniz?", "Silme Onayı", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (dialog != DialogResult.Yes)
+                return;
+
+            try
+            {
+                var priceToDelete = _roomPriceRepo.GetById(selectedPriceID.Value);
+                if (priceToDelete == null)
+                {
+                    MessageBox.Show("Silinecek fiyat bulunamadı.", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
+                _roomPriceRepo.Delete(priceToDelete);
+
+                LogHelper.AddLog(CurrentUser.UserID, "Fiyat Yönetimi", "Silme", $"Fiyat silindi. ID: {priceToDelete.RoomPriceID}");
+
+                MessageBox.Show("Fiyat başarıyla silindi.", "Bilgi", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                LoadPrices();
+                ClearPriceForm();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Fiyat silinirken hata oluştu:\n" + ex.Message, "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void btnPriceRefresh_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                LoadPrices();         // Fiyat listesini güncelle
+                ClearPriceForm();     // Form alanlarını temizle
+
+                LogHelper.AddLog(CurrentUser.UserID, "Fiyat Yönetimi", "Yenileme", "Fiyat listesi yenilendi.");
+                MessageBox.Show("Fiyat listesi yenilendi.", "Bilgi", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Fiyatlar yenilenirken hata oluştu:\n" + ex.Message, "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void txtPriceSearch_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                string searchText = txtPriceSearch.Text.Trim().ToLower();
+                var allPrices = _roomPriceRepo.GetAll();  // Tüm fiyatları getir
+
+                var filteredList = allPrices
+                    .Where(p =>
+                        (p.Room != null && p.Room.RoomNumber.ToLower().Contains(searchText)) ||
+                        (p.Room != null && p.Room.RoomType != null && p.Room.RoomType.TypeName.ToLower().Contains(searchText)) ||
+                        (p.Season != null && p.Season.SeasonName.ToLower().Contains(searchText)) ||
+                        p.Price.ToString().Contains(searchText) ||
+                        p.LastUpdated.ToString("dd.MM.yyyy").Contains(searchText)
+                    )
+                    .Select(p => new
+                    {
+                        p.RoomPriceID,
+                        RoomNumber = p.Room?.RoomNumber ?? "Bilinmiyor",
+                        RoomType = p.Room?.RoomType?.TypeName ?? "Bilinmiyor",
+                        SeasonName = p.Season?.SeasonName ?? "Bilinmiyor",
+                        Price = p.Price,
+                        LastUpdated = p.LastUpdated
+                    })
+                    .ToList();
+
+                dgvPrices.DataSource = filteredList;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Filtreleme sırasında hata oluştu:\n" + ex.Message, "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }

@@ -15,5 +15,9 @@ namespace GunesMotel.Entities
         public int SeasonID { get; set; }
         public decimal Price { get; set; }
         public DateTime LastUpdated { get; set; }
+
+        // Navigation Properties
+        public virtual Rooms Room { get; set; }
+        public virtual Seasons Season { get; set; }
     }
 }

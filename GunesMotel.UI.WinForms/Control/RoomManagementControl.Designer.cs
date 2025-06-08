@@ -32,10 +32,10 @@ namespace GunesMotel.UI.WinForms.Control
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle39 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle40 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle37 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle38 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
             this.pnlMain = new System.Windows.Forms.Panel();
             this.tabControl = new System.Windows.Forms.TabControl();
             this.tabRoomTypes = new System.Windows.Forms.TabPage();
@@ -55,11 +55,13 @@ namespace GunesMotel.UI.WinForms.Control
             this.pnlFormRow3 = new System.Windows.Forms.Panel();
             this.txtDescription = new System.Windows.Forms.TextBox();
             this.pnlFormRow2 = new System.Windows.Forms.Panel();
-            this.txtFloor = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.cmbStatus = new System.Windows.Forms.ComboBox();
-            this.pnlFormRow1 = new System.Windows.Forms.Panel();
-            this.txtRoomNumber = new System.Windows.Forms.TextBox();
             this.cmbRoomType = new System.Windows.Forms.ComboBox();
+            this.pnlFormRow1 = new System.Windows.Forms.Panel();
+            this.txtFloor = new System.Windows.Forms.TextBox();
+            this.txtRoomNumber = new System.Windows.Forms.TextBox();
             this.pnlRoomButtons = new System.Windows.Forms.Panel();
             this.btnAdd = new System.Windows.Forms.Button();
             this.btnUpdate = new System.Windows.Forms.Button();
@@ -76,6 +78,8 @@ namespace GunesMotel.UI.WinForms.Control
             this.colLastUpdated = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pnlPriceForm = new System.Windows.Forms.Panel();
             this.pnlPriceFormRow1 = new System.Windows.Forms.Panel();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.cmbPriceRoom = new System.Windows.Forms.ComboBox();
             this.cmbSeason = new System.Windows.Forms.ComboBox();
             this.pnlPriceFormRow2 = new System.Windows.Forms.Panel();
@@ -86,10 +90,6 @@ namespace GunesMotel.UI.WinForms.Control
             this.btnPriceUpdate = new System.Windows.Forms.Button();
             this.btnPriceDelete = new System.Windows.Forms.Button();
             this.btnPriceRefresh = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
             this.pnlMain.SuspendLayout();
             this.tabControl.SuspendLayout();
             this.tabRooms.SuspendLayout();
@@ -176,14 +176,14 @@ namespace GunesMotel.UI.WinForms.Control
             this.dgvRooms.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvRooms.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.dgvRooms.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle39.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle39.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(240)))), ((int)(((byte)(230)))));
-            dataGridViewCellStyle39.Font = new System.Drawing.Font("Segoe UI", 12F);
-            dataGridViewCellStyle39.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(101)))), ((int)(((byte)(67)))), ((int)(((byte)(33)))));
-            dataGridViewCellStyle39.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(240)))), ((int)(((byte)(230)))));
-            dataGridViewCellStyle39.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(101)))), ((int)(((byte)(67)))), ((int)(((byte)(33)))));
-            dataGridViewCellStyle39.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvRooms.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle39;
+            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle15.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(240)))), ((int)(((byte)(230)))));
+            dataGridViewCellStyle15.Font = new System.Drawing.Font("Segoe UI", 12F);
+            dataGridViewCellStyle15.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(101)))), ((int)(((byte)(67)))), ((int)(((byte)(33)))));
+            dataGridViewCellStyle15.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(240)))), ((int)(((byte)(230)))));
+            dataGridViewCellStyle15.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(101)))), ((int)(((byte)(67)))), ((int)(((byte)(33)))));
+            dataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvRooms.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle15;
             this.dgvRooms.ColumnHeadersHeight = 50;
             this.dgvRooms.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colRoomID,
@@ -193,14 +193,14 @@ namespace GunesMotel.UI.WinForms.Control
             this.colStatus,
             this.colFloor,
             this.colDescription});
-            dataGridViewCellStyle40.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle40.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle40.Font = new System.Drawing.Font("Segoe UI", 12F);
-            dataGridViewCellStyle40.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(101)))), ((int)(((byte)(67)))), ((int)(((byte)(33)))));
-            dataGridViewCellStyle40.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(240)))), ((int)(((byte)(230)))));
-            dataGridViewCellStyle40.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(101)))), ((int)(((byte)(67)))), ((int)(((byte)(33)))));
-            dataGridViewCellStyle40.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvRooms.DefaultCellStyle = dataGridViewCellStyle40;
+            dataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle16.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle16.Font = new System.Drawing.Font("Segoe UI", 12F);
+            dataGridViewCellStyle16.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(101)))), ((int)(((byte)(67)))), ((int)(((byte)(33)))));
+            dataGridViewCellStyle16.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(240)))), ((int)(((byte)(230)))));
+            dataGridViewCellStyle16.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(101)))), ((int)(((byte)(67)))), ((int)(((byte)(33)))));
+            dataGridViewCellStyle16.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvRooms.DefaultCellStyle = dataGridViewCellStyle16;
             this.dgvRooms.EnableHeadersVisualStyles = false;
             this.dgvRooms.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(232)))), ((int)(((byte)(220)))));
             this.dgvRooms.Location = new System.Drawing.Point(20, 20);
@@ -360,21 +360,27 @@ namespace GunesMotel.UI.WinForms.Control
             this.pnlFormRow2.Size = new System.Drawing.Size(1115, 60);
             this.pnlFormRow2.TabIndex = 1;
             // 
-            // txtFloor
+            // label2
             // 
-            this.txtFloor.BackColor = System.Drawing.Color.White;
-            this.txtFloor.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtFloor.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.txtFloor.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(150)))), ((int)(((byte)(150)))));
-            this.txtFloor.Location = new System.Drawing.Point(485, 15);
-            this.txtFloor.Margin = new System.Windows.Forms.Padding(4);
-            this.txtFloor.Multiline = true;
-            this.txtFloor.Name = "txtFloor";
-            this.txtFloor.Size = new System.Drawing.Size(450, 30);
-            this.txtFloor.TabIndex = 0;
-            this.txtFloor.Text = "Kat";
-            this.txtFloor.Enter += new System.EventHandler(this.txtFloor_Enter);
-            this.txtFloor.Leave += new System.EventHandler(this.txtFloor_Leave);
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(139)))), ((int)(((byte)(106)))), ((int)(((byte)(66)))));
+            this.label2.Location = new System.Drawing.Point(480, -5);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(71, 25);
+            this.label2.TabIndex = 4;
+            this.label2.Text = "Durum:";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(139)))), ((int)(((byte)(106)))), ((int)(((byte)(66)))));
+            this.label1.Location = new System.Drawing.Point(10, -5);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(83, 25);
+            this.label1.TabIndex = 3;
+            this.label1.Text = "Oda Tipi:";
             // 
             // cmbStatus
             // 
@@ -391,6 +397,17 @@ namespace GunesMotel.UI.WinForms.Control
             this.cmbStatus.Size = new System.Drawing.Size(450, 36);
             this.cmbStatus.TabIndex = 1;
             // 
+            // cmbRoomType
+            // 
+            this.cmbRoomType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbRoomType.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.cmbRoomType.FormattingEnabled = true;
+            this.cmbRoomType.Location = new System.Drawing.Point(15, 24);
+            this.cmbRoomType.Margin = new System.Windows.Forms.Padding(4);
+            this.cmbRoomType.Name = "cmbRoomType";
+            this.cmbRoomType.Size = new System.Drawing.Size(450, 36);
+            this.cmbRoomType.TabIndex = 1;
+            // 
             // pnlFormRow1
             // 
             this.pnlFormRow1.Controls.Add(this.txtFloor);
@@ -402,6 +419,22 @@ namespace GunesMotel.UI.WinForms.Control
             this.pnlFormRow1.Padding = new System.Windows.Forms.Padding(0, 0, 0, 15);
             this.pnlFormRow1.Size = new System.Drawing.Size(1115, 60);
             this.pnlFormRow1.TabIndex = 0;
+            // 
+            // txtFloor
+            // 
+            this.txtFloor.BackColor = System.Drawing.Color.White;
+            this.txtFloor.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtFloor.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.txtFloor.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(150)))), ((int)(((byte)(150)))));
+            this.txtFloor.Location = new System.Drawing.Point(485, 15);
+            this.txtFloor.Margin = new System.Windows.Forms.Padding(4);
+            this.txtFloor.Multiline = true;
+            this.txtFloor.Name = "txtFloor";
+            this.txtFloor.Size = new System.Drawing.Size(450, 30);
+            this.txtFloor.TabIndex = 0;
+            this.txtFloor.Text = "Kat";
+            this.txtFloor.Enter += new System.EventHandler(this.txtFloor_Enter);
+            this.txtFloor.Leave += new System.EventHandler(this.txtFloor_Leave);
             // 
             // txtRoomNumber
             // 
@@ -418,17 +451,6 @@ namespace GunesMotel.UI.WinForms.Control
             this.txtRoomNumber.Text = "Oda Numarası";
             this.txtRoomNumber.Enter += new System.EventHandler(this.txtRoomNumber_Enter);
             this.txtRoomNumber.Leave += new System.EventHandler(this.txtRoomNumber_Leave);
-            // 
-            // cmbRoomType
-            // 
-            this.cmbRoomType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbRoomType.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.cmbRoomType.FormattingEnabled = true;
-            this.cmbRoomType.Location = new System.Drawing.Point(15, 24);
-            this.cmbRoomType.Margin = new System.Windows.Forms.Padding(4);
-            this.cmbRoomType.Name = "cmbRoomType";
-            this.cmbRoomType.Size = new System.Drawing.Size(450, 36);
-            this.cmbRoomType.TabIndex = 1;
             // 
             // pnlRoomButtons
             // 
@@ -542,14 +564,14 @@ namespace GunesMotel.UI.WinForms.Control
             this.dgvPrices.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvPrices.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.dgvPrices.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle37.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle37.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(240)))), ((int)(((byte)(230)))));
-            dataGridViewCellStyle37.Font = new System.Drawing.Font("Segoe UI", 12F);
-            dataGridViewCellStyle37.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(101)))), ((int)(((byte)(67)))), ((int)(((byte)(33)))));
-            dataGridViewCellStyle37.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(240)))), ((int)(((byte)(230)))));
-            dataGridViewCellStyle37.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(101)))), ((int)(((byte)(67)))), ((int)(((byte)(33)))));
-            dataGridViewCellStyle37.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvPrices.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle37;
+            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle13.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(240)))), ((int)(((byte)(230)))));
+            dataGridViewCellStyle13.Font = new System.Drawing.Font("Segoe UI", 12F);
+            dataGridViewCellStyle13.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(101)))), ((int)(((byte)(67)))), ((int)(((byte)(33)))));
+            dataGridViewCellStyle13.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(240)))), ((int)(((byte)(230)))));
+            dataGridViewCellStyle13.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(101)))), ((int)(((byte)(67)))), ((int)(((byte)(33)))));
+            dataGridViewCellStyle13.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvPrices.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle13;
             this.dgvPrices.ColumnHeadersHeight = 50;
             this.dgvPrices.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colPriceID,
@@ -558,14 +580,14 @@ namespace GunesMotel.UI.WinForms.Control
             this.colSeasonName,
             this.colPrice,
             this.colLastUpdated});
-            dataGridViewCellStyle38.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle38.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle38.Font = new System.Drawing.Font("Segoe UI", 12F);
-            dataGridViewCellStyle38.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(101)))), ((int)(((byte)(67)))), ((int)(((byte)(33)))));
-            dataGridViewCellStyle38.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(240)))), ((int)(((byte)(230)))));
-            dataGridViewCellStyle38.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(101)))), ((int)(((byte)(67)))), ((int)(((byte)(33)))));
-            dataGridViewCellStyle38.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvPrices.DefaultCellStyle = dataGridViewCellStyle38;
+            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle14.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle14.Font = new System.Drawing.Font("Segoe UI", 12F);
+            dataGridViewCellStyle14.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(101)))), ((int)(((byte)(67)))), ((int)(((byte)(33)))));
+            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(240)))), ((int)(((byte)(230)))));
+            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(101)))), ((int)(((byte)(67)))), ((int)(((byte)(33)))));
+            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvPrices.DefaultCellStyle = dataGridViewCellStyle14;
             this.dgvPrices.EnableHeadersVisualStyles = false;
             this.dgvPrices.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(232)))), ((int)(((byte)(220)))));
             this.dgvPrices.Location = new System.Drawing.Point(20, 20);
@@ -578,6 +600,7 @@ namespace GunesMotel.UI.WinForms.Control
             this.dgvPrices.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvPrices.Size = new System.Drawing.Size(1115, 400);
             this.dgvPrices.TabIndex = 0;
+            this.dgvPrices.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPrices_CellClick);
             // 
             // colPriceID
             // 
@@ -656,6 +679,28 @@ namespace GunesMotel.UI.WinForms.Control
             this.pnlPriceFormRow1.Size = new System.Drawing.Size(1115, 60);
             this.pnlPriceFormRow1.TabIndex = 0;
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(139)))), ((int)(((byte)(106)))), ((int)(((byte)(66)))));
+            this.label4.Location = new System.Drawing.Point(480, -5);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(64, 25);
+            this.label4.TabIndex = 4;
+            this.label4.Text = "Sezon:";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(139)))), ((int)(((byte)(106)))), ((int)(((byte)(66)))));
+            this.label3.Location = new System.Drawing.Point(10, -5);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(50, 25);
+            this.label3.TabIndex = 4;
+            this.label3.Text = "Oda:";
+            // 
             // cmbPriceRoom
             // 
             this.cmbPriceRoom.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
@@ -719,6 +764,7 @@ namespace GunesMotel.UI.WinForms.Control
             this.txtPriceSearch.Size = new System.Drawing.Size(450, 30);
             this.txtPriceSearch.TabIndex = 1;
             this.txtPriceSearch.Text = "Ara (Oda No, Sezon)";
+            this.txtPriceSearch.TextChanged += new System.EventHandler(this.txtPriceSearch_TextChanged);
             this.txtPriceSearch.Enter += new System.EventHandler(this.txtPriceSearch_Enter);
             this.txtPriceSearch.Leave += new System.EventHandler(this.txtPriceSearch_Leave);
             // 
@@ -750,6 +796,7 @@ namespace GunesMotel.UI.WinForms.Control
             this.btnPriceAdd.TabIndex = 0;
             this.btnPriceAdd.Text = "Ekle";
             this.btnPriceAdd.UseVisualStyleBackColor = false;
+            this.btnPriceAdd.Click += new System.EventHandler(this.btnPriceAdd_Click);
             // 
             // btnPriceUpdate
             // 
@@ -766,6 +813,7 @@ namespace GunesMotel.UI.WinForms.Control
             this.btnPriceUpdate.TabIndex = 1;
             this.btnPriceUpdate.Text = "Güncelle";
             this.btnPriceUpdate.UseVisualStyleBackColor = false;
+            this.btnPriceUpdate.Click += new System.EventHandler(this.btnPriceUpdate_Click);
             // 
             // btnPriceDelete
             // 
@@ -782,6 +830,7 @@ namespace GunesMotel.UI.WinForms.Control
             this.btnPriceDelete.TabIndex = 2;
             this.btnPriceDelete.Text = "Sil";
             this.btnPriceDelete.UseVisualStyleBackColor = false;
+            this.btnPriceDelete.Click += new System.EventHandler(this.btnPriceDelete_Click);
             // 
             // btnPriceRefresh
             // 
@@ -798,50 +847,7 @@ namespace GunesMotel.UI.WinForms.Control
             this.btnPriceRefresh.TabIndex = 3;
             this.btnPriceRefresh.Text = "Yenile";
             this.btnPriceRefresh.UseVisualStyleBackColor = false;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(139)))), ((int)(((byte)(106)))), ((int)(((byte)(66)))));
-            this.label1.Location = new System.Drawing.Point(10, -5);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(83, 25);
-            this.label1.TabIndex = 3;
-            this.label1.Text = "Oda Tipi:";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(139)))), ((int)(((byte)(106)))), ((int)(((byte)(66)))));
-            this.label2.Location = new System.Drawing.Point(480, -5);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(71, 25);
-            this.label2.TabIndex = 4;
-            this.label2.Text = "Durum:";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(139)))), ((int)(((byte)(106)))), ((int)(((byte)(66)))));
-            this.label3.Location = new System.Drawing.Point(10, -5);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(50, 25);
-            this.label3.TabIndex = 4;
-            this.label3.Text = "Oda:";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(139)))), ((int)(((byte)(106)))), ((int)(((byte)(66)))));
-            this.label4.Location = new System.Drawing.Point(480, -5);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(64, 25);
-            this.label4.TabIndex = 4;
-            this.label4.Text = "Sezon:";
+            this.btnPriceRefresh.Click += new System.EventHandler(this.btnPriceRefresh_Click);
             // 
             // RoomManagementControl
             // 
