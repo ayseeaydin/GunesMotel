@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using Microsoft.EntityFrameworkCore;
+using GunesMotel.Entities.DTOs;
 
 namespace GunesMotel.DataAccess.Repositories
 {
@@ -82,6 +83,35 @@ namespace GunesMotel.DataAccess.Repositories
 
                 return result;
             }
-        }          
+        }
+
+        public List<RoomStatusDTO> GetRoomStatuses()
+        {
+            using var context = new GunesMotelContext();
+            var today = DateTime.Today;
+
+            // Bugünkü aktif rezervasyonlara göre dolu odaları al
+            var doluOdalar = context.Reservations
+                .Where(r => r.CheckInDate <= today && r.CheckOutDate >= today)
+                .Select(r => r.RoomID)
+                .Distinct()
+                .ToList();
+
+            var roomStatuses = context.Rooms
+                .Include(r => r.RoomType)
+                .Select(r => new RoomStatusDTO
+                {
+                    RoomID = r.RoomID,
+                    RoomNumber = r.RoomNumber,
+                    RoomTypeName = r.RoomType.TypeName, // dikkat: RoomTypeName değilse burada TypeName olmalı
+                    Floor = r.Floor.HasValue ? r.Floor.Value.ToString() : "Belirtilmemiş",
+                    Status = doluOdalar.Contains(r.RoomID) ? "Dolu" : "Boş"
+                })
+                .OrderBy(r => r.Floor)
+                .ThenBy(r => r.RoomNumber)
+                .ToList();
+
+            return roomStatuses;
+        }
     }
 }

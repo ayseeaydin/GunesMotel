@@ -52,6 +52,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Customers.cs" />
+    <Compile Include="DTOs\RoomStatusDTO.cs" />
     <Compile Include="Employees.cs" />
     <Compile Include="ExtraServicePrices.cs" />
     <Compile Include="ExtraServices.cs" />
