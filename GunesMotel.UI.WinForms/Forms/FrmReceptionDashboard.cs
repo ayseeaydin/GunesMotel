@@ -142,11 +142,15 @@ namespace GunesMotel.UI.WinForms.Forms
             var btn = sender as Button;
             if (btn == null || btn.Tag == null) return;
 
-            var room = btn.Tag as RoomStatusDTO;
+            int roomId = (int)btn.Tag;
 
-            if (room == null) return;
+            using (var context = new GunesMotelContext())
+            {
+                var room = context.Rooms.Include(r => r.RoomType).FirstOrDefault(r => r.RoomID == roomId);
+                if (room == null) return;
 
-            MessageBox.Show($"Oda {room.RoomNumber} - Durum: {room.Status}", "Oda Detayı");
+                MessageBox.Show($"Oda {room.RoomNumber} - Durum: {room.Status}", "Oda Detayı");
+            }
         }
 
         private void btnClose_Click(object sender, EventArgs e)
