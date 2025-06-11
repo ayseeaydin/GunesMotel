@@ -15,7 +15,7 @@ namespace GunesMotel.Entities
         public string Email { get; set; }
         public string? NationalID { get; set; }
         public string? PassportNo { get; set; }
-        public DateTime BirthDate { get; set; }
+        public DateTime? BirthDate { get; set; }
         public string Address { get; set; }
         public string Gender { get; set; }
         public DateTime RegisterDate { get; set; }

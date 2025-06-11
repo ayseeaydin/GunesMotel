@@ -77,7 +77,7 @@
             this.flpRooms.Location = new System.Drawing.Point(20, 55);
             this.flpRooms.Name = "flpRooms";
             this.flpRooms.Padding = new System.Windows.Forms.Padding(5);
-            this.flpRooms.Size = new System.Drawing.Size(700, 340);
+            this.flpRooms.Size = new System.Drawing.Size(784, 355);
             this.flpRooms.TabIndex = 2;
             // 
             // pnlLegend
@@ -87,7 +87,7 @@
             this.pnlLegend.Controls.Add(this.lblBos);
             this.pnlLegend.Controls.Add(this.lblDolu);
             this.pnlLegend.Controls.Add(this.lblTemizlikte);
-            this.pnlLegend.Location = new System.Drawing.Point(400, 10);
+            this.pnlLegend.Location = new System.Drawing.Point(521, 9);
             this.pnlLegend.Name = "pnlLegend";
             this.pnlLegend.Size = new System.Drawing.Size(300, 35);
             this.pnlLegend.TabIndex = 1;
@@ -127,7 +127,7 @@
             this.Controls.Add(this.pnlLegend);
             this.Controls.Add(this.flpRooms);
             this.Name = "RoomStatusControl";
-            this.Size = new System.Drawing.Size(740, 420);
+            this.Size = new System.Drawing.Size(824, 435);
             this.pnlLegend.ResumeLayout(false);
             this.pnlLegend.PerformLayout();
             this.ResumeLayout(false);

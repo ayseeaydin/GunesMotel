@@ -57,11 +57,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Control\AddCustomerControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Control\AddCustomerControl.Designer.cs">
+      <DependentUpon>AddCustomerControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="Control\EmployeeManagementControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Control\EmployeeManagementControl.Designer.cs">
       <DependentUpon>EmployeeManagementControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Control\ReservationManagementControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Control\ReservationManagementControl.Designer.cs">
+      <DependentUpon>ReservationManagementControl.cs</DependentUpon>
     </Compile>
     <Compile Include="Control\RoleManagementControl.cs">
       <SubType>UserControl</SubType>
@@ -131,6 +143,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Control\AddCustomerControl.resx">
+      <DependentUpon>AddCustomerControl.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Control\EmployeeManagementControl.resx">
       <DependentUpon>EmployeeManagementControl.cs</DependentUpon>
     </EmbeddedResource>

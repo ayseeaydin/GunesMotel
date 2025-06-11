@@ -52,19 +52,20 @@
             this.pnlQuickNotes = new System.Windows.Forms.Panel();
             this.lblNotesTitle = new System.Windows.Forms.Label();
             this.txtQuickNotes = new System.Windows.Forms.TextBox();
+            this.lstRecentActivities = new System.Windows.Forms.ListBox();
             this.pnlTodaySchedule = new System.Windows.Forms.Panel();
             this.lblScheduleTitle = new System.Windows.Forms.Label();
             this.dgvTodaySchedule = new System.Windows.Forms.DataGridView();
             this.pnlMiddleSection = new System.Windows.Forms.Panel();
             this.pnlRecentActivities = new System.Windows.Forms.Panel();
             this.lblActivitiesTitle = new System.Windows.Forms.Label();
-            this.lstRecentActivities = new System.Windows.Forms.ListBox();
             this.pnlRoomStatus = new System.Windows.Forms.Panel();
             this.pnlQuickActions = new System.Windows.Forms.Panel();
             this.btnEkHizmet = new System.Windows.Forms.Button();
-            this.btnYeniRezervasyon = new System.Windows.Forms.Button();
-            this.btnCheckOut = new System.Windows.Forms.Button();
             this.btnCheckIn = new System.Windows.Forms.Button();
+            this.btnCheckOut = new System.Windows.Forms.Button();
+            this.btnYeniRezervasyon = new System.Windows.Forms.Button();
+            this.lblRoomStatusTitle = new System.Windows.Forms.Label();
             this.pnlRoomGrid = new System.Windows.Forms.Panel();
             this.pnlStatsCards = new System.Windows.Forms.Panel();
             this.pnlPendingCard = new System.Windows.Forms.Panel();
@@ -87,7 +88,6 @@
             this.lblLastUpdate = new System.Windows.Forms.Label();
             this.lblStatus = new System.Windows.Forms.Label();
             this.lblCopyright = new System.Windows.Forms.Label();
-            this.lblRoomStatusTitle = new System.Windows.Forms.Label();
             this.pnlSidebar.SuspendLayout();
             this.pnlLogo.SuspendLayout();
             this.pnlHeader.SuspendLayout();
@@ -216,6 +216,7 @@
             this.btnMusteriler.Text = "👥 Müşteriler";
             this.btnMusteriler.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnMusteriler.UseVisualStyleBackColor = true;
+            this.btnMusteriler.Click += new System.EventHandler(this.btnMusteriler_Click);
             // 
             // btnCheckinOut
             // 
@@ -422,11 +423,10 @@
             // 
             this.pnlBottomSection.Controls.Add(this.pnlQuickNotes);
             this.pnlBottomSection.Controls.Add(this.pnlTodaySchedule);
-            this.pnlBottomSection.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlBottomSection.Location = new System.Drawing.Point(0, 443);
+            this.pnlBottomSection.Location = new System.Drawing.Point(0, 509);
             this.pnlBottomSection.Margin = new System.Windows.Forms.Padding(4);
             this.pnlBottomSection.Name = "pnlBottomSection";
-            this.pnlBottomSection.Size = new System.Drawing.Size(1426, 378);
+            this.pnlBottomSection.Size = new System.Drawing.Size(1426, 312);
             this.pnlBottomSection.TabIndex = 2;
             // 
             // pnlQuickNotes
@@ -435,12 +435,12 @@
             this.pnlQuickNotes.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pnlQuickNotes.Controls.Add(this.lblNotesTitle);
             this.pnlQuickNotes.Controls.Add(this.txtQuickNotes);
-            this.pnlQuickNotes.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlQuickNotes.Location = new System.Drawing.Point(747, 0);
+            this.pnlQuickNotes.Controls.Add(this.lstRecentActivities);
+            this.pnlQuickNotes.Location = new System.Drawing.Point(745, 20);
             this.pnlQuickNotes.Margin = new System.Windows.Forms.Padding(4);
             this.pnlQuickNotes.Name = "pnlQuickNotes";
             this.pnlQuickNotes.Padding = new System.Windows.Forms.Padding(13, 12, 13, 12);
-            this.pnlQuickNotes.Size = new System.Drawing.Size(679, 378);
+            this.pnlQuickNotes.Size = new System.Drawing.Size(662, 288);
             this.pnlQuickNotes.TabIndex = 1;
             // 
             // lblNotesTitle
@@ -448,7 +448,7 @@
             this.lblNotesTitle.AutoSize = true;
             this.lblNotesTitle.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
             this.lblNotesTitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(93)))), ((int)(((byte)(64)))), ((int)(((byte)(55)))));
-            this.lblNotesTitle.Location = new System.Drawing.Point(17, 16);
+            this.lblNotesTitle.Location = new System.Drawing.Point(13, 10);
             this.lblNotesTitle.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblNotesTitle.Name = "lblNotesTitle";
             this.lblNotesTitle.Size = new System.Drawing.Size(122, 28);
@@ -462,16 +462,31 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtQuickNotes.BackColor = System.Drawing.Color.LemonChiffon;
             this.txtQuickNotes.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txtQuickNotes.Location = new System.Drawing.Point(17, 49);
+            this.txtQuickNotes.Location = new System.Drawing.Point(10, 42);
             this.txtQuickNotes.Margin = new System.Windows.Forms.Padding(4);
             this.txtQuickNotes.Multiline = true;
             this.txtQuickNotes.Name = "txtQuickNotes";
             this.txtQuickNotes.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.txtQuickNotes.Size = new System.Drawing.Size(834, 310);
+            this.txtQuickNotes.Size = new System.Drawing.Size(620, 217);
             this.txtQuickNotes.TabIndex = 0;
             this.txtQuickNotes.Text = "• 103 numaralı odada klima arızası var\r\n• Yarın sabah erken check-in talebi (Oda " +
     "201)\r\n• Özel diyet menüsü talebi (Oda 105)\r\n• Ekstra yatak talebi (Oda 301)\r\n• G" +
     "eç check-out onayı (Oda 102 - 15:00)";
+            // 
+            // lstRecentActivities
+            // 
+            this.lstRecentActivities.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lstRecentActivities.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.lstRecentActivities.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.lstRecentActivities.FormattingEnabled = true;
+            this.lstRecentActivities.ItemHeight = 20;
+            this.lstRecentActivities.Location = new System.Drawing.Point(16, -332);
+            this.lstRecentActivities.Margin = new System.Windows.Forms.Padding(4);
+            this.lstRecentActivities.Name = "lstRecentActivities";
+            this.lstRecentActivities.Size = new System.Drawing.Size(339, 300);
+            this.lstRecentActivities.TabIndex = 0;
             // 
             // pnlTodaySchedule
             // 
@@ -479,12 +494,11 @@
             this.pnlTodaySchedule.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pnlTodaySchedule.Controls.Add(this.lblScheduleTitle);
             this.pnlTodaySchedule.Controls.Add(this.dgvTodaySchedule);
-            this.pnlTodaySchedule.Dock = System.Windows.Forms.DockStyle.Left;
-            this.pnlTodaySchedule.Location = new System.Drawing.Point(0, 0);
+            this.pnlTodaySchedule.Location = new System.Drawing.Point(0, 20);
             this.pnlTodaySchedule.Margin = new System.Windows.Forms.Padding(4);
             this.pnlTodaySchedule.Name = "pnlTodaySchedule";
             this.pnlTodaySchedule.Padding = new System.Windows.Forms.Padding(13, 12, 13, 12);
-            this.pnlTodaySchedule.Size = new System.Drawing.Size(747, 378);
+            this.pnlTodaySchedule.Size = new System.Drawing.Size(737, 288);
             this.pnlTodaySchedule.TabIndex = 0;
             // 
             // lblScheduleTitle
@@ -492,7 +506,7 @@
             this.lblScheduleTitle.AutoSize = true;
             this.lblScheduleTitle.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
             this.lblScheduleTitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(93)))), ((int)(((byte)(64)))), ((int)(((byte)(55)))));
-            this.lblScheduleTitle.Location = new System.Drawing.Point(17, 16);
+            this.lblScheduleTitle.Location = new System.Drawing.Point(12, 10);
             this.lblScheduleTitle.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblScheduleTitle.Name = "lblScheduleTitle";
             this.lblScheduleTitle.Size = new System.Drawing.Size(183, 28);
@@ -510,13 +524,13 @@
             this.dgvTodaySchedule.BackgroundColor = System.Drawing.Color.White;
             this.dgvTodaySchedule.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvTodaySchedule.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvTodaySchedule.Location = new System.Drawing.Point(17, 49);
+            this.dgvTodaySchedule.Location = new System.Drawing.Point(17, 42);
             this.dgvTodaySchedule.Margin = new System.Windows.Forms.Padding(4);
             this.dgvTodaySchedule.Name = "dgvTodaySchedule";
             this.dgvTodaySchedule.ReadOnly = true;
             this.dgvTodaySchedule.RowHeadersVisible = false;
             this.dgvTodaySchedule.RowHeadersWidth = 51;
-            this.dgvTodaySchedule.Size = new System.Drawing.Size(710, 311);
+            this.dgvTodaySchedule.Size = new System.Drawing.Size(701, 217);
             this.dgvTodaySchedule.TabIndex = 0;
             // 
             // pnlMiddleSection
@@ -527,7 +541,7 @@
             this.pnlMiddleSection.Location = new System.Drawing.Point(0, 148);
             this.pnlMiddleSection.Margin = new System.Windows.Forms.Padding(4);
             this.pnlMiddleSection.Name = "pnlMiddleSection";
-            this.pnlMiddleSection.Size = new System.Drawing.Size(1426, 295);
+            this.pnlMiddleSection.Size = new System.Drawing.Size(1426, 373);
             this.pnlMiddleSection.TabIndex = 1;
             // 
             // pnlRecentActivities
@@ -535,13 +549,11 @@
             this.pnlRecentActivities.BackColor = System.Drawing.Color.White;
             this.pnlRecentActivities.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pnlRecentActivities.Controls.Add(this.lblActivitiesTitle);
-            this.pnlRecentActivities.Controls.Add(this.lstRecentActivities);
-            this.pnlRecentActivities.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlRecentActivities.Location = new System.Drawing.Point(747, 0);
+            this.pnlRecentActivities.Location = new System.Drawing.Point(745, 0);
             this.pnlRecentActivities.Margin = new System.Windows.Forms.Padding(4);
             this.pnlRecentActivities.Name = "pnlRecentActivities";
             this.pnlRecentActivities.Padding = new System.Windows.Forms.Padding(13, 12, 13, 12);
-            this.pnlRecentActivities.Size = new System.Drawing.Size(679, 295);
+            this.pnlRecentActivities.Size = new System.Drawing.Size(662, 353);
             this.pnlRecentActivities.TabIndex = 1;
             // 
             // lblActivitiesTitle
@@ -556,21 +568,6 @@
             this.lblActivitiesTitle.TabIndex = 1;
             this.lblActivitiesTitle.Text = "Son Hareketler";
             // 
-            // lstRecentActivities
-            // 
-            this.lstRecentActivities.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.lstRecentActivities.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.lstRecentActivities.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.lstRecentActivities.FormattingEnabled = true;
-            this.lstRecentActivities.ItemHeight = 20;
-            this.lstRecentActivities.Location = new System.Drawing.Point(17, 49);
-            this.lstRecentActivities.Margin = new System.Windows.Forms.Padding(4);
-            this.lstRecentActivities.Name = "lstRecentActivities";
-            this.lstRecentActivities.Size = new System.Drawing.Size(835, 220);
-            this.lstRecentActivities.TabIndex = 0;
-            // 
             // pnlRoomStatus
             // 
             this.pnlRoomStatus.BackColor = System.Drawing.Color.White;
@@ -578,25 +575,23 @@
             this.pnlRoomStatus.Controls.Add(this.pnlQuickActions);
             this.pnlRoomStatus.Controls.Add(this.lblRoomStatusTitle);
             this.pnlRoomStatus.Controls.Add(this.pnlRoomGrid);
-            this.pnlRoomStatus.Dock = System.Windows.Forms.DockStyle.Left;
             this.pnlRoomStatus.Location = new System.Drawing.Point(0, 0);
             this.pnlRoomStatus.Margin = new System.Windows.Forms.Padding(4);
             this.pnlRoomStatus.Name = "pnlRoomStatus";
             this.pnlRoomStatus.Padding = new System.Windows.Forms.Padding(13, 12, 13, 12);
-            this.pnlRoomStatus.Size = new System.Drawing.Size(747, 295);
+            this.pnlRoomStatus.Size = new System.Drawing.Size(737, 353);
             this.pnlRoomStatus.TabIndex = 0;
             // 
             // pnlQuickActions
             // 
             this.pnlQuickActions.Controls.Add(this.btnEkHizmet);
-            this.pnlQuickActions.Controls.Add(this.btnYeniRezervasyon);
-            this.pnlQuickActions.Controls.Add(this.btnCheckOut);
             this.pnlQuickActions.Controls.Add(this.btnCheckIn);
-            this.pnlQuickActions.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.pnlQuickActions.Location = new System.Drawing.Point(13, 234);
+            this.pnlQuickActions.Controls.Add(this.btnCheckOut);
+            this.pnlQuickActions.Controls.Add(this.btnYeniRezervasyon);
+            this.pnlQuickActions.Location = new System.Drawing.Point(22, 294);
             this.pnlQuickActions.Margin = new System.Windows.Forms.Padding(4);
             this.pnlQuickActions.Name = "pnlQuickActions";
-            this.pnlQuickActions.Size = new System.Drawing.Size(719, 47);
+            this.pnlQuickActions.Size = new System.Drawing.Size(596, 47);
             this.pnlQuickActions.TabIndex = 3;
             // 
             // btnEkHizmet
@@ -606,43 +601,13 @@
             this.btnEkHizmet.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEkHizmet.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnEkHizmet.ForeColor = System.Drawing.Color.White;
-            this.btnEkHizmet.Location = new System.Drawing.Point(420, 6);
+            this.btnEkHizmet.Location = new System.Drawing.Point(421, 9);
             this.btnEkHizmet.Margin = new System.Windows.Forms.Padding(4);
             this.btnEkHizmet.Name = "btnEkHizmet";
             this.btnEkHizmet.Size = new System.Drawing.Size(133, 34);
             this.btnEkHizmet.TabIndex = 3;
             this.btnEkHizmet.Text = "Ek Hizmet";
             this.btnEkHizmet.UseVisualStyleBackColor = false;
-            // 
-            // btnYeniRezervasyon
-            // 
-            this.btnYeniRezervasyon.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(139)))), ((int)(((byte)(106)))), ((int)(((byte)(66)))));
-            this.btnYeniRezervasyon.FlatAppearance.BorderSize = 0;
-            this.btnYeniRezervasyon.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnYeniRezervasyon.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnYeniRezervasyon.ForeColor = System.Drawing.Color.White;
-            this.btnYeniRezervasyon.Location = new System.Drawing.Point(280, 6);
-            this.btnYeniRezervasyon.Margin = new System.Windows.Forms.Padding(4);
-            this.btnYeniRezervasyon.Name = "btnYeniRezervasyon";
-            this.btnYeniRezervasyon.Size = new System.Drawing.Size(133, 34);
-            this.btnYeniRezervasyon.TabIndex = 2;
-            this.btnYeniRezervasyon.Text = "Rezervasyon";
-            this.btnYeniRezervasyon.UseVisualStyleBackColor = false;
-            // 
-            // btnCheckOut
-            // 
-            this.btnCheckOut.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(139)))), ((int)(((byte)(106)))), ((int)(((byte)(66)))));
-            this.btnCheckOut.FlatAppearance.BorderSize = 0;
-            this.btnCheckOut.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCheckOut.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnCheckOut.ForeColor = System.Drawing.Color.White;
-            this.btnCheckOut.Location = new System.Drawing.Point(140, 6);
-            this.btnCheckOut.Margin = new System.Windows.Forms.Padding(4);
-            this.btnCheckOut.Name = "btnCheckOut";
-            this.btnCheckOut.Size = new System.Drawing.Size(133, 34);
-            this.btnCheckOut.TabIndex = 1;
-            this.btnCheckOut.Text = "Check-out";
-            this.btnCheckOut.UseVisualStyleBackColor = false;
             // 
             // btnCheckIn
             // 
@@ -651,7 +616,7 @@
             this.btnCheckIn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCheckIn.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnCheckIn.ForeColor = System.Drawing.Color.White;
-            this.btnCheckIn.Location = new System.Drawing.Point(0, 6);
+            this.btnCheckIn.Location = new System.Drawing.Point(4, 9);
             this.btnCheckIn.Margin = new System.Windows.Forms.Padding(4);
             this.btnCheckIn.Name = "btnCheckIn";
             this.btnCheckIn.Size = new System.Drawing.Size(133, 34);
@@ -659,14 +624,56 @@
             this.btnCheckIn.Text = "Check-in";
             this.btnCheckIn.UseVisualStyleBackColor = false;
             // 
+            // btnCheckOut
+            // 
+            this.btnCheckOut.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(139)))), ((int)(((byte)(106)))), ((int)(((byte)(66)))));
+            this.btnCheckOut.FlatAppearance.BorderSize = 0;
+            this.btnCheckOut.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCheckOut.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnCheckOut.ForeColor = System.Drawing.Color.White;
+            this.btnCheckOut.Location = new System.Drawing.Point(141, 9);
+            this.btnCheckOut.Margin = new System.Windows.Forms.Padding(4);
+            this.btnCheckOut.Name = "btnCheckOut";
+            this.btnCheckOut.Size = new System.Drawing.Size(133, 34);
+            this.btnCheckOut.TabIndex = 1;
+            this.btnCheckOut.Text = "Check-out";
+            this.btnCheckOut.UseVisualStyleBackColor = false;
+            // 
+            // btnYeniRezervasyon
+            // 
+            this.btnYeniRezervasyon.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(139)))), ((int)(((byte)(106)))), ((int)(((byte)(66)))));
+            this.btnYeniRezervasyon.FlatAppearance.BorderSize = 0;
+            this.btnYeniRezervasyon.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnYeniRezervasyon.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnYeniRezervasyon.ForeColor = System.Drawing.Color.White;
+            this.btnYeniRezervasyon.Location = new System.Drawing.Point(281, 9);
+            this.btnYeniRezervasyon.Margin = new System.Windows.Forms.Padding(4);
+            this.btnYeniRezervasyon.Name = "btnYeniRezervasyon";
+            this.btnYeniRezervasyon.Size = new System.Drawing.Size(133, 34);
+            this.btnYeniRezervasyon.TabIndex = 2;
+            this.btnYeniRezervasyon.Text = "Rezervasyon";
+            this.btnYeniRezervasyon.UseVisualStyleBackColor = false;
+            // 
+            // lblRoomStatusTitle
+            // 
+            this.lblRoomStatusTitle.AutoSize = true;
+            this.lblRoomStatusTitle.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            this.lblRoomStatusTitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(93)))), ((int)(((byte)(64)))), ((int)(((byte)(55)))));
+            this.lblRoomStatusTitle.Location = new System.Drawing.Point(17, 3);
+            this.lblRoomStatusTitle.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblRoomStatusTitle.Name = "lblRoomStatusTitle";
+            this.lblRoomStatusTitle.Size = new System.Drawing.Size(133, 28);
+            this.lblRoomStatusTitle.TabIndex = 1;
+            this.lblRoomStatusTitle.Text = "Oda Durumu";
+            // 
             // pnlRoomGrid
             // 
             this.pnlRoomGrid.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.pnlRoomGrid.Location = new System.Drawing.Point(17, 49);
+            this.pnlRoomGrid.Location = new System.Drawing.Point(20, 35);
             this.pnlRoomGrid.Margin = new System.Windows.Forms.Padding(4);
             this.pnlRoomGrid.Name = "pnlRoomGrid";
-            this.pnlRoomGrid.Size = new System.Drawing.Size(710, 172);
+            this.pnlRoomGrid.Size = new System.Drawing.Size(701, 251);
             this.pnlRoomGrid.TabIndex = 2;
             // 
             // pnlStatsCards
@@ -833,7 +840,7 @@
             this.pnlCheckInCard.Location = new System.Drawing.Point(0, 12);
             this.pnlCheckInCard.Margin = new System.Windows.Forms.Padding(4);
             this.pnlCheckInCard.Name = "pnlCheckInCard";
-            this.pnlCheckInCard.Size = new System.Drawing.Size(287, 123);
+            this.pnlCheckInCard.Size = new System.Drawing.Size(290, 123);
             this.pnlCheckInCard.TabIndex = 0;
             // 
             // lblCheckInCount
@@ -920,18 +927,6 @@
             this.lblCopyright.TabIndex = 0;
             this.lblCopyright.Text = "© 2025 Güneş Otel - Resepsiyon v1.0";
             // 
-            // lblRoomStatusTitle
-            // 
-            this.lblRoomStatusTitle.AutoSize = true;
-            this.lblRoomStatusTitle.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
-            this.lblRoomStatusTitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(93)))), ((int)(((byte)(64)))), ((int)(((byte)(55)))));
-            this.lblRoomStatusTitle.Location = new System.Drawing.Point(17, 16);
-            this.lblRoomStatusTitle.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblRoomStatusTitle.Name = "lblRoomStatusTitle";
-            this.lblRoomStatusTitle.Size = new System.Drawing.Size(133, 28);
-            this.lblRoomStatusTitle.TabIndex = 1;
-            this.lblRoomStatusTitle.Text = "Oda Durumu";
-            // 
             // FrmReceptionDashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -1007,23 +1002,12 @@
         private System.Windows.Forms.Button btnClose;
         private System.Windows.Forms.Panel pnlContent;
         private System.Windows.Forms.Panel pnlMainContent;
-        private System.Windows.Forms.Panel pnlBottomSection;
-        private System.Windows.Forms.Panel pnlQuickNotes;
-        private System.Windows.Forms.Label lblNotesTitle;
-        private System.Windows.Forms.TextBox txtQuickNotes;
-        private System.Windows.Forms.Panel pnlTodaySchedule;
-        private System.Windows.Forms.Label lblScheduleTitle;
-        private System.Windows.Forms.DataGridView dgvTodaySchedule;
         private System.Windows.Forms.Panel pnlMiddleSection;
         private System.Windows.Forms.Panel pnlRecentActivities;
         private System.Windows.Forms.Label lblActivitiesTitle;
         private System.Windows.Forms.ListBox lstRecentActivities;
         private System.Windows.Forms.Panel pnlRoomStatus;
         private System.Windows.Forms.Panel pnlQuickActions;
-        private System.Windows.Forms.Button btnEkHizmet;
-        private System.Windows.Forms.Button btnYeniRezervasyon;
-        private System.Windows.Forms.Button btnCheckOut;
-        private System.Windows.Forms.Button btnCheckIn;
         private System.Windows.Forms.Panel pnlRoomGrid;
         private System.Windows.Forms.Panel pnlStatsCards;
         private System.Windows.Forms.Panel pnlPendingCard;
@@ -1047,5 +1031,16 @@
         private System.Windows.Forms.Label lblStatus;
         private System.Windows.Forms.Label lblCopyright;
         private System.Windows.Forms.Label lblRoomStatusTitle;
+        private System.Windows.Forms.Panel pnlBottomSection;
+        private System.Windows.Forms.Panel pnlQuickNotes;
+        private System.Windows.Forms.Label lblNotesTitle;
+        private System.Windows.Forms.TextBox txtQuickNotes;
+        private System.Windows.Forms.Panel pnlTodaySchedule;
+        private System.Windows.Forms.Label lblScheduleTitle;
+        private System.Windows.Forms.DataGridView dgvTodaySchedule;
+        private System.Windows.Forms.Button btnEkHizmet;
+        private System.Windows.Forms.Button btnYeniRezervasyon;
+        private System.Windows.Forms.Button btnCheckOut;
+        private System.Windows.Forms.Button btnCheckIn;
     }
 }

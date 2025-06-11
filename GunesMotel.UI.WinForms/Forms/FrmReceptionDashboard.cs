@@ -90,7 +90,10 @@ namespace GunesMotel.UI.WinForms.Forms
         {
             LoadUserControl(new RoomStatusControl());
         }
-
+        private void btnMusteriler_Click(object sender, EventArgs e)
+        {
+            LoadUserControl(new AddCustomerControl());
+        }
         /*
         private void LoadRoomStatus()
         {
@@ -160,5 +163,7 @@ namespace GunesMotel.UI.WinForms.Forms
         {
             Application.Exit();
         }
+
+        
     }
 }
