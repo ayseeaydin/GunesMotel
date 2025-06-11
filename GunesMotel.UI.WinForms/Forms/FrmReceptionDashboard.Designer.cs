@@ -65,7 +65,6 @@
             this.btnYeniRezervasyon = new System.Windows.Forms.Button();
             this.btnCheckOut = new System.Windows.Forms.Button();
             this.btnCheckIn = new System.Windows.Forms.Button();
-            this.lblRoomStatusTitle = new System.Windows.Forms.Label();
             this.pnlRoomGrid = new System.Windows.Forms.Panel();
             this.pnlStatsCards = new System.Windows.Forms.Panel();
             this.pnlPendingCard = new System.Windows.Forms.Panel();
@@ -88,6 +87,7 @@
             this.lblLastUpdate = new System.Windows.Forms.Label();
             this.lblStatus = new System.Windows.Forms.Label();
             this.lblCopyright = new System.Windows.Forms.Label();
+            this.lblRoomStatusTitle = new System.Windows.Forms.Label();
             this.pnlSidebar.SuspendLayout();
             this.pnlLogo.SuspendLayout();
             this.pnlHeader.SuspendLayout();
@@ -129,7 +129,7 @@
             this.pnlSidebar.Location = new System.Drawing.Point(0, 0);
             this.pnlSidebar.Margin = new System.Windows.Forms.Padding(4);
             this.pnlSidebar.Name = "pnlSidebar";
-            this.pnlSidebar.Size = new System.Drawing.Size(373, 985);
+            this.pnlSidebar.Size = new System.Drawing.Size(373, 1019);
             this.pnlSidebar.TabIndex = 0;
             // 
             // btnRaporlar
@@ -317,7 +317,7 @@
             this.pnlHeader.Location = new System.Drawing.Point(373, 0);
             this.pnlHeader.Margin = new System.Windows.Forms.Padding(4);
             this.pnlHeader.Name = "pnlHeader";
-            this.pnlHeader.Size = new System.Drawing.Size(1227, 86);
+            this.pnlHeader.Size = new System.Drawing.Size(1480, 86);
             this.pnlHeader.TabIndex = 1;
             // 
             // lblUserName
@@ -325,7 +325,7 @@
             this.lblUserName.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblUserName.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.lblUserName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(93)))), ((int)(((byte)(64)))), ((int)(((byte)(55)))));
-            this.lblUserName.Location = new System.Drawing.Point(827, 49);
+            this.lblUserName.Location = new System.Drawing.Point(1080, 49);
             this.lblUserName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblUserName.Name = "lblUserName";
             this.lblUserName.Size = new System.Drawing.Size(213, 27);
@@ -353,7 +353,7 @@
             this.btnMinimize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnMinimize.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
             this.btnMinimize.ForeColor = System.Drawing.Color.White;
-            this.btnMinimize.Location = new System.Drawing.Point(1067, 0);
+            this.btnMinimize.Location = new System.Drawing.Point(1320, 0);
             this.btnMinimize.Margin = new System.Windows.Forms.Padding(4);
             this.btnMinimize.Name = "btnMinimize";
             this.btnMinimize.Size = new System.Drawing.Size(53, 37);
@@ -369,7 +369,7 @@
             this.btnMaximize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnMaximize.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
             this.btnMaximize.ForeColor = System.Drawing.Color.White;
-            this.btnMaximize.Location = new System.Drawing.Point(1120, 0);
+            this.btnMaximize.Location = new System.Drawing.Point(1373, 0);
             this.btnMaximize.Margin = new System.Windows.Forms.Padding(4);
             this.btnMaximize.Name = "btnMaximize";
             this.btnMaximize.Size = new System.Drawing.Size(53, 37);
@@ -385,7 +385,7 @@
             this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnClose.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
             this.btnClose.ForeColor = System.Drawing.Color.White;
-            this.btnClose.Location = new System.Drawing.Point(1173, 0);
+            this.btnClose.Location = new System.Drawing.Point(1426, 0);
             this.btnClose.Margin = new System.Windows.Forms.Padding(4);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(53, 37);
@@ -403,7 +403,7 @@
             this.pnlContent.Margin = new System.Windows.Forms.Padding(4);
             this.pnlContent.Name = "pnlContent";
             this.pnlContent.Padding = new System.Windows.Forms.Padding(27, 25, 27, 25);
-            this.pnlContent.Size = new System.Drawing.Size(1227, 837);
+            this.pnlContent.Size = new System.Drawing.Size(1480, 871);
             this.pnlContent.TabIndex = 2;
             // 
             // pnlMainContent
@@ -415,7 +415,7 @@
             this.pnlMainContent.Location = new System.Drawing.Point(27, 25);
             this.pnlMainContent.Margin = new System.Windows.Forms.Padding(4);
             this.pnlMainContent.Name = "pnlMainContent";
-            this.pnlMainContent.Size = new System.Drawing.Size(1173, 787);
+            this.pnlMainContent.Size = new System.Drawing.Size(1426, 821);
             this.pnlMainContent.TabIndex = 0;
             // 
             // pnlBottomSection
@@ -426,7 +426,7 @@
             this.pnlBottomSection.Location = new System.Drawing.Point(0, 443);
             this.pnlBottomSection.Margin = new System.Windows.Forms.Padding(4);
             this.pnlBottomSection.Name = "pnlBottomSection";
-            this.pnlBottomSection.Size = new System.Drawing.Size(1173, 344);
+            this.pnlBottomSection.Size = new System.Drawing.Size(1426, 378);
             this.pnlBottomSection.TabIndex = 2;
             // 
             // pnlQuickNotes
@@ -436,11 +436,11 @@
             this.pnlQuickNotes.Controls.Add(this.lblNotesTitle);
             this.pnlQuickNotes.Controls.Add(this.txtQuickNotes);
             this.pnlQuickNotes.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlQuickNotes.Location = new System.Drawing.Point(586, 0);
+            this.pnlQuickNotes.Location = new System.Drawing.Point(747, 0);
             this.pnlQuickNotes.Margin = new System.Windows.Forms.Padding(4);
             this.pnlQuickNotes.Name = "pnlQuickNotes";
             this.pnlQuickNotes.Padding = new System.Windows.Forms.Padding(13, 12, 13, 12);
-            this.pnlQuickNotes.Size = new System.Drawing.Size(587, 344);
+            this.pnlQuickNotes.Size = new System.Drawing.Size(679, 378);
             this.pnlQuickNotes.TabIndex = 1;
             // 
             // lblNotesTitle
@@ -467,7 +467,7 @@
             this.txtQuickNotes.Multiline = true;
             this.txtQuickNotes.Name = "txtQuickNotes";
             this.txtQuickNotes.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.txtQuickNotes.Size = new System.Drawing.Size(549, 276);
+            this.txtQuickNotes.Size = new System.Drawing.Size(834, 310);
             this.txtQuickNotes.TabIndex = 0;
             this.txtQuickNotes.Text = "• 103 numaralı odada klima arızası var\r\n• Yarın sabah erken check-in talebi (Oda " +
     "201)\r\n• Özel diyet menüsü talebi (Oda 105)\r\n• Ekstra yatak talebi (Oda 301)\r\n• G" +
@@ -484,7 +484,7 @@
             this.pnlTodaySchedule.Margin = new System.Windows.Forms.Padding(4);
             this.pnlTodaySchedule.Name = "pnlTodaySchedule";
             this.pnlTodaySchedule.Padding = new System.Windows.Forms.Padding(13, 12, 13, 12);
-            this.pnlTodaySchedule.Size = new System.Drawing.Size(586, 344);
+            this.pnlTodaySchedule.Size = new System.Drawing.Size(747, 378);
             this.pnlTodaySchedule.TabIndex = 0;
             // 
             // lblScheduleTitle
@@ -516,7 +516,7 @@
             this.dgvTodaySchedule.ReadOnly = true;
             this.dgvTodaySchedule.RowHeadersVisible = false;
             this.dgvTodaySchedule.RowHeadersWidth = 51;
-            this.dgvTodaySchedule.Size = new System.Drawing.Size(549, 277);
+            this.dgvTodaySchedule.Size = new System.Drawing.Size(710, 311);
             this.dgvTodaySchedule.TabIndex = 0;
             // 
             // pnlMiddleSection
@@ -527,7 +527,7 @@
             this.pnlMiddleSection.Location = new System.Drawing.Point(0, 148);
             this.pnlMiddleSection.Margin = new System.Windows.Forms.Padding(4);
             this.pnlMiddleSection.Name = "pnlMiddleSection";
-            this.pnlMiddleSection.Size = new System.Drawing.Size(1173, 295);
+            this.pnlMiddleSection.Size = new System.Drawing.Size(1426, 295);
             this.pnlMiddleSection.TabIndex = 1;
             // 
             // pnlRecentActivities
@@ -537,11 +537,11 @@
             this.pnlRecentActivities.Controls.Add(this.lblActivitiesTitle);
             this.pnlRecentActivities.Controls.Add(this.lstRecentActivities);
             this.pnlRecentActivities.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlRecentActivities.Location = new System.Drawing.Point(586, 0);
+            this.pnlRecentActivities.Location = new System.Drawing.Point(747, 0);
             this.pnlRecentActivities.Margin = new System.Windows.Forms.Padding(4);
             this.pnlRecentActivities.Name = "pnlRecentActivities";
             this.pnlRecentActivities.Padding = new System.Windows.Forms.Padding(13, 12, 13, 12);
-            this.pnlRecentActivities.Size = new System.Drawing.Size(587, 295);
+            this.pnlRecentActivities.Size = new System.Drawing.Size(679, 295);
             this.pnlRecentActivities.TabIndex = 1;
             // 
             // lblActivitiesTitle
@@ -568,7 +568,7 @@
             this.lstRecentActivities.Location = new System.Drawing.Point(17, 49);
             this.lstRecentActivities.Margin = new System.Windows.Forms.Padding(4);
             this.lstRecentActivities.Name = "lstRecentActivities";
-            this.lstRecentActivities.Size = new System.Drawing.Size(550, 220);
+            this.lstRecentActivities.Size = new System.Drawing.Size(835, 220);
             this.lstRecentActivities.TabIndex = 0;
             // 
             // pnlRoomStatus
@@ -583,7 +583,7 @@
             this.pnlRoomStatus.Margin = new System.Windows.Forms.Padding(4);
             this.pnlRoomStatus.Name = "pnlRoomStatus";
             this.pnlRoomStatus.Padding = new System.Windows.Forms.Padding(13, 12, 13, 12);
-            this.pnlRoomStatus.Size = new System.Drawing.Size(586, 295);
+            this.pnlRoomStatus.Size = new System.Drawing.Size(747, 295);
             this.pnlRoomStatus.TabIndex = 0;
             // 
             // pnlQuickActions
@@ -596,7 +596,7 @@
             this.pnlQuickActions.Location = new System.Drawing.Point(13, 234);
             this.pnlQuickActions.Margin = new System.Windows.Forms.Padding(4);
             this.pnlQuickActions.Name = "pnlQuickActions";
-            this.pnlQuickActions.Size = new System.Drawing.Size(558, 47);
+            this.pnlQuickActions.Size = new System.Drawing.Size(719, 47);
             this.pnlQuickActions.TabIndex = 3;
             // 
             // btnEkHizmet
@@ -659,18 +659,6 @@
             this.btnCheckIn.Text = "Check-in";
             this.btnCheckIn.UseVisualStyleBackColor = false;
             // 
-            // lblRoomStatusTitle
-            // 
-            this.lblRoomStatusTitle.AutoSize = true;
-            this.lblRoomStatusTitle.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
-            this.lblRoomStatusTitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(93)))), ((int)(((byte)(64)))), ((int)(((byte)(55)))));
-            this.lblRoomStatusTitle.Location = new System.Drawing.Point(17, 16);
-            this.lblRoomStatusTitle.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblRoomStatusTitle.Name = "lblRoomStatusTitle";
-            this.lblRoomStatusTitle.Size = new System.Drawing.Size(133, 28);
-            this.lblRoomStatusTitle.TabIndex = 1;
-            this.lblRoomStatusTitle.Text = "Oda Durumu";
-            // 
             // pnlRoomGrid
             // 
             this.pnlRoomGrid.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
@@ -678,7 +666,7 @@
             this.pnlRoomGrid.Location = new System.Drawing.Point(17, 49);
             this.pnlRoomGrid.Margin = new System.Windows.Forms.Padding(4);
             this.pnlRoomGrid.Name = "pnlRoomGrid";
-            this.pnlRoomGrid.Size = new System.Drawing.Size(549, 172);
+            this.pnlRoomGrid.Size = new System.Drawing.Size(710, 172);
             this.pnlRoomGrid.TabIndex = 2;
             // 
             // pnlStatsCards
@@ -691,7 +679,7 @@
             this.pnlStatsCards.Location = new System.Drawing.Point(0, 0);
             this.pnlStatsCards.Margin = new System.Windows.Forms.Padding(4);
             this.pnlStatsCards.Name = "pnlStatsCards";
-            this.pnlStatsCards.Size = new System.Drawing.Size(1173, 148);
+            this.pnlStatsCards.Size = new System.Drawing.Size(1426, 148);
             this.pnlStatsCards.TabIndex = 0;
             // 
             // pnlPendingCard
@@ -701,10 +689,10 @@
             this.pnlPendingCard.Controls.Add(this.lblPendingCount);
             this.pnlPendingCard.Controls.Add(this.lblPendingTitle);
             this.pnlPendingCard.Controls.Add(this.picPending);
-            this.pnlPendingCard.Location = new System.Drawing.Point(880, 12);
+            this.pnlPendingCard.Location = new System.Drawing.Point(1117, 12);
             this.pnlPendingCard.Margin = new System.Windows.Forms.Padding(4);
             this.pnlPendingCard.Name = "pnlPendingCard";
-            this.pnlPendingCard.Size = new System.Drawing.Size(279, 123);
+            this.pnlPendingCard.Size = new System.Drawing.Size(290, 123);
             this.pnlPendingCard.TabIndex = 3;
             // 
             // lblPendingCount
@@ -748,10 +736,10 @@
             this.pnlAvailableCard.Controls.Add(this.lblAvailableCount);
             this.pnlAvailableCard.Controls.Add(this.lblAvailableTitle);
             this.pnlAvailableCard.Controls.Add(this.picAvailable);
-            this.pnlAvailableCard.Location = new System.Drawing.Point(587, 12);
+            this.pnlAvailableCard.Location = new System.Drawing.Point(745, 12);
             this.pnlAvailableCard.Margin = new System.Windows.Forms.Padding(4);
             this.pnlAvailableCard.Name = "pnlAvailableCard";
-            this.pnlAvailableCard.Size = new System.Drawing.Size(279, 123);
+            this.pnlAvailableCard.Size = new System.Drawing.Size(290, 123);
             this.pnlAvailableCard.TabIndex = 2;
             // 
             // lblAvailableCount
@@ -795,10 +783,10 @@
             this.pnlCheckOutCard.Controls.Add(this.lblCheckOutCount);
             this.pnlCheckOutCard.Controls.Add(this.lblCheckOutTitle);
             this.pnlCheckOutCard.Controls.Add(this.picCheckOut);
-            this.pnlCheckOutCard.Location = new System.Drawing.Point(293, 12);
+            this.pnlCheckOutCard.Location = new System.Drawing.Point(371, 12);
             this.pnlCheckOutCard.Margin = new System.Windows.Forms.Padding(4);
             this.pnlCheckOutCard.Name = "pnlCheckOutCard";
-            this.pnlCheckOutCard.Size = new System.Drawing.Size(279, 123);
+            this.pnlCheckOutCard.Size = new System.Drawing.Size(290, 123);
             this.pnlCheckOutCard.TabIndex = 1;
             // 
             // lblCheckOutCount
@@ -845,7 +833,7 @@
             this.pnlCheckInCard.Location = new System.Drawing.Point(0, 12);
             this.pnlCheckInCard.Margin = new System.Windows.Forms.Padding(4);
             this.pnlCheckInCard.Name = "pnlCheckInCard";
-            this.pnlCheckInCard.Size = new System.Drawing.Size(279, 123);
+            this.pnlCheckInCard.Size = new System.Drawing.Size(287, 123);
             this.pnlCheckInCard.TabIndex = 0;
             // 
             // lblCheckInCount
@@ -889,10 +877,10 @@
             this.pnlFooter.Controls.Add(this.lblStatus);
             this.pnlFooter.Controls.Add(this.lblCopyright);
             this.pnlFooter.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.pnlFooter.Location = new System.Drawing.Point(373, 923);
+            this.pnlFooter.Location = new System.Drawing.Point(373, 957);
             this.pnlFooter.Margin = new System.Windows.Forms.Padding(4);
             this.pnlFooter.Name = "pnlFooter";
-            this.pnlFooter.Size = new System.Drawing.Size(1227, 62);
+            this.pnlFooter.Size = new System.Drawing.Size(1480, 62);
             this.pnlFooter.TabIndex = 3;
             // 
             // lblLastUpdate
@@ -925,18 +913,30 @@
             this.lblCopyright.AutoSize = true;
             this.lblCopyright.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.lblCopyright.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(93)))), ((int)(((byte)(64)))), ((int)(((byte)(55)))));
-            this.lblCopyright.Location = new System.Drawing.Point(960, 18);
+            this.lblCopyright.Location = new System.Drawing.Point(1213, 18);
             this.lblCopyright.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblCopyright.Name = "lblCopyright";
             this.lblCopyright.Size = new System.Drawing.Size(252, 20);
             this.lblCopyright.TabIndex = 0;
             this.lblCopyright.Text = "© 2025 Güneş Otel - Resepsiyon v1.0";
             // 
+            // lblRoomStatusTitle
+            // 
+            this.lblRoomStatusTitle.AutoSize = true;
+            this.lblRoomStatusTitle.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            this.lblRoomStatusTitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(93)))), ((int)(((byte)(64)))), ((int)(((byte)(55)))));
+            this.lblRoomStatusTitle.Location = new System.Drawing.Point(17, 16);
+            this.lblRoomStatusTitle.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblRoomStatusTitle.Name = "lblRoomStatusTitle";
+            this.lblRoomStatusTitle.Size = new System.Drawing.Size(133, 28);
+            this.lblRoomStatusTitle.TabIndex = 1;
+            this.lblRoomStatusTitle.Text = "Oda Durumu";
+            // 
             // FrmReceptionDashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1600, 985);
+            this.ClientSize = new System.Drawing.Size(1853, 1019);
             this.Controls.Add(this.pnlContent);
             this.Controls.Add(this.pnlFooter);
             this.Controls.Add(this.pnlHeader);
@@ -1024,7 +1024,6 @@
         private System.Windows.Forms.Button btnYeniRezervasyon;
         private System.Windows.Forms.Button btnCheckOut;
         private System.Windows.Forms.Button btnCheckIn;
-        private System.Windows.Forms.Label lblRoomStatusTitle;
         private System.Windows.Forms.Panel pnlRoomGrid;
         private System.Windows.Forms.Panel pnlStatsCards;
         private System.Windows.Forms.Panel pnlPendingCard;
@@ -1047,5 +1046,6 @@
         private System.Windows.Forms.Label lblLastUpdate;
         private System.Windows.Forms.Label lblStatus;
         private System.Windows.Forms.Label lblCopyright;
+        private System.Windows.Forms.Label lblRoomStatusTitle;
     }
 }

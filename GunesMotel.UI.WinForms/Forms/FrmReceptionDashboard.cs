@@ -29,7 +29,7 @@ namespace GunesMotel.UI.WinForms.Forms
             LoadUserInfo();
             LoadRoomStatistics();
             LoadFooterStatus();
-            LoadRoomStatus(); // Oda durumunu yükle
+            // LoadRoomStatus(); // Oda durumunu yükle
 
             roomStatusControl = new RoomStatusControl();
             roomStatusControl.Dock = DockStyle.Fill;
@@ -91,6 +91,7 @@ namespace GunesMotel.UI.WinForms.Forms
             LoadUserControl(new RoomStatusControl());
         }
 
+        /*
         private void LoadRoomStatus()
         {
             pnlRoomGrid.Controls.Clear();
@@ -122,6 +123,8 @@ namespace GunesMotel.UI.WinForms.Forms
 
             pnlRoomGrid.Controls.Add(flp);
         }
+        */
+
 
         private Color GetColorByStatus(string status)
         {
