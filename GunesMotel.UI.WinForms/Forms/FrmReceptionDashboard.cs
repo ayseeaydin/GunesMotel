@@ -12,6 +12,7 @@ namespace GunesMotel.UI.WinForms.Forms
 {
     public partial class FrmReceptionDashboard : Form
     {
+
         public FrmReceptionDashboard()
         {
             InitializeComponent();
