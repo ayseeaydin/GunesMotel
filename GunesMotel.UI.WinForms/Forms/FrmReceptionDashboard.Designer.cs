@@ -127,8 +127,9 @@
             this.pnlSidebar.Controls.Add(this.pnlLogo);
             this.pnlSidebar.Dock = System.Windows.Forms.DockStyle.Left;
             this.pnlSidebar.Location = new System.Drawing.Point(0, 0);
+            this.pnlSidebar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pnlSidebar.Name = "pnlSidebar";
-            this.pnlSidebar.Size = new System.Drawing.Size(280, 800);
+            this.pnlSidebar.Size = new System.Drawing.Size(373, 985);
             this.pnlSidebar.TabIndex = 0;
             // 
             // btnRaporlar
@@ -138,10 +139,11 @@
             this.btnRaporlar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRaporlar.Font = new System.Drawing.Font("Segoe UI", 11F);
             this.btnRaporlar.ForeColor = System.Drawing.Color.White;
-            this.btnRaporlar.Location = new System.Drawing.Point(0, 470);
+            this.btnRaporlar.Location = new System.Drawing.Point(0, 582);
+            this.btnRaporlar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnRaporlar.Name = "btnRaporlar";
-            this.btnRaporlar.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.btnRaporlar.Size = new System.Drawing.Size(280, 50);
+            this.btnRaporlar.Padding = new System.Windows.Forms.Padding(13, 0, 0, 0);
+            this.btnRaporlar.Size = new System.Drawing.Size(373, 62);
             this.btnRaporlar.TabIndex = 8;
             this.btnRaporlar.Text = "📊 Raporlar";
             this.btnRaporlar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -154,10 +156,11 @@
             this.btnEkHizmetler.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEkHizmetler.Font = new System.Drawing.Font("Segoe UI", 11F);
             this.btnEkHizmetler.ForeColor = System.Drawing.Color.White;
-            this.btnEkHizmetler.Location = new System.Drawing.Point(0, 420);
+            this.btnEkHizmetler.Location = new System.Drawing.Point(0, 520);
+            this.btnEkHizmetler.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnEkHizmetler.Name = "btnEkHizmetler";
-            this.btnEkHizmetler.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.btnEkHizmetler.Size = new System.Drawing.Size(280, 50);
+            this.btnEkHizmetler.Padding = new System.Windows.Forms.Padding(13, 0, 0, 0);
+            this.btnEkHizmetler.Size = new System.Drawing.Size(373, 62);
             this.btnEkHizmetler.TabIndex = 7;
             this.btnEkHizmetler.Text = "🛎️ Ek Hizmetler";
             this.btnEkHizmetler.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -170,10 +173,11 @@
             this.btnFaturalar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnFaturalar.Font = new System.Drawing.Font("Segoe UI", 11F);
             this.btnFaturalar.ForeColor = System.Drawing.Color.White;
-            this.btnFaturalar.Location = new System.Drawing.Point(0, 370);
+            this.btnFaturalar.Location = new System.Drawing.Point(0, 458);
+            this.btnFaturalar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnFaturalar.Name = "btnFaturalar";
-            this.btnFaturalar.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.btnFaturalar.Size = new System.Drawing.Size(280, 50);
+            this.btnFaturalar.Padding = new System.Windows.Forms.Padding(13, 0, 0, 0);
+            this.btnFaturalar.Size = new System.Drawing.Size(373, 62);
             this.btnFaturalar.TabIndex = 6;
             this.btnFaturalar.Text = "🧾 Faturalar";
             this.btnFaturalar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -186,10 +190,11 @@
             this.btnRezervasyonlar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRezervasyonlar.Font = new System.Drawing.Font("Segoe UI", 11F);
             this.btnRezervasyonlar.ForeColor = System.Drawing.Color.White;
-            this.btnRezervasyonlar.Location = new System.Drawing.Point(0, 320);
+            this.btnRezervasyonlar.Location = new System.Drawing.Point(0, 396);
+            this.btnRezervasyonlar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnRezervasyonlar.Name = "btnRezervasyonlar";
-            this.btnRezervasyonlar.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.btnRezervasyonlar.Size = new System.Drawing.Size(280, 50);
+            this.btnRezervasyonlar.Padding = new System.Windows.Forms.Padding(13, 0, 0, 0);
+            this.btnRezervasyonlar.Size = new System.Drawing.Size(373, 62);
             this.btnRezervasyonlar.TabIndex = 5;
             this.btnRezervasyonlar.Text = "📅 Rezervasyonlar";
             this.btnRezervasyonlar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -202,10 +207,11 @@
             this.btnMusteriler.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnMusteriler.Font = new System.Drawing.Font("Segoe UI", 11F);
             this.btnMusteriler.ForeColor = System.Drawing.Color.White;
-            this.btnMusteriler.Location = new System.Drawing.Point(0, 270);
+            this.btnMusteriler.Location = new System.Drawing.Point(0, 334);
+            this.btnMusteriler.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnMusteriler.Name = "btnMusteriler";
-            this.btnMusteriler.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.btnMusteriler.Size = new System.Drawing.Size(280, 50);
+            this.btnMusteriler.Padding = new System.Windows.Forms.Padding(13, 0, 0, 0);
+            this.btnMusteriler.Size = new System.Drawing.Size(373, 62);
             this.btnMusteriler.TabIndex = 4;
             this.btnMusteriler.Text = "👥 Müşteriler";
             this.btnMusteriler.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -218,10 +224,11 @@
             this.btnCheckinOut.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCheckinOut.Font = new System.Drawing.Font("Segoe UI", 11F);
             this.btnCheckinOut.ForeColor = System.Drawing.Color.White;
-            this.btnCheckinOut.Location = new System.Drawing.Point(0, 220);
+            this.btnCheckinOut.Location = new System.Drawing.Point(0, 272);
+            this.btnCheckinOut.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnCheckinOut.Name = "btnCheckinOut";
-            this.btnCheckinOut.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.btnCheckinOut.Size = new System.Drawing.Size(280, 50);
+            this.btnCheckinOut.Padding = new System.Windows.Forms.Padding(13, 0, 0, 0);
+            this.btnCheckinOut.Size = new System.Drawing.Size(373, 62);
             this.btnCheckinOut.TabIndex = 3;
             this.btnCheckinOut.Text = "✅ Check-in/out";
             this.btnCheckinOut.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -234,10 +241,11 @@
             this.btnOdaDurumu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnOdaDurumu.Font = new System.Drawing.Font("Segoe UI", 11F);
             this.btnOdaDurumu.ForeColor = System.Drawing.Color.White;
-            this.btnOdaDurumu.Location = new System.Drawing.Point(0, 170);
+            this.btnOdaDurumu.Location = new System.Drawing.Point(0, 210);
+            this.btnOdaDurumu.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnOdaDurumu.Name = "btnOdaDurumu";
-            this.btnOdaDurumu.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.btnOdaDurumu.Size = new System.Drawing.Size(280, 50);
+            this.btnOdaDurumu.Padding = new System.Windows.Forms.Padding(13, 0, 0, 0);
+            this.btnOdaDurumu.Size = new System.Drawing.Size(373, 62);
             this.btnOdaDurumu.TabIndex = 2;
             this.btnOdaDurumu.Text = "🏨 Oda Durumu";
             this.btnOdaDurumu.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -250,10 +258,11 @@
             this.btnAnaSayfa.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAnaSayfa.Font = new System.Drawing.Font("Segoe UI", 11F);
             this.btnAnaSayfa.ForeColor = System.Drawing.Color.White;
-            this.btnAnaSayfa.Location = new System.Drawing.Point(0, 120);
+            this.btnAnaSayfa.Location = new System.Drawing.Point(0, 148);
+            this.btnAnaSayfa.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnAnaSayfa.Name = "btnAnaSayfa";
-            this.btnAnaSayfa.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.btnAnaSayfa.Size = new System.Drawing.Size(280, 50);
+            this.btnAnaSayfa.Padding = new System.Windows.Forms.Padding(13, 0, 0, 0);
+            this.btnAnaSayfa.Size = new System.Drawing.Size(373, 62);
             this.btnAnaSayfa.TabIndex = 1;
             this.btnAnaSayfa.Text = "🏠 Ana Sayfa";
             this.btnAnaSayfa.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -266,8 +275,9 @@
             this.pnlLogo.Controls.Add(this.lblLogoSubtext);
             this.pnlLogo.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlLogo.Location = new System.Drawing.Point(0, 0);
+            this.pnlLogo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pnlLogo.Name = "pnlLogo";
-            this.pnlLogo.Size = new System.Drawing.Size(280, 120);
+            this.pnlLogo.Size = new System.Drawing.Size(373, 148);
             this.pnlLogo.TabIndex = 0;
             // 
             // lblLogoText
@@ -275,9 +285,10 @@
             this.lblLogoText.AutoSize = true;
             this.lblLogoText.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Bold);
             this.lblLogoText.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(194)))), ((int)(((byte)(166)))));
-            this.lblLogoText.Location = new System.Drawing.Point(75, 40);
+            this.lblLogoText.Location = new System.Drawing.Point(100, 49);
+            this.lblLogoText.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblLogoText.Name = "lblLogoText";
-            this.lblLogoText.Size = new System.Drawing.Size(130, 30);
+            this.lblLogoText.Size = new System.Drawing.Size(176, 37);
             this.lblLogoText.TabIndex = 0;
             this.lblLogoText.Text = "GÜNEŞ OTEL";
             // 
@@ -286,9 +297,10 @@
             this.lblLogoSubtext.AutoSize = true;
             this.lblLogoSubtext.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.lblLogoSubtext.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(194)))), ((int)(((byte)(166)))));
-            this.lblLogoSubtext.Location = new System.Drawing.Point(100, 70);
+            this.lblLogoSubtext.Location = new System.Drawing.Point(133, 86);
+            this.lblLogoSubtext.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblLogoSubtext.Name = "lblLogoSubtext";
-            this.lblLogoSubtext.Size = new System.Drawing.Size(80, 21);
+            this.lblLogoSubtext.Size = new System.Drawing.Size(109, 28);
             this.lblLogoSubtext.TabIndex = 1;
             this.lblLogoSubtext.Text = "Resepsiyon";
             // 
@@ -301,9 +313,10 @@
             this.pnlHeader.Controls.Add(this.btnMaximize);
             this.pnlHeader.Controls.Add(this.btnClose);
             this.pnlHeader.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnlHeader.Location = new System.Drawing.Point(280, 0);
+            this.pnlHeader.Location = new System.Drawing.Point(373, 0);
+            this.pnlHeader.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pnlHeader.Name = "pnlHeader";
-            this.pnlHeader.Size = new System.Drawing.Size(920, 70);
+            this.pnlHeader.Size = new System.Drawing.Size(1227, 86);
             this.pnlHeader.TabIndex = 1;
             // 
             // lblUserName
@@ -311,9 +324,10 @@
             this.lblUserName.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblUserName.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.lblUserName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(93)))), ((int)(((byte)(64)))), ((int)(((byte)(55)))));
-            this.lblUserName.Location = new System.Drawing.Point(620, 40);
+            this.lblUserName.Location = new System.Drawing.Point(827, 49);
+            this.lblUserName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblUserName.Name = "lblUserName";
-            this.lblUserName.Size = new System.Drawing.Size(160, 22);
+            this.lblUserName.Size = new System.Drawing.Size(213, 27);
             this.lblUserName.TabIndex = 5;
             this.lblUserName.Text = "Resepsiyon Personeli";
             this.lblUserName.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -323,9 +337,10 @@
             this.lblFormTitle.AutoSize = true;
             this.lblFormTitle.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold);
             this.lblFormTitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(93)))), ((int)(((byte)(64)))), ((int)(((byte)(55)))));
-            this.lblFormTitle.Location = new System.Drawing.Point(20, 12);
+            this.lblFormTitle.Location = new System.Drawing.Point(27, 15);
+            this.lblFormTitle.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblFormTitle.Name = "lblFormTitle";
-            this.lblFormTitle.Size = new System.Drawing.Size(171, 25);
+            this.lblFormTitle.Size = new System.Drawing.Size(218, 32);
             this.lblFormTitle.TabIndex = 3;
             this.lblFormTitle.Text = "Resepsiyon Paneli";
             // 
@@ -337,9 +352,10 @@
             this.btnMinimize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnMinimize.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
             this.btnMinimize.ForeColor = System.Drawing.Color.White;
-            this.btnMinimize.Location = new System.Drawing.Point(800, 0);
+            this.btnMinimize.Location = new System.Drawing.Point(1067, 0);
+            this.btnMinimize.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnMinimize.Name = "btnMinimize";
-            this.btnMinimize.Size = new System.Drawing.Size(40, 30);
+            this.btnMinimize.Size = new System.Drawing.Size(53, 37);
             this.btnMinimize.TabIndex = 2;
             this.btnMinimize.Text = "_";
             this.btnMinimize.UseVisualStyleBackColor = false;
@@ -352,9 +368,10 @@
             this.btnMaximize.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnMaximize.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
             this.btnMaximize.ForeColor = System.Drawing.Color.White;
-            this.btnMaximize.Location = new System.Drawing.Point(840, 0);
+            this.btnMaximize.Location = new System.Drawing.Point(1120, 0);
+            this.btnMaximize.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnMaximize.Name = "btnMaximize";
-            this.btnMaximize.Size = new System.Drawing.Size(40, 30);
+            this.btnMaximize.Size = new System.Drawing.Size(53, 37);
             this.btnMaximize.TabIndex = 1;
             this.btnMaximize.Text = "□";
             this.btnMaximize.UseVisualStyleBackColor = false;
@@ -367,9 +384,10 @@
             this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnClose.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
             this.btnClose.ForeColor = System.Drawing.Color.White;
-            this.btnClose.Location = new System.Drawing.Point(880, 0);
+            this.btnClose.Location = new System.Drawing.Point(1173, 0);
+            this.btnClose.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(40, 30);
+            this.btnClose.Size = new System.Drawing.Size(53, 37);
             this.btnClose.TabIndex = 0;
             this.btnClose.Text = "X";
             this.btnClose.UseVisualStyleBackColor = false;
@@ -379,10 +397,11 @@
             this.pnlContent.BackColor = System.Drawing.Color.White;
             this.pnlContent.Controls.Add(this.pnlMainContent);
             this.pnlContent.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlContent.Location = new System.Drawing.Point(280, 70);
+            this.pnlContent.Location = new System.Drawing.Point(373, 86);
+            this.pnlContent.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pnlContent.Name = "pnlContent";
-            this.pnlContent.Padding = new System.Windows.Forms.Padding(20);
-            this.pnlContent.Size = new System.Drawing.Size(920, 680);
+            this.pnlContent.Padding = new System.Windows.Forms.Padding(27, 25, 27, 25);
+            this.pnlContent.Size = new System.Drawing.Size(1227, 837);
             this.pnlContent.TabIndex = 2;
             // 
             // pnlMainContent
@@ -391,9 +410,10 @@
             this.pnlMainContent.Controls.Add(this.pnlMiddleSection);
             this.pnlMainContent.Controls.Add(this.pnlStatsCards);
             this.pnlMainContent.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlMainContent.Location = new System.Drawing.Point(20, 20);
+            this.pnlMainContent.Location = new System.Drawing.Point(27, 25);
+            this.pnlMainContent.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pnlMainContent.Name = "pnlMainContent";
-            this.pnlMainContent.Size = new System.Drawing.Size(880, 640);
+            this.pnlMainContent.Size = new System.Drawing.Size(1173, 787);
             this.pnlMainContent.TabIndex = 0;
             // 
             // pnlBottomSection
@@ -401,9 +421,10 @@
             this.pnlBottomSection.Controls.Add(this.pnlQuickNotes);
             this.pnlBottomSection.Controls.Add(this.pnlTodaySchedule);
             this.pnlBottomSection.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlBottomSection.Location = new System.Drawing.Point(0, 360);
+            this.pnlBottomSection.Location = new System.Drawing.Point(0, 443);
+            this.pnlBottomSection.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pnlBottomSection.Name = "pnlBottomSection";
-            this.pnlBottomSection.Size = new System.Drawing.Size(880, 280);
+            this.pnlBottomSection.Size = new System.Drawing.Size(1173, 344);
             this.pnlBottomSection.TabIndex = 2;
             // 
             // pnlQuickNotes
@@ -413,10 +434,11 @@
             this.pnlQuickNotes.Controls.Add(this.lblNotesTitle);
             this.pnlQuickNotes.Controls.Add(this.txtQuickNotes);
             this.pnlQuickNotes.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlQuickNotes.Location = new System.Drawing.Point(440, 0);
+            this.pnlQuickNotes.Location = new System.Drawing.Point(586, 0);
+            this.pnlQuickNotes.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pnlQuickNotes.Name = "pnlQuickNotes";
-            this.pnlQuickNotes.Padding = new System.Windows.Forms.Padding(10);
-            this.pnlQuickNotes.Size = new System.Drawing.Size(440, 280);
+            this.pnlQuickNotes.Padding = new System.Windows.Forms.Padding(13, 12, 13, 12);
+            this.pnlQuickNotes.Size = new System.Drawing.Size(587, 344);
             this.pnlQuickNotes.TabIndex = 1;
             // 
             // lblNotesTitle
@@ -424,28 +446,30 @@
             this.lblNotesTitle.AutoSize = true;
             this.lblNotesTitle.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
             this.lblNotesTitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(93)))), ((int)(((byte)(64)))), ((int)(((byte)(55)))));
-            this.lblNotesTitle.Location = new System.Drawing.Point(13, 13);
+            this.lblNotesTitle.Location = new System.Drawing.Point(17, 16);
+            this.lblNotesTitle.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblNotesTitle.Name = "lblNotesTitle";
-            this.lblNotesTitle.Size = new System.Drawing.Size(98, 21);
+            this.lblNotesTitle.Size = new System.Drawing.Size(122, 28);
             this.lblNotesTitle.TabIndex = 1;
             this.lblNotesTitle.Text = "Hızlı Notlar";
             // 
             // txtQuickNotes
             // 
-            this.txtQuickNotes.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-            | System.Windows.Forms.AnchorStyles.Left)
+            this.txtQuickNotes.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtQuickNotes.BackColor = System.Drawing.Color.LemonChiffon;
             this.txtQuickNotes.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.txtQuickNotes.Location = new System.Drawing.Point(13, 40);
+            this.txtQuickNotes.Location = new System.Drawing.Point(17, 49);
+            this.txtQuickNotes.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtQuickNotes.Multiline = true;
             this.txtQuickNotes.Name = "txtQuickNotes";
             this.txtQuickNotes.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.txtQuickNotes.Size = new System.Drawing.Size(412, 225);
+            this.txtQuickNotes.Size = new System.Drawing.Size(549, 276);
             this.txtQuickNotes.TabIndex = 0;
-            this.txtQuickNotes.Text = "• 103 numaralı odada klima arızası var\r\n• Yarın sabah erken check-in talebi (Oda" +
-    " 201)\r\n• Özel diyet menüsü talebi (Oda 105)\r\n• Ekstra yatak talebi (Oda 301)\r\n• " +
-    "Geç check-out onayı (Oda 102 - 15:00)";
+            this.txtQuickNotes.Text = "• 103 numaralı odada klima arızası var\r\n• Yarın sabah erken check-in talebi (Oda " +
+    "201)\r\n• Özel diyet menüsü talebi (Oda 105)\r\n• Ekstra yatak talebi (Oda 301)\r\n• G" +
+    "eç check-out onayı (Oda 102 - 15:00)";
             // 
             // pnlTodaySchedule
             // 
@@ -455,9 +479,10 @@
             this.pnlTodaySchedule.Controls.Add(this.dgvTodaySchedule);
             this.pnlTodaySchedule.Dock = System.Windows.Forms.DockStyle.Left;
             this.pnlTodaySchedule.Location = new System.Drawing.Point(0, 0);
+            this.pnlTodaySchedule.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pnlTodaySchedule.Name = "pnlTodaySchedule";
-            this.pnlTodaySchedule.Padding = new System.Windows.Forms.Padding(10);
-            this.pnlTodaySchedule.Size = new System.Drawing.Size(440, 280);
+            this.pnlTodaySchedule.Padding = new System.Windows.Forms.Padding(13, 12, 13, 12);
+            this.pnlTodaySchedule.Size = new System.Drawing.Size(586, 344);
             this.pnlTodaySchedule.TabIndex = 0;
             // 
             // lblScheduleTitle
@@ -465,9 +490,10 @@
             this.lblScheduleTitle.AutoSize = true;
             this.lblScheduleTitle.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
             this.lblScheduleTitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(93)))), ((int)(((byte)(64)))), ((int)(((byte)(55)))));
-            this.lblScheduleTitle.Location = new System.Drawing.Point(13, 13);
+            this.lblScheduleTitle.Location = new System.Drawing.Point(17, 16);
+            this.lblScheduleTitle.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblScheduleTitle.Name = "lblScheduleTitle";
-            this.lblScheduleTitle.Size = new System.Drawing.Size(137, 21);
+            this.lblScheduleTitle.Size = new System.Drawing.Size(183, 28);
             this.lblScheduleTitle.TabIndex = 1;
             this.lblScheduleTitle.Text = "Bugünkü Program";
             // 
@@ -475,18 +501,20 @@
             // 
             this.dgvTodaySchedule.AllowUserToAddRows = false;
             this.dgvTodaySchedule.AllowUserToDeleteRows = false;
-            this.dgvTodaySchedule.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-            | System.Windows.Forms.AnchorStyles.Left)
+            this.dgvTodaySchedule.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvTodaySchedule.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvTodaySchedule.BackgroundColor = System.Drawing.Color.White;
             this.dgvTodaySchedule.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvTodaySchedule.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvTodaySchedule.Location = new System.Drawing.Point(13, 40);
+            this.dgvTodaySchedule.Location = new System.Drawing.Point(17, 49);
+            this.dgvTodaySchedule.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dgvTodaySchedule.Name = "dgvTodaySchedule";
             this.dgvTodaySchedule.ReadOnly = true;
             this.dgvTodaySchedule.RowHeadersVisible = false;
-            this.dgvTodaySchedule.Size = new System.Drawing.Size(412, 225);
+            this.dgvTodaySchedule.RowHeadersWidth = 51;
+            this.dgvTodaySchedule.Size = new System.Drawing.Size(549, 277);
             this.dgvTodaySchedule.TabIndex = 0;
             // 
             // pnlMiddleSection
@@ -494,9 +522,10 @@
             this.pnlMiddleSection.Controls.Add(this.pnlRecentActivities);
             this.pnlMiddleSection.Controls.Add(this.pnlRoomStatus);
             this.pnlMiddleSection.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnlMiddleSection.Location = new System.Drawing.Point(0, 120);
+            this.pnlMiddleSection.Location = new System.Drawing.Point(0, 148);
+            this.pnlMiddleSection.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pnlMiddleSection.Name = "pnlMiddleSection";
-            this.pnlMiddleSection.Size = new System.Drawing.Size(880, 240);
+            this.pnlMiddleSection.Size = new System.Drawing.Size(1173, 295);
             this.pnlMiddleSection.TabIndex = 1;
             // 
             // pnlRecentActivities
@@ -506,10 +535,11 @@
             this.pnlRecentActivities.Controls.Add(this.lblActivitiesTitle);
             this.pnlRecentActivities.Controls.Add(this.lstRecentActivities);
             this.pnlRecentActivities.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlRecentActivities.Location = new System.Drawing.Point(440, 0);
+            this.pnlRecentActivities.Location = new System.Drawing.Point(586, 0);
+            this.pnlRecentActivities.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pnlRecentActivities.Name = "pnlRecentActivities";
-            this.pnlRecentActivities.Padding = new System.Windows.Forms.Padding(10);
-            this.pnlRecentActivities.Size = new System.Drawing.Size(440, 240);
+            this.pnlRecentActivities.Padding = new System.Windows.Forms.Padding(13, 12, 13, 12);
+            this.pnlRecentActivities.Size = new System.Drawing.Size(587, 295);
             this.pnlRecentActivities.TabIndex = 1;
             // 
             // lblActivitiesTitle
@@ -517,24 +547,26 @@
             this.lblActivitiesTitle.AutoSize = true;
             this.lblActivitiesTitle.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
             this.lblActivitiesTitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(93)))), ((int)(((byte)(64)))), ((int)(((byte)(55)))));
-            this.lblActivitiesTitle.Location = new System.Drawing.Point(13, 13);
+            this.lblActivitiesTitle.Location = new System.Drawing.Point(17, 16);
+            this.lblActivitiesTitle.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblActivitiesTitle.Name = "lblActivitiesTitle";
-            this.lblActivitiesTitle.Size = new System.Drawing.Size(111, 21);
+            this.lblActivitiesTitle.Size = new System.Drawing.Size(153, 28);
             this.lblActivitiesTitle.TabIndex = 1;
             this.lblActivitiesTitle.Text = "Son Hareketler";
             // 
             // lstRecentActivities
             // 
-            this.lstRecentActivities.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-            | System.Windows.Forms.AnchorStyles.Left)
+            this.lstRecentActivities.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lstRecentActivities.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.lstRecentActivities.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.lstRecentActivities.FormattingEnabled = true;
-            this.lstRecentActivities.ItemHeight = 15;
-            this.lstRecentActivities.Location = new System.Drawing.Point(13, 40);
+            this.lstRecentActivities.ItemHeight = 20;
+            this.lstRecentActivities.Location = new System.Drawing.Point(17, 49);
+            this.lstRecentActivities.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.lstRecentActivities.Name = "lstRecentActivities";
-            this.lstRecentActivities.Size = new System.Drawing.Size(412, 180);
+            this.lstRecentActivities.Size = new System.Drawing.Size(550, 220);
             this.lstRecentActivities.TabIndex = 0;
             // 
             // pnlRoomStatus
@@ -546,9 +578,10 @@
             this.pnlRoomStatus.Controls.Add(this.pnlRoomGrid);
             this.pnlRoomStatus.Dock = System.Windows.Forms.DockStyle.Left;
             this.pnlRoomStatus.Location = new System.Drawing.Point(0, 0);
+            this.pnlRoomStatus.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pnlRoomStatus.Name = "pnlRoomStatus";
-            this.pnlRoomStatus.Padding = new System.Windows.Forms.Padding(10);
-            this.pnlRoomStatus.Size = new System.Drawing.Size(440, 240);
+            this.pnlRoomStatus.Padding = new System.Windows.Forms.Padding(13, 12, 13, 12);
+            this.pnlRoomStatus.Size = new System.Drawing.Size(586, 295);
             this.pnlRoomStatus.TabIndex = 0;
             // 
             // pnlQuickActions
@@ -558,63 +591,68 @@
             this.pnlQuickActions.Controls.Add(this.btnCheckOut);
             this.pnlQuickActions.Controls.Add(this.btnCheckIn);
             this.pnlQuickActions.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.pnlQuickActions.Location = new System.Drawing.Point(10, 190);
+            this.pnlQuickActions.Location = new System.Drawing.Point(13, 234);
+            this.pnlQuickActions.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pnlQuickActions.Name = "pnlQuickActions";
-            this.pnlQuickActions.Size = new System.Drawing.Size(418, 38);
+            this.pnlQuickActions.Size = new System.Drawing.Size(558, 47);
             this.pnlQuickActions.TabIndex = 3;
             // 
             // btnEkHizmet
             // 
-            this.btnEkHizmet.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(89)))), ((int)(((byte)(182)))));
+            this.btnEkHizmet.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(139)))), ((int)(((byte)(106)))), ((int)(((byte)(66)))));
             this.btnEkHizmet.FlatAppearance.BorderSize = 0;
             this.btnEkHizmet.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEkHizmet.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnEkHizmet.ForeColor = System.Drawing.Color.White;
-            this.btnEkHizmet.Location = new System.Drawing.Point(315, 5);
+            this.btnEkHizmet.Location = new System.Drawing.Point(420, 6);
+            this.btnEkHizmet.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnEkHizmet.Name = "btnEkHizmet";
-            this.btnEkHizmet.Size = new System.Drawing.Size(100, 28);
+            this.btnEkHizmet.Size = new System.Drawing.Size(133, 34);
             this.btnEkHizmet.TabIndex = 3;
             this.btnEkHizmet.Text = "Ek Hizmet";
             this.btnEkHizmet.UseVisualStyleBackColor = false;
             // 
             // btnYeniRezervasyon
             // 
-            this.btnYeniRezervasyon.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(152)))), ((int)(((byte)(219)))));
+            this.btnYeniRezervasyon.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(139)))), ((int)(((byte)(106)))), ((int)(((byte)(66)))));
             this.btnYeniRezervasyon.FlatAppearance.BorderSize = 0;
             this.btnYeniRezervasyon.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnYeniRezervasyon.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnYeniRezervasyon.ForeColor = System.Drawing.Color.White;
-            this.btnYeniRezervasyon.Location = new System.Drawing.Point(210, 5);
+            this.btnYeniRezervasyon.Location = new System.Drawing.Point(280, 6);
+            this.btnYeniRezervasyon.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnYeniRezervasyon.Name = "btnYeniRezervasyon";
-            this.btnYeniRezervasyon.Size = new System.Drawing.Size(100, 28);
+            this.btnYeniRezervasyon.Size = new System.Drawing.Size(133, 34);
             this.btnYeniRezervasyon.TabIndex = 2;
             this.btnYeniRezervasyon.Text = "Rezervasyon";
             this.btnYeniRezervasyon.UseVisualStyleBackColor = false;
             // 
             // btnCheckOut
             // 
-            this.btnCheckOut.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(76)))), ((int)(((byte)(60)))));
+            this.btnCheckOut.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(139)))), ((int)(((byte)(106)))), ((int)(((byte)(66)))));
             this.btnCheckOut.FlatAppearance.BorderSize = 0;
             this.btnCheckOut.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCheckOut.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnCheckOut.ForeColor = System.Drawing.Color.White;
-            this.btnCheckOut.Location = new System.Drawing.Point(105, 5);
+            this.btnCheckOut.Location = new System.Drawing.Point(140, 6);
+            this.btnCheckOut.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnCheckOut.Name = "btnCheckOut";
-            this.btnCheckOut.Size = new System.Drawing.Size(100, 28);
+            this.btnCheckOut.Size = new System.Drawing.Size(133, 34);
             this.btnCheckOut.TabIndex = 1;
             this.btnCheckOut.Text = "Check-out";
             this.btnCheckOut.UseVisualStyleBackColor = false;
             // 
             // btnCheckIn
             // 
-            this.btnCheckIn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(174)))), ((int)(((byte)(96)))));
+            this.btnCheckIn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(139)))), ((int)(((byte)(106)))), ((int)(((byte)(66)))));
             this.btnCheckIn.FlatAppearance.BorderSize = 0;
             this.btnCheckIn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCheckIn.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnCheckIn.ForeColor = System.Drawing.Color.White;
-            this.btnCheckIn.Location = new System.Drawing.Point(0, 5);
+            this.btnCheckIn.Location = new System.Drawing.Point(0, 6);
+            this.btnCheckIn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnCheckIn.Name = "btnCheckIn";
-            this.btnCheckIn.Size = new System.Drawing.Size(100, 28);
+            this.btnCheckIn.Size = new System.Drawing.Size(133, 34);
             this.btnCheckIn.TabIndex = 0;
             this.btnCheckIn.Text = "Check-in";
             this.btnCheckIn.UseVisualStyleBackColor = false;
@@ -624,19 +662,21 @@
             this.lblRoomStatusTitle.AutoSize = true;
             this.lblRoomStatusTitle.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
             this.lblRoomStatusTitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(93)))), ((int)(((byte)(64)))), ((int)(((byte)(55)))));
-            this.lblRoomStatusTitle.Location = new System.Drawing.Point(13, 13);
+            this.lblRoomStatusTitle.Location = new System.Drawing.Point(17, 16);
+            this.lblRoomStatusTitle.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblRoomStatusTitle.Name = "lblRoomStatusTitle";
-            this.lblRoomStatusTitle.Size = new System.Drawing.Size(140, 21);
+            this.lblRoomStatusTitle.Size = new System.Drawing.Size(203, 28);
             this.lblRoomStatusTitle.TabIndex = 1;
             this.lblRoomStatusTitle.Text = "Oda Durumu (Kat 1)";
             // 
             // pnlRoomGrid
             // 
-            this.pnlRoomGrid.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+            this.pnlRoomGrid.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.pnlRoomGrid.Location = new System.Drawing.Point(13, 40);
+            this.pnlRoomGrid.Location = new System.Drawing.Point(17, 49);
+            this.pnlRoomGrid.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pnlRoomGrid.Name = "pnlRoomGrid";
-            this.pnlRoomGrid.Size = new System.Drawing.Size(412, 140);
+            this.pnlRoomGrid.Size = new System.Drawing.Size(549, 172);
             this.pnlRoomGrid.TabIndex = 2;
             // 
             // pnlStatsCards
@@ -647,20 +687,22 @@
             this.pnlStatsCards.Controls.Add(this.pnlCheckInCard);
             this.pnlStatsCards.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlStatsCards.Location = new System.Drawing.Point(0, 0);
+            this.pnlStatsCards.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pnlStatsCards.Name = "pnlStatsCards";
-            this.pnlStatsCards.Size = new System.Drawing.Size(880, 120);
+            this.pnlStatsCards.Size = new System.Drawing.Size(1173, 148);
             this.pnlStatsCards.TabIndex = 0;
             // 
             // pnlPendingCard
             // 
-            this.pnlPendingCard.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(229)))), ((int)(((byte)(180)))));
+            this.pnlPendingCard.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(215)))), ((int)(((byte)(185)))));
             this.pnlPendingCard.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pnlPendingCard.Controls.Add(this.lblPendingCount);
             this.pnlPendingCard.Controls.Add(this.lblPendingTitle);
             this.pnlPendingCard.Controls.Add(this.picPending);
-            this.pnlPendingCard.Location = new System.Drawing.Point(660, 10);
+            this.pnlPendingCard.Location = new System.Drawing.Point(880, 12);
+            this.pnlPendingCard.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pnlPendingCard.Name = "pnlPendingCard";
-            this.pnlPendingCard.Size = new System.Drawing.Size(210, 100);
+            this.pnlPendingCard.Size = new System.Drawing.Size(279, 123);
             this.pnlPendingCard.TabIndex = 3;
             // 
             // lblPendingCount
@@ -668,9 +710,10 @@
             this.lblPendingCount.AutoSize = true;
             this.lblPendingCount.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold);
             this.lblPendingCount.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(93)))), ((int)(((byte)(64)))), ((int)(((byte)(55)))));
-            this.lblPendingCount.Location = new System.Drawing.Point(75, 50);
+            this.lblPendingCount.Location = new System.Drawing.Point(100, 62);
+            this.lblPendingCount.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblPendingCount.Name = "lblPendingCount";
-            this.lblPendingCount.Size = new System.Drawing.Size(29, 32);
+            this.lblPendingCount.Size = new System.Drawing.Size(35, 41);
             this.lblPendingCount.TabIndex = 2;
             this.lblPendingCount.Text = "3";
             // 
@@ -679,17 +722,19 @@
             this.lblPendingTitle.AutoSize = true;
             this.lblPendingTitle.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
             this.lblPendingTitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(93)))), ((int)(((byte)(64)))), ((int)(((byte)(55)))));
-            this.lblPendingTitle.Location = new System.Drawing.Point(75, 20);
+            this.lblPendingTitle.Location = new System.Drawing.Point(100, 25);
+            this.lblPendingTitle.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblPendingTitle.Name = "lblPendingTitle";
-            this.lblPendingTitle.Size = new System.Drawing.Size(103, 19);
+            this.lblPendingTitle.Size = new System.Drawing.Size(129, 23);
             this.lblPendingTitle.TabIndex = 1;
             this.lblPendingTitle.Text = "Bekleyen İşlem";
             // 
             // picPending
             // 
-            this.picPending.Location = new System.Drawing.Point(15, 30);
+            this.picPending.Location = new System.Drawing.Point(20, 37);
+            this.picPending.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.picPending.Name = "picPending";
-            this.picPending.Size = new System.Drawing.Size(50, 40);
+            this.picPending.Size = new System.Drawing.Size(67, 49);
             this.picPending.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.picPending.TabIndex = 0;
             this.picPending.TabStop = false;
@@ -701,9 +746,10 @@
             this.pnlAvailableCard.Controls.Add(this.lblAvailableCount);
             this.pnlAvailableCard.Controls.Add(this.lblAvailableTitle);
             this.pnlAvailableCard.Controls.Add(this.picAvailable);
-            this.pnlAvailableCard.Location = new System.Drawing.Point(440, 10);
+            this.pnlAvailableCard.Location = new System.Drawing.Point(587, 12);
+            this.pnlAvailableCard.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pnlAvailableCard.Name = "pnlAvailableCard";
-            this.pnlAvailableCard.Size = new System.Drawing.Size(210, 100);
+            this.pnlAvailableCard.Size = new System.Drawing.Size(279, 123);
             this.pnlAvailableCard.TabIndex = 2;
             // 
             // lblAvailableCount
@@ -711,9 +757,10 @@
             this.lblAvailableCount.AutoSize = true;
             this.lblAvailableCount.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold);
             this.lblAvailableCount.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(93)))), ((int)(((byte)(64)))), ((int)(((byte)(55)))));
-            this.lblAvailableCount.Location = new System.Drawing.Point(75, 50);
+            this.lblAvailableCount.Location = new System.Drawing.Point(100, 62);
+            this.lblAvailableCount.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblAvailableCount.Name = "lblAvailableCount";
-            this.lblAvailableCount.Size = new System.Drawing.Size(29, 32);
+            this.lblAvailableCount.Size = new System.Drawing.Size(35, 41);
             this.lblAvailableCount.TabIndex = 2;
             this.lblAvailableCount.Text = "7";
             // 
@@ -722,17 +769,19 @@
             this.lblAvailableTitle.AutoSize = true;
             this.lblAvailableTitle.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
             this.lblAvailableTitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(93)))), ((int)(((byte)(64)))), ((int)(((byte)(55)))));
-            this.lblAvailableTitle.Location = new System.Drawing.Point(75, 20);
+            this.lblAvailableTitle.Location = new System.Drawing.Point(100, 25);
+            this.lblAvailableTitle.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblAvailableTitle.Name = "lblAvailableTitle";
-            this.lblAvailableTitle.Size = new System.Drawing.Size(79, 19);
+            this.lblAvailableTitle.Size = new System.Drawing.Size(97, 23);
             this.lblAvailableTitle.TabIndex = 1;
             this.lblAvailableTitle.Text = "Boş Odalar";
             // 
             // picAvailable
             // 
-            this.picAvailable.Location = new System.Drawing.Point(15, 30);
+            this.picAvailable.Location = new System.Drawing.Point(20, 37);
+            this.picAvailable.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.picAvailable.Name = "picAvailable";
-            this.picAvailable.Size = new System.Drawing.Size(50, 40);
+            this.picAvailable.Size = new System.Drawing.Size(67, 49);
             this.picAvailable.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.picAvailable.TabIndex = 0;
             this.picAvailable.TabStop = false;
@@ -744,9 +793,10 @@
             this.pnlCheckOutCard.Controls.Add(this.lblCheckOutCount);
             this.pnlCheckOutCard.Controls.Add(this.lblCheckOutTitle);
             this.pnlCheckOutCard.Controls.Add(this.picCheckOut);
-            this.pnlCheckOutCard.Location = new System.Drawing.Point(220, 10);
+            this.pnlCheckOutCard.Location = new System.Drawing.Point(293, 12);
+            this.pnlCheckOutCard.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pnlCheckOutCard.Name = "pnlCheckOutCard";
-            this.pnlCheckOutCard.Size = new System.Drawing.Size(210, 100);
+            this.pnlCheckOutCard.Size = new System.Drawing.Size(279, 123);
             this.pnlCheckOutCard.TabIndex = 1;
             // 
             // lblCheckOutCount
@@ -754,9 +804,10 @@
             this.lblCheckOutCount.AutoSize = true;
             this.lblCheckOutCount.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold);
             this.lblCheckOutCount.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(93)))), ((int)(((byte)(64)))), ((int)(((byte)(55)))));
-            this.lblCheckOutCount.Location = new System.Drawing.Point(75, 50);
+            this.lblCheckOutCount.Location = new System.Drawing.Point(100, 62);
+            this.lblCheckOutCount.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblCheckOutCount.Name = "lblCheckOutCount";
-            this.lblCheckOutCount.Size = new System.Drawing.Size(29, 32);
+            this.lblCheckOutCount.Size = new System.Drawing.Size(35, 41);
             this.lblCheckOutCount.TabIndex = 2;
             this.lblCheckOutCount.Text = "5";
             // 
@@ -765,17 +816,19 @@
             this.lblCheckOutTitle.AutoSize = true;
             this.lblCheckOutTitle.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
             this.lblCheckOutTitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(93)))), ((int)(((byte)(64)))), ((int)(((byte)(55)))));
-            this.lblCheckOutTitle.Location = new System.Drawing.Point(75, 20);
+            this.lblCheckOutTitle.Location = new System.Drawing.Point(100, 25);
+            this.lblCheckOutTitle.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblCheckOutTitle.Name = "lblCheckOutTitle";
-            this.lblCheckOutTitle.Size = new System.Drawing.Size(131, 19);
+            this.lblCheckOutTitle.Size = new System.Drawing.Size(168, 23);
             this.lblCheckOutTitle.TabIndex = 1;
             this.lblCheckOutTitle.Text = "Bugünkü Check-out";
             // 
             // picCheckOut
             // 
-            this.picCheckOut.Location = new System.Drawing.Point(15, 30);
+            this.picCheckOut.Location = new System.Drawing.Point(20, 37);
+            this.picCheckOut.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.picCheckOut.Name = "picCheckOut";
-            this.picCheckOut.Size = new System.Drawing.Size(50, 40);
+            this.picCheckOut.Size = new System.Drawing.Size(67, 49);
             this.picCheckOut.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.picCheckOut.TabIndex = 0;
             this.picCheckOut.TabStop = false;
@@ -787,9 +840,10 @@
             this.pnlCheckInCard.Controls.Add(this.lblCheckInCount);
             this.pnlCheckInCard.Controls.Add(this.lblCheckInTitle);
             this.pnlCheckInCard.Controls.Add(this.picCheckIn);
-            this.pnlCheckInCard.Location = new System.Drawing.Point(0, 10);
+            this.pnlCheckInCard.Location = new System.Drawing.Point(0, 12);
+            this.pnlCheckInCard.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pnlCheckInCard.Name = "pnlCheckInCard";
-            this.pnlCheckInCard.Size = new System.Drawing.Size(210, 100);
+            this.pnlCheckInCard.Size = new System.Drawing.Size(279, 123);
             this.pnlCheckInCard.TabIndex = 0;
             // 
             // lblCheckInCount
@@ -797,9 +851,10 @@
             this.lblCheckInCount.AutoSize = true;
             this.lblCheckInCount.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold);
             this.lblCheckInCount.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(93)))), ((int)(((byte)(64)))), ((int)(((byte)(55)))));
-            this.lblCheckInCount.Location = new System.Drawing.Point(75, 50);
+            this.lblCheckInCount.Location = new System.Drawing.Point(100, 62);
+            this.lblCheckInCount.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblCheckInCount.Name = "lblCheckInCount";
-            this.lblCheckInCount.Size = new System.Drawing.Size(29, 32);
+            this.lblCheckInCount.Size = new System.Drawing.Size(35, 41);
             this.lblCheckInCount.TabIndex = 2;
             this.lblCheckInCount.Text = "8";
             // 
@@ -808,17 +863,19 @@
             this.lblCheckInTitle.AutoSize = true;
             this.lblCheckInTitle.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
             this.lblCheckInTitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(93)))), ((int)(((byte)(64)))), ((int)(((byte)(55)))));
-            this.lblCheckInTitle.Location = new System.Drawing.Point(75, 20);
+            this.lblCheckInTitle.Location = new System.Drawing.Point(100, 25);
+            this.lblCheckInTitle.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblCheckInTitle.Name = "lblCheckInTitle";
-            this.lblCheckInTitle.Size = new System.Drawing.Size(124, 19);
+            this.lblCheckInTitle.Size = new System.Drawing.Size(156, 23);
             this.lblCheckInTitle.TabIndex = 1;
             this.lblCheckInTitle.Text = "Bugünkü Check-in";
             // 
             // picCheckIn
             // 
-            this.picCheckIn.Location = new System.Drawing.Point(15, 30);
+            this.picCheckIn.Location = new System.Drawing.Point(20, 37);
+            this.picCheckIn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.picCheckIn.Name = "picCheckIn";
-            this.picCheckIn.Size = new System.Drawing.Size(50, 40);
+            this.picCheckIn.Size = new System.Drawing.Size(67, 49);
             this.picCheckIn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.picCheckIn.TabIndex = 0;
             this.picCheckIn.TabStop = false;
@@ -830,9 +887,10 @@
             this.pnlFooter.Controls.Add(this.lblStatus);
             this.pnlFooter.Controls.Add(this.lblCopyright);
             this.pnlFooter.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.pnlFooter.Location = new System.Drawing.Point(280, 750);
+            this.pnlFooter.Location = new System.Drawing.Point(373, 923);
+            this.pnlFooter.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pnlFooter.Name = "pnlFooter";
-            this.pnlFooter.Size = new System.Drawing.Size(920, 50);
+            this.pnlFooter.Size = new System.Drawing.Size(1227, 62);
             this.pnlFooter.TabIndex = 3;
             // 
             // lblLastUpdate
@@ -840,9 +898,10 @@
             this.lblLastUpdate.AutoSize = true;
             this.lblLastUpdate.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.lblLastUpdate.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(93)))), ((int)(((byte)(64)))), ((int)(((byte)(55)))));
-            this.lblLastUpdate.Location = new System.Drawing.Point(20, 30);
+            this.lblLastUpdate.Location = new System.Drawing.Point(27, 37);
+            this.lblLastUpdate.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblLastUpdate.Name = "lblLastUpdate";
-            this.lblLastUpdate.Size = new System.Drawing.Size(192, 15);
+            this.lblLastUpdate.Size = new System.Drawing.Size(272, 20);
             this.lblLastUpdate.TabIndex = 2;
             this.lblLastUpdate.Text = "Son Güncelleme: 11 Haziran 2025, 17:30";
             // 
@@ -851,9 +910,10 @@
             this.lblStatus.AutoSize = true;
             this.lblStatus.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.lblStatus.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(93)))), ((int)(((byte)(64)))), ((int)(((byte)(55)))));
-            this.lblStatus.Location = new System.Drawing.Point(20, 10);
+            this.lblStatus.Location = new System.Drawing.Point(27, 12);
+            this.lblStatus.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblStatus.Name = "lblStatus";
-            this.lblStatus.Size = new System.Drawing.Size(220, 15);
+            this.lblStatus.Size = new System.Drawing.Size(301, 20);
             this.lblStatus.TabIndex = 1;
             this.lblStatus.Text = "Durum: 8 aktif rezervasyon, 3 bekleyen işlem";
             // 
@@ -863,22 +923,24 @@
             this.lblCopyright.AutoSize = true;
             this.lblCopyright.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.lblCopyright.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(93)))), ((int)(((byte)(64)))), ((int)(((byte)(55)))));
-            this.lblCopyright.Location = new System.Drawing.Point(720, 15);
+            this.lblCopyright.Location = new System.Drawing.Point(960, 18);
+            this.lblCopyright.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblCopyright.Name = "lblCopyright";
-            this.lblCopyright.Size = new System.Drawing.Size(180, 15);
+            this.lblCopyright.Size = new System.Drawing.Size(252, 20);
             this.lblCopyright.TabIndex = 0;
             this.lblCopyright.Text = "© 2025 Güneş Otel - Resepsiyon v1.0";
             // 
             // FrmReceptionDashboard
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1200, 800);
+            this.ClientSize = new System.Drawing.Size(1600, 985);
             this.Controls.Add(this.pnlContent);
             this.Controls.Add(this.pnlFooter);
             this.Controls.Add(this.pnlHeader);
             this.Controls.Add(this.pnlSidebar);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "FrmReceptionDashboard";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Güneş Otel - Resepsiyon Paneli";
@@ -918,6 +980,7 @@
             this.pnlFooter.ResumeLayout(false);
             this.pnlFooter.PerformLayout();
             this.ResumeLayout(false);
+
         }
 
         #endregion

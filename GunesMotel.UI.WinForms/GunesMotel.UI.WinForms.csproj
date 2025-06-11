@@ -146,6 +146,9 @@
     <EmbeddedResource Include="Control\PositionManagementControl.resx">
       <DependentUpon>PositionManagementControl.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmReceptionDashboard.resx">
+      <DependentUpon>FrmReceptionDashboard.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
