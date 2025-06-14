@@ -199,6 +199,7 @@
             this.btnRezervasyonlar.Text = "📅 Rezervasyonlar";
             this.btnRezervasyonlar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnRezervasyonlar.UseVisualStyleBackColor = true;
+            this.btnRezervasyonlar.Click += new System.EventHandler(this.btnRezervasyonlar_Click);
             // 
             // btnMusteriler
             // 

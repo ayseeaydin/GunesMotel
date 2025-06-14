@@ -149,6 +149,9 @@
     <EmbeddedResource Include="Control\EmployeeManagementControl.resx">
       <DependentUpon>EmployeeManagementControl.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Control\ReservationManagementControl.resx">
+      <DependentUpon>ReservationManagementControl.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Control\RoleManagementControl.resx">
       <DependentUpon>RoleManagementControl.cs</DependentUpon>
     </EmbeddedResource>

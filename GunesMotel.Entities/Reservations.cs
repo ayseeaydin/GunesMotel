@@ -11,7 +11,7 @@ namespace GunesMotel.Entities
     {
         [Key]
         public int ReservationID { get; set; }
-        public string CustomerID { get; set; }
+        public int CustomerID { get; set; }
         public int RoomID { get; set; }
         public int UserID { get; set; }
         public DateTime CheckInDate { get; set; }
@@ -21,5 +21,9 @@ namespace GunesMotel.Entities
         public string? Status { get; set; }
         public int GuestCount { get; set; }
         public string? Notes { get; set; }
+
+        public virtual Customers Customer { get; set; }
+        public virtual Rooms Room { get; set; }
+        public virtual Users User { get; set; }
     }    
 }

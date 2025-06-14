@@ -38,7 +38,6 @@
         private System.Windows.Forms.TextBox txtNotes;
         private System.Windows.Forms.Panel pnlFormButtons;
         private System.Windows.Forms.Button btnSave;
-        private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.Button btnNew;
         private System.Windows.Forms.Button btnEdit;
         private System.Windows.Forms.Button btnDelete;
@@ -70,21 +69,26 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle21 = new System.Windows.Forms.DataGridViewCellStyle();
             this.pnlSearch = new System.Windows.Forms.Panel();
             this.btnSearch = new System.Windows.Forms.Button();
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.cmbSearchType = new System.Windows.Forms.ComboBox();
             this.lblSearchType = new System.Windows.Forms.Label();
             this.pnlMain = new System.Windows.Forms.Panel();
+            this.pnlCustomerList = new System.Windows.Forms.Panel();
+            this.dgvCustomers = new System.Windows.Forms.DataGridView();
+            this.pnlListButtons = new System.Windows.Forms.Panel();
+            this.btnExport = new System.Windows.Forms.Button();
+            this.btnRefresh = new System.Windows.Forms.Button();
+            this.lblListTitle = new System.Windows.Forms.Label();
             this.pnlCustomerForm = new System.Windows.Forms.Panel();
             this.pnlFormButtons = new System.Windows.Forms.Panel();
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnEdit = new System.Windows.Forms.Button();
             this.btnNew = new System.Windows.Forms.Button();
-            this.btnCancel = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
             this.pnlFormContent = new System.Windows.Forms.Panel();
             this.grpNotes = new System.Windows.Forms.GroupBox();
@@ -109,14 +113,11 @@
             this.lblFullName = new System.Windows.Forms.Label();
             this.pnlFormHeader = new System.Windows.Forms.Panel();
             this.lblFormTitle = new System.Windows.Forms.Label();
-            this.pnlCustomerList = new System.Windows.Forms.Panel();
-            this.dgvCustomers = new System.Windows.Forms.DataGridView();
-            this.pnlListButtons = new System.Windows.Forms.Panel();
-            this.btnExport = new System.Windows.Forms.Button();
-            this.btnRefresh = new System.Windows.Forms.Button();
-            this.lblListTitle = new System.Windows.Forms.Label();
             this.pnlSearch.SuspendLayout();
             this.pnlMain.SuspendLayout();
+            this.pnlCustomerList.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCustomers)).BeginInit();
+            this.pnlListButtons.SuspendLayout();
             this.pnlCustomerForm.SuspendLayout();
             this.pnlFormButtons.SuspendLayout();
             this.pnlFormContent.SuspendLayout();
@@ -124,9 +125,6 @@
             this.grpContactInfo.SuspendLayout();
             this.grpPersonalInfo.SuspendLayout();
             this.pnlFormHeader.SuspendLayout();
-            this.pnlCustomerList.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvCustomers)).BeginInit();
-            this.pnlListButtons.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnlSearch
@@ -165,6 +163,7 @@
             this.txtSearch.Size = new System.Drawing.Size(250, 30);
             this.txtSearch.TabIndex = 2;
             this.txtSearch.Text = "Aranacak değeri giriniz...";
+            this.txtSearch.TextChanged += new System.EventHandler(this.txtSearch_TextChanged);
             // 
             // cmbSearchType
             // 
@@ -196,13 +195,133 @@
             // pnlMain
             // 
             this.pnlMain.Controls.Add(this.pnlCustomerList);
-            this.pnlMain.Controls.Add(this.pnlCustomerForm);            
+            this.pnlMain.Controls.Add(this.pnlCustomerForm);
             this.pnlMain.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlMain.Location = new System.Drawing.Point(0, 60);
             this.pnlMain.Name = "pnlMain";
             this.pnlMain.Padding = new System.Windows.Forms.Padding(10);
             this.pnlMain.Size = new System.Drawing.Size(1200, 640);
             this.pnlMain.TabIndex = 2;
+            // 
+            // pnlCustomerList
+            // 
+            this.pnlCustomerList.BackColor = System.Drawing.Color.White;
+            this.pnlCustomerList.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnlCustomerList.Controls.Add(this.dgvCustomers);
+            this.pnlCustomerList.Controls.Add(this.pnlListButtons);
+            this.pnlCustomerList.Controls.Add(this.lblListTitle);
+            this.pnlCustomerList.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlCustomerList.Location = new System.Drawing.Point(460, 10);
+            this.pnlCustomerList.Name = "pnlCustomerList";
+            this.pnlCustomerList.Size = new System.Drawing.Size(730, 620);
+            this.pnlCustomerList.TabIndex = 1;
+            // 
+            // dgvCustomers
+            // 
+            this.dgvCustomers.AllowUserToAddRows = false;
+            this.dgvCustomers.AllowUserToDeleteRows = false;
+            this.dgvCustomers.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvCustomers.BackgroundColor = System.Drawing.Color.White;
+            this.dgvCustomers.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgvCustomers.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            this.dgvCustomers.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle19.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle19.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(240)))), ((int)(((byte)(230)))));
+            dataGridViewCellStyle19.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle19.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(101)))), ((int)(((byte)(67)))), ((int)(((byte)(33)))));
+            dataGridViewCellStyle19.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(240)))), ((int)(((byte)(230)))));
+            dataGridViewCellStyle19.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(101)))), ((int)(((byte)(67)))), ((int)(((byte)(33)))));
+            dataGridViewCellStyle19.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvCustomers.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle19;
+            this.dgvCustomers.ColumnHeadersHeight = 50;
+            this.dgvCustomers.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            dataGridViewCellStyle20.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle20.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle20.Font = new System.Drawing.Font("Segoe UI", 10F);
+            dataGridViewCellStyle20.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(101)))), ((int)(((byte)(67)))), ((int)(((byte)(33)))));
+            dataGridViewCellStyle20.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(240)))), ((int)(((byte)(230)))));
+            dataGridViewCellStyle20.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(101)))), ((int)(((byte)(67)))), ((int)(((byte)(33)))));
+            dataGridViewCellStyle20.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvCustomers.DefaultCellStyle = dataGridViewCellStyle20;
+            this.dgvCustomers.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvCustomers.EnableHeadersVisualStyles = false;
+            this.dgvCustomers.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(232)))), ((int)(((byte)(220)))));
+            this.dgvCustomers.Location = new System.Drawing.Point(0, 50);
+            this.dgvCustomers.MultiSelect = false;
+            this.dgvCustomers.Name = "dgvCustomers";
+            this.dgvCustomers.ReadOnly = true;
+            this.dgvCustomers.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle21.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle21.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(240)))), ((int)(((byte)(230)))));
+            dataGridViewCellStyle21.Font = new System.Drawing.Font("Segoe UI", 10F);
+            dataGridViewCellStyle21.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(101)))), ((int)(((byte)(67)))), ((int)(((byte)(33)))));
+            dataGridViewCellStyle21.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(139)))), ((int)(((byte)(106)))), ((int)(((byte)(66)))));
+            dataGridViewCellStyle21.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle21.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvCustomers.RowHeadersDefaultCellStyle = dataGridViewCellStyle21;
+            this.dgvCustomers.RowHeadersVisible = false;
+            this.dgvCustomers.RowHeadersWidth = 51;
+            this.dgvCustomers.RowTemplate.Height = 40;
+            this.dgvCustomers.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvCustomers.Size = new System.Drawing.Size(728, 508);
+            this.dgvCustomers.TabIndex = 2;
+            this.dgvCustomers.SelectionChanged += new System.EventHandler(this.dgvCustomers_SelectionChanged);
+            // 
+            // pnlListButtons
+            // 
+            this.pnlListButtons.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(245)))), ((int)(((byte)(245)))));
+            this.pnlListButtons.Controls.Add(this.btnExport);
+            this.pnlListButtons.Controls.Add(this.btnRefresh);
+            this.pnlListButtons.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.pnlListButtons.Location = new System.Drawing.Point(0, 558);
+            this.pnlListButtons.Name = "pnlListButtons";
+            this.pnlListButtons.Padding = new System.Windows.Forms.Padding(15, 10, 15, 10);
+            this.pnlListButtons.Size = new System.Drawing.Size(728, 60);
+            this.pnlListButtons.TabIndex = 1;
+            // 
+            // btnExport
+            // 
+            this.btnExport.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnExport.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(160)))), ((int)(((byte)(71)))));
+            this.btnExport.FlatAppearance.BorderSize = 0;
+            this.btnExport.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnExport.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.btnExport.ForeColor = System.Drawing.Color.White;
+            this.btnExport.Location = new System.Drawing.Point(638, 12);
+            this.btnExport.Name = "btnExport";
+            this.btnExport.Size = new System.Drawing.Size(80, 35);
+            this.btnExport.TabIndex = 1;
+            this.btnExport.Text = "📤 Dışa Aktar";
+            this.btnExport.UseVisualStyleBackColor = false;
+            // 
+            // btnRefresh
+            // 
+            this.btnRefresh.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnRefresh.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(139)))), ((int)(((byte)(106)))), ((int)(((byte)(66)))));
+            this.btnRefresh.FlatAppearance.BorderSize = 0;
+            this.btnRefresh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRefresh.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.btnRefresh.ForeColor = System.Drawing.Color.White;
+            this.btnRefresh.Location = new System.Drawing.Point(548, 12);
+            this.btnRefresh.Name = "btnRefresh";
+            this.btnRefresh.Size = new System.Drawing.Size(80, 35);
+            this.btnRefresh.TabIndex = 0;
+            this.btnRefresh.Text = "🔄 Yenile";
+            this.btnRefresh.UseVisualStyleBackColor = false;
+            // 
+            // lblListTitle
+            // 
+            this.lblListTitle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(215)))), ((int)(((byte)(185)))));
+            this.lblListTitle.Dock = System.Windows.Forms.DockStyle.Top;
+            this.lblListTitle.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            this.lblListTitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(93)))), ((int)(((byte)(64)))), ((int)(((byte)(55)))));
+            this.lblListTitle.Location = new System.Drawing.Point(0, 0);
+            this.lblListTitle.Name = "lblListTitle";
+            this.lblListTitle.Padding = new System.Windows.Forms.Padding(15, 12, 15, 12);
+            this.lblListTitle.Size = new System.Drawing.Size(728, 50);
+            this.lblListTitle.TabIndex = 0;
+            this.lblListTitle.Text = "📊 Müşteri Listesi";
+            this.lblListTitle.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // pnlCustomerForm
             // 
@@ -223,7 +342,6 @@
             this.pnlFormButtons.Controls.Add(this.btnDelete);
             this.pnlFormButtons.Controls.Add(this.btnEdit);
             this.pnlFormButtons.Controls.Add(this.btnNew);
-            this.pnlFormButtons.Controls.Add(this.btnCancel);
             this.pnlFormButtons.Controls.Add(this.btnSave);
             this.pnlFormButtons.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.pnlFormButtons.Location = new System.Drawing.Point(0, 558);
@@ -234,31 +352,33 @@
             // 
             // btnDelete
             // 
-            this.btnDelete.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(158)))), ((int)(((byte)(158)))), ((int)(((byte)(158)))));
+            this.btnDelete.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(67)))), ((int)(((byte)(54)))));
             this.btnDelete.FlatAppearance.BorderSize = 0;
             this.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDelete.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
             this.btnDelete.ForeColor = System.Drawing.Color.White;
-            this.btnDelete.Location = new System.Drawing.Point(353, 12);
+            this.btnDelete.Location = new System.Drawing.Point(101, 12);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(80, 35);
             this.btnDelete.TabIndex = 4;
             this.btnDelete.Text = "🗑️ Sil";
             this.btnDelete.UseVisualStyleBackColor = false;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // btnEdit
             // 
-            this.btnEdit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(193)))), ((int)(((byte)(7)))));
+            this.btnEdit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(158)))), ((int)(((byte)(158)))), ((int)(((byte)(158)))));
             this.btnEdit.FlatAppearance.BorderSize = 0;
             this.btnEdit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEdit.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
             this.btnEdit.ForeColor = System.Drawing.Color.White;
-            this.btnEdit.Location = new System.Drawing.Point(285, 12);
+            this.btnEdit.Location = new System.Drawing.Point(187, 12);
             this.btnEdit.Name = "btnEdit";
             this.btnEdit.Size = new System.Drawing.Size(80, 35);
             this.btnEdit.TabIndex = 3;
             this.btnEdit.Text = "✏️ Düzenle";
             this.btnEdit.UseVisualStyleBackColor = false;
+            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
             // 
             // btnNew
             // 
@@ -267,26 +387,13 @@
             this.btnNew.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnNew.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
             this.btnNew.ForeColor = System.Drawing.Color.White;
-            this.btnNew.Location = new System.Drawing.Point(195, 12);
+            this.btnNew.Location = new System.Drawing.Point(273, 12);
             this.btnNew.Name = "btnNew";
             this.btnNew.Size = new System.Drawing.Size(80, 35);
             this.btnNew.TabIndex = 2;
-            this.btnNew.Text = "➕ Yeni";
+            this.btnNew.Text = "➕ Temizle";
             this.btnNew.UseVisualStyleBackColor = false;
-            // 
-            // btnCancel
-            // 
-            this.btnCancel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(244)))), ((int)(((byte)(67)))), ((int)(((byte)(54)))));
-            this.btnCancel.FlatAppearance.BorderSize = 0;
-            this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCancel.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            this.btnCancel.ForeColor = System.Drawing.Color.White;
-            this.btnCancel.Location = new System.Drawing.Point(105, 12);
-            this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(80, 35);
-            this.btnCancel.TabIndex = 1;
-            this.btnCancel.Text = "❌ İptal";
-            this.btnCancel.UseVisualStyleBackColor = false;
+            this.btnNew.Click += new System.EventHandler(this.btnNew_Click);
             // 
             // btnSave
             // 
@@ -301,6 +408,7 @@
             this.btnSave.TabIndex = 0;
             this.btnSave.Text = "💾 Kaydet";
             this.btnSave.UseVisualStyleBackColor = false;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // pnlFormContent
             // 
@@ -563,125 +671,6 @@
             this.lblFormTitle.TabIndex = 0;
             this.lblFormTitle.Text = "📝 Müşteri Bilgileri";
             // 
-            // pnlCustomerList
-            // 
-            this.pnlCustomerList.BackColor = System.Drawing.Color.White;
-            this.pnlCustomerList.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pnlCustomerList.Controls.Add(this.dgvCustomers);
-            this.pnlCustomerList.Controls.Add(this.pnlListButtons);
-            this.pnlCustomerList.Controls.Add(this.lblListTitle);
-            this.pnlCustomerList.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlCustomerList.Location = new System.Drawing.Point(10, 10);
-            this.pnlCustomerList.Name = "pnlCustomerList";
-            this.pnlCustomerList.Size = new System.Drawing.Size(1180, 620);
-            this.pnlCustomerList.TabIndex = 1;
-            // 
-            // dgvCustomers
-            // 
-            this.dgvCustomers.AllowUserToAddRows = false;
-            this.dgvCustomers.AllowUserToDeleteRows = false;
-            this.dgvCustomers.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvCustomers.BackgroundColor = System.Drawing.Color.White;
-            this.dgvCustomers.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dgvCustomers.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
-            this.dgvCustomers.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(240)))), ((int)(((byte)(230)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(101)))), ((int)(((byte)(67)))), ((int)(((byte)(33)))));
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(240)))), ((int)(((byte)(230)))));
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(101)))), ((int)(((byte)(67)))), ((int)(((byte)(33)))));
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvCustomers.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.dgvCustomers.ColumnHeadersHeight = 50;
-            this.dgvCustomers.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 10F);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(101)))), ((int)(((byte)(67)))), ((int)(((byte)(33)))));
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(240)))), ((int)(((byte)(230)))));
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(101)))), ((int)(((byte)(67)))), ((int)(((byte)(33)))));
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvCustomers.DefaultCellStyle = dataGridViewCellStyle2;
-            this.dgvCustomers.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvCustomers.EnableHeadersVisualStyles = false;
-            this.dgvCustomers.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(232)))), ((int)(((byte)(220)))));
-            this.dgvCustomers.Location = new System.Drawing.Point(0, 50);
-            this.dgvCustomers.MultiSelect = false;
-            this.dgvCustomers.Name = "dgvCustomers";
-            this.dgvCustomers.ReadOnly = true;
-            this.dgvCustomers.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(240)))), ((int)(((byte)(230)))));
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 10F);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(101)))), ((int)(((byte)(67)))), ((int)(((byte)(33)))));
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(139)))), ((int)(((byte)(106)))), ((int)(((byte)(66)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvCustomers.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
-            this.dgvCustomers.RowHeadersVisible = false;
-            this.dgvCustomers.RowHeadersWidth = 51;
-            this.dgvCustomers.RowTemplate.Height = 40;
-            this.dgvCustomers.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvCustomers.Size = new System.Drawing.Size(1178, 508);
-            this.dgvCustomers.TabIndex = 2;
-            // 
-            // pnlListButtons
-            // 
-            this.pnlListButtons.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(245)))), ((int)(((byte)(245)))));
-            this.pnlListButtons.Controls.Add(this.btnExport);
-            this.pnlListButtons.Controls.Add(this.btnRefresh);
-            this.pnlListButtons.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.pnlListButtons.Location = new System.Drawing.Point(0, 558);
-            this.pnlListButtons.Name = "pnlListButtons";
-            this.pnlListButtons.Padding = new System.Windows.Forms.Padding(15, 10, 15, 10);
-            this.pnlListButtons.Size = new System.Drawing.Size(1178, 60);
-            this.pnlListButtons.TabIndex = 1;
-            // 
-            // btnExport
-            // 
-            this.btnExport.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnExport.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(160)))), ((int)(((byte)(71)))));
-            this.btnExport.FlatAppearance.BorderSize = 0;
-            this.btnExport.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnExport.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            this.btnExport.ForeColor = System.Drawing.Color.White;
-            this.btnExport.Location = new System.Drawing.Point(1088, 12);
-            this.btnExport.Name = "btnExport";
-            this.btnExport.Size = new System.Drawing.Size(80, 35);
-            this.btnExport.TabIndex = 1;
-            this.btnExport.Text = "📤 Dışa Aktar";
-            this.btnExport.UseVisualStyleBackColor = false;
-            // 
-            // btnRefresh
-            // 
-            this.btnRefresh.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnRefresh.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(139)))), ((int)(((byte)(106)))), ((int)(((byte)(66)))));
-            this.btnRefresh.FlatAppearance.BorderSize = 0;
-            this.btnRefresh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRefresh.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            this.btnRefresh.ForeColor = System.Drawing.Color.White;
-            this.btnRefresh.Location = new System.Drawing.Point(998, 12);
-            this.btnRefresh.Name = "btnRefresh";
-            this.btnRefresh.Size = new System.Drawing.Size(80, 35);
-            this.btnRefresh.TabIndex = 0;
-            this.btnRefresh.Text = "🔄 Yenile";
-            this.btnRefresh.UseVisualStyleBackColor = false;
-            // 
-            // lblListTitle
-            // 
-            this.lblListTitle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(215)))), ((int)(((byte)(185)))));
-            this.lblListTitle.Dock = System.Windows.Forms.DockStyle.Top;
-            this.lblListTitle.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
-            this.lblListTitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(93)))), ((int)(((byte)(64)))), ((int)(((byte)(55)))));
-            this.lblListTitle.Location = new System.Drawing.Point(0, 0);
-            this.lblListTitle.Name = "lblListTitle";
-            this.lblListTitle.Padding = new System.Windows.Forms.Padding(15, 12, 15, 12);
-            this.lblListTitle.Size = new System.Drawing.Size(1178, 50);
-            this.lblListTitle.TabIndex = 0;
-            this.lblListTitle.Text = "📊 Müşteri Listesi";
-            this.lblListTitle.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
             // AddCustomerControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -694,6 +683,9 @@
             this.pnlSearch.ResumeLayout(false);
             this.pnlSearch.PerformLayout();
             this.pnlMain.ResumeLayout(false);
+            this.pnlCustomerList.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCustomers)).EndInit();
+            this.pnlListButtons.ResumeLayout(false);
             this.pnlCustomerForm.ResumeLayout(false);
             this.pnlFormButtons.ResumeLayout(false);
             this.pnlFormContent.ResumeLayout(false);
@@ -705,9 +697,6 @@
             this.grpPersonalInfo.PerformLayout();
             this.pnlFormHeader.ResumeLayout(false);
             this.pnlFormHeader.PerformLayout();
-            this.pnlCustomerList.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvCustomers)).EndInit();
-            this.pnlListButtons.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

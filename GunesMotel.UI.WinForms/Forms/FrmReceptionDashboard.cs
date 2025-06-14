@@ -164,6 +164,9 @@ namespace GunesMotel.UI.WinForms.Forms
             Application.Exit();
         }
 
-        
+        private void btnRezervasyonlar_Click(object sender, EventArgs e)
+        {
+            LoadUserControl(new ReservationManagementControl());
+        }
     }
 }
