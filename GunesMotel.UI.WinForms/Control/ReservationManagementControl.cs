@@ -30,12 +30,12 @@ namespace GunesMotel.UI.WinForms.Control
                 var displayList = reservationList.Select(r => new
                 {
                     r.ReservationID,
-                    r.CustomerID, 
-                    r.RoomID,     
-                    r.UserID,     
-                    Customer = r.Customer?.FullName,
-                    Room = r.Room?.RoomNumber,
-                    User = r.User?.Username,
+                    r.CustomerID,
+                    r.RoomID,
+                    r.UserID,
+                    CustomerName = r.Customer?.FullName,
+                    RoomNumber = r.Room?.RoomNumber,
+                    Username = r.User?.Username,
                     r.CheckInDate,
                     r.CheckOutDate,
                     r.ReservationDate,
@@ -239,7 +239,78 @@ namespace GunesMotel.UI.WinForms.Control
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
+            try
+            {
+                if (dgvReservations.SelectedRows.Count == 0)
+                {
+                    MessageBox.Show("Lütfen silmek için bir rezervasyon seçin.", "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
 
+                var selectedRow = dgvReservations.SelectedRows[0];
+                int reservationId = Convert.ToInt32(selectedRow.Cells["ReservationID"].Value);
+
+                var confirmResult = MessageBox.Show("Seçilen rezervasyonu silmek istediğinize emin misiniz?", "Silme Onayı", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (confirmResult == DialogResult.Yes)
+                {
+                    var repo = new ReservationRepository();
+                    repo.Delete(reservationId);
+
+                    MessageBox.Show("Rezervasyon başarıyla silindi.", "Bilgi", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    LoadReservations(); // Listeyi yenile
+                    ClearForm();        // Formu temizle
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Silme işlemi sırasında hata oluştu: " + ex.Message, "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void txtSearch_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                string searchText = txtSearch.Text.Trim().ToLower();
+
+                var repo = new ReservationRepository();
+                var reservations = repo.GetAll();
+
+                var filtered = reservations
+                    .Where(r =>
+                        string.IsNullOrEmpty(searchText) ||
+                        (r.Customer != null && r.Customer.FullName.ToLower().Contains(searchText)) ||
+                        (r.Room != null && r.Room.RoomNumber.ToString().Contains(searchText)) ||
+                        (r.User != null && r.User.Username.ToLower().Contains(searchText)) ||
+                        (!string.IsNullOrEmpty(r.Status) && r.Status.ToLower().Contains(searchText)) ||
+                        (!string.IsNullOrEmpty(r.Source) && r.Source.ToLower().Contains(searchText)) ||
+                        (!string.IsNullOrEmpty(r.Notes) && r.Notes.ToLower().Contains(searchText)) ||
+                        r.ReservationDate.ToString("dd.MM.yyyy").Contains(searchText)
+                    )
+                    .Select(r => new
+                    {
+                        r.ReservationID,
+                        r.CustomerID,
+                        r.RoomID,
+                        r.UserID,
+                        CustomerName = r.Customer?.FullName,
+                        RoomNumber = r.Room?.RoomNumber,
+                        Username = r.User?.Username,
+                        r.CheckInDate,
+                        r.CheckOutDate,
+                        r.ReservationDate,
+                        r.Status,
+                        r.Source,
+                        r.GuestCount,
+                        r.Notes
+                    }).ToList();
+
+                dgvReservations.DataSource = filtered;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Arama sırasında hata oluştu: " + ex.Message, "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }
