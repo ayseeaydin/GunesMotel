@@ -8,8 +8,7 @@
         private System.ComponentModel.IContainer components = null;
         private System.Windows.Forms.Panel pnlSearch;
         private System.Windows.Forms.TextBox txtSearch;
-        private System.Windows.Forms.Button btnSearch;
-        private System.Windows.Forms.ComboBox cmbSearchType;
+        private System.Windows.Forms.ComboBox cmbDateType;
         private System.Windows.Forms.Label lblSearchType;
         private System.Windows.Forms.Panel pnlMain;
         private System.Windows.Forms.Panel pnlReservationForm;
@@ -75,10 +74,11 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.pnlSearch = new System.Windows.Forms.Panel();
+            this.dtpStartDate = new System.Windows.Forms.DateTimePicker();
+            this.dtpEndDate = new System.Windows.Forms.DateTimePicker();
             this.btnFilter = new System.Windows.Forms.Button();
-            this.btnSearch = new System.Windows.Forms.Button();
             this.txtSearch = new System.Windows.Forms.TextBox();
-            this.cmbSearchType = new System.Windows.Forms.ComboBox();
+            this.cmbDateType = new System.Windows.Forms.ComboBox();
             this.lblSearchType = new System.Windows.Forms.Label();
             this.pnlMain = new System.Windows.Forms.Panel();
             this.pnlReservationList = new System.Windows.Forms.Panel();
@@ -134,10 +134,12 @@
             // pnlSearch
             // 
             this.pnlSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(215)))), ((int)(((byte)(185)))));
+            this.pnlSearch.Controls.Add(this.dtpStartDate);
+            this.pnlSearch.Controls.Add(this.dtpEndDate);
             this.pnlSearch.Controls.Add(this.btnFilter);
-            this.pnlSearch.Controls.Add(this.btnSearch);
+            this.pnlSearch.Controls.Add(this.btnCancel);
             this.pnlSearch.Controls.Add(this.txtSearch);
-            this.pnlSearch.Controls.Add(this.cmbSearchType);
+            this.pnlSearch.Controls.Add(this.cmbDateType);
             this.pnlSearch.Controls.Add(this.lblSearchType);
             this.pnlSearch.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlSearch.Location = new System.Drawing.Point(0, 0);
@@ -146,6 +148,20 @@
             this.pnlSearch.Size = new System.Drawing.Size(1200, 60);
             this.pnlSearch.TabIndex = 1;
             // 
+            // dtpStartDate
+            // 
+            this.dtpStartDate.Location = new System.Drawing.Point(567, 25);
+            this.dtpStartDate.Name = "dtpStartDate";
+            this.dtpStartDate.Size = new System.Drawing.Size(200, 22);
+            this.dtpStartDate.TabIndex = 6;
+            // 
+            // dtpEndDate
+            // 
+            this.dtpEndDate.Location = new System.Drawing.Point(773, 25);
+            this.dtpEndDate.Name = "dtpEndDate";
+            this.dtpEndDate.Size = new System.Drawing.Size(200, 22);
+            this.dtpEndDate.TabIndex = 5;
+            // 
             // btnFilter
             // 
             this.btnFilter.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(160)))), ((int)(((byte)(71)))));
@@ -153,26 +169,13 @@
             this.btnFilter.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnFilter.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
             this.btnFilter.ForeColor = System.Drawing.Color.White;
-            this.btnFilter.Location = new System.Drawing.Point(680, 15);
+            this.btnFilter.Location = new System.Drawing.Point(990, 13);
             this.btnFilter.Name = "btnFilter";
             this.btnFilter.Size = new System.Drawing.Size(120, 35);
             this.btnFilter.TabIndex = 4;
             this.btnFilter.Text = "🗂️ Tarih Filtresi";
             this.btnFilter.UseVisualStyleBackColor = false;
-            // 
-            // btnSearch
-            // 
-            this.btnSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(139)))), ((int)(((byte)(106)))), ((int)(((byte)(66)))));
-            this.btnSearch.FlatAppearance.BorderSize = 0;
-            this.btnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSearch.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
-            this.btnSearch.ForeColor = System.Drawing.Color.White;
-            this.btnSearch.Location = new System.Drawing.Point(570, 15);
-            this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(100, 35);
-            this.btnSearch.TabIndex = 3;
-            this.btnSearch.Text = "🔍 Ara";
-            this.btnSearch.UseVisualStyleBackColor = false;
+            this.btnFilter.Click += new System.EventHandler(this.btnFilter_Click);
             // 
             // txtSearch
             // 
@@ -184,21 +187,19 @@
             this.txtSearch.Text = "Aranacak değeri giriniz...";
             this.txtSearch.TextChanged += new System.EventHandler(this.txtSearch_TextChanged);
             // 
-            // cmbSearchType
+            // cmbDateType
             // 
-            this.cmbSearchType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbSearchType.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.cmbSearchType.FormattingEnabled = true;
-            this.cmbSearchType.Items.AddRange(new object[] {
-            "Müşteri Adı",
-            "Oda Numarası",
-            "Durum",
-            "Kaynak",
-            "Rezervasyon Tarihi"});
-            this.cmbSearchType.Location = new System.Drawing.Point(130, 17);
-            this.cmbSearchType.Name = "cmbSearchType";
-            this.cmbSearchType.Size = new System.Drawing.Size(150, 31);
-            this.cmbSearchType.TabIndex = 1;
+            this.cmbDateType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbDateType.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.cmbDateType.FormattingEnabled = true;
+            this.cmbDateType.Items.AddRange(new object[] {
+            "Rezervasyon Tarihi",
+            "Giriş Tarihi",
+            "Çıkış Tarihi"});
+            this.cmbDateType.Location = new System.Drawing.Point(130, 17);
+            this.cmbDateType.Name = "cmbDateType";
+            this.cmbDateType.Size = new System.Drawing.Size(150, 31);
+            this.cmbDateType.TabIndex = 1;
             // 
             // lblSearchType
             // 
@@ -626,7 +627,6 @@
             this.pnlFormButtons.Controls.Add(this.btnDelete);
             this.pnlFormButtons.Controls.Add(this.btnEdit);
             this.pnlFormButtons.Controls.Add(this.btnNew);
-            this.pnlFormButtons.Controls.Add(this.btnCancel);
             this.pnlFormButtons.Controls.Add(this.btnSave);
             this.pnlFormButtons.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.pnlFormButtons.Location = new System.Drawing.Point(0, 558);
@@ -687,12 +687,13 @@
             this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancel.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
             this.btnCancel.ForeColor = System.Drawing.Color.White;
-            this.btnCancel.Location = new System.Drawing.Point(110, 12);
+            this.btnCancel.Location = new System.Drawing.Point(1116, 12);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(85, 35);
             this.btnCancel.TabIndex = 1;
             this.btnCancel.Text = "❌ İptal";
             this.btnCancel.UseVisualStyleBackColor = false;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // btnSave
             // 
@@ -761,5 +762,8 @@
         }
 
         #endregion
+
+        private System.Windows.Forms.DateTimePicker dtpStartDate;
+        private System.Windows.Forms.DateTimePicker dtpEndDate;
     }
 }

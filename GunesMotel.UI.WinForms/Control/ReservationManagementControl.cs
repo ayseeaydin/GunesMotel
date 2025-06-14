@@ -312,5 +312,66 @@ namespace GunesMotel.UI.WinForms.Control
                 MessageBox.Show("Arama sırasında hata oluştu: " + ex.Message, "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        private void btnFilter_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string selectedDateType = cmbDateType.SelectedItem?.ToString();
+                DateTime start = dtpStartDate.Value.Date;
+                DateTime end = dtpEndDate.Value.Date;
+
+                var repo = new ReservationRepository();
+                var reservations = repo.GetAll();
+
+                var filtered = reservations.Where(r =>
+                {
+                    DateTime dateToCheck = r.ReservationDate;
+
+                    if (selectedDateType == "Giriş Tarihi")
+                        dateToCheck = r.CheckInDate;
+                    else if (selectedDateType == "Çıkış Tarihi")
+                        dateToCheck = r.CheckOutDate;
+
+                    return dateToCheck >= start && dateToCheck <= end;
+                })
+                .Select(r => new
+                {
+                    r.ReservationID,
+                    r.CustomerID,
+                    r.RoomID,
+                    r.UserID,
+                    Customer = r.Customer?.FullName,
+                    Room = r.Room?.RoomNumber,
+                    User = r.User?.Username,
+                    r.CheckInDate,
+                    r.CheckOutDate,
+                    r.ReservationDate,
+                    r.Status,
+                    r.Source,
+                    r.GuestCount,
+                    r.Notes
+                })
+                .ToList();
+
+                dgvReservations.DataSource = filtered;
+
+                dgvReservations.Columns["ReservationID"].Visible = false;
+                dgvReservations.Columns["CustomerID"].Visible = false;
+                dgvReservations.Columns["RoomID"].Visible = false;
+                dgvReservations.Columns["UserID"].Visible = false;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Tarih filtrelemesi sırasında hata oluştu: " + ex.Message, "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            LoadReservations();
+            ClearForm();
+            dgvReservations.ClearSelection();
+        }
     }
 }
