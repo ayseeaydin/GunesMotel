@@ -30,6 +30,9 @@ namespace GunesMotel.UI.WinForms.Control
                 var displayList = reservationList.Select(r => new
                 {
                     r.ReservationID,
+                    r.CustomerID, 
+                    r.RoomID,     
+                    r.UserID,     
                     Customer = r.Customer?.FullName,
                     Room = r.Room?.RoomNumber,
                     User = r.User?.Username,
@@ -52,6 +55,10 @@ namespace GunesMotel.UI.WinForms.Control
 
         private void ReservationManagementControl_Load(object sender, EventArgs e)
         {
+            LoadCustomers();
+            LoadRooms();
+            LoadStatuses();
+            LoadSources();
             LoadReservations();
         }
 
@@ -67,35 +74,127 @@ namespace GunesMotel.UI.WinForms.Control
             dtpReservationDate.Value = DateTime.Today;
             txtNotes.Clear();
         }
+
+        private void LoadCustomers()
+        {
+            var customerRepo = new CustomerRepository();
+            var customers = customerRepo.GetAll();
+
+            cmbCustomer.DataSource = customers;
+            cmbCustomer.DisplayMember = "FullName";
+            cmbCustomer.ValueMember = "CustomerID";
+            cmbCustomer.SelectedIndex = -1;
+        }
+
+        private void LoadRooms()
+        {
+            var roomRepo = new RoomRepository();
+            var rooms = roomRepo.GetAll();
+
+            cmbRoom.DataSource = rooms;
+            cmbRoom.DisplayMember = "RoomNumber"; // veya RoomName
+            cmbRoom.ValueMember = "RoomID";
+            cmbRoom.SelectedIndex = -1;
+        }
+        private void LoadStatuses()
+        {
+            cmbStatus.Items.Clear();
+            cmbStatus.Items.AddRange(new string[]
+            {
+        "Beklemede", "Onaylandı", "Check-in", "Check-out", "İptal"
+            });
+            cmbStatus.SelectedIndex = -1;
+        }
+        private void LoadSources()
+        {
+            cmbSource.Items.Clear();
+            cmbSource.Items.AddRange(new string[]
+            {
+        "Website", "Telefon", "Email", "Booking.com", "Expedia", "Hotels.com", "Tripadvisor", "Walk-in", "Diğer"
+            });
+            cmbSource.SelectedIndex = -1;
+        }
+
         private void btnSave_Click(object sender, EventArgs e)
         {
             try
             {
-                // Validasyon kontrolü
-                if (cmbCustomer.SelectedItem == null || cmbRoom.SelectedItem == null)
+                // ✅ Zorunlu alanlar kontrolü
+                if (cmbCustomer.SelectedIndex == -1)
                 {
-                    MessageBox.Show("Lütfen müşteri ve oda seçiniz.", "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show("Lütfen bir müşteri seçin.", "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
                 }
 
+                if (cmbRoom.SelectedIndex == -1)
+                {
+                    MessageBox.Show("Lütfen bir oda seçin.", "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
+                if (cmbStatus.SelectedIndex == -1)
+                {
+                    MessageBox.Show("Lütfen bir durum seçin.", "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
+                // Check-in tarihi Check-out tarihinden büyük olamaz
                 if (dtpCheckInDate.Value.Date >= dtpCheckOutDate.Value.Date)
                 {
                     MessageBox.Show("Giriş tarihi, çıkış tarihinden önce olmalıdır.", "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
                 }
 
-                // Seçilen CustomerID ve RoomID bilgilerini al
-                var selectedCustomer = (Customers)cmbCustomer.SelectedItem;
-                var selectedRoom = (Rooms)cmbRoom.SelectedItem;
-
+                // 📌 Rezervasyon oluşturuluyor
                 var newReservation = new Reservations
                 {
-                    CustomerID = selectedCustomer.CustomerID.ToString(), // CustomerID string tanımlanmıştı
-                    RoomID = selectedRoom.RoomID,
-                    UserID = CurrentUser.UserID, // Oturum açan kullanıcı
+                    CustomerID = Convert.ToInt32(cmbCustomer.SelectedValue),
+                    RoomID = Convert.ToInt32(cmbRoom.SelectedValue),
+                    UserID = CurrentUser.UserID, // giriş yapan kullanıcı
                     CheckInDate = dtpCheckInDate.Value.Date,
                     CheckOutDate = dtpCheckOutDate.Value.Date,
                     ReservationDate = dtpReservationDate.Value.Date,
+                    Source = cmbSource.SelectedItem?.ToString(),
+                    Status = cmbStatus.SelectedItem?.ToString(),
+                    GuestCount = (int)nudGuestCount.Value,
+                    Notes = txtNotes.Text?.Trim()
+                };
+
+                var repo = new ReservationRepository();
+                repo.Add(newReservation);
+
+                MessageBox.Show("Rezervasyon başarıyla eklendi.", "Bilgi", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                LoadReservations(); // DataGridView yenile
+                ClearForm();        // Formu temizle
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Rezervasyon kaydında hata: " + ex.Message, "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void btnEdit_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (dgvReservations.SelectedRows.Count == 0)
+                {
+                    MessageBox.Show("Güncellenecek rezervasyonu seçin.", "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
+                var selectedRow = dgvReservations.SelectedRows[0];
+                int reservationId = Convert.ToInt32(selectedRow.Cells["ReservationID"].Value);
+
+                var updated = new Reservations
+                {
+                    ReservationID = reservationId,
+                    CustomerID = Convert.ToInt32(cmbCustomer.SelectedValue),
+                    RoomID = Convert.ToInt32(cmbRoom.SelectedValue),
+                    UserID = CurrentUser.UserID, // Oturumdaki kullanıcıdan alınıyor
+                    CheckInDate = dtpCheckInDate.Value,
+                    CheckOutDate = dtpCheckOutDate.Value,
+                    ReservationDate = dtpReservationDate.Value,
                     Source = cmbSource.SelectedItem?.ToString(),
                     Status = cmbStatus.SelectedItem?.ToString(),
                     GuestCount = (int)nudGuestCount.Value,
@@ -103,16 +202,44 @@ namespace GunesMotel.UI.WinForms.Control
                 };
 
                 var repo = new ReservationRepository();
-                repo.Add(newReservation);
+                repo.Update(updated);
 
-                MessageBox.Show("Yeni rezervasyon başarıyla eklendi.", "Bilgi", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Rezervasyon başarıyla güncellendi.", "Bilgi", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 LoadReservations(); // Yeniden listele
-                ClearForm(); // Formu temizle
+                ClearForm();        // Formu temizle
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Rezervasyon eklenemedi: " + ex.Message, "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Güncelleme hatası: " + ex.Message, "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void dgvReservations_SelectionChanged(object sender, EventArgs e)
+        {
+            if (dgvReservations.SelectedRows.Count == 0) return;
+
+            var row = dgvReservations.SelectedRows[0];
+
+            cmbCustomer.SelectedValue = Convert.ToInt32(row.Cells["CustomerID"].Value);
+            cmbRoom.SelectedValue = Convert.ToInt32(row.Cells["RoomID"].Value);
+            cmbStatus.SelectedItem = row.Cells["Status"].Value?.ToString();
+            cmbSource.SelectedItem = row.Cells["Source"].Value?.ToString();
+            dtpCheckInDate.Value = Convert.ToDateTime(row.Cells["CheckInDate"].Value);
+            dtpCheckOutDate.Value = Convert.ToDateTime(row.Cells["CheckOutDate"].Value);
+            dtpReservationDate.Value = Convert.ToDateTime(row.Cells["ReservationDate"].Value);
+            nudGuestCount.Value = Convert.ToInt32(row.Cells["GuestCount"].Value);
+            txtNotes.Text = row.Cells["Notes"].Value?.ToString();
+        }
+
+        private void btnNew_Click(object sender, EventArgs e)
+        {
+            ClearForm(); // Formu temizle
+            dgvReservations.ClearSelection(); // DataGridView seçimleri kaldır
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
