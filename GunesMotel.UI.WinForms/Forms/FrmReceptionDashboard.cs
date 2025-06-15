@@ -168,5 +168,10 @@ namespace GunesMotel.UI.WinForms.Forms
         {
             LoadUserControl(new ReservationManagementControl());
         }
+
+        private void btnCheckinOut_Click(object sender, EventArgs e)
+        {
+            LoadUserControl(new CheckInOutControl());
+        }
     }
 }

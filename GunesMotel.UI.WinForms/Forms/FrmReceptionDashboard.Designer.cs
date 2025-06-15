@@ -235,6 +235,7 @@
             this.btnCheckinOut.Text = "✅ Check-in/out";
             this.btnCheckinOut.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnCheckinOut.UseVisualStyleBackColor = true;
+            this.btnCheckinOut.Click += new System.EventHandler(this.btnCheckinOut_Click);
             // 
             // btnOdaDurumu
             // 

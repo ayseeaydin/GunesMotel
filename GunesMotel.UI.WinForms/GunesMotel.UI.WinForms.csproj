@@ -63,6 +63,12 @@
     <Compile Include="Control\AddCustomerControl.Designer.cs">
       <DependentUpon>AddCustomerControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="Control\CheckInOutControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Control\CheckInOutControl.Designer.cs">
+      <DependentUpon>CheckInOutControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="Control\EmployeeManagementControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -145,6 +151,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Control\AddCustomerControl.resx">
       <DependentUpon>AddCustomerControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Control\CheckInOutControl.resx">
+      <DependentUpon>CheckInOutControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Control\EmployeeManagementControl.resx">
       <DependentUpon>EmployeeManagementControl.cs</DependentUpon>
