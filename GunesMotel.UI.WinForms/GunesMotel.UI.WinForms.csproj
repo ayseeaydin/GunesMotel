@@ -129,6 +129,12 @@
     <Compile Include="Forms\FrmChangeRoomStatus.Designer.cs">
       <DependentUpon>FrmChangeRoomStatus.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\FrmGuestEntry.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmGuestEntry.Designer.cs">
+      <DependentUpon>FrmGuestEntry.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\FrmLogin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -184,6 +190,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FrmChangeRoomStatus.resx">
       <DependentUpon>FrmChangeRoomStatus.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmGuestEntry.resx">
+      <DependentUpon>FrmGuestEntry.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FrmLogin.resx">
       <DependentUpon>FrmLogin.cs</DependentUpon>
