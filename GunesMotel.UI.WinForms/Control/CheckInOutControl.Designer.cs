@@ -232,7 +232,6 @@
             this.btnPerformCheckIn.TabIndex = 0;
             this.btnPerformCheckIn.Text = "✔ Check-In Yap";
             this.btnPerformCheckIn.UseVisualStyleBackColor = false;
-            this.btnPerformCheckIn.Click += new System.EventHandler(this.btnPerformCheckIn_Click);
             // 
             // pnlCheckInHeader
             // 

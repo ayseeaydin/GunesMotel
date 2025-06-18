@@ -54,10 +54,5 @@ namespace GunesMotel.UI.WinForms.Control
             LoadTodayCheckIns();
         }
 
-        private void btnPerformCheckIn_Click(object sender, EventArgs e)
-        {
-            FrmGuestEntry guestForm = new FrmGuestEntry();
-            guestForm.ShowDialog();
-        }
     }
 }
