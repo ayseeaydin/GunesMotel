@@ -71,10 +71,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle22 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle23 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle21 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle24 = new System.Windows.Forms.DataGridViewCellStyle();
             this.pnlMain = new System.Windows.Forms.Panel();
             this.tabMain = new System.Windows.Forms.TabControl();
             this.tabTodayCheckIn = new System.Windows.Forms.TabPage();
@@ -171,14 +171,14 @@
             this.dgvTodayCheckIns.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvTodayCheckIns.BackgroundColor = System.Drawing.Color.White;
             this.dgvTodayCheckIns.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(93)))), ((int)(((byte)(64)))), ((int)(((byte)(55)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvTodayCheckIns.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle22.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle22.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(93)))), ((int)(((byte)(64)))), ((int)(((byte)(55)))));
+            dataGridViewCellStyle22.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle22.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle22.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle22.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle22.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvTodayCheckIns.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle22;
             this.dgvTodayCheckIns.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvTodayCheckIns.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvTodayCheckIns.EnableHeadersVisualStyles = false;
@@ -218,6 +218,7 @@
             this.btnRefreshCheckIn.TabIndex = 1;
             this.btnRefreshCheckIn.Text = "🔄 Yenile";
             this.btnRefreshCheckIn.UseVisualStyleBackColor = false;
+            this.btnRefreshCheckIn.Click += new System.EventHandler(this.btnRefreshCheckIn_Click);
             // 
             // btnPerformCheckIn
             // 
@@ -288,14 +289,14 @@
             this.dgvTodayCheckOuts.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvTodayCheckOuts.BackgroundColor = System.Drawing.Color.White;
             this.dgvTodayCheckOuts.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(93)))), ((int)(((byte)(64)))), ((int)(((byte)(55)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvTodayCheckOuts.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle23.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle23.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(93)))), ((int)(((byte)(64)))), ((int)(((byte)(55)))));
+            dataGridViewCellStyle23.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle23.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle23.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle23.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle23.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvTodayCheckOuts.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle23;
             this.dgvTodayCheckOuts.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvTodayCheckOuts.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvTodayCheckOuts.EnableHeadersVisualStyles = false;
@@ -336,6 +337,7 @@
             this.btnLateCheckOuts.TabIndex = 2;
             this.btnLateCheckOuts.Text = "⚠ Geç Kalanlar";
             this.btnLateCheckOuts.UseVisualStyleBackColor = false;
+            this.btnLateCheckOuts.Click += new System.EventHandler(this.btnLateCheckOuts_Click);
             // 
             // btnRefreshCheckOut
             // 
@@ -364,6 +366,7 @@
             this.btnPerformCheckOut.TabIndex = 0;
             this.btnPerformCheckOut.Text = "📤 Check-Out Yap";
             this.btnPerformCheckOut.UseVisualStyleBackColor = false;
+            this.btnPerformCheckOut.Click += new System.EventHandler(this.btnPerformCheckOut_Click);
             // 
             // pnlCheckOutHeader
             // 
@@ -406,14 +409,14 @@
             this.dgvCurrentGuests.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvCurrentGuests.BackgroundColor = System.Drawing.Color.White;
             this.dgvCurrentGuests.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(93)))), ((int)(((byte)(64)))), ((int)(((byte)(55)))));
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvCurrentGuests.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle21.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle21.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(93)))), ((int)(((byte)(64)))), ((int)(((byte)(55)))));
+            dataGridViewCellStyle21.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle21.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle21.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle21.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle21.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvCurrentGuests.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle21;
             this.dgvCurrentGuests.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvCurrentGuests.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvCurrentGuests.EnableHeadersVisualStyles = false;
@@ -454,6 +457,7 @@
             this.btnRefreshGuests.TabIndex = 2;
             this.btnRefreshGuests.Text = "🔄 Yenile";
             this.btnRefreshGuests.UseVisualStyleBackColor = false;
+            this.btnRefreshGuests.Click += new System.EventHandler(this.btnRefreshGuests_Click);
             // 
             // btnExtendStay
             // 
@@ -468,6 +472,7 @@
             this.btnExtendStay.TabIndex = 1;
             this.btnExtendStay.Text = "📅 Konaklama Uzat";
             this.btnExtendStay.UseVisualStyleBackColor = false;
+            this.btnExtendStay.Click += new System.EventHandler(this.btnExtendStay_Click);
             // 
             // btnEarlyCheckOut
             // 
@@ -482,6 +487,7 @@
             this.btnEarlyCheckOut.TabIndex = 0;
             this.btnEarlyCheckOut.Text = "🏃 Erken Check-Out";
             this.btnEarlyCheckOut.UseVisualStyleBackColor = false;
+            this.btnEarlyCheckOut.Click += new System.EventHandler(this.btnEarlyCheckOut_Click);
             // 
             // pnlGuestsHeader
             // 
@@ -523,14 +529,14 @@
             this.dgvSearchResults.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvSearchResults.BackgroundColor = System.Drawing.Color.White;
             this.dgvSearchResults.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(93)))), ((int)(((byte)(64)))), ((int)(((byte)(55)))));
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvSearchResults.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle24.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle24.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(93)))), ((int)(((byte)(64)))), ((int)(((byte)(55)))));
+            dataGridViewCellStyle24.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle24.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle24.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle24.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle24.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvSearchResults.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle24;
             this.dgvSearchResults.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvSearchResults.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvSearchResults.EnableHeadersVisualStyles = false;

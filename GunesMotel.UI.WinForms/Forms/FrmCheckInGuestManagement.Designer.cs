@@ -88,9 +88,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
             this.pnlMain = new System.Windows.Forms.Panel();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.pnlMainActions = new System.Windows.Forms.Panel();
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnCompleteCheckIn = new System.Windows.Forms.Button();
@@ -137,8 +138,6 @@
             this.lblReservationID = new System.Windows.Forms.Label();
             this.lblReservationTitle = new System.Windows.Forms.Label();
             this.lblFormTitle = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.btnClose = new System.Windows.Forms.Button();
             this.pnlMain.SuspendLayout();
             this.pnlMainActions.SuspendLayout();
             this.pnlReservationGuests.SuspendLayout();
@@ -151,7 +150,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvExistingCustomers)).BeginInit();
             this.pnlCustomerSearch.SuspendLayout();
             this.pnlReservationInfo.SuspendLayout();
-            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnlMain
@@ -171,13 +169,21 @@
             this.pnlMain.Size = new System.Drawing.Size(1400, 800);
             this.pnlMain.TabIndex = 0;
             // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(139)))), ((int)(((byte)(106)))), ((int)(((byte)(66)))));
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1400, 49);
+            this.panel1.TabIndex = 6;
+            // 
             // pnlMainActions
             // 
             this.pnlMainActions.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(245)))), ((int)(((byte)(245)))));
             this.pnlMainActions.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pnlMainActions.Controls.Add(this.btnCancel);
             this.pnlMainActions.Controls.Add(this.btnCompleteCheckIn);
-            this.pnlMainActions.Location = new System.Drawing.Point(12, 656);
+            this.pnlMainActions.Location = new System.Drawing.Point(19, 643);
             this.pnlMainActions.Name = "pnlMainActions";
             this.pnlMainActions.Padding = new System.Windows.Forms.Padding(15);
             this.pnlMainActions.Size = new System.Drawing.Size(1360, 80);
@@ -188,28 +194,30 @@
             this.btnCancel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(139)))), ((int)(((byte)(106)))), ((int)(((byte)(66)))));
             this.btnCancel.FlatAppearance.BorderSize = 0;
             this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCancel.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold);
+            this.btnCancel.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.btnCancel.ForeColor = System.Drawing.Color.White;
-            this.btnCancel.Location = new System.Drawing.Point(255, 15);
+            this.btnCancel.Location = new System.Drawing.Point(321, 15);
             this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(120, 50);
+            this.btnCancel.Size = new System.Drawing.Size(128, 50);
             this.btnCancel.TabIndex = 1;
             this.btnCancel.Text = "❌ İptal";
             this.btnCancel.UseVisualStyleBackColor = false;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // btnCompleteCheckIn
             // 
             this.btnCompleteCheckIn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(160)))), ((int)(((byte)(71)))));
             this.btnCompleteCheckIn.FlatAppearance.BorderSize = 0;
             this.btnCompleteCheckIn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCompleteCheckIn.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold);
+            this.btnCompleteCheckIn.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.btnCompleteCheckIn.ForeColor = System.Drawing.Color.White;
             this.btnCompleteCheckIn.Location = new System.Drawing.Point(15, 15);
             this.btnCompleteCheckIn.Name = "btnCompleteCheckIn";
-            this.btnCompleteCheckIn.Size = new System.Drawing.Size(220, 50);
+            this.btnCompleteCheckIn.Size = new System.Drawing.Size(300, 50);
             this.btnCompleteCheckIn.TabIndex = 0;
             this.btnCompleteCheckIn.Text = "✅ Check-In\'i Tamamla";
             this.btnCompleteCheckIn.UseVisualStyleBackColor = false;
+            this.btnCompleteCheckIn.Click += new System.EventHandler(this.btnCompleteCheckIn_Click);
             // 
             // pnlReservationGuests
             // 
@@ -218,7 +226,7 @@
             this.pnlReservationGuests.Controls.Add(this.pnlGuestActions);
             this.pnlReservationGuests.Controls.Add(this.dgvReservationGuests);
             this.pnlReservationGuests.Controls.Add(this.lblReservationGuestsTitle);
-            this.pnlReservationGuests.Location = new System.Drawing.Point(952, 256);
+            this.pnlReservationGuests.Location = new System.Drawing.Point(952, 242);
             this.pnlReservationGuests.Name = "pnlReservationGuests";
             this.pnlReservationGuests.Padding = new System.Windows.Forms.Padding(15);
             this.pnlReservationGuests.Size = new System.Drawing.Size(420, 380);
@@ -245,6 +253,7 @@
             this.btnRemoveGuest.TabIndex = 0;
             this.btnRemoveGuest.Text = "➖ Misafiri Kaldır";
             this.btnRemoveGuest.UseVisualStyleBackColor = false;
+            this.btnRemoveGuest.Click += new System.EventHandler(this.btnRemoveGuest_Click);
             // 
             // dgvReservationGuests
             // 
@@ -253,14 +262,14 @@
             this.dgvReservationGuests.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvReservationGuests.BackgroundColor = System.Drawing.Color.White;
             this.dgvReservationGuests.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(93)))), ((int)(((byte)(64)))), ((int)(((byte)(55)))));
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvReservationGuests.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle15.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(93)))), ((int)(((byte)(64)))), ((int)(((byte)(55)))));
+            dataGridViewCellStyle15.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle15.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle15.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle15.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvReservationGuests.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle15;
             this.dgvReservationGuests.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvReservationGuests.EnableHeadersVisualStyles = false;
             this.dgvReservationGuests.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
@@ -293,7 +302,7 @@
             this.pnlGuestForm.Controls.Add(this.pnlGuestFields);
             this.pnlGuestForm.Controls.Add(this.pnlCustomerTypeSelection);
             this.pnlGuestForm.Controls.Add(this.lblGuestFormTitle);
-            this.pnlGuestForm.Location = new System.Drawing.Point(482, 256);
+            this.pnlGuestForm.Location = new System.Drawing.Point(486, 242);
             this.pnlGuestForm.Name = "pnlGuestForm";
             this.pnlGuestForm.Padding = new System.Windows.Forms.Padding(15);
             this.pnlGuestForm.Size = new System.Drawing.Size(450, 380);
@@ -337,6 +346,7 @@
             this.btnClearForm.TabIndex = 17;
             this.btnClearForm.Text = "🗑";
             this.btnClearForm.UseVisualStyleBackColor = false;
+            this.btnClearForm.Click += new System.EventHandler(this.btnClearForm_Click);
             // 
             // btnAddGuest
             // 
@@ -351,6 +361,7 @@
             this.btnAddGuest.TabIndex = 16;
             this.btnAddGuest.Text = "➕ Ekle";
             this.btnAddGuest.UseVisualStyleBackColor = false;
+            this.btnAddGuest.Click += new System.EventHandler(this.btnAddGuest_Click);
             // 
             // cmbGender
             // 
@@ -539,6 +550,7 @@
             this.rbNewCustomer.TabStop = true;
             this.rbNewCustomer.Text = "Yeni Müşteri";
             this.rbNewCustomer.UseVisualStyleBackColor = true;
+            this.rbNewCustomer.CheckedChanged += new System.EventHandler(this.rbNewCustomer_CheckedChanged);
             // 
             // rbExistingCustomer
             // 
@@ -551,6 +563,7 @@
             this.rbExistingCustomer.TabIndex = 0;
             this.rbExistingCustomer.Text = "Mevcut Müşteri";
             this.rbExistingCustomer.UseVisualStyleBackColor = true;
+            this.rbExistingCustomer.CheckedChanged += new System.EventHandler(this.rbExistingCustomer_CheckedChanged);
             // 
             // lblGuestFormTitle
             // 
@@ -570,7 +583,7 @@
             this.pnlExistingCustomers.Controls.Add(this.dgvExistingCustomers);
             this.pnlExistingCustomers.Controls.Add(this.pnlCustomerSearch);
             this.pnlExistingCustomers.Controls.Add(this.lblExistingCustomersTitle);
-            this.pnlExistingCustomers.Location = new System.Drawing.Point(12, 256);
+            this.pnlExistingCustomers.Location = new System.Drawing.Point(19, 242);
             this.pnlExistingCustomers.Name = "pnlExistingCustomers";
             this.pnlExistingCustomers.Padding = new System.Windows.Forms.Padding(15);
             this.pnlExistingCustomers.Size = new System.Drawing.Size(450, 380);
@@ -583,14 +596,14 @@
             this.dgvExistingCustomers.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvExistingCustomers.BackgroundColor = System.Drawing.Color.White;
             this.dgvExistingCustomers.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(93)))), ((int)(((byte)(64)))), ((int)(((byte)(55)))));
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvExistingCustomers.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle16.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(93)))), ((int)(((byte)(64)))), ((int)(((byte)(55)))));
+            dataGridViewCellStyle16.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle16.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle16.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle16.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle16.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvExistingCustomers.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle16;
             this.dgvExistingCustomers.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvExistingCustomers.EnableHeadersVisualStyles = false;
             this.dgvExistingCustomers.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
@@ -604,6 +617,7 @@
             this.dgvExistingCustomers.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvExistingCustomers.Size = new System.Drawing.Size(418, 250);
             this.dgvExistingCustomers.TabIndex = 2;
+            this.dgvExistingCustomers.SelectionChanged += new System.EventHandler(this.dgvExistingCustomers_SelectionChanged);
             // 
             // pnlCustomerSearch
             // 
@@ -627,6 +641,7 @@
             this.btnSearchCustomer.TabIndex = 1;
             this.btnSearchCustomer.Text = "🔍 Ara";
             this.btnSearchCustomer.UseVisualStyleBackColor = false;
+            this.btnSearchCustomer.Click += new System.EventHandler(this.btnSearchCustomer_Click);
             // 
             // txtCustomerSearch
             // 
@@ -637,6 +652,8 @@
             this.txtCustomerSearch.Size = new System.Drawing.Size(300, 30);
             this.txtCustomerSearch.TabIndex = 0;
             this.txtCustomerSearch.Text = "Ad, soyad veya TC ile arayın...";
+            this.txtCustomerSearch.Enter += new System.EventHandler(this.txtCustomerSearch_Enter);
+            this.txtCustomerSearch.Leave += new System.EventHandler(this.txtCustomerSearch_Leave);
             // 
             // lblExistingCustomersTitle
             // 
@@ -659,7 +676,7 @@
             this.pnlReservationInfo.Controls.Add(this.lblRoomNumber);
             this.pnlReservationInfo.Controls.Add(this.lblReservationID);
             this.pnlReservationInfo.Controls.Add(this.lblReservationTitle);
-            this.pnlReservationInfo.Location = new System.Drawing.Point(12, 136);
+            this.pnlReservationInfo.Location = new System.Drawing.Point(19, 118);
             this.pnlReservationInfo.Name = "pnlReservationInfo";
             this.pnlReservationInfo.Padding = new System.Windows.Forms.Padding(15);
             this.pnlReservationInfo.Size = new System.Drawing.Size(1360, 100);
@@ -725,7 +742,7 @@
             this.lblReservationTitle.AutoSize = true;
             this.lblReservationTitle.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
             this.lblReservationTitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(94)))), ((int)(((byte)(32)))));
-            this.lblReservationTitle.Location = new System.Drawing.Point(15, 15);
+            this.lblReservationTitle.Location = new System.Drawing.Point(10, 15);
             this.lblReservationTitle.Name = "lblReservationTitle";
             this.lblReservationTitle.Size = new System.Drawing.Size(246, 28);
             this.lblReservationTitle.TabIndex = 0;
@@ -736,29 +753,11 @@
             this.lblFormTitle.AutoSize = true;
             this.lblFormTitle.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold);
             this.lblFormTitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(93)))), ((int)(((byte)(64)))), ((int)(((byte)(55)))));
-            this.lblFormTitle.Location = new System.Drawing.Point(12, 76);
+            this.lblFormTitle.Location = new System.Drawing.Point(12, 64);
             this.lblFormTitle.Name = "lblFormTitle";
             this.lblFormTitle.Size = new System.Drawing.Size(430, 41);
             this.lblFormTitle.TabIndex = 0;
             this.lblFormTitle.Text = "🏨 Check-In Misafir Yönetimi";
-            // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(139)))), ((int)(((byte)(106)))), ((int)(((byte)(66)))));
-            this.panel1.Controls.Add(this.btnClose);
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1400, 49);
-            this.panel1.TabIndex = 6;
-            // 
-            // btnClose
-            // 
-            this.btnClose.Location = new System.Drawing.Point(1322, 12);
-            this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(55, 31);
-            this.btnClose.TabIndex = 0;
-            this.btnClose.Text = "X";
-            this.btnClose.UseVisualStyleBackColor = true;
             // 
             // FrmCheckInGuestManagement
             // 
@@ -773,6 +772,7 @@
             this.Name = "FrmCheckInGuestManagement";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Check-In Misafir Yönetimi - Güneş Otel";
+            this.Load += new System.EventHandler(this.FrmCheckInGuestManagement_Load);
             this.pnlMain.ResumeLayout(false);
             this.pnlMain.PerformLayout();
             this.pnlMainActions.ResumeLayout(false);
@@ -793,13 +793,11 @@
             this.pnlCustomerSearch.PerformLayout();
             this.pnlReservationInfo.ResumeLayout(false);
             this.pnlReservationInfo.PerformLayout();
-            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
         #endregion
 
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button btnClose;
     }
 }
