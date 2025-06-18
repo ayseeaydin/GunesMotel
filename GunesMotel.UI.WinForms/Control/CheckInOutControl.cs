@@ -54,5 +54,39 @@ namespace GunesMotel.UI.WinForms.Control
             LoadTodayCheckIns();
         }
 
+        private void btnPerformCheckIn_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (dgvTodayCheckIns.SelectedRows.Count == 0)
+                {
+                    MessageBox.Show("Lütfen check-in yapılacak rezervasyonu seçin.", "Uyarı",
+                        MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
+                var selectedRow = dgvTodayCheckIns.SelectedRows[0];
+                int reservationId = Convert.ToInt32(selectedRow.Cells["ReservationID"].Value);
+
+                var reservationRepo = new ReservationRepository();
+                var selectedReservation = reservationRepo.GetById(reservationId);
+
+                if (selectedReservation == null)
+                {
+                    MessageBox.Show("Rezervasyon bulunamadı.", "Hata",
+                        MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
+                // Test formunu aç
+                var checkInForm = new FrmCheckInGuestManagement(selectedReservation);
+                checkInForm.ShowDialog();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Hata: {ex.Message}", "Hata",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
     }
 }
