@@ -58,7 +58,38 @@ namespace GunesMotel.UI.WinForms.Control
             LoadTodayCheckIns();
             LoadTodayCheckOuts();
             LoadCurrentGuests();
+            InitializeSearchTab();
             lblDateTime.Text = DateTime.Now.ToString("dd MMMM yyyy dddd");
+        }
+
+        private void InitializeSearchTab()
+        {
+            try
+            {
+                // Arama tiplerini yükle
+                cmbSearchType.Items.Clear();
+                cmbSearchType.Items.AddRange(new string[]
+                {
+                    "Müşteri Adı",
+                    "TC Kimlik",
+                    "Pasaport No",
+                    "Oda Numarası",
+                    "Rezervasyon No",
+                    "Telefon",
+                    "Tümü"
+                        });
+                cmbSearchType.SelectedIndex = 0; // Varsayılan: Müşteri Adı
+
+                // Arama kutusu placeholder
+                txtSearch.Text = "Aranacak kelimeyi yazın...";
+                txtSearch.ForeColor = System.Drawing.Color.Gray;
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Arama sekmesi başlatılırken hata: {ex.Message}", "Hata",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void LoadCurrentGuests()
@@ -490,6 +521,181 @@ namespace GunesMotel.UI.WinForms.Control
             prompt.CancelButton = cancel;
 
             return prompt.ShowDialog() == DialogResult.OK ? textBox.Text : "";
+        }
+
+        private void txtSearch_Enter(object sender, EventArgs e)
+        {
+            if (txtSearch.Text == "Aranacak kelimeyi yazın...")
+            {
+                txtSearch.Text = "";
+                txtSearch.ForeColor = System.Drawing.Color.Black;
+            }
+        }
+
+        private void txtSearch_Leave(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(txtSearch.Text))
+            {
+                txtSearch.Text = "Aranacak kelimeyi yazın...";
+                txtSearch.ForeColor = System.Drawing.Color.Gray;
+            }
+        }
+
+        private void txtSearch_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                btnSearch_Click(sender, e);
+                e.Handled = true;
+            }
+        }
+
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string searchText = txtSearch.Text.Trim();
+                if (string.IsNullOrEmpty(searchText) || searchText == "Aranacak kelimeyi yazın...")
+                {
+                    MessageBox.Show("Lütfen aranacak kelimeyi girin.", "Uyarı",
+                        MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    txtSearch.Focus();
+                    return;
+                }
+
+                string searchType = cmbSearchType.SelectedItem?.ToString();
+                if (string.IsNullOrEmpty(searchType))
+                {
+                    MessageBox.Show("Lütfen arama tipini seçin.", "Uyarı",
+                        MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
+                PerformSearch(searchText, searchType);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Arama sırasında hata: {ex.Message}", "Hata",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void PerformSearch(string searchText, string searchType)
+        {
+            try
+            {
+                var repo = new ReservationRepository();
+                var allReservations = repo.GetAll();
+
+                List<object> searchResults = new List<object>();
+
+                searchText = searchText.ToLower();
+
+                foreach (var r in allReservations)
+                {
+                    bool match = false;
+
+                    switch (searchType)
+                    {
+                        case "Müşteri Adı":
+                            match = r.Customer?.FullName?.ToLower().Contains(searchText) == true;
+                            break;
+                        case "TC Kimlik":
+                            match = r.Customer?.NationalID?.Contains(searchText) == true;
+                            break;
+                        case "Pasaport No":
+                            match = r.Customer?.PassportNo?.ToLower().Contains(searchText) == true;
+                            break;
+                        case "Oda Numarası":
+                            match = r.Room?.RoomNumber?.ToLower().Contains(searchText) == true;
+                            break;
+                        case "Rezervasyon No":
+                            match = r.ReservationID.ToString().Contains(searchText);
+                            break;
+                        case "Telefon":
+                            match = r.Customer?.Phone?.Contains(searchText) == true;
+                            break;
+                        case "Tümü":
+                            match = (r.Customer?.FullName?.ToLower().Contains(searchText) == true) ||
+                                   (r.Customer?.NationalID?.Contains(searchText) == true) ||
+                                   (r.Customer?.PassportNo?.ToLower().Contains(searchText) == true) ||
+                                   (r.Room?.RoomNumber?.ToLower().Contains(searchText) == true) ||
+                                   (r.ReservationID.ToString().Contains(searchText)) ||
+                                   (r.Customer?.Phone?.Contains(searchText) == true);
+                            break;
+                    }
+
+                    if (match)
+                    {
+                        searchResults.Add(new
+                        {
+                            r.ReservationID,
+                            Customer = r.Customer?.FullName ?? "N/A",
+                            TC_Pasaport = !string.IsNullOrEmpty(r.Customer?.NationalID) ? r.Customer.NationalID : r.Customer?.PassportNo ?? "N/A",
+                            Telefon = r.Customer?.Phone ?? "N/A",
+                            Room = r.Room?.RoomNumber ?? "N/A",
+                            r.CheckInDate,
+                            r.CheckOutDate,
+                            r.Status,
+                            r.Source,
+                            Gece = (r.CheckOutDate.Date - r.CheckInDate.Date).Days
+                        });
+                    }
+                }
+
+                dgvSearchResults.DataSource = searchResults;
+
+                // Status'a göre renklendirme
+                foreach (DataGridViewRow row in dgvSearchResults.Rows)
+                {
+                    if (row.Cells["Status"].Value != null)
+                    {
+                        string status = row.Cells["Status"].Value.ToString();
+                        switch (status)
+                        {
+                            case "Check-in":
+                                row.DefaultCellStyle.BackColor = System.Drawing.Color.LightGreen;
+                                break;
+                            case "Check-out":
+                                row.DefaultCellStyle.BackColor = System.Drawing.Color.LightGray;
+                                break;
+                            case "Bekliyor":
+                                row.DefaultCellStyle.BackColor = System.Drawing.Color.LightYellow;
+                                break;
+                            case "İptal":
+                                row.DefaultCellStyle.BackColor = System.Drawing.Color.LightCoral;
+                                break;
+                        }
+                    }
+                }
+
+                MessageBox.Show($"{searchResults.Count} sonuç bulundu.", "Arama Sonucu",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Arama işlemi sırasında hata: {ex.Message}", "Hata",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void btnClearSearch_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                txtSearch.Text = "Aranacak kelimeyi yazın...";
+                txtSearch.ForeColor = System.Drawing.Color.Gray;
+                cmbSearchType.SelectedIndex = 0;
+                dgvSearchResults.DataSource = null;
+
+                MessageBox.Show("Arama temizlendi.", "Bilgi",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Arama temizlenirken hata: {ex.Message}", "Hata",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }
