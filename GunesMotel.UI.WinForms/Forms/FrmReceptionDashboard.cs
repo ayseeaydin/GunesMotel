@@ -178,5 +178,26 @@ namespace GunesMotel.UI.WinForms.Forms
         {
             FrmReceptionDashboard_Load(sender, e); // Yeniden yükle999
         }
+
+        private void btnFaturaYonetimi_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                pnlContent.Controls.Clear();
+
+                var invoiceControl = new Control.InvoiceManagementControl();
+                invoiceControl.Dock = DockStyle.Fill;
+
+                pnlContent.Controls.Add(invoiceControl);
+
+                // Form başlığını güncelle
+                lblFormTitle.Text = "Fatura Yönetimi";
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Fatura yönetimi açılırken hata: {ex.Message}", "Hata",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
     }
 }

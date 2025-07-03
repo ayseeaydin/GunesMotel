@@ -457,7 +457,6 @@
             this.btnRefreshGuests.TabIndex = 2;
             this.btnRefreshGuests.Text = "🔄 Yenile";
             this.btnRefreshGuests.UseVisualStyleBackColor = false;
-            this.btnRefreshGuests.Click += new System.EventHandler(this.btnRefreshGuests_Click);
             // 
             // btnExtendStay
             // 

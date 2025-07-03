@@ -296,7 +296,7 @@ namespace GunesMotel.UI.WinForms.Control
                                 context.SaveChanges();
                             }
 
-                            // 3. Log kaydı
+                            // 3. Check-out log kaydı
                             GunesMotel.DataAccess.Helpers.LogHelper.AddLog(
                                 GunesMotel.Common.CurrentUser.UserID,
                                 "Check-out",
@@ -305,15 +305,54 @@ namespace GunesMotel.UI.WinForms.Control
                                 $"Oda: {reservation.Room?.RoomNumber}"
                             );
 
-                            transaction.Commit();
+                            // 4. Fatura oluşturmayı dene
+                            try
+                            {
+                                var invoiceRepo = new GunesMotel.DataAccess.Repositories.InvoiceRepository();
+                                var invoice = invoiceRepo.CreateInvoiceForReservation(
+                                    reservation.ReservationID,
+                                    GunesMotel.Common.CurrentUser.UserID
+                                );
 
-                            MessageBox.Show("Check-out işlemi başarıyla tamamlandı!\n\n" +
-                                "Oda 'Temizlikte' durumuna alındı.", "Başarılı",
-                                MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                // Fatura başarıyla oluşturuldu
+                                GunesMotel.DataAccess.Helpers.LogHelper.AddLog(
+                                    GunesMotel.Common.CurrentUser.UserID,
+                                    "Fatura",
+                                    "Oluşturuldu",
+                                    $"Rezervasyon {reservation.ReservationID} için fatura oluşturuldu. Fatura No: {invoice.InvoiceID}"
+                                );
+
+                                transaction.Commit();
+
+                                // Başarı mesajı - fatura ile
+                                MessageBox.Show($"Check-out işlemi başarıyla tamamlandı!\n\n" +
+                                               $"Oda '{reservation.Room?.RoomNumber}' temizlikte durumuna alındı.\n" +
+                                               $"Fatura No: {invoice.InvoiceID} oluşturuldu.", "Başarılı",
+                                               MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            }
+                            catch (Exception invoiceEx)
+                            {
+                                // Fatura oluşturulamadı ama check-out devam etsin
+                                GunesMotel.DataAccess.Helpers.LogHelper.AddLog(
+                                    GunesMotel.Common.CurrentUser.UserID,
+                                    "Fatura",
+                                    "Hata",
+                                    $"Rezervasyon {reservation.ReservationID} için fatura oluşturulamadı: {invoiceEx.Message}"
+                                );
+
+                                transaction.Commit();
+
+                                // Kısmi başarı mesajı
+                                MessageBox.Show($"Check-out işlemi tamamlandı!\n\n" +
+                                               $"Oda '{reservation.Room?.RoomNumber}' temizlikte durumuna alındı.\n\n" +
+                                               $"⚠️ Fatura oluşturulamadı: {invoiceEx.Message}", "Kısmi Başarı",
+                                               MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                            }
 
                             // Listeleri yenile
                             LoadTodayCheckIns();
                             LoadTodayCheckOuts();
+                            LoadCurrentGuests();
                         }
                         catch (Exception ex)
                         {
@@ -325,8 +364,9 @@ namespace GunesMotel.UI.WinForms.Control
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Check-out işlemi başarıyla tamamlanamadı: {ex.Message}", "Hata",
-                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show($"Check-out işlemi başarıyla tamamlanamadı: {ex.Message}\n\n" +
+                               $"İç hata: {ex.InnerException?.Message}", "Hata",
+                               MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -378,13 +418,6 @@ namespace GunesMotel.UI.WinForms.Control
                 MessageBox.Show($"Geç kalanlar yüklenirken hata: {ex.Message}", "Hata",
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-        }
-
-        private void btnRefreshGuests_Click(object sender, EventArgs e)
-        {
-            LoadCurrentGuests();
-            MessageBox.Show("Mevcut misafirler listesi yenilendi.", "Bilgi",
-                MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void btnEarlyCheckOut_Click(object sender, EventArgs e)

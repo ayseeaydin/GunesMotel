@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.pnlSidebar = new System.Windows.Forms.Panel();
+            this.btnFaturaYonetimi = new System.Windows.Forms.Button();
             this.btnRezervasyonlar = new System.Windows.Forms.Button();
             this.btnMusteriler = new System.Windows.Forms.Button();
             this.btnCheckinOut = new System.Windows.Forms.Button();
@@ -113,6 +114,7 @@
             // pnlSidebar
             // 
             this.pnlSidebar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(93)))), ((int)(((byte)(64)))), ((int)(((byte)(55)))));
+            this.pnlSidebar.Controls.Add(this.btnFaturaYonetimi);
             this.pnlSidebar.Controls.Add(this.btnRezervasyonlar);
             this.pnlSidebar.Controls.Add(this.btnMusteriler);
             this.pnlSidebar.Controls.Add(this.btnCheckinOut);
@@ -125,6 +127,24 @@
             this.pnlSidebar.Name = "pnlSidebar";
             this.pnlSidebar.Size = new System.Drawing.Size(373, 1019);
             this.pnlSidebar.TabIndex = 0;
+            // 
+            // btnFaturaYonetimi
+            // 
+            this.btnFaturaYonetimi.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnFaturaYonetimi.FlatAppearance.BorderSize = 0;
+            this.btnFaturaYonetimi.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnFaturaYonetimi.Font = new System.Drawing.Font("Segoe UI", 11F);
+            this.btnFaturaYonetimi.ForeColor = System.Drawing.Color.White;
+            this.btnFaturaYonetimi.Location = new System.Drawing.Point(0, 458);
+            this.btnFaturaYonetimi.Margin = new System.Windows.Forms.Padding(4);
+            this.btnFaturaYonetimi.Name = "btnFaturaYonetimi";
+            this.btnFaturaYonetimi.Padding = new System.Windows.Forms.Padding(13, 0, 0, 0);
+            this.btnFaturaYonetimi.Size = new System.Drawing.Size(373, 62);
+            this.btnFaturaYonetimi.TabIndex = 6;
+            this.btnFaturaYonetimi.Text = "💰 Fatura Yönetimi";
+            this.btnFaturaYonetimi.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnFaturaYonetimi.UseVisualStyleBackColor = true;
+            this.btnFaturaYonetimi.Click += new System.EventHandler(this.btnFaturaYonetimi_Click);
             // 
             // btnRezervasyonlar
             // 
@@ -985,5 +1005,6 @@
         private System.Windows.Forms.Button btnYeniRezervasyon;
         private System.Windows.Forms.Button btnCheckOut;
         private System.Windows.Forms.Button btnCheckIn;
+        private System.Windows.Forms.Button btnFaturaYonetimi;
     }
 }
