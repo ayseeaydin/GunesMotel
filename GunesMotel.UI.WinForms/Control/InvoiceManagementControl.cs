@@ -4,13 +4,14 @@ using GunesMotel.Entities.DTOs;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
+using System.Linq;
 using System.Windows.Forms;
 
 namespace GunesMotel.UI.WinForms.Control
 {
     public partial class InvoiceManagementControl : UserControl
     {
-        
+        private int? selectedInvoiceId = null;
         public InvoiceManagementControl()
         {
             InitializeComponent();            
@@ -95,6 +96,55 @@ namespace GunesMotel.UI.WinForms.Control
                 txtInvoiceSearch.Text = "Müşteri, fatura no veya oda no...";
                 txtInvoiceSearch.ForeColor = Color.Gray;
             }
+        }
+
+        private void dgvInvoices_SelectionChanged(object sender, EventArgs e)
+        {
+            if (dgvInvoices.SelectedRows.Count > 0)
+            {
+                selectedInvoiceId = Convert.ToInt32(dgvInvoices.SelectedRows[0].Cells["InvoiceID"].Value);
+            }
+            else
+            {
+                selectedInvoiceId = null;
+            }
+        }
+
+        private void ShowInvoiceDetail(int invoiceId)
+        {
+            var repo = new InvoiceRepository();
+            var detail = repo.GetDetailById(invoiceId);
+
+            if (detail == null)
+            {
+                MessageBox.Show("Fatura bulunamadı!", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            // Üst bilgiler
+            lblInvoiceNumber.Text = "Fatura No: " + detail.InvoiceID;
+            lblCustomerName.Text = "Müşteri: " + detail.CustomerName;
+            lblInvoiceDate.Text = "Tarih: " + detail.InvoiceDate.ToString("dd.MM.yyyy");
+            lblInvoiceStatus.Text = "Durum: " + detail.Status;
+            lblInvoiceAmount.Text = "Toplam: " + detail.TotalAmount.ToString("N2") + " TL";
+
+            // Kalemler
+            dgvInvoiceItems.DataSource = detail.Items;
+
+            // Ödemeler
+            dgvPayments.DataSource = detail.Payments;
+        }
+
+        private void btnViewInvoice_Click(object sender, EventArgs e)
+        {
+            if (selectedInvoiceId == null)
+            {
+                MessageBox.Show("Lütfen bir fatura seçin!", "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            ShowInvoiceDetail(selectedInvoiceId.Value);
+            tabControl.SelectedTab = tabInvoiceDetail;
         }
     }
 }

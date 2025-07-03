@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace GunesMotel.Entities
 {
@@ -19,6 +20,8 @@ namespace GunesMotel.Entities
         public int ProcessedByUserID { get; set; }
 
         public virtual Invoices Invoice { get; set; }
+
+        [ForeignKey("ProcessedByUserID")]
         public virtual Users User { get; set; }
 
         public Payments()

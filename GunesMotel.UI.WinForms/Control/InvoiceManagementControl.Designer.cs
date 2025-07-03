@@ -160,6 +160,7 @@
             this.btnViewInvoice.TabIndex = 1;
             this.btnViewInvoice.Text = "👁️ Fatura Detayı";
             this.btnViewInvoice.UseVisualStyleBackColor = false;
+            this.btnViewInvoice.Click += new System.EventHandler(this.btnViewInvoice_Click);
             // 
             // btnAddPayment
             // 
@@ -317,6 +318,7 @@
             this.dgvInvoices.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvInvoices.Size = new System.Drawing.Size(1584, 691);
             this.dgvInvoices.TabIndex = 1;
+            this.dgvInvoices.SelectionChanged += new System.EventHandler(this.dgvInvoices_SelectionChanged);
             // 
             // pnlInvoiceHeader
             // 

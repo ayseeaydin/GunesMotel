@@ -81,6 +81,40 @@ namespace GunesMotel.DataAccess.Repositories
             }
         }
 
+        public InvoiceDetailDTO GetDetailById(int invoiceId)
+        {
+            using (var context = new GunesMotelContext())
+            {
+                return context.Invoices
+                    .Where(i => i.InvoiceID == invoiceId)
+                    .Select(i => new InvoiceDetailDTO
+                    {
+                        InvoiceID = i.InvoiceID,
+                        CustomerName = i.Reservation.Customer.FullName,
+                        RoomNumber = i.Reservation.Room.RoomNumber,
+                        InvoiceDate = i.InvoiceDate,
+                        Status = i.Status,
+                        TotalAmount = i.TotalAmount,
+                        Items = i.InvoiceItems.Select(ii => new InvoiceItemDTO
+                        {
+                            ItemType = ii.ItemType,
+                            Description = ii.Description,
+                            Quantity = ii.Quantity,
+                            UnitPrice = ii.UnitPrice,
+                        }).ToList(),
+                        Payments = i.Payments.Select(p => new PaymentDTO
+                        {
+                            Amount = p.Amount,
+                            PaymentType = p.PaymentType,
+                            Currency = p.Currency,
+                            PaymentDate = p.PaymentDate,
+                            UserName = p.User.Username
+                        }).ToList()
+                    })
+                    .FirstOrDefault();
+            }
+        }
+
 
         public List<Invoices> GetAll()
         {
@@ -101,8 +135,10 @@ namespace GunesMotel.DataAccess.Repositories
             {
                 return context.Invoices
                     .Include(i => i.Reservation)
-                    .Include(i => i.Reservation.Customer)
+                        .ThenInclude(r => r.Customer)
                     .Include(i => i.Reservation.Room)
+                    .Include(i => i.InvoiceItems)
+                    .Include(i => i.Payments.Select(p => p.User)) // Ödemede kullanıcıyı da çek
                     .FirstOrDefault(i => i.InvoiceID == invoiceId);
             }
         }

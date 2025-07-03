@@ -52,7 +52,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Customers.cs" />
+    <Compile Include="DTOs\InvoiceDetailDTO.cs" />
+    <Compile Include="DTOs\InvoiceItemDTO.cs" />
     <Compile Include="DTOs\InvoiceListDTO.cs" />
+    <Compile Include="DTOs\PaymentDTO.cs" />
     <Compile Include="DTOs\RoomStatusDTO.cs" />
     <Compile Include="Employees.cs" />
     <Compile Include="ExtraServicePrices.cs" />
