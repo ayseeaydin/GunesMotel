@@ -2,6 +2,7 @@
 using GunesMotel.DataAccess.Repositories;
 using GunesMotel.Entities;
 using GunesMotel.Entities.DTOs;
+using GunesMotel.UI.WinForms.Forms;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
@@ -147,6 +148,58 @@ namespace GunesMotel.UI.WinForms.Control
             tabControl.SelectedTab = tabInvoiceDetail;
         }
 
-        
+        private void btnAddPayment_Click(object sender, EventArgs e)
+        {
+            if (selectedInvoiceId == null)
+            {
+                MessageBox.Show("Lütfen bir fatura seçin!");
+                return;
+            }
+
+            var frm = new FrmAddPayment();
+            if (frm.ShowDialog() == DialogResult.OK)
+            {
+                var payment = new Payments
+                {
+                    InvoiceID = selectedInvoiceId.Value,
+                    Amount = frm.PaymentAmount,
+                    PaymentType = frm.PaymentType,
+                    Currency = frm.Currency,
+                    PaymentDate = DateTime.Now,
+                    ProcessedByUserID = CurrentUser.UserID // Giriş yapan kullanıcının ID'si
+                };
+
+                var repo = new InvoiceRepository();
+                repo.AddPayment(payment);
+                repo.UpdateInvoiceStatus(selectedInvoiceId.Value);
+
+                ShowInvoiceDetail(selectedInvoiceId.Value); // Fatura ve ödemeleri anında güncelle
+                MessageBox.Show("Ödeme başarıyla kaydedildi!");
+            }
+        }
+
+        private void btnRefreshInvoices_Click(object sender, EventArgs e)
+        {
+            txtInvoiceSearch.Text = "Müşteri, fatura no veya oda no...";
+            txtInvoiceSearch.ForeColor = Color.Gray;
+            cmbInvoiceStatus.SelectedIndex = 0;
+            dtpStartDate.Checked = false;
+            dtpEndDate.Checked = false;
+            dtpStartDate.Value = DateTime.Today.AddMonths(-1);
+            dtpEndDate.Value = DateTime.Today;
+
+            LoadInvoices();
+
+            dgvInvoices.ClearSelection();
+            selectedInvoiceId = null;
+
+            lblInvoiceNumber.Text = "Fatura No: ";
+            lblCustomerName.Text = "Müşteri: ";
+            lblInvoiceDate.Text = "Tarih: ";
+            lblInvoiceStatus.Text = "Durum: ";
+            lblInvoiceAmount.Text = "Toplam: ";
+            dgvInvoiceItems.DataSource = null;
+            dgvPayments.DataSource = null;
+        }
     }
 }

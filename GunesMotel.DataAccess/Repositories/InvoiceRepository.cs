@@ -12,7 +12,14 @@ namespace GunesMotel.DataAccess.Repositories
 {
     public class InvoiceRepository
     {
-
+        public void AddPayment(Payments payment)
+        {
+            using (var context = new GunesMotelContext())
+            {
+                context.Payments.Add(payment);
+                context.SaveChanges();
+            }
+        }
         public List<InvoiceListDTO> GetAllForGrid()
         {
             using (var context = new GunesMotelContext())
@@ -364,14 +371,17 @@ namespace GunesMotel.DataAccess.Repositories
                 var invoice = context.Invoices.Find(invoiceId);
                 if (invoice != null)
                 {
-                    var totalPaid = GetTotalPaidAmount(invoiceId);
+                    // Tüm ödemeleri topla:
+                    var totalPaid = context.Payments
+                                           .Where(p => p.InvoiceID == invoiceId)
+                                           .Sum(p => (decimal?)p.Amount) ?? 0;
 
                     if (totalPaid >= invoice.TotalAmount)
                         invoice.Status = "Ödendi";
                     else if (totalPaid > 0)
-                        invoice.Status = "Kısmi Ödendi";
+                        invoice.Status = "Kısmi";
                     else
-                        invoice.Status = "Bekliyor";
+                        invoice.Status = "Beklemede";
 
                     context.SaveChanges();
                 }

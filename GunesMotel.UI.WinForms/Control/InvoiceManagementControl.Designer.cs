@@ -145,6 +145,7 @@
             this.btnRefreshInvoices.TabIndex = 2;
             this.btnRefreshInvoices.Text = "🔄 Yenile";
             this.btnRefreshInvoices.UseVisualStyleBackColor = false;
+            this.btnRefreshInvoices.Click += new System.EventHandler(this.btnRefreshInvoices_Click);
             // 
             // btnViewInvoice
             // 
@@ -176,6 +177,7 @@
             this.btnAddPayment.TabIndex = 0;
             this.btnAddPayment.Text = "💰 Ödeme Al";
             this.btnAddPayment.UseVisualStyleBackColor = false;
+            this.btnAddPayment.Click += new System.EventHandler(this.btnAddPayment_Click);
             // 
             // pnlInvoiceFilters
             // 

@@ -200,6 +200,9 @@
     <EmbeddedResource Include="Control\UserManagementControl.resx">
       <DependentUpon>UserManagementControl.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmAddPayment.resx">
+      <DependentUpon>FrmAddPayment.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\FrmAdminDashboard.resx">
       <DependentUpon>FrmAdminDashboard.cs</DependentUpon>
     </EmbeddedResource>
