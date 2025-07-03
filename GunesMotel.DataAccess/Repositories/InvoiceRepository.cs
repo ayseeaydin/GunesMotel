@@ -6,11 +6,82 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
+using GunesMotel.Entities.DTOs;
 
 namespace GunesMotel.DataAccess.Repositories
 {
     public class InvoiceRepository
     {
+
+        public List<InvoiceListDTO> GetAllForGrid()
+        {
+            using (var context = new GunesMotelContext())
+            {
+                return context.Invoices
+                    .Include(i => i.Reservation)
+                        .ThenInclude(r => r.Customer)
+                    .Include(i => i.Reservation.Room)
+                    .OrderByDescending(i => i.InvoiceID)
+                    .Select(i => new InvoiceListDTO
+                    {
+                        InvoiceID = i.InvoiceID,
+                        CustomerName = i.Reservation.Customer.FullName,
+                        RoomNumber = i.Reservation.Room.RoomNumber,
+                        InvoiceDate = i.InvoiceDate, // DateTime olarak bırak!
+                        TotalAmount = i.TotalAmount,
+                        Status = i.Status
+                    })
+                    .ToList();
+            }
+        }
+
+        public List<InvoiceListDTO> GetFiltered(
+                                    string searchText = "",
+                                    string status = "",
+                                    DateTime? startDate = null,
+                                    DateTime? endDate = null)
+        {
+            using (var context = new GunesMotelContext())
+            {
+                var query = context.Invoices
+                    .Include(i => i.Reservation)
+                        .ThenInclude(r => r.Customer)
+                    .Include(i => i.Reservation.Room)
+                    .Select(i => new InvoiceListDTO
+                    {
+                        InvoiceID = i.InvoiceID,
+                        CustomerName = i.Reservation.Customer.FullName,
+                        RoomNumber = i.Reservation.Room.RoomNumber,
+                        InvoiceDate = i.InvoiceDate,
+                        TotalAmount = i.TotalAmount,
+                        Status = i.Status
+                    });
+
+                if (!string.IsNullOrWhiteSpace(searchText))
+                {
+                    query = query.Where(i =>
+                        i.CustomerName.Contains(searchText) ||
+                        i.InvoiceID.ToString().Contains(searchText) ||
+                        i.RoomNumber.Contains(searchText));
+                }
+
+                if (!string.IsNullOrWhiteSpace(status) && status != "Tümü")
+                {
+                    query = query.Where(i => i.Status == status);
+                }
+
+                if (startDate != null && endDate != null)
+                {
+                    DateTime start = startDate.Value.Date;
+                    DateTime end = endDate.Value.Date.AddDays(1); // Bitiş gününü de dahil et
+                    query = query.Where(i => i.InvoiceDate >= start && i.InvoiceDate < end);
+                }
+
+                return query.OrderByDescending(i => i.InvoiceID).ToList();
+            }
+        }
+
+
         public List<Invoices> GetAll()
         {
             using (var context = new GunesMotelContext())
@@ -20,7 +91,7 @@ namespace GunesMotel.DataAccess.Repositories
                     .Include(i => i.Reservation.Customer)
                     .Include(i => i.Reservation.Room)
                     .OrderByDescending(i => i.InvoiceID)
-                    .ToList(); 
+                    .ToList();
             }
         }
 

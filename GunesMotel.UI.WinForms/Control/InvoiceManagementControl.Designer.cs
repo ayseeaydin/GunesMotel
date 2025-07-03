@@ -145,7 +145,6 @@
             this.btnRefreshInvoices.TabIndex = 2;
             this.btnRefreshInvoices.Text = "🔄 Yenile";
             this.btnRefreshInvoices.UseVisualStyleBackColor = false;
-            this.btnRefreshInvoices.Click += new System.EventHandler(this.btnRefreshInvoices_Click);
             // 
             // btnViewInvoice
             // 
@@ -161,7 +160,6 @@
             this.btnViewInvoice.TabIndex = 1;
             this.btnViewInvoice.Text = "👁️ Fatura Detayı";
             this.btnViewInvoice.UseVisualStyleBackColor = false;
-            this.btnViewInvoice.Click += new System.EventHandler(this.btnViewInvoice_Click);
             // 
             // btnAddPayment
             // 
@@ -177,7 +175,6 @@
             this.btnAddPayment.TabIndex = 0;
             this.btnAddPayment.Text = "💰 Ödeme Al";
             this.btnAddPayment.UseVisualStyleBackColor = false;
-            this.btnAddPayment.Click += new System.EventHandler(this.btnAddPayment_Click);
             // 
             // pnlInvoiceFilters
             // 
@@ -205,6 +202,7 @@
             this.dtpEndDate.Location = new System.Drawing.Point(507, 55);
             this.dtpEndDate.Margin = new System.Windows.Forms.Padding(4);
             this.dtpEndDate.Name = "dtpEndDate";
+            this.dtpEndDate.ShowCheckBox = true;
             this.dtpEndDate.Size = new System.Drawing.Size(159, 27);
             this.dtpEndDate.TabIndex = 8;
             // 
@@ -215,6 +213,7 @@
             this.dtpStartDate.Location = new System.Drawing.Point(507, 18);
             this.dtpStartDate.Margin = new System.Windows.Forms.Padding(4);
             this.dtpStartDate.Name = "dtpStartDate";
+            this.dtpStartDate.ShowCheckBox = true;
             this.dtpStartDate.Size = new System.Drawing.Size(159, 27);
             this.dtpStartDate.TabIndex = 7;
             // 
@@ -238,7 +237,7 @@
             this.txtInvoiceSearch.Name = "txtInvoiceSearch";
             this.txtInvoiceSearch.Size = new System.Drawing.Size(265, 27);
             this.txtInvoiceSearch.TabIndex = 5;
-            this.txtInvoiceSearch.Text = "Müşteri adı veya fatura no...";
+            this.txtInvoiceSearch.Text = "Müşteri, fatura no veya oda no...";
             this.txtInvoiceSearch.Enter += new System.EventHandler(this.txtInvoiceSearch_Enter);
             this.txtInvoiceSearch.Leave += new System.EventHandler(this.txtInvoiceSearch_Leave);
             // 
