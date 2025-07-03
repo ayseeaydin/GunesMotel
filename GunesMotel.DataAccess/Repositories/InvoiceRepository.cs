@@ -16,11 +16,11 @@ namespace GunesMotel.DataAccess.Repositories
             using (var context = new GunesMotelContext())
             {
                 return context.Invoices
-                              .Include(i => i.Reservation.Customer)
-                              .Include(i => i.Reservation.Room)
-                              .Include(i => i.User)
-                              .OrderByDescending(i => i.InvoiceDate)
-                              .ToList();
+                    .Include(i => i.Reservation)
+                    .Include(i => i.Reservation.Customer)
+                    .Include(i => i.Reservation.Room)
+                    .OrderByDescending(i => i.InvoiceID)
+                    .ToList(); 
             }
         }
 
@@ -29,11 +29,10 @@ namespace GunesMotel.DataAccess.Repositories
             using (var context = new GunesMotelContext())
             {
                 return context.Invoices
-                              .Include(i => i.Reservation.Customer)
-                              .Include(i => i.Reservation.Room)
-                              .Include(i => i.User)
-                              .Include(i => i.InvoiceItems)
-                              .FirstOrDefault(i => i.InvoiceID == invoiceId);
+                    .Include(i => i.Reservation)
+                    .Include(i => i.Reservation.Customer)
+                    .Include(i => i.Reservation.Room)
+                    .FirstOrDefault(i => i.InvoiceID == invoiceId);
             }
         }
 

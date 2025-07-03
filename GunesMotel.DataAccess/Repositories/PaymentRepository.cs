@@ -39,10 +39,10 @@ namespace GunesMotel.DataAccess.Repositories
             using (var context = new GunesMotelContext())
             {
                 return context.Payments
-                              .Include(p => p.User)
-                              .Where(p => p.InvoiceID == invoiceId)
-                              .OrderBy(p => p.PaymentDate)
-                              .ToList();
+                    .Include(p => p.User)
+                    .Where(p => p.InvoiceID == invoiceId)
+                    .OrderBy(p => p.PaymentDate)
+                    .ToList();
             }
         }
 

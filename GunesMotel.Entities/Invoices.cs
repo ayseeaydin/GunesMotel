@@ -20,7 +20,7 @@ namespace GunesMotel.Entities
         public int? CreatedByUserID { get; set; }
 
         public virtual Reservations Reservation { get; set; }
-        public virtual Users User { get; set; }
+        // public virtual Users User { get; set; }
         public virtual ICollection<InvoiceItems> InvoiceItems { get; set; }
         public virtual ICollection<Payments> Payments { get; set; }
 

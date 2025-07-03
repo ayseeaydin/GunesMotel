@@ -141,7 +141,7 @@
             this.btnFaturaYonetimi.Padding = new System.Windows.Forms.Padding(13, 0, 0, 0);
             this.btnFaturaYonetimi.Size = new System.Drawing.Size(373, 62);
             this.btnFaturaYonetimi.TabIndex = 6;
-            this.btnFaturaYonetimi.Text = "💰 Fatura Yönetimi";
+            this.btnFaturaYonetimi.Text = "💰 Fatura-Ödeme";
             this.btnFaturaYonetimi.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnFaturaYonetimi.UseVisualStyleBackColor = true;
             this.btnFaturaYonetimi.Click += new System.EventHandler(this.btnFaturaYonetimi_Click);

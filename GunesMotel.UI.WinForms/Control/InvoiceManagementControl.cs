@@ -55,53 +55,30 @@ namespace GunesMotel.UI.WinForms.Control
         {
             try
             {
-                using (var context = new GunesMotel.DataAccess.Contexts.GunesMotelContext())
+                var invoices = _invoiceRepo.GetAll();
+
+                var invoiceList = invoices.Select(i => new
                 {
-                    // Basit LINQ sorgusu
-                    var invoiceData = (from i in context.Invoices
-                                       join res in context.Reservations on i.ReservationID equals res.ReservationID into resGroup
-                                       from res in resGroup.DefaultIfEmpty()
-                                       join c in context.Customers on res.CustomerID equals c.CustomerID into custGroup
-                                       from c in custGroup.DefaultIfEmpty()
-                                       join r in context.Rooms on res.RoomID equals r.RoomID into roomGroup
-                                       from r in roomGroup.DefaultIfEmpty()
-                                       select new
-                                       {
-                                           InvoiceID = i.InvoiceID,
-                                           ReservationID = i.ReservationID,
-                                           CustomerName = c.FullName ?? "N/A",
-                                           RoomNumber = r.RoomNumber ?? "N/A",
-                                           InvoiceDate = i.InvoiceDate,
-                                           TotalAmount = i.TotalAmount,
-                                           Status = i.Status ?? "Bekliyor"
-                                       }).OrderByDescending(x => x.InvoiceID).ToList();
+                    i.InvoiceID,
+                    FaturaNo = i.InvoiceID,
+                    RezervasyonNo = i.ReservationID,
+                    Müşteri = i.Reservation?.Customer?.FullName ?? "N/A",
+                    Oda = i.Reservation?.Room?.RoomNumber ?? "N/A",
+                    Tarih = i.InvoiceDate.ToString("dd.MM.yyyy"),
+                    Tutar = i.TotalAmount.ToString("C2"),
+                    Durum = i.Status ?? "Bekliyor"
+                }).ToList();
 
-                    var invoiceList = invoiceData.Select(i => new
-                    {
-                        i.InvoiceID,
-                        FaturaNo = i.InvoiceID,
-                        RezervasyonNo = i.ReservationID,
-                        Müşteri = i.CustomerName,
-                        Oda = i.RoomNumber,
-                        Tarih = i.InvoiceDate.ToString("dd.MM.yyyy"),
-                        Tutar = i.TotalAmount.ToString("C2"),
-                        Durum = i.Status
-                    }).ToList();
+                dgvInvoices.DataSource = invoiceList;
 
-                    dgvInvoices.DataSource = invoiceList;
+                if (dgvInvoices.Columns["InvoiceID"] != null)
+                    dgvInvoices.Columns["InvoiceID"].Visible = false;
 
-                    // ID sütununu gizle
-                    if (dgvInvoices.Columns["InvoiceID"] != null)
-                        dgvInvoices.Columns["InvoiceID"].Visible = false;
-
-                    MessageBox.Show($"{invoiceList.Count} fatura listelendi!", "Başarılı",
-                        MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
+                MessageBox.Show($"{invoiceList.Count} fatura listelendi!", "Başarılı");
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Faturalar yüklenirken hata: {ex.Message}\n\nDetay: {ex.InnerException?.Message}", "Hata",
-                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show($"Hata: {ex.Message}", "Hata");
             }
         }
 
