@@ -17,5 +17,14 @@ namespace GunesMotel.Entities
         public string Currency { get; set; }
         public DateTime PaymentDate { get; set; }
         public int ProcessedByUserID { get; set; }
+
+        public virtual Invoices Invoice { get; set; }
+        public virtual Users User { get; set; }
+
+        public Payments()
+        {
+            PaymentDate = DateTime.Now;
+            Currency = "$";
+        }
     }
 }

@@ -173,5 +173,10 @@ namespace GunesMotel.UI.WinForms.Forms
         {
             LoadUserControl(new CheckInOutControl());
         }
+
+        private void btnAnaSayfa_Click(object sender, EventArgs e)
+        {
+            FrmReceptionDashboard_Load(sender, e); // Yeniden yükle999
+        }
     }
 }

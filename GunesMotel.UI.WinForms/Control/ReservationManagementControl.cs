@@ -373,5 +373,23 @@ namespace GunesMotel.UI.WinForms.Control
             ClearForm();
             dgvReservations.ClearSelection();
         }
+
+        private void txtSearch_Enter(object sender, EventArgs e)
+        {
+            if(txtSearch.Text == "Aranacak değeri giriniz...")
+            {
+                txtSearch.Text = "";
+                txtSearch.ForeColor = Color.Black;
+            }
+        }
+
+        private void txtSearch_Leave(object sender, EventArgs e)
+        {
+            if(string.IsNullOrWhiteSpace(txtSearch.Text))
+            {
+                txtSearch.Text = "Aranacak değeri giriniz...";
+                txtSearch.ForeColor = Color.Gray;
+            }
+        }
     }
 }

@@ -30,13 +30,8 @@
         {
             this.pnlSidebar = new System.Windows.Forms.Panel();
             this.btnHareketler = new System.Windows.Forms.Button();
-            this.btnAyarlar = new System.Windows.Forms.Button();
             this.btnKullanicilar = new System.Windows.Forms.Button();
             this.btnPersonel = new System.Windows.Forms.Button();
-            this.btnRaporlar = new System.Windows.Forms.Button();
-            this.btnFaturalar = new System.Windows.Forms.Button();
-            this.btnOdemeler = new System.Windows.Forms.Button();
-            this.btnRezervasyonlar = new System.Windows.Forms.Button();
             this.btnSeasons = new System.Windows.Forms.Button();
             this.btnOdalar = new System.Windows.Forms.Button();
             this.btnAnaSayfa = new System.Windows.Forms.Button();
@@ -53,19 +48,15 @@
             this.pnlRoomsCard = new System.Windows.Forms.Panel();
             this.lblRoomsTotal = new System.Windows.Forms.Label();
             this.lblRoomsTitle = new System.Windows.Forms.Label();
-            this.picRooms = new System.Windows.Forms.PictureBox();
             this.pnlReservationsCard = new System.Windows.Forms.Panel();
             this.lblReservationsTotal = new System.Windows.Forms.Label();
             this.lblReservationsTitle = new System.Windows.Forms.Label();
-            this.picReservations = new System.Windows.Forms.PictureBox();
             this.pnlCustomersCard = new System.Windows.Forms.Panel();
             this.lblCustomersTotal = new System.Windows.Forms.Label();
             this.lblCustomersTitle = new System.Windows.Forms.Label();
-            this.picCustomers = new System.Windows.Forms.PictureBox();
             this.pnlRevenueCard = new System.Windows.Forms.Panel();
             this.lblRevenueAmount = new System.Windows.Forms.Label();
             this.lblRevenueTitle = new System.Windows.Forms.Label();
-            this.picRevenue = new System.Windows.Forms.PictureBox();
             this.pnlFooter = new System.Windows.Forms.Panel();
             this.lblStatus = new System.Windows.Forms.Label();
             this.lblCopyright = new System.Windows.Forms.Label();
@@ -75,13 +66,9 @@
             this.pnlDashboard.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.pnlRoomsCard.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picRooms)).BeginInit();
             this.pnlReservationsCard.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picReservations)).BeginInit();
             this.pnlCustomersCard.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picCustomers)).BeginInit();
             this.pnlRevenueCard.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picRevenue)).BeginInit();
             this.pnlFooter.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -89,13 +76,8 @@
             // 
             this.pnlSidebar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(93)))), ((int)(((byte)(64)))), ((int)(((byte)(55)))));
             this.pnlSidebar.Controls.Add(this.btnHareketler);
-            this.pnlSidebar.Controls.Add(this.btnAyarlar);
             this.pnlSidebar.Controls.Add(this.btnKullanicilar);
             this.pnlSidebar.Controls.Add(this.btnPersonel);
-            this.pnlSidebar.Controls.Add(this.btnRaporlar);
-            this.pnlSidebar.Controls.Add(this.btnFaturalar);
-            this.pnlSidebar.Controls.Add(this.btnOdemeler);
-            this.pnlSidebar.Controls.Add(this.btnRezervasyonlar);
             this.pnlSidebar.Controls.Add(this.btnSeasons);
             this.pnlSidebar.Controls.Add(this.btnOdalar);
             this.pnlSidebar.Controls.Add(this.btnAnaSayfa);
@@ -114,7 +96,7 @@
             this.btnHareketler.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnHareketler.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.btnHareketler.ForeColor = System.Drawing.Color.White;
-            this.btnHareketler.Location = new System.Drawing.Point(0, 780);
+            this.btnHareketler.Location = new System.Drawing.Point(0, 470);
             this.btnHareketler.Margin = new System.Windows.Forms.Padding(4);
             this.btnHareketler.Name = "btnHareketler";
             this.btnHareketler.Padding = new System.Windows.Forms.Padding(13, 0, 0, 0);
@@ -124,23 +106,6 @@
             this.btnHareketler.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnHareketler.UseVisualStyleBackColor = true;
             // 
-            // btnAyarlar
-            // 
-            this.btnAyarlar.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnAyarlar.FlatAppearance.BorderSize = 0;
-            this.btnAyarlar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAyarlar.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.btnAyarlar.ForeColor = System.Drawing.Color.White;
-            this.btnAyarlar.Location = new System.Drawing.Point(0, 718);
-            this.btnAyarlar.Margin = new System.Windows.Forms.Padding(4);
-            this.btnAyarlar.Name = "btnAyarlar";
-            this.btnAyarlar.Padding = new System.Windows.Forms.Padding(13, 0, 0, 0);
-            this.btnAyarlar.Size = new System.Drawing.Size(333, 62);
-            this.btnAyarlar.TabIndex = 10;
-            this.btnAyarlar.Text = "Sistem Ayarları";
-            this.btnAyarlar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAyarlar.UseVisualStyleBackColor = true;
-            // 
             // btnKullanicilar
             // 
             this.btnKullanicilar.Dock = System.Windows.Forms.DockStyle.Top;
@@ -148,7 +113,7 @@
             this.btnKullanicilar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnKullanicilar.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.btnKullanicilar.ForeColor = System.Drawing.Color.White;
-            this.btnKullanicilar.Location = new System.Drawing.Point(0, 656);
+            this.btnKullanicilar.Location = new System.Drawing.Point(0, 408);
             this.btnKullanicilar.Margin = new System.Windows.Forms.Padding(4);
             this.btnKullanicilar.Name = "btnKullanicilar";
             this.btnKullanicilar.Padding = new System.Windows.Forms.Padding(13, 0, 0, 0);
@@ -166,7 +131,7 @@
             this.btnPersonel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPersonel.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.btnPersonel.ForeColor = System.Drawing.Color.White;
-            this.btnPersonel.Location = new System.Drawing.Point(0, 594);
+            this.btnPersonel.Location = new System.Drawing.Point(0, 346);
             this.btnPersonel.Margin = new System.Windows.Forms.Padding(4);
             this.btnPersonel.Name = "btnPersonel";
             this.btnPersonel.Padding = new System.Windows.Forms.Padding(13, 0, 0, 0);
@@ -176,74 +141,6 @@
             this.btnPersonel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnPersonel.UseVisualStyleBackColor = true;
             this.btnPersonel.Click += new System.EventHandler(this.btnPersonel_Click);
-            // 
-            // btnRaporlar
-            // 
-            this.btnRaporlar.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnRaporlar.FlatAppearance.BorderSize = 0;
-            this.btnRaporlar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRaporlar.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.btnRaporlar.ForeColor = System.Drawing.Color.White;
-            this.btnRaporlar.Location = new System.Drawing.Point(0, 532);
-            this.btnRaporlar.Margin = new System.Windows.Forms.Padding(4);
-            this.btnRaporlar.Name = "btnRaporlar";
-            this.btnRaporlar.Padding = new System.Windows.Forms.Padding(13, 0, 0, 0);
-            this.btnRaporlar.Size = new System.Drawing.Size(333, 62);
-            this.btnRaporlar.TabIndex = 7;
-            this.btnRaporlar.Text = "Raporlar";
-            this.btnRaporlar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnRaporlar.UseVisualStyleBackColor = true;
-            // 
-            // btnFaturalar
-            // 
-            this.btnFaturalar.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnFaturalar.FlatAppearance.BorderSize = 0;
-            this.btnFaturalar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnFaturalar.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.btnFaturalar.ForeColor = System.Drawing.Color.White;
-            this.btnFaturalar.Location = new System.Drawing.Point(0, 470);
-            this.btnFaturalar.Margin = new System.Windows.Forms.Padding(4);
-            this.btnFaturalar.Name = "btnFaturalar";
-            this.btnFaturalar.Padding = new System.Windows.Forms.Padding(13, 0, 0, 0);
-            this.btnFaturalar.Size = new System.Drawing.Size(333, 62);
-            this.btnFaturalar.TabIndex = 6;
-            this.btnFaturalar.Text = "Faturalar";
-            this.btnFaturalar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnFaturalar.UseVisualStyleBackColor = true;
-            // 
-            // btnOdemeler
-            // 
-            this.btnOdemeler.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnOdemeler.FlatAppearance.BorderSize = 0;
-            this.btnOdemeler.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnOdemeler.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.btnOdemeler.ForeColor = System.Drawing.Color.White;
-            this.btnOdemeler.Location = new System.Drawing.Point(0, 408);
-            this.btnOdemeler.Margin = new System.Windows.Forms.Padding(4);
-            this.btnOdemeler.Name = "btnOdemeler";
-            this.btnOdemeler.Padding = new System.Windows.Forms.Padding(13, 0, 0, 0);
-            this.btnOdemeler.Size = new System.Drawing.Size(333, 62);
-            this.btnOdemeler.TabIndex = 5;
-            this.btnOdemeler.Text = "Ödemeler";
-            this.btnOdemeler.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnOdemeler.UseVisualStyleBackColor = true;
-            // 
-            // btnRezervasyonlar
-            // 
-            this.btnRezervasyonlar.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnRezervasyonlar.FlatAppearance.BorderSize = 0;
-            this.btnRezervasyonlar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRezervasyonlar.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.btnRezervasyonlar.ForeColor = System.Drawing.Color.White;
-            this.btnRezervasyonlar.Location = new System.Drawing.Point(0, 346);
-            this.btnRezervasyonlar.Margin = new System.Windows.Forms.Padding(4);
-            this.btnRezervasyonlar.Name = "btnRezervasyonlar";
-            this.btnRezervasyonlar.Padding = new System.Windows.Forms.Padding(13, 0, 0, 0);
-            this.btnRezervasyonlar.Size = new System.Drawing.Size(333, 62);
-            this.btnRezervasyonlar.TabIndex = 4;
-            this.btnRezervasyonlar.Text = "Rezervasyonlar";
-            this.btnRezervasyonlar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnRezervasyonlar.UseVisualStyleBackColor = true;
             // 
             // btnSeasons
             // 
@@ -297,6 +194,7 @@
             this.btnAnaSayfa.Text = "Ana Sayfa";
             this.btnAnaSayfa.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnAnaSayfa.UseVisualStyleBackColor = true;
+            this.btnAnaSayfa.Click += new System.EventHandler(this.btnAnaSayfa_Click);
             // 
             // pnlLogo
             // 
@@ -444,7 +342,6 @@
             this.pnlRoomsCard.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(215)))), ((int)(((byte)(185)))));
             this.pnlRoomsCard.Controls.Add(this.lblRoomsTotal);
             this.pnlRoomsCard.Controls.Add(this.lblRoomsTitle);
-            this.pnlRoomsCard.Controls.Add(this.picRooms);
             this.pnlRoomsCard.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlRoomsCard.Location = new System.Drawing.Point(4, 4);
             this.pnlRoomsCard.Margin = new System.Windows.Forms.Padding(4);
@@ -476,22 +373,11 @@
             this.lblRoomsTitle.TabIndex = 1;
             this.lblRoomsTitle.Text = "Toplam Oda Sayısı";
             // 
-            // picRooms
-            // 
-            this.picRooms.Location = new System.Drawing.Point(20, 43);
-            this.picRooms.Margin = new System.Windows.Forms.Padding(4);
-            this.picRooms.Name = "picRooms";
-            this.picRooms.Size = new System.Drawing.Size(67, 62);
-            this.picRooms.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picRooms.TabIndex = 0;
-            this.picRooms.TabStop = false;
-            // 
             // pnlReservationsCard
             // 
             this.pnlReservationsCard.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(215)))), ((int)(((byte)(185)))));
             this.pnlReservationsCard.Controls.Add(this.lblReservationsTotal);
             this.pnlReservationsCard.Controls.Add(this.lblReservationsTitle);
-            this.pnlReservationsCard.Controls.Add(this.picReservations);
             this.pnlReservationsCard.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlReservationsCard.Location = new System.Drawing.Point(334, 4);
             this.pnlReservationsCard.Margin = new System.Windows.Forms.Padding(4);
@@ -523,22 +409,11 @@
             this.lblReservationsTitle.TabIndex = 1;
             this.lblReservationsTitle.Text = "Aktif Rezervasyonlar";
             // 
-            // picReservations
-            // 
-            this.picReservations.Location = new System.Drawing.Point(11, 43);
-            this.picReservations.Margin = new System.Windows.Forms.Padding(4);
-            this.picReservations.Name = "picReservations";
-            this.picReservations.Size = new System.Drawing.Size(67, 62);
-            this.picReservations.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picReservations.TabIndex = 0;
-            this.picReservations.TabStop = false;
-            // 
             // pnlCustomersCard
             // 
             this.pnlCustomersCard.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(215)))), ((int)(((byte)(185)))));
             this.pnlCustomersCard.Controls.Add(this.lblCustomersTotal);
             this.pnlCustomersCard.Controls.Add(this.lblCustomersTitle);
-            this.pnlCustomersCard.Controls.Add(this.picCustomers);
             this.pnlCustomersCard.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlCustomersCard.Location = new System.Drawing.Point(664, 4);
             this.pnlCustomersCard.Margin = new System.Windows.Forms.Padding(4);
@@ -570,22 +445,11 @@
             this.lblCustomersTitle.TabIndex = 1;
             this.lblCustomersTitle.Text = "Toplam Müşteriler";
             // 
-            // picCustomers
-            // 
-            this.picCustomers.Location = new System.Drawing.Point(20, 43);
-            this.picCustomers.Margin = new System.Windows.Forms.Padding(4);
-            this.picCustomers.Name = "picCustomers";
-            this.picCustomers.Size = new System.Drawing.Size(67, 62);
-            this.picCustomers.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picCustomers.TabIndex = 0;
-            this.picCustomers.TabStop = false;
-            // 
             // pnlRevenueCard
             // 
             this.pnlRevenueCard.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(215)))), ((int)(((byte)(185)))));
             this.pnlRevenueCard.Controls.Add(this.lblRevenueAmount);
             this.pnlRevenueCard.Controls.Add(this.lblRevenueTitle);
-            this.pnlRevenueCard.Controls.Add(this.picRevenue);
             this.pnlRevenueCard.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlRevenueCard.Location = new System.Drawing.Point(994, 4);
             this.pnlRevenueCard.Margin = new System.Windows.Forms.Padding(4);
@@ -616,16 +480,6 @@
             this.lblRevenueTitle.Size = new System.Drawing.Size(140, 28);
             this.lblRevenueTitle.TabIndex = 1;
             this.lblRevenueTitle.Text = "Günlük Kazanç";
-            // 
-            // picRevenue
-            // 
-            this.picRevenue.Location = new System.Drawing.Point(20, 43);
-            this.picRevenue.Margin = new System.Windows.Forms.Padding(4);
-            this.picRevenue.Name = "picRevenue";
-            this.picRevenue.Size = new System.Drawing.Size(67, 62);
-            this.picRevenue.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picRevenue.TabIndex = 0;
-            this.picRevenue.TabStop = false;
             // 
             // pnlFooter
             // 
@@ -688,16 +542,12 @@
             this.tableLayoutPanel1.ResumeLayout(false);
             this.pnlRoomsCard.ResumeLayout(false);
             this.pnlRoomsCard.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picRooms)).EndInit();
             this.pnlReservationsCard.ResumeLayout(false);
             this.pnlReservationsCard.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picReservations)).EndInit();
             this.pnlCustomersCard.ResumeLayout(false);
             this.pnlCustomersCard.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picCustomers)).EndInit();
             this.pnlRevenueCard.ResumeLayout(false);
             this.pnlRevenueCard.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picRevenue)).EndInit();
             this.pnlFooter.ResumeLayout(false);
             this.pnlFooter.PerformLayout();
             this.ResumeLayout(false);
@@ -708,13 +558,8 @@
         private System.Windows.Forms.Panel pnlSidebar;
         private System.Windows.Forms.Panel pnlLogo;
         private System.Windows.Forms.Button btnAnaSayfa;
-        private System.Windows.Forms.Button btnAyarlar;
         private System.Windows.Forms.Button btnKullanicilar;
         private System.Windows.Forms.Button btnPersonel;
-        private System.Windows.Forms.Button btnRaporlar;
-        private System.Windows.Forms.Button btnFaturalar;
-        private System.Windows.Forms.Button btnOdemeler;
-        private System.Windows.Forms.Button btnRezervasyonlar;
         private System.Windows.Forms.Button btnSeasons;
         private System.Windows.Forms.Button btnOdalar;
         private System.Windows.Forms.Panel pnlHeader;
@@ -728,19 +573,15 @@
         private System.Windows.Forms.Panel pnlRoomsCard;
         private System.Windows.Forms.Label lblRoomsTotal;
         private System.Windows.Forms.Label lblRoomsTitle;
-        private System.Windows.Forms.PictureBox picRooms;
         private System.Windows.Forms.Panel pnlReservationsCard;
         private System.Windows.Forms.Label lblReservationsTotal;
         private System.Windows.Forms.Label lblReservationsTitle;
-        private System.Windows.Forms.PictureBox picReservations;
         private System.Windows.Forms.Panel pnlCustomersCard;
         private System.Windows.Forms.Label lblCustomersTotal;
         private System.Windows.Forms.Label lblCustomersTitle;
-        private System.Windows.Forms.PictureBox picCustomers;
         private System.Windows.Forms.Panel pnlRevenueCard;
         private System.Windows.Forms.Label lblRevenueAmount;
         private System.Windows.Forms.Label lblRevenueTitle;
-        private System.Windows.Forms.PictureBox picRevenue;
         private System.Windows.Forms.Panel pnlFooter;
         private System.Windows.Forms.Label lblCopyright;
         private System.Windows.Forms.Label lblStatus;

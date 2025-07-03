@@ -25,5 +25,16 @@ namespace GunesMotel.Entities
         public virtual Customers Customer { get; set; }
         public virtual Rooms Room { get; set; }
         public virtual Users User { get; set; }
+
+        public virtual ICollection<ReservationExtras> ReservationExtras { get; set; }
+        public virtual ICollection<ReservationGuests> ReservationGuests { get; set; }
+        public virtual ICollection<Invoices> Invoices { get; set; }
+
+        public Reservations()
+        {
+            ReservationExtras = new HashSet<ReservationExtras>();
+            ReservationGuests = new HashSet<ReservationGuests>();
+            Invoices = new HashSet<Invoices>();
+        }
     }    
 }

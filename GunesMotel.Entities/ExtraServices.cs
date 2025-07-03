@@ -13,5 +13,14 @@ namespace GunesMotel.Entities
         public int ServiceID { get; set; }
         public string ServiceName { get; set; }
         public string? Description { get; set; }
+
+        public virtual ICollection<ReservationExtras> ReservationExtras { get; set; }
+        public virtual ICollection<ExtraServicePrices> ExtraServicePrices { get; set; }
+
+        public ExtraServices()
+        {
+            ReservationExtras = new HashSet<ReservationExtras>();
+            ExtraServicePrices = new HashSet<ExtraServicePrices>();
+        }
     }
 }

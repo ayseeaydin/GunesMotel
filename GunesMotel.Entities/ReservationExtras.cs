@@ -16,5 +16,8 @@ namespace GunesMotel.Entities
         public int Quantity { get; set; }
         public decimal UnitPrice { get; set; }
         public decimal TotalPrice => Quantity * UnitPrice; // Otomatik hesaplama
+
+        public virtual Reservations Reservation { get; set; }
+        public virtual ExtraServices ExtraService { get; set; }
     }
 }

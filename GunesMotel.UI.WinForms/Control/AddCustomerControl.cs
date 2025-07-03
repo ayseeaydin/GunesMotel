@@ -232,5 +232,23 @@ namespace GunesMotel.UI.WinForms.Control
 
             dgvCustomers.DataSource = filtered;
         }
+
+        private void txtSearch_Enter(object sender, EventArgs e)
+        {
+            if(txtSearch.Text == "Aranacak değeri giriniz...")
+            {
+                txtSearch.Text = string.Empty;
+                txtSearch.ForeColor = System.Drawing.Color.Black;
+            }
+        }
+
+        private void txtSearch_Leave(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(txtSearch.Text))
+            {
+                txtSearch.Text = "Aranacak değeri giriniz...";
+                txtSearch.ForeColor = System.Drawing.Color.Gray;
+            }
+        }
     }
 }

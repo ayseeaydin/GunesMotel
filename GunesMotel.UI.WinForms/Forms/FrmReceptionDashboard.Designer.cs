@@ -29,9 +29,6 @@
         private void InitializeComponent()
         {
             this.pnlSidebar = new System.Windows.Forms.Panel();
-            this.btnRaporlar = new System.Windows.Forms.Button();
-            this.btnEkHizmetler = new System.Windows.Forms.Button();
-            this.btnFaturalar = new System.Windows.Forms.Button();
             this.btnRezervasyonlar = new System.Windows.Forms.Button();
             this.btnMusteriler = new System.Windows.Forms.Button();
             this.btnCheckinOut = new System.Windows.Forms.Button();
@@ -116,9 +113,6 @@
             // pnlSidebar
             // 
             this.pnlSidebar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(93)))), ((int)(((byte)(64)))), ((int)(((byte)(55)))));
-            this.pnlSidebar.Controls.Add(this.btnRaporlar);
-            this.pnlSidebar.Controls.Add(this.btnEkHizmetler);
-            this.pnlSidebar.Controls.Add(this.btnFaturalar);
             this.pnlSidebar.Controls.Add(this.btnRezervasyonlar);
             this.pnlSidebar.Controls.Add(this.btnMusteriler);
             this.pnlSidebar.Controls.Add(this.btnCheckinOut);
@@ -131,57 +125,6 @@
             this.pnlSidebar.Name = "pnlSidebar";
             this.pnlSidebar.Size = new System.Drawing.Size(373, 1019);
             this.pnlSidebar.TabIndex = 0;
-            // 
-            // btnRaporlar
-            // 
-            this.btnRaporlar.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnRaporlar.FlatAppearance.BorderSize = 0;
-            this.btnRaporlar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRaporlar.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.btnRaporlar.ForeColor = System.Drawing.Color.White;
-            this.btnRaporlar.Location = new System.Drawing.Point(0, 582);
-            this.btnRaporlar.Margin = new System.Windows.Forms.Padding(4);
-            this.btnRaporlar.Name = "btnRaporlar";
-            this.btnRaporlar.Padding = new System.Windows.Forms.Padding(13, 0, 0, 0);
-            this.btnRaporlar.Size = new System.Drawing.Size(373, 62);
-            this.btnRaporlar.TabIndex = 8;
-            this.btnRaporlar.Text = "📊 Raporlar";
-            this.btnRaporlar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnRaporlar.UseVisualStyleBackColor = true;
-            // 
-            // btnEkHizmetler
-            // 
-            this.btnEkHizmetler.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnEkHizmetler.FlatAppearance.BorderSize = 0;
-            this.btnEkHizmetler.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEkHizmetler.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.btnEkHizmetler.ForeColor = System.Drawing.Color.White;
-            this.btnEkHizmetler.Location = new System.Drawing.Point(0, 520);
-            this.btnEkHizmetler.Margin = new System.Windows.Forms.Padding(4);
-            this.btnEkHizmetler.Name = "btnEkHizmetler";
-            this.btnEkHizmetler.Padding = new System.Windows.Forms.Padding(13, 0, 0, 0);
-            this.btnEkHizmetler.Size = new System.Drawing.Size(373, 62);
-            this.btnEkHizmetler.TabIndex = 7;
-            this.btnEkHizmetler.Text = "🛎️ Ek Hizmetler";
-            this.btnEkHizmetler.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnEkHizmetler.UseVisualStyleBackColor = true;
-            // 
-            // btnFaturalar
-            // 
-            this.btnFaturalar.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnFaturalar.FlatAppearance.BorderSize = 0;
-            this.btnFaturalar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnFaturalar.Font = new System.Drawing.Font("Segoe UI", 11F);
-            this.btnFaturalar.ForeColor = System.Drawing.Color.White;
-            this.btnFaturalar.Location = new System.Drawing.Point(0, 458);
-            this.btnFaturalar.Margin = new System.Windows.Forms.Padding(4);
-            this.btnFaturalar.Name = "btnFaturalar";
-            this.btnFaturalar.Padding = new System.Windows.Forms.Padding(13, 0, 0, 0);
-            this.btnFaturalar.Size = new System.Drawing.Size(373, 62);
-            this.btnFaturalar.TabIndex = 6;
-            this.btnFaturalar.Text = "🧾 Faturalar";
-            this.btnFaturalar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnFaturalar.UseVisualStyleBackColor = true;
             // 
             // btnRezervasyonlar
             // 
@@ -271,6 +214,7 @@
             this.btnAnaSayfa.Text = "🏠 Ana Sayfa";
             this.btnAnaSayfa.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnAnaSayfa.UseVisualStyleBackColor = true;
+            this.btnAnaSayfa.Click += new System.EventHandler(this.btnAnaSayfa_Click);
             // 
             // pnlLogo
             // 
@@ -985,9 +929,6 @@
 
         #endregion
         private System.Windows.Forms.Panel pnlSidebar;
-        private System.Windows.Forms.Button btnRaporlar;
-        private System.Windows.Forms.Button btnEkHizmetler;
-        private System.Windows.Forms.Button btnFaturalar;
         private System.Windows.Forms.Button btnRezervasyonlar;
         private System.Windows.Forms.Button btnMusteriler;
         private System.Windows.Forms.Button btnCheckinOut;

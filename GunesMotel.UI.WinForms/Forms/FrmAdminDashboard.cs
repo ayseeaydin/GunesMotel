@@ -96,5 +96,10 @@ namespace GunesMotel.UI.WinForms.Forms
             var seasonControl = new SeasonManagementControl();
             LoadContent(seasonControl);
         }
+
+        private void btnAnaSayfa_Click(object sender, EventArgs e)
+        {
+            FrmAdminDashboard_Load(sender, e); // Yeniden yükle
+        }
     }
 }
