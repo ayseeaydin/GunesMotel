@@ -1,4 +1,5 @@
-﻿using GunesMotel.DataAccess.Repositories;
+﻿using GunesMotel.Common;
+using GunesMotel.DataAccess.Repositories;
 using GunesMotel.Entities;
 using GunesMotel.Entities.DTOs;
 using System;
@@ -32,7 +33,6 @@ namespace GunesMotel.UI.WinForms.Control
             dtpStartDate.Checked = false; 
             dtpEndDate.Checked = false;
 
-            // Tarih başlangıcını anlamlı bir değere çekebilirsin (örn. 1 yıl önce)
             dtpStartDate.Value = DateTime.Today.AddMonths(-1);
             dtpEndDate.Value = DateTime.Today;
 
@@ -146,5 +146,7 @@ namespace GunesMotel.UI.WinForms.Control
             ShowInvoiceDetail(selectedInvoiceId.Value);
             tabControl.SelectedTab = tabInvoiceDetail;
         }
+
+        
     }
 }
