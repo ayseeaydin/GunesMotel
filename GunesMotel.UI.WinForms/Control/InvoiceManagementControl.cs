@@ -156,7 +156,12 @@ namespace GunesMotel.UI.WinForms.Control
                 return;
             }
 
+            var repo = new InvoiceRepository();
+            var detail = repo.GetDetailById(selectedInvoiceId.Value);
+
             var frm = new FrmAddPayment();
+            frm.DefaultAmount = detail.TotalAmount; // Otomatik olarak fatura tutarını gir
+
             if (frm.ShowDialog() == DialogResult.OK)
             {
                 var payment = new Payments
@@ -166,14 +171,14 @@ namespace GunesMotel.UI.WinForms.Control
                     PaymentType = frm.PaymentType,
                     Currency = frm.Currency,
                     PaymentDate = DateTime.Now,
-                    ProcessedByUserID = CurrentUser.UserID // Giriş yapan kullanıcının ID'si
+                    ProcessedByUserID = CurrentUser.UserID
                 };
 
-                var repo = new InvoiceRepository();
                 repo.AddPayment(payment);
                 repo.UpdateInvoiceStatus(selectedInvoiceId.Value);
 
-                ShowInvoiceDetail(selectedInvoiceId.Value); // Fatura ve ödemeleri anında güncelle
+                ShowInvoiceDetail(selectedInvoiceId.Value);
+                LoadInvoices(); // Listeyi de güncelle!
                 MessageBox.Show("Ödeme başarıyla kaydedildi!");
             }
         }

@@ -23,6 +23,13 @@ namespace GunesMotel.UI.WinForms.Forms
             nudAmount.Value = 1;
         }
 
+        public decimal DefaultAmount
+        {
+            get => nudAmount.Value;
+            set => nudAmount.Value = value;
+        }
+
+
         private void btnSave_Click(object sender, EventArgs e)
         {
             if (PaymentAmount <= 0)
