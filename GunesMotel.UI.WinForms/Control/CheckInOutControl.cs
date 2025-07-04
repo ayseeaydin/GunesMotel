@@ -250,17 +250,19 @@ namespace GunesMotel.UI.WinForms.Control
                     return;
                 }
 
-                // Check-out onayı
-                var result = MessageBox.Show($"Check-out işlemini onaylıyor musunuz?\n\n" +
-                    $"Müşteri: {selectedReservation.Customer?.FullName}\n" +
-                    $"Oda: {selectedReservation.Room?.RoomNumber}\n" +
-                    $"Giriş: {selectedReservation.CheckInDate:dd.MM.yyyy}\n" +
-                    $"Çıkış: {selectedReservation.CheckOutDate:dd.MM.yyyy}",
-                    "Check-Out Onayı", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-
-                if (result == DialogResult.Yes)
+                // YENİ: Doğrudan fatura ve ödeme formu aç
+                using (var checkOutForm = new FrmCheckOutWithInvoice(selectedReservation))
                 {
-                    PerformCheckOut(selectedReservation);
+                    if (checkOutForm.ShowDialog() == DialogResult.OK)
+                    {
+                        // Check-out başarıyla tamamlandı, listeleri yenile
+                        LoadTodayCheckIns();
+                        LoadTodayCheckOuts();
+                        LoadCurrentGuests();
+
+                        // Başarı mesajı artık formun içinde gösteriliyor
+                    }
+                    // DialogResult.Cancel ise hiçbir şey yapma (iptal edildi)
                 }
             }
             catch (Exception ex)
@@ -269,6 +271,7 @@ namespace GunesMotel.UI.WinForms.Control
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
 
         private void PerformCheckOut(Reservations reservation)
         {
@@ -369,7 +372,7 @@ namespace GunesMotel.UI.WinForms.Control
                                MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-
+        
         private void btnLateCheckOuts_Click(object sender, EventArgs e)
         {
             try

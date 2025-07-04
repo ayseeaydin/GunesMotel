@@ -147,6 +147,12 @@
     <Compile Include="Forms\FrmCheckInGuestManagement.Designer.cs">
       <DependentUpon>FrmCheckInGuestManagement.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\FrmCheckOutWithInvoice.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmCheckOutWithInvoice.Designer.cs">
+      <DependentUpon>FrmCheckOutWithInvoice.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\FrmLogin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -211,6 +217,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FrmCheckInGuestManagement.resx">
       <DependentUpon>FrmCheckInGuestManagement.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmCheckOutWithInvoice.resx">
+      <DependentUpon>FrmCheckOutWithInvoice.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FrmLogin.resx">
       <DependentUpon>FrmLogin.cs</DependentUpon>
