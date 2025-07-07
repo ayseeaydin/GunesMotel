@@ -71,31 +71,39 @@ namespace GunesMotel.UI.WinForms.Control
         {
             try
             {
-                // Validasyon: Ad Soyad ve Telefon boş olamaz
                 if (string.IsNullOrWhiteSpace(txtFullName.Text))
                 {
                     MessageBox.Show("Ad Soyad alanı boş olamaz.", "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
                 }
-
                 if (string.IsNullOrWhiteSpace(txtPhone.Text))
                 {
                     MessageBox.Show("Telefon alanı boş olamaz.", "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+                if (string.IsNullOrWhiteSpace(txtEmail.Text))
+                {
+                    MessageBox.Show("E-posta alanı boş olamaz.", "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+                if (string.IsNullOrWhiteSpace(txtAddress.Text))
+                {
+                    MessageBox.Show("Adres alanı boş olamaz.", "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
                 }
 
                 var newCustomer = new Customers
                 {
                     FullName = txtFullName.Text.Trim(),
-                    NationalID = txtNationalID.Text.Trim(),
-                    PassportNo = txtPassportNo.Text.Trim(),
+                    NationalID = string.IsNullOrWhiteSpace(txtNationalID.Text) ? null : txtNationalID.Text.Trim(),
+                    PassportNo = string.IsNullOrWhiteSpace(txtPassportNo.Text) ? null : txtPassportNo.Text.Trim(),
                     BirthDate = dtpBirthDate.Value,
                     Gender = cmbGender.SelectedItem?.ToString(),
                     Phone = txtPhone.Text.Trim(),
                     Email = txtEmail.Text.Trim(),
                     Address = txtAddress.Text.Trim(),
                     Notes = txtNotes.Text.Trim(),
-                    RegisterDate = DateTime.Now // Doğru sütun adı bu
+                    RegisterDate = DateTime.Now
                 };
 
                 var repo = new CustomerRepository();
@@ -103,12 +111,12 @@ namespace GunesMotel.UI.WinForms.Control
 
                 MessageBox.Show("Yeni müşteri başarıyla eklendi.", "Bilgi", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                LoadCustomers(); // GridView'i yenile
-                ClearForm();     // Formu temizle
+                LoadCustomers();
+                ClearForm();
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Müşteri ekleme hatası: " + ex.Message, "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Müşteri ekleme hatası: " + ex.ToString(), "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
