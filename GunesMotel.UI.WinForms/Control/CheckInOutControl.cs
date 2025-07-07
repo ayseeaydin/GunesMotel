@@ -733,5 +733,42 @@ namespace GunesMotel.UI.WinForms.Control
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        private void dgvCurrentGuests_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex < 0) return; // header'a tıklanınca hata olmasın
+            var selectedRow = dgvCurrentGuests.Rows[e.RowIndex];
+            int reservationId = Convert.ToInt32(selectedRow.Cells["ReservationID"].Value);
+
+            // Misafirleri çek
+            var guestRepo = new ReservationGuestsRepository();
+            var guestList = guestRepo.GetByReservationId(reservationId);
+
+            // Guest’lerin müşteri bilgilerini çekmek için Customers tablosuna eriş
+            var customerRepo = new CustomerRepository();
+            var allCustomers = customerRepo.GetAll();
+
+            var guestDisplayList = guestList.Select(g => {
+                var cust = allCustomers.FirstOrDefault(c => c.CustomerID == g.CustomerID);
+                return new
+                {
+                    cust?.FullName,
+                    cust?.Phone,
+                    cust?.Email,
+                    cust?.NationalID,
+                    cust?.PassportNo,
+                    cust?.Gender,
+                    cust?.BirthDate,
+                    cust?.Address,
+                    cust?.Notes
+                };
+            }).ToList();
+            
+            using (var frm = new FrmGuestListDetail())
+            {
+                frm.SetGuestList(guestDisplayList); 
+                frm.ShowDialog();
+            }
+        }
     }
 }

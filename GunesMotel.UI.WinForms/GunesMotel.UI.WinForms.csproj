@@ -153,6 +153,12 @@
     <Compile Include="Forms\FrmCheckOutWithInvoice.Designer.cs">
       <DependentUpon>FrmCheckOutWithInvoice.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\FrmGuestListDetail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmGuestListDetail.Designer.cs">
+      <DependentUpon>FrmGuestListDetail.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\FrmLogin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -220,6 +226,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FrmCheckOutWithInvoice.resx">
       <DependentUpon>FrmCheckOutWithInvoice.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmGuestListDetail.resx">
+      <DependentUpon>FrmGuestListDetail.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FrmLogin.resx">
       <DependentUpon>FrmLogin.cs</DependentUpon>

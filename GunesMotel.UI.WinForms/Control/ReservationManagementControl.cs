@@ -374,6 +374,48 @@ namespace GunesMotel.UI.WinForms.Control
             dgvReservations.ClearSelection();
         }
 
+        private void LoadEmptyRooms()
+        {
+            var roomRepo = new RoomRepository();
+            var reservationRepo = new ReservationRepository();
+
+            // Kullanıcının seçtiği check-in ve check-out
+            DateTime checkIn = dtpCheckInDate.Value.Date;
+            DateTime checkOut = dtpCheckOutDate.Value.Date;
+
+            // Tüm odalar
+            var allRooms = roomRepo.GetAll();
+
+            // Bu aralıkta dolu olan odalar (iptal rezervasyonlar hariç)
+            var reservations = reservationRepo.GetAll();
+
+            var occupiedRoomIds = reservations
+                .Where(r =>
+                    r.Status != "İptal" &&   // İptal rezervasyonlar hariç
+                    (
+                        // Yeni rezervasyonun check-in'i mevcut rezervasyon aralığında mı?
+                        (checkIn >= r.CheckInDate && checkIn < r.CheckOutDate) ||
+                        // Yeni rezervasyonun check-out'u mevcut rezervasyon aralığında mı?
+                        (checkOut > r.CheckInDate && checkOut <= r.CheckOutDate) ||
+                        // Mevcut rezervasyon yeni rezervasyonun tam ortasında mı?
+                        (checkIn <= r.CheckInDate && checkOut >= r.CheckOutDate)
+                    )
+                )
+                .Select(r => r.RoomID)
+                .Distinct()
+                .ToList();
+
+            // Sadece boş olan odaları getir
+            var emptyRooms = allRooms
+                .Where(room => !occupiedRoomIds.Contains(room.RoomID))
+                .ToList();
+
+            cmbRoom.DataSource = emptyRooms;
+            cmbRoom.DisplayMember = "RoomNumber";
+            cmbRoom.ValueMember = "RoomID";
+            cmbRoom.SelectedIndex = -1;
+        }
+
         private void txtSearch_Enter(object sender, EventArgs e)
         {
             if(txtSearch.Text == "Aranacak değeri giriniz...")
@@ -390,6 +432,16 @@ namespace GunesMotel.UI.WinForms.Control
                 txtSearch.Text = "Aranacak değeri giriniz...";
                 txtSearch.ForeColor = Color.Gray;
             }
+        }
+
+        private void dtpCheckInDate_ValueChanged(object sender, EventArgs e)
+        {
+            LoadEmptyRooms(); 
+        }
+
+        private void dtpCheckOutDate_ValueChanged(object sender, EventArgs e)
+        {
+            LoadEmptyRooms();
         }
     }
 }

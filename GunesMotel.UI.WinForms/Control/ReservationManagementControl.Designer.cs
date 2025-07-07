@@ -564,6 +564,7 @@
             this.dtpCheckOutDate.Name = "dtpCheckOutDate";
             this.dtpCheckOutDate.Size = new System.Drawing.Size(130, 27);
             this.dtpCheckOutDate.TabIndex = 7;
+            this.dtpCheckOutDate.ValueChanged += new System.EventHandler(this.dtpCheckOutDate_ValueChanged);
             // 
             // lblCheckOutDate
             // 
@@ -584,6 +585,7 @@
             this.dtpCheckInDate.Name = "dtpCheckInDate";
             this.dtpCheckInDate.Size = new System.Drawing.Size(130, 27);
             this.dtpCheckInDate.TabIndex = 5;
+            this.dtpCheckInDate.ValueChanged += new System.EventHandler(this.dtpCheckInDate_ValueChanged);
             // 
             // lblCheckInDate
             // 
