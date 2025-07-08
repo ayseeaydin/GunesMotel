@@ -44,20 +44,17 @@ namespace GunesMotel.UI.WinForms.Control
             this.pnlPendingCard = new System.Windows.Forms.Panel();
             this.lblPendingCount = new System.Windows.Forms.Label();
             this.lblPendingTitle = new System.Windows.Forms.Label();
-
             this.pnlMiddleSection = new System.Windows.Forms.Panel();
             this.pnlRoomStatus = new System.Windows.Forms.Panel();
-            this.lblRoomStatusTitle = new System.Windows.Forms.Label();
-            this.pnlRoomGrid = new System.Windows.Forms.Panel();
             this.pnlQuickActions = new System.Windows.Forms.Panel();
+            this.btnEkHizmet = new System.Windows.Forms.Button();
             this.btnCheckIn = new System.Windows.Forms.Button();
             this.btnCheckOut = new System.Windows.Forms.Button();
             this.btnYeniRezervasyon = new System.Windows.Forms.Button();
-            this.btnEkHizmet = new System.Windows.Forms.Button();
-
+            this.lblRoomStatusTitle = new System.Windows.Forms.Label();
+            this.pnlRoomGrid = new System.Windows.Forms.Panel();
             this.pnlRecentActivities = new System.Windows.Forms.Panel();
             this.lblActivitiesTitle = new System.Windows.Forms.Label();
-
             this.pnlBottomSection = new System.Windows.Forms.Panel();
             this.pnlTodaySchedule = new System.Windows.Forms.Panel();
             this.lblScheduleTitle = new System.Windows.Forms.Label();
@@ -65,7 +62,6 @@ namespace GunesMotel.UI.WinForms.Control
             this.pnlQuickNotes = new System.Windows.Forms.Panel();
             this.lblNotesTitle = new System.Windows.Forms.Label();
             this.txtQuickNotes = new System.Windows.Forms.TextBox();
-
             this.pnlStatsCards.SuspendLayout();
             this.pnlCheckInCard.SuspendLayout();
             this.pnlCheckOutCard.SuspendLayout();
@@ -95,11 +91,11 @@ namespace GunesMotel.UI.WinForms.Control
             // 
             // pnlCheckInCard
             // 
-            this.pnlCheckInCard.BackColor = System.Drawing.Color.FromArgb(230, 215, 185);
+            this.pnlCheckInCard.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(215)))), ((int)(((byte)(185)))));
             this.pnlCheckInCard.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pnlCheckInCard.Controls.Add(this.lblCheckInCount);
             this.pnlCheckInCard.Controls.Add(this.lblCheckInTitle);
-            this.pnlCheckInCard.Location = new System.Drawing.Point(0, 12);
+            this.pnlCheckInCard.Location = new System.Drawing.Point(23, 12);
             this.pnlCheckInCard.Name = "pnlCheckInCard";
             this.pnlCheckInCard.Size = new System.Drawing.Size(290, 123);
             this.pnlCheckInCard.TabIndex = 0;
@@ -108,7 +104,7 @@ namespace GunesMotel.UI.WinForms.Control
             // 
             this.lblCheckInCount.AutoSize = true;
             this.lblCheckInCount.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold);
-            this.lblCheckInCount.ForeColor = System.Drawing.Color.FromArgb(93, 64, 55);
+            this.lblCheckInCount.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(93)))), ((int)(((byte)(64)))), ((int)(((byte)(55)))));
             this.lblCheckInCount.Location = new System.Drawing.Point(100, 62);
             this.lblCheckInCount.Name = "lblCheckInCount";
             this.lblCheckInCount.Size = new System.Drawing.Size(35, 41);
@@ -119,7 +115,7 @@ namespace GunesMotel.UI.WinForms.Control
             // 
             this.lblCheckInTitle.AutoSize = true;
             this.lblCheckInTitle.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
-            this.lblCheckInTitle.ForeColor = System.Drawing.Color.FromArgb(93, 64, 55);
+            this.lblCheckInTitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(93)))), ((int)(((byte)(64)))), ((int)(((byte)(55)))));
             this.lblCheckInTitle.Location = new System.Drawing.Point(100, 25);
             this.lblCheckInTitle.Name = "lblCheckInTitle";
             this.lblCheckInTitle.Size = new System.Drawing.Size(156, 23);
@@ -128,11 +124,11 @@ namespace GunesMotel.UI.WinForms.Control
             // 
             // pnlCheckOutCard
             // 
-            this.pnlCheckOutCard.BackColor = System.Drawing.Color.FromArgb(230, 215, 185);
+            this.pnlCheckOutCard.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(215)))), ((int)(((byte)(185)))));
             this.pnlCheckOutCard.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pnlCheckOutCard.Controls.Add(this.lblCheckOutCount);
             this.pnlCheckOutCard.Controls.Add(this.lblCheckOutTitle);
-            this.pnlCheckOutCard.Location = new System.Drawing.Point(292, 12);
+            this.pnlCheckOutCard.Location = new System.Drawing.Point(383, 12);
             this.pnlCheckOutCard.Name = "pnlCheckOutCard";
             this.pnlCheckOutCard.Size = new System.Drawing.Size(290, 123);
             this.pnlCheckOutCard.TabIndex = 1;
@@ -141,7 +137,7 @@ namespace GunesMotel.UI.WinForms.Control
             // 
             this.lblCheckOutCount.AutoSize = true;
             this.lblCheckOutCount.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold);
-            this.lblCheckOutCount.ForeColor = System.Drawing.Color.FromArgb(93, 64, 55);
+            this.lblCheckOutCount.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(93)))), ((int)(((byte)(64)))), ((int)(((byte)(55)))));
             this.lblCheckOutCount.Location = new System.Drawing.Point(100, 62);
             this.lblCheckOutCount.Name = "lblCheckOutCount";
             this.lblCheckOutCount.Size = new System.Drawing.Size(35, 41);
@@ -152,7 +148,7 @@ namespace GunesMotel.UI.WinForms.Control
             // 
             this.lblCheckOutTitle.AutoSize = true;
             this.lblCheckOutTitle.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
-            this.lblCheckOutTitle.ForeColor = System.Drawing.Color.FromArgb(93, 64, 55);
+            this.lblCheckOutTitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(93)))), ((int)(((byte)(64)))), ((int)(((byte)(55)))));
             this.lblCheckOutTitle.Location = new System.Drawing.Point(100, 25);
             this.lblCheckOutTitle.Name = "lblCheckOutTitle";
             this.lblCheckOutTitle.Size = new System.Drawing.Size(168, 23);
@@ -161,11 +157,11 @@ namespace GunesMotel.UI.WinForms.Control
             // 
             // pnlAvailableCard
             // 
-            this.pnlAvailableCard.BackColor = System.Drawing.Color.FromArgb(230, 215, 185);
+            this.pnlAvailableCard.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(215)))), ((int)(((byte)(185)))));
             this.pnlAvailableCard.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pnlAvailableCard.Controls.Add(this.lblAvailableCount);
             this.pnlAvailableCard.Controls.Add(this.lblAvailableTitle);
-            this.pnlAvailableCard.Location = new System.Drawing.Point(584, 12);
+            this.pnlAvailableCard.Location = new System.Drawing.Point(745, 12);
             this.pnlAvailableCard.Name = "pnlAvailableCard";
             this.pnlAvailableCard.Size = new System.Drawing.Size(290, 123);
             this.pnlAvailableCard.TabIndex = 2;
@@ -174,7 +170,7 @@ namespace GunesMotel.UI.WinForms.Control
             // 
             this.lblAvailableCount.AutoSize = true;
             this.lblAvailableCount.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold);
-            this.lblAvailableCount.ForeColor = System.Drawing.Color.FromArgb(93, 64, 55);
+            this.lblAvailableCount.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(93)))), ((int)(((byte)(64)))), ((int)(((byte)(55)))));
             this.lblAvailableCount.Location = new System.Drawing.Point(100, 62);
             this.lblAvailableCount.Name = "lblAvailableCount";
             this.lblAvailableCount.Size = new System.Drawing.Size(35, 41);
@@ -185,7 +181,7 @@ namespace GunesMotel.UI.WinForms.Control
             // 
             this.lblAvailableTitle.AutoSize = true;
             this.lblAvailableTitle.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
-            this.lblAvailableTitle.ForeColor = System.Drawing.Color.FromArgb(93, 64, 55);
+            this.lblAvailableTitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(93)))), ((int)(((byte)(64)))), ((int)(((byte)(55)))));
             this.lblAvailableTitle.Location = new System.Drawing.Point(100, 25);
             this.lblAvailableTitle.Name = "lblAvailableTitle";
             this.lblAvailableTitle.Size = new System.Drawing.Size(97, 23);
@@ -194,11 +190,11 @@ namespace GunesMotel.UI.WinForms.Control
             // 
             // pnlPendingCard
             // 
-            this.pnlPendingCard.BackColor = System.Drawing.Color.FromArgb(230, 215, 185);
+            this.pnlPendingCard.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(215)))), ((int)(((byte)(185)))));
             this.pnlPendingCard.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pnlPendingCard.Controls.Add(this.lblPendingCount);
             this.pnlPendingCard.Controls.Add(this.lblPendingTitle);
-            this.pnlPendingCard.Location = new System.Drawing.Point(876, 12);
+            this.pnlPendingCard.Location = new System.Drawing.Point(1117, 12);
             this.pnlPendingCard.Name = "pnlPendingCard";
             this.pnlPendingCard.Size = new System.Drawing.Size(290, 123);
             this.pnlPendingCard.TabIndex = 3;
@@ -207,7 +203,7 @@ namespace GunesMotel.UI.WinForms.Control
             // 
             this.lblPendingCount.AutoSize = true;
             this.lblPendingCount.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold);
-            this.lblPendingCount.ForeColor = System.Drawing.Color.FromArgb(93, 64, 55);
+            this.lblPendingCount.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(93)))), ((int)(((byte)(64)))), ((int)(((byte)(55)))));
             this.lblPendingCount.Location = new System.Drawing.Point(100, 62);
             this.lblPendingCount.Name = "lblPendingCount";
             this.lblPendingCount.Size = new System.Drawing.Size(35, 41);
@@ -218,7 +214,7 @@ namespace GunesMotel.UI.WinForms.Control
             // 
             this.lblPendingTitle.AutoSize = true;
             this.lblPendingTitle.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
-            this.lblPendingTitle.ForeColor = System.Drawing.Color.FromArgb(93, 64, 55);
+            this.lblPendingTitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(93)))), ((int)(((byte)(64)))), ((int)(((byte)(55)))));
             this.lblPendingTitle.Location = new System.Drawing.Point(100, 25);
             this.lblPendingTitle.Name = "lblPendingTitle";
             this.lblPendingTitle.Size = new System.Drawing.Size(129, 23);
@@ -248,24 +244,6 @@ namespace GunesMotel.UI.WinForms.Control
             this.pnlRoomStatus.Size = new System.Drawing.Size(737, 353);
             this.pnlRoomStatus.TabIndex = 0;
             // 
-            // lblRoomStatusTitle
-            // 
-            this.lblRoomStatusTitle.AutoSize = true;
-            this.lblRoomStatusTitle.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
-            this.lblRoomStatusTitle.ForeColor = System.Drawing.Color.FromArgb(93, 64, 55);
-            this.lblRoomStatusTitle.Location = new System.Drawing.Point(17, 3);
-            this.lblRoomStatusTitle.Name = "lblRoomStatusTitle";
-            this.lblRoomStatusTitle.Size = new System.Drawing.Size(133, 28);
-            this.lblRoomStatusTitle.TabIndex = 1;
-            this.lblRoomStatusTitle.Text = "Oda Durumu";
-            // 
-            // pnlRoomGrid
-            // 
-            this.pnlRoomGrid.Location = new System.Drawing.Point(20, 35);
-            this.pnlRoomGrid.Name = "pnlRoomGrid";
-            this.pnlRoomGrid.Size = new System.Drawing.Size(701, 251);
-            this.pnlRoomGrid.TabIndex = 2;
-            // 
             // pnlQuickActions
             // 
             this.pnlQuickActions.Controls.Add(this.btnEkHizmet);
@@ -277,9 +255,23 @@ namespace GunesMotel.UI.WinForms.Control
             this.pnlQuickActions.Size = new System.Drawing.Size(596, 47);
             this.pnlQuickActions.TabIndex = 3;
             // 
+            // btnEkHizmet
+            // 
+            this.btnEkHizmet.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(139)))), ((int)(((byte)(106)))), ((int)(((byte)(66)))));
+            this.btnEkHizmet.FlatAppearance.BorderSize = 0;
+            this.btnEkHizmet.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEkHizmet.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnEkHizmet.ForeColor = System.Drawing.Color.White;
+            this.btnEkHizmet.Location = new System.Drawing.Point(421, 9);
+            this.btnEkHizmet.Name = "btnEkHizmet";
+            this.btnEkHizmet.Size = new System.Drawing.Size(133, 34);
+            this.btnEkHizmet.TabIndex = 3;
+            this.btnEkHizmet.Text = "Ek Hizmet";
+            this.btnEkHizmet.UseVisualStyleBackColor = false;
+            // 
             // btnCheckIn
             // 
-            this.btnCheckIn.BackColor = System.Drawing.Color.FromArgb(139, 106, 66);
+            this.btnCheckIn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(139)))), ((int)(((byte)(106)))), ((int)(((byte)(66)))));
             this.btnCheckIn.FlatAppearance.BorderSize = 0;
             this.btnCheckIn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCheckIn.Font = new System.Drawing.Font("Segoe UI", 9F);
@@ -293,7 +285,7 @@ namespace GunesMotel.UI.WinForms.Control
             // 
             // btnCheckOut
             // 
-            this.btnCheckOut.BackColor = System.Drawing.Color.FromArgb(139, 106, 66);
+            this.btnCheckOut.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(139)))), ((int)(((byte)(106)))), ((int)(((byte)(66)))));
             this.btnCheckOut.FlatAppearance.BorderSize = 0;
             this.btnCheckOut.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCheckOut.Font = new System.Drawing.Font("Segoe UI", 9F);
@@ -307,7 +299,7 @@ namespace GunesMotel.UI.WinForms.Control
             // 
             // btnYeniRezervasyon
             // 
-            this.btnYeniRezervasyon.BackColor = System.Drawing.Color.FromArgb(139, 106, 66);
+            this.btnYeniRezervasyon.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(139)))), ((int)(((byte)(106)))), ((int)(((byte)(66)))));
             this.btnYeniRezervasyon.FlatAppearance.BorderSize = 0;
             this.btnYeniRezervasyon.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnYeniRezervasyon.Font = new System.Drawing.Font("Segoe UI", 9F);
@@ -319,19 +311,23 @@ namespace GunesMotel.UI.WinForms.Control
             this.btnYeniRezervasyon.Text = "Rezervasyon";
             this.btnYeniRezervasyon.UseVisualStyleBackColor = false;
             // 
-            // btnEkHizmet
+            // lblRoomStatusTitle
             // 
-            this.btnEkHizmet.BackColor = System.Drawing.Color.FromArgb(139, 106, 66);
-            this.btnEkHizmet.FlatAppearance.BorderSize = 0;
-            this.btnEkHizmet.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEkHizmet.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnEkHizmet.ForeColor = System.Drawing.Color.White;
-            this.btnEkHizmet.Location = new System.Drawing.Point(421, 9);
-            this.btnEkHizmet.Name = "btnEkHizmet";
-            this.btnEkHizmet.Size = new System.Drawing.Size(133, 34);
-            this.btnEkHizmet.TabIndex = 3;
-            this.btnEkHizmet.Text = "Ek Hizmet";
-            this.btnEkHizmet.UseVisualStyleBackColor = false;
+            this.lblRoomStatusTitle.AutoSize = true;
+            this.lblRoomStatusTitle.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            this.lblRoomStatusTitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(93)))), ((int)(((byte)(64)))), ((int)(((byte)(55)))));
+            this.lblRoomStatusTitle.Location = new System.Drawing.Point(17, 3);
+            this.lblRoomStatusTitle.Name = "lblRoomStatusTitle";
+            this.lblRoomStatusTitle.Size = new System.Drawing.Size(133, 28);
+            this.lblRoomStatusTitle.TabIndex = 1;
+            this.lblRoomStatusTitle.Text = "Oda Durumu";
+            // 
+            // pnlRoomGrid
+            // 
+            this.pnlRoomGrid.Location = new System.Drawing.Point(20, 35);
+            this.pnlRoomGrid.Name = "pnlRoomGrid";
+            this.pnlRoomGrid.Size = new System.Drawing.Size(701, 251);
+            this.pnlRoomGrid.TabIndex = 2;
             // 
             // pnlRecentActivities
             // 
@@ -348,7 +344,7 @@ namespace GunesMotel.UI.WinForms.Control
             // 
             this.lblActivitiesTitle.AutoSize = true;
             this.lblActivitiesTitle.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
-            this.lblActivitiesTitle.ForeColor = System.Drawing.Color.FromArgb(93, 64, 55);
+            this.lblActivitiesTitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(93)))), ((int)(((byte)(64)))), ((int)(((byte)(55)))));
             this.lblActivitiesTitle.Location = new System.Drawing.Point(17, 16);
             this.lblActivitiesTitle.Name = "lblActivitiesTitle";
             this.lblActivitiesTitle.Size = new System.Drawing.Size(153, 28);
@@ -381,7 +377,7 @@ namespace GunesMotel.UI.WinForms.Control
             // 
             this.lblScheduleTitle.AutoSize = true;
             this.lblScheduleTitle.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
-            this.lblScheduleTitle.ForeColor = System.Drawing.Color.FromArgb(93, 64, 55);
+            this.lblScheduleTitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(93)))), ((int)(((byte)(64)))), ((int)(((byte)(55)))));
             this.lblScheduleTitle.Location = new System.Drawing.Point(12, 10);
             this.lblScheduleTitle.Name = "lblScheduleTitle";
             this.lblScheduleTitle.Size = new System.Drawing.Size(183, 28);
@@ -420,7 +416,7 @@ namespace GunesMotel.UI.WinForms.Control
             // 
             this.lblNotesTitle.AutoSize = true;
             this.lblNotesTitle.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
-            this.lblNotesTitle.ForeColor = System.Drawing.Color.FromArgb(93, 64, 55);
+            this.lblNotesTitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(93)))), ((int)(((byte)(64)))), ((int)(((byte)(55)))));
             this.lblNotesTitle.Location = new System.Drawing.Point(13, 10);
             this.lblNotesTitle.Name = "lblNotesTitle";
             this.lblNotesTitle.Size = new System.Drawing.Size(122, 28);
@@ -429,9 +425,9 @@ namespace GunesMotel.UI.WinForms.Control
             // 
             // txtQuickNotes
             // 
-            this.txtQuickNotes.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-            | System.Windows.Forms.AnchorStyles.Left)
-            | System.Windows.Forms.AnchorStyles.Right));
+            this.txtQuickNotes.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.txtQuickNotes.BackColor = System.Drawing.Color.LemonChiffon;
             this.txtQuickNotes.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtQuickNotes.Location = new System.Drawing.Point(10, 42);
@@ -440,7 +436,6 @@ namespace GunesMotel.UI.WinForms.Control
             this.txtQuickNotes.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.txtQuickNotes.Size = new System.Drawing.Size(620, 217);
             this.txtQuickNotes.TabIndex = 0;
-            this.txtQuickNotes.Text = "";
             // 
             // ReceptionDashboardContentControl
             // 
@@ -452,6 +447,7 @@ namespace GunesMotel.UI.WinForms.Control
             this.Controls.Add(this.pnlStatsCards);
             this.Name = "ReceptionDashboardContentControl";
             this.Size = new System.Drawing.Size(1426, 821);
+            this.Load += new System.EventHandler(this.ReceptionDashboardContentControl_Load);
             this.pnlStatsCards.ResumeLayout(false);
             this.pnlCheckInCard.ResumeLayout(false);
             this.pnlCheckInCard.PerformLayout();

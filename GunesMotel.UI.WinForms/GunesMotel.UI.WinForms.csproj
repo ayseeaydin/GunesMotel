@@ -197,6 +197,9 @@
     <EmbeddedResource Include="Control\InvoiceManagementControl.resx">
       <DependentUpon>InvoiceManagementControl.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Control\ReceptionDashboardContentControl.resx">
+      <DependentUpon>ReceptionDashboardContentControl.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Control\ReservationManagementControl.resx">
       <DependentUpon>ReservationManagementControl.cs</DependentUpon>
     </EmbeddedResource>
