@@ -27,6 +27,7 @@ namespace GunesMotel.UI.WinForms.Forms
         {
             LoadUserInfo();
             LoadUserControl(new ReceptionDashboardContentControl());
+            UpdateFooter();
         }
 
         private void LoadUserControl(UserControl control)
@@ -41,7 +42,16 @@ namespace GunesMotel.UI.WinForms.Forms
             lblUserName.Text = CurrentUser.Username;
         }
 
-       
+        private void UpdateFooter()
+        {
+            using (var context = new GunesMotelContext())
+            {
+                int aktifRezervasyon = context.Reservations.Count(r => r.Status == "Check-in");
+                int bekleyenIslem = context.Reservations.Count(r => r.Status == "Beklemede");
+                lblStatus.Text = $"Durum: {aktifRezervasyon} aktif rezervasyon, {bekleyenIslem} bekleyen işlem";
+                lblLastUpdate.Text = "Son Güncelleme: " + DateTime.Now.ToString("dd MMMM yyyy, HH:mm");
+            }
+        }
 
         private void btnOdaDurumu_Click(object sender, EventArgs e)
         {
