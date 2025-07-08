@@ -176,7 +176,7 @@ namespace GunesMotel.UI.WinForms.Forms
 
         private void btnAnaSayfa_Click(object sender, EventArgs e)
         {
-            FrmReceptionDashboard_Load(sender, e); // Yeniden yükle999
+            LoadUserControl(new ReceptionDashboardContentControl());
         }
 
         private void btnFaturaYonetimi_Click(object sender, EventArgs e)

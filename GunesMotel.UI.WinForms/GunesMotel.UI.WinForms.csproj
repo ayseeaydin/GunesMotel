@@ -81,6 +81,12 @@
     <Compile Include="Control\InvoiceManagementControl.Designer.cs">
       <DependentUpon>InvoiceManagementControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="Control\ReceptionDashboardContentControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Control\ReceptionDashboardContentControl.Designer.cs">
+      <DependentUpon>ReceptionDashboardContentControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="Control\ReservationManagementControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
