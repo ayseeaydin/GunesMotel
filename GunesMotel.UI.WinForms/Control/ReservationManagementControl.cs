@@ -189,14 +189,21 @@ namespace GunesMotel.UI.WinForms.Control
                     return;
                 }
 
-                // Her ihtimale karşı, yine kontrol edelim
+                var customerId = Convert.ToInt32(cmbCustomer.SelectedValue);
                 var roomId = Convert.ToInt32(cmbRoom.SelectedValue);
                 var checkIn = dtpCheckInDate.Value.Date;
                 var checkOut = dtpCheckOutDate.Value.Date;
+
                 if (!IsRoomAvailable(roomId, checkIn, checkOut))
                 {
                     MessageBox.Show("Bu oda seçilen tarihlerde zaten rezerve edilmiş. Lütfen başka bir oda veya tarih seçin.", "Oda Dolu", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     LoadEmptyRooms();
+                    return;
+                }
+
+                if (IsDuplicateReservation(customerId, roomId, checkIn, checkOut))
+                {
+                    MessageBox.Show("Bu müşteri için aynı oda ve tarihlerde zaten bir rezervasyon var!", "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
                 }
 
@@ -237,14 +244,19 @@ namespace GunesMotel.UI.WinForms.Control
                     return;
                 }
 
+                var customerId = Convert.ToInt32(cmbCustomer.SelectedValue);
                 var roomId = Convert.ToInt32(cmbRoom.SelectedValue);
                 var checkIn = dtpCheckInDate.Value.Date;
                 var checkOut = dtpCheckOutDate.Value.Date;
-
                 var selectedRow = dgvReservations.SelectedRows[0];
                 int reservationId = Convert.ToInt32(selectedRow.Cells["ReservationID"].Value);
 
-                // Kendi rezervasyonunu hariç tut!
+                if (IsDuplicateReservation(customerId, roomId, checkIn, checkOut, reservationId))
+                {
+                    MessageBox.Show("Bu müşteri için aynı oda ve tarihlerde zaten bir rezervasyon var!", "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
                 if (!IsRoomAvailable(roomId, checkIn, checkOut, reservationId))
                 {
                     MessageBox.Show("Bu oda seçilen tarihlerde zaten rezerve edilmiş. Lütfen başka bir oda veya tarih seçin.", "Oda Dolu", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -487,6 +499,24 @@ namespace GunesMotel.UI.WinForms.Control
                 .Any();
 
             return !overlapping;
+        }
+
+        private bool IsDuplicateReservation(int customerId, int roomId, DateTime checkIn, DateTime checkOut, int? ignoreReservationId = null)
+        {
+            var repo = new ReservationRepository();
+            var reservations = repo.GetAll();
+
+            return reservations.Any(r =>
+                r.CustomerID == customerId &&
+                r.RoomID == roomId &&
+                r.Status != "İptal" &&
+                (ignoreReservationId == null || r.ReservationID != ignoreReservationId) &&
+                (
+                    (checkIn >= r.CheckInDate && checkIn < r.CheckOutDate) ||
+                    (checkOut > r.CheckInDate && checkOut <= r.CheckOutDate) ||
+                    (checkIn <= r.CheckInDate && checkOut >= r.CheckOutDate)
+                )
+            );
         }
     }
 }

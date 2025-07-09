@@ -97,16 +97,6 @@ namespace GunesMotel.UI.WinForms.Forms
                         }
                     }
 
-                    // Ana müşteri otomatik olarak eklenmeli
-                    if (!_reservationGuests.Any(g => g.CustomerID == _selectedReservation.CustomerID))
-                    {
-                        var mainCustomer = context.Customers.Find(_selectedReservation.CustomerID);
-                        if (mainCustomer != null)
-                        {
-                            _reservationGuests.Add(mainCustomer);
-                        }
-                    }
-
                     RefreshReservationGuestsGrid();
                 }
             }
@@ -321,14 +311,6 @@ namespace GunesMotel.UI.WinForms.Forms
 
                 int customerId = Convert.ToInt32(dgvReservationGuests.SelectedRows[0].Cells["CustomerID"].Value);
 
-                // Ana müşteri kaldırılamaz
-                if (customerId == _selectedReservation.CustomerID)
-                {
-                    MessageBox.Show("Ana müşteri kaldırılamaz.", "Uyarı",
-                        MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    return;
-                }
-
                 var result = MessageBox.Show("Seçili misafiri kaldırmak istediğinizden emin misiniz?",
                     "Onay", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
@@ -396,8 +378,14 @@ namespace GunesMotel.UI.WinForms.Forms
         {
             if (rbExistingCustomer.Checked)
             {
-                // Mevcut müşteri seçildiğinde form alanlarını temizle
                 ClearForm();
+                dgvExistingCustomers.Enabled = true;
+
+            }
+            else
+            {
+                dgvExistingCustomers.ClearSelection();
+                dgvExistingCustomers.Enabled = false;
             }
         }
 
