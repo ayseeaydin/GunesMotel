@@ -185,7 +185,8 @@ namespace GunesMotel.UI.WinForms.Forms
         {
             try
             {
-                if (dgvExistingCustomers.SelectedRows.Count > 0)
+                // Sadece "Mevcut Müşteri" radio seçiliyse bilgileri doldur!
+                if (rbExistingCustomer.Checked && dgvExistingCustomers.SelectedRows.Count > 0)
                 {
                     var selectedRow = dgvExistingCustomers.SelectedRows[0];
                     int customerId = Convert.ToInt32(selectedRow.Cells["CustomerID"].Value);
@@ -193,7 +194,6 @@ namespace GunesMotel.UI.WinForms.Forms
                     var selectedCustomer = _allCustomers.FirstOrDefault(c => c.CustomerID == customerId);
                     if (selectedCustomer != null)
                     {
-                        // Form alanlarını doldur
                         txtFullName.Text = selectedCustomer.FullName ?? "";
                         txtNationalID.Text = selectedCustomer.NationalID ?? "";
                         txtPassportNo.Text = selectedCustomer.PassportNo ?? "";
@@ -206,8 +206,6 @@ namespace GunesMotel.UI.WinForms.Forms
 
                         if (!string.IsNullOrEmpty(selectedCustomer.Gender))
                             cmbGender.SelectedItem = selectedCustomer.Gender;
-
-                        rbExistingCustomer.Checked = true;
                     }
                 }
             }
@@ -229,6 +227,20 @@ namespace GunesMotel.UI.WinForms.Forms
             dtpBirthDate.Value = new DateTime(1990, 1, 1);
             cmbGender.SelectedIndex = -1;
             rbNewCustomer.Checked = true;
+        }
+
+        private void ClearForm(bool keepRadio = false)
+        {
+            txtFullName.Clear();
+            txtNationalID.Clear();
+            txtPassportNo.Clear();
+            txtPhone.Clear();
+            txtEmail.Clear();
+            txtAddress.Clear();
+            dtpBirthDate.Value = new DateTime(1990, 1, 1);
+            cmbGender.SelectedIndex = -1;
+            if (!keepRadio)
+                rbNewCustomer.Checked = true; // Sadece dışarıdan çağrılınca true yap
         }
 
         private void btnClearForm_Click(object sender, EventArgs e)
@@ -378,9 +390,8 @@ namespace GunesMotel.UI.WinForms.Forms
         {
             if (rbExistingCustomer.Checked)
             {
-                ClearForm();
+                ClearForm(true); // Radio değişmesin!
                 dgvExistingCustomers.Enabled = true;
-
             }
             else
             {
@@ -393,7 +404,9 @@ namespace GunesMotel.UI.WinForms.Forms
         {
             if (rbNewCustomer.Checked)
             {
-                ClearForm();
+                ClearForm(true); // Radio değişmesin!
+                dgvExistingCustomers.ClearSelection();
+                dgvExistingCustomers.Enabled = false;
             }
         }
         #endregion
