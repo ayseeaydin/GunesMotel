@@ -18,6 +18,41 @@ namespace GunesMotel.UI.WinForms.Control
         public ReservationManagementControl()
         {
             InitializeComponent();
+        }        
+
+        private void ReservationManagementControl_Load(object sender, EventArgs e)
+        {
+            LoadCustomers();
+            LoadStatuses();
+            LoadSources();
+            LoadReservations();
+            LoadEmptyRooms();
+        }
+
+        private void ClearForm()
+        {
+            cmbCustomer.SelectedIndex = -1;
+            cmbRoom.SelectedIndex = -1;
+            dtpCheckInDate.Value = DateTime.Today;
+            dtpCheckOutDate.Value = DateTime.Today.AddDays(1);
+            cmbStatus.SelectedIndex = -1;
+            nudGuestCount.Value = 1;
+            cmbSource.SelectedIndex = -1;
+            dtpReservationDate.Value = DateTime.Today;
+            txtNotes.Clear();
+            dgvReservations.ClearSelection();
+            LoadEmptyRooms();
+        }
+
+        private void LoadCustomers()
+        {
+            var customerRepo = new CustomerRepository();
+            var customers = customerRepo.GetAll();
+
+            cmbCustomer.DataSource = customers;
+            cmbCustomer.DisplayMember = "FullName";
+            cmbCustomer.ValueMember = "CustomerID";
+            cmbCustomer.SelectedIndex = -1;
         }
 
         private void LoadReservations()
@@ -25,7 +60,9 @@ namespace GunesMotel.UI.WinForms.Control
             try
             {
                 var repo = new ReservationRepository();
-                var reservationList = repo.GetAll();
+                var reservationList = repo.GetAll()
+                    .OrderByDescending(r => r.ReservationID)
+                    .ToList();
 
                 var displayList = reservationList.Select(r => new
                 {
@@ -53,55 +90,66 @@ namespace GunesMotel.UI.WinForms.Control
             }
         }
 
-        private void ReservationManagementControl_Load(object sender, EventArgs e)
-        {
-            LoadCustomers();
-            LoadRooms();
-            LoadStatuses();
-            LoadSources();
-            LoadReservations();
-        }
-
-        private void ClearForm()
-        {
-            cmbCustomer.SelectedIndex = -1;
-            cmbRoom.SelectedIndex = -1;
-            dtpCheckInDate.Value = DateTime.Today;
-            dtpCheckOutDate.Value = DateTime.Today.AddDays(1);
-            cmbStatus.SelectedIndex = -1;
-            nudGuestCount.Value = 1;
-            cmbSource.SelectedIndex = -1;
-            dtpReservationDate.Value = DateTime.Today;
-            txtNotes.Clear();
-        }
-
-        private void LoadCustomers()
-        {
-            var customerRepo = new CustomerRepository();
-            var customers = customerRepo.GetAll();
-
-            cmbCustomer.DataSource = customers;
-            cmbCustomer.DisplayMember = "FullName";
-            cmbCustomer.ValueMember = "CustomerID";
-            cmbCustomer.SelectedIndex = -1;
-        }
-
-        private void LoadRooms()
+        private void LoadEmptyRooms()
         {
             var roomRepo = new RoomRepository();
-            var rooms = roomRepo.GetAll();
+            var reservationRepo = new ReservationRepository();
 
-            cmbRoom.DataSource = rooms;
-            cmbRoom.DisplayMember = "RoomNumber"; // veya RoomName
+            DateTime checkIn = dtpCheckInDate.Value.Date;
+            DateTime checkOut = dtpCheckOutDate.Value.Date;
+
+            // Güncellenen rezervasyon varsa, o id hariç tutulacak
+            int? currentReservationId = null;
+            if (dgvReservations.SelectedRows.Count > 0)
+            {
+                currentReservationId = Convert.ToInt32(dgvReservations.SelectedRows[0].Cells["ReservationID"].Value);
+            }
+
+            var allRooms = roomRepo.GetAll();
+            var reservations = reservationRepo.GetAll();
+
+            var occupiedRoomIds = reservations
+                .Where(r =>
+                    r.Status != "İptal"
+                    && (currentReservationId == null || r.ReservationID != currentReservationId)
+                    && (
+                        (checkIn >= r.CheckInDate && checkIn < r.CheckOutDate) ||
+                        (checkOut > r.CheckInDate && checkOut <= r.CheckOutDate) ||
+                        (checkIn <= r.CheckInDate && checkOut >= r.CheckOutDate)
+                    )
+                )
+                .Select(r => r.RoomID)
+                .Distinct()
+                .ToList();
+
+            var emptyRooms = allRooms
+                .Where(room => !occupiedRoomIds.Contains(room.RoomID))
+                .ToList();
+
+            // Güncellemede, seçili oda dolu ise bile combobox'ta görünsün
+            if (currentReservationId.HasValue)
+            {
+                var selectedRoomId = Convert.ToInt32(cmbRoom.SelectedValue ?? -1);
+                if (selectedRoomId > 0 && !emptyRooms.Any(r => r.RoomID == selectedRoomId))
+                {
+                    var selectedRoom = allRooms.FirstOrDefault(r => r.RoomID == selectedRoomId);
+                    if (selectedRoom != null)
+                        emptyRooms.Add(selectedRoom);
+                }
+            }
+
+            cmbRoom.DataSource = emptyRooms.OrderBy(r => r.RoomNumber).ToList();
+            cmbRoom.DisplayMember = "RoomNumber";
             cmbRoom.ValueMember = "RoomID";
             cmbRoom.SelectedIndex = -1;
         }
+
         private void LoadStatuses()
         {
             cmbStatus.Items.Clear();
             cmbStatus.Items.AddRange(new string[]
             {
-        "Beklemede", "Onaylandı", "Check-in", "Check-out", "İptal"
+            "Beklemede", "Onaylandı", "Check-in", "Check-out", "İptal"
             });
             cmbStatus.SelectedIndex = -1;
         }
@@ -110,7 +158,7 @@ namespace GunesMotel.UI.WinForms.Control
             cmbSource.Items.Clear();
             cmbSource.Items.AddRange(new string[]
             {
-        "Website", "Telefon", "Email", "Booking.com", "Expedia", "Hotels.com", "Tripadvisor", "Walk-in", "Diğer"
+            "Website", "Telefon", "Email", "Booking.com", "Expedia", "Hotels.com", "Tripadvisor", "Walk-in", "Diğer"
             });
             cmbSource.SelectedIndex = -1;
         }
@@ -119,40 +167,46 @@ namespace GunesMotel.UI.WinForms.Control
         {
             try
             {
-                // ✅ Zorunlu alanlar kontrolü
+                // Zorunlu alanlar
                 if (cmbCustomer.SelectedIndex == -1)
                 {
                     MessageBox.Show("Lütfen bir müşteri seçin.", "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
                 }
-
                 if (cmbRoom.SelectedIndex == -1)
                 {
                     MessageBox.Show("Lütfen bir oda seçin.", "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
                 }
-
                 if (cmbStatus.SelectedIndex == -1)
                 {
                     MessageBox.Show("Lütfen bir durum seçin.", "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
                 }
-
-                // Check-in tarihi Check-out tarihinden büyük olamaz
                 if (dtpCheckInDate.Value.Date >= dtpCheckOutDate.Value.Date)
                 {
                     MessageBox.Show("Giriş tarihi, çıkış tarihinden önce olmalıdır.", "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
                 }
 
-                // 📌 Rezervasyon oluşturuluyor
+                // Her ihtimale karşı, yine kontrol edelim
+                var roomId = Convert.ToInt32(cmbRoom.SelectedValue);
+                var checkIn = dtpCheckInDate.Value.Date;
+                var checkOut = dtpCheckOutDate.Value.Date;
+                if (!IsRoomAvailable(roomId, checkIn, checkOut))
+                {
+                    MessageBox.Show("Bu oda seçilen tarihlerde zaten rezerve edilmiş. Lütfen başka bir oda veya tarih seçin.", "Oda Dolu", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    LoadEmptyRooms();
+                    return;
+                }
+
                 var newReservation = new Reservations
                 {
                     CustomerID = Convert.ToInt32(cmbCustomer.SelectedValue),
-                    RoomID = Convert.ToInt32(cmbRoom.SelectedValue),
-                    UserID = CurrentUser.UserID, // giriş yapan kullanıcı
-                    CheckInDate = dtpCheckInDate.Value.Date,
-                    CheckOutDate = dtpCheckOutDate.Value.Date,
+                    RoomID = roomId,
+                    UserID = CurrentUser.UserID,
+                    CheckInDate = checkIn,
+                    CheckOutDate = checkOut,
                     ReservationDate = dtpReservationDate.Value.Date,
                     Source = cmbSource.SelectedItem?.ToString(),
                     Status = cmbStatus.SelectedItem?.ToString(),
@@ -164,8 +218,8 @@ namespace GunesMotel.UI.WinForms.Control
                 repo.Add(newReservation);
 
                 MessageBox.Show("Rezervasyon başarıyla eklendi.", "Bilgi", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                LoadReservations(); // DataGridView yenile
-                ClearForm();        // Formu temizle
+                LoadReservations();
+                ClearForm();
             }
             catch (Exception ex)
             {
@@ -183,30 +237,42 @@ namespace GunesMotel.UI.WinForms.Control
                     return;
                 }
 
+                var roomId = Convert.ToInt32(cmbRoom.SelectedValue);
+                var checkIn = dtpCheckInDate.Value.Date;
+                var checkOut = dtpCheckOutDate.Value.Date;
+
                 var selectedRow = dgvReservations.SelectedRows[0];
                 int reservationId = Convert.ToInt32(selectedRow.Cells["ReservationID"].Value);
+
+                // Kendi rezervasyonunu hariç tut!
+                if (!IsRoomAvailable(roomId, checkIn, checkOut, reservationId))
+                {
+                    MessageBox.Show("Bu oda seçilen tarihlerde zaten rezerve edilmiş. Lütfen başka bir oda veya tarih seçin.", "Oda Dolu", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    LoadEmptyRooms();
+                    return;
+                }
 
                 var updated = new Reservations
                 {
                     ReservationID = reservationId,
                     CustomerID = Convert.ToInt32(cmbCustomer.SelectedValue),
-                    RoomID = Convert.ToInt32(cmbRoom.SelectedValue),
-                    UserID = CurrentUser.UserID, // Oturumdaki kullanıcıdan alınıyor
-                    CheckInDate = dtpCheckInDate.Value,
-                    CheckOutDate = dtpCheckOutDate.Value,
-                    ReservationDate = dtpReservationDate.Value,
+                    RoomID = roomId,
+                    UserID = CurrentUser.UserID,
+                    CheckInDate = checkIn,
+                    CheckOutDate = checkOut,
+                    ReservationDate = dtpReservationDate.Value.Date,
                     Source = cmbSource.SelectedItem?.ToString(),
                     Status = cmbStatus.SelectedItem?.ToString(),
                     GuestCount = (int)nudGuestCount.Value,
-                    Notes = txtNotes.Text.Trim()
+                    Notes = txtNotes.Text?.Trim()
                 };
 
                 var repo = new ReservationRepository();
                 repo.Update(updated);
 
                 MessageBox.Show("Rezervasyon başarıyla güncellendi.", "Bilgi", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                LoadReservations(); // Yeniden listele
-                ClearForm();        // Formu temizle
+                LoadReservations();
+                ClearForm();
             }
             catch (Exception ex)
             {
@@ -229,6 +295,9 @@ namespace GunesMotel.UI.WinForms.Control
             dtpReservationDate.Value = Convert.ToDateTime(row.Cells["ReservationDate"].Value);
             nudGuestCount.Value = Convert.ToInt32(row.Cells["GuestCount"].Value);
             txtNotes.Text = row.Cells["Notes"].Value?.ToString();
+
+            // Güncelleme ekranında oda listesini güncelle
+            LoadEmptyRooms();
         }
 
         private void btnNew_Click(object sender, EventArgs e)
@@ -257,8 +326,8 @@ namespace GunesMotel.UI.WinForms.Control
                     repo.Delete(reservationId);
 
                     MessageBox.Show("Rezervasyon başarıyla silindi.", "Bilgi", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    LoadReservations(); // Listeyi yenile
-                    ClearForm();        // Formu temizle
+                    LoadReservations();
+                    ClearForm();
                 }
             }
             catch (Exception ex)
@@ -372,49 +441,7 @@ namespace GunesMotel.UI.WinForms.Control
             LoadReservations();
             ClearForm();
             dgvReservations.ClearSelection();
-        }
-
-        private void LoadEmptyRooms()
-        {
-            var roomRepo = new RoomRepository();
-            var reservationRepo = new ReservationRepository();
-
-            // Kullanıcının seçtiği check-in ve check-out
-            DateTime checkIn = dtpCheckInDate.Value.Date;
-            DateTime checkOut = dtpCheckOutDate.Value.Date;
-
-            // Tüm odalar
-            var allRooms = roomRepo.GetAll();
-
-            // Bu aralıkta dolu olan odalar (iptal rezervasyonlar hariç)
-            var reservations = reservationRepo.GetAll();
-
-            var occupiedRoomIds = reservations
-                .Where(r =>
-                    r.Status != "İptal" &&   // İptal rezervasyonlar hariç
-                    (
-                        // Yeni rezervasyonun check-in'i mevcut rezervasyon aralığında mı?
-                        (checkIn >= r.CheckInDate && checkIn < r.CheckOutDate) ||
-                        // Yeni rezervasyonun check-out'u mevcut rezervasyon aralığında mı?
-                        (checkOut > r.CheckInDate && checkOut <= r.CheckOutDate) ||
-                        // Mevcut rezervasyon yeni rezervasyonun tam ortasında mı?
-                        (checkIn <= r.CheckInDate && checkOut >= r.CheckOutDate)
-                    )
-                )
-                .Select(r => r.RoomID)
-                .Distinct()
-                .ToList();
-
-            // Sadece boş olan odaları getir
-            var emptyRooms = allRooms
-                .Where(room => !occupiedRoomIds.Contains(room.RoomID))
-                .ToList();
-
-            cmbRoom.DataSource = emptyRooms;
-            cmbRoom.DisplayMember = "RoomNumber";
-            cmbRoom.ValueMember = "RoomID";
-            cmbRoom.SelectedIndex = -1;
-        }
+        }       
 
         private void txtSearch_Enter(object sender, EventArgs e)
         {
@@ -442,6 +469,24 @@ namespace GunesMotel.UI.WinForms.Control
         private void dtpCheckOutDate_ValueChanged(object sender, EventArgs e)
         {
             LoadEmptyRooms();
+        }
+
+        private bool IsRoomAvailable(int roomId, DateTime checkIn, DateTime checkOut, int? ignoreReservationId = null)
+        {
+            var repo = new ReservationRepository();
+            var reservations = repo.GetAll();
+
+            var overlapping = reservations
+                .Where(r => r.RoomID == roomId && r.Status != "İptal"
+                    && (ignoreReservationId == null || r.ReservationID != ignoreReservationId)
+                    && (
+                        (checkIn >= r.CheckInDate && checkIn < r.CheckOutDate) ||
+                        (checkOut > r.CheckInDate && checkOut <= r.CheckOutDate) ||
+                        (checkIn <= r.CheckInDate && checkOut >= r.CheckOutDate)
+                    ))
+                .Any();
+
+            return !overlapping;
         }
     }
 }

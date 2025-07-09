@@ -191,11 +191,9 @@ namespace GunesMotel.DataAccess.Repositories
                 var invoice = context.Invoices.Find(invoiceId);
                 if (invoice != null)
                 {
-                    // Önce fatura kalemlerini sil
                     var items = context.InvoiceItems.Where(ii => ii.InvoiceID == invoiceId);
                     context.InvoiceItems.RemoveRange(items);
 
-                    // Sonra faturayı sil
                     context.Invoices.Remove(invoice);
                     context.SaveChanges();
                 }
@@ -216,7 +214,6 @@ namespace GunesMotel.DataAccess.Repositories
                 var nights = (reservation.CheckOutDate.Date - reservation.CheckInDate.Date).Days;
                 if (nights <= 0) nights = 1;
 
-                // Basit hesaplama - tek fiyat kullan (sezon entegrasyonu sonra eklenebilir)
                 var roomPrice = context.RoomPrices
                     .Where(rp => rp.RoomID == reservation.RoomID)
                     .OrderByDescending(rp => rp.LastUpdated)
